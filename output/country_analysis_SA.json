@@ -1,0 +1,28 @@
+{
+  "id": "f97c2466-db9f-47d4-abc8-718fca6f6b40",
+  "object": "chat.completion",
+  "created": 1759413682,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"country\": \"SA\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"275,174.63€\",\n                \"url\": \"https://www.888casino.com/offers\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"275,151.73€\",\n                \"url\": \"https://www.888casino.com\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"£65,100\",\n                \"url\": \"https://casinia.bet\"\n            },\n            {\n                \"competitor\": \"Rabona\",\n                \"title\": \"Limited Time Offer from Rabona\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"Up to 500%\",\n                \"url\": \"https://www.rabona.casino\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Flaming Wild, Crown Don, Blaze Fire, White Witch, Wolf Gold, Gonzo's\",\n                \"context\": \"Jackpot promotion featuring various slot games\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"Eye of Horus, Fishin’ Frenzy\",\n                \"context\": \"No-wagering free spins on specified games\"\n            },\n            {\n                \"competitor\": \"Rabona\",\n                \"game\": \"Mega Moolah\",\n                \"context\": \"Access to 216 jackpot games, including popular ones like 'Mega Moolah'\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"Approx. 100% up to €500 + 200 free spins (common among Casinia, EmirBet, Rabona)\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"Approx. 150-200 free spins (Casinia: 200-350, Rabona: 200, Rooster bet: 50)\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"High variability, with amounts like €275k (888 Casino) and £65k (Casinia)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"Approx. 100% up to €100-€500 (Casinia, Rabona)\"\n            }\n        ],\n        \"distinctive_data\": [\"888 Casino offers the highest jackpot amounts (over €275k), significantly above competitors.\", \"Casinia provides a unique 'bonus crab' feature in multiple promotions, adding a gamified element.\", \"Rabona's limited-time offer of up to 500% bonus is the highest percentage bonus found.\", \"Casinia offers no-wagering free spins (350 on specific games), which is rare and player-friendly.\", \"Multiple competitors (Casinia, Rabona) include crypto-specific bonuses, indicating a trend towards cryptocurrency integration.\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4787,
+    "completion_tokens": 760,
+    "total_tokens": 5547,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 4467
+  },
+  "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
+}

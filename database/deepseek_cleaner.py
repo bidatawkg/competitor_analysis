@@ -67,8 +67,17 @@ class DeepSeekCleaner:
                 Título: {promo['title']}
                 Descripción: {promo['description']}
                 ---
-                Filtra y devuelve SOLO si es relevante (bonus, free spin, promoción, torneo, jackpot, wagering).
-                Devuelve en JSON con este formato:
+                Tu tarea es:
+
+                1. Filtrar relevancia: Devuelve resultados solo si la promoción está claramente relacionada con el sector de casinos online (ejemplo: bonus, free spins, promociones, torneos, jackpots, wagering).
+
+                - Descarta promociones que no tengan relación con casinos.
+
+                - Descarta textos vagos o sin información suficiente sobre la oferta (ej. sin monto del bono, condiciones poco claras o inexistentes).
+
+                2. Idioma de salida: Todas las respuestas deben estar en inglés.
+
+                3. Formato de salida: Devuelve un JSON con la siguiente estructura:
                 {{
                     "title": "string",
                     "description": "string",
@@ -77,7 +86,7 @@ class DeepSeekCleaner:
                     "conditions": "string",
                     "valid_until": "string"
                 }}
-                Si no es relevante, responde con null.
+                4. Condición de salida: Si la promoción no es relevante, responde únicamente con null.
                 """
 
                 data = {

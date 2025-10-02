@@ -9,7 +9,7 @@ import sys
 import os
 import logging
 from datetime import datetime
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 import argparse
 from pathlib import Path
 
@@ -22,6 +22,9 @@ sys.path.append(str(base_dir / "database"))
 from scraper.competitor_scraper import CompetitorScraper, PromotionData
 from database.db_manager import DatabaseManager
 from database.deepseek_cleaner import DeepSeekCleaner
+
+from dotenv import load_dotenv  # Optional dependency
+load_dotenv()  # Optional
 
 if sys.platform.startswith("win"):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
@@ -39,14 +42,15 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 class CompetitorAnalysisSystem:
-    """Main system class that orchestrates the entire process"""
-    
-    def __init__(self, use_proxy: bool = False, headless: bool = True):
+    """Main system class that orchestrates the entire process"""        
+
+    def __init__(self, use_proxy: bool = False, headless: bool = True, deepseek_api_key: Optional[str] = None):
         self.scraper = CompetitorScraper(use_proxy=use_proxy, headless=headless)
         self.db_manager = DatabaseManager()
         base_dir = Path(__file__).resolve().parent  # carpeta donde está main.py
         self.output_dir = base_dir / "output"
         self.output_dir.mkdir(exist_ok=True)  # crea la carpeta si no existe
+        self.deepseek_api_key = deepseek_api_key or os.getenv('DEEPSEEK_API_KEY')
         
     async def run_full_analysis(self, country: str = "UAE") -> Dict[str, Any]:
         """Run complete analysis: scrape, store, compare, and export"""
@@ -81,6 +85,9 @@ class CompetitorAnalysisSystem:
             # csv_file = self.db_manager.export_clean_to_csv(country, self.output_dir)
             # json_file = self.db_manager.export_clean_to_json(country, self.output_dir)
 
+            # # Export CLEAN comparison results (only NEW for dashboard)
+            # comp_csv, comp_json = self.db_manager.export_clean_comparison_results(country, self.output_dir) 
+
             # Step 3: Compare with previous data (SEMANTIC & DEDUPED)
             logger.info("Step 3: Comparing with previous data (semantic & dedup)...")
             current_date = datetime.now().date().isoformat()
@@ -91,13 +98,83 @@ class CompetitorAnalysisSystem:
             csv_file = self.db_manager.export_clean_new_semantic_to_csv(country, self.output_dir)
             json_file = self.db_manager.export_clean_new_semantic_to_json(country, self.output_dir)
 
-            
-            # # Export CLEAN comparison results (only NEW for dashboard)
-            # comp_csv, comp_json = self.db_manager.export_clean_comparison_results(country, self.output_dir) 
-
             # Export CLEAN comparison results (only NEW for dashboard)
             comp_csv, comp_json = self.db_manager.export_clean_comparison_results_semantic(country, self.output_dir)
 
+            ########## ANÁLISIS IA DE LA SALIDA ######################
+
+            # **** Step 4.5: AI Country-Level Analysis with DeepSeek ****
+            logger.info("Step 4.5: Generating AI-based analysis (DeepSeek)...")
+            try:
+                import requests, json
+
+                # Cargar datos del comp_json (que ya exportaste en Step 4)
+                with open(comp_json, "r", encoding="utf-8") as f:
+                    comp_data = json.load(f)
+
+                # Construir prompt
+                prompt = f"""
+                Analiza todas las promociones de todos los competidores en el país {country}.
+                El resultado debe ser un JSON estructurado a nivel país con la siguiente forma:
+
+                {{
+                  "country": "{country}",
+                  "analysis": {{
+                    "most_aggressive_promotions": [
+                      {{ "competitor": "...", "title": "...", "bonus_type": "...", "bonus_amount": "...", "url": "..." }}
+                    ],
+                    "highlighted_games": [
+                      {{ "competitor": "...", "game": "...", "context": "..." }}
+                    ],
+                    "average_values_by_promo_type": [
+                      {{ "bonus_type": "...", "average_bonus": "..." }}
+                    ],
+                    "distinctive_data": [
+                      "punto que llame la atención"
+                    ]
+                  }}
+                }}
+
+                Ten en cuenta:
+                - Identifica las promos más agresivas por % o monto.
+                - Si hay juegos concretos destacados (jackpots, torneos, etc.), inclúyelos.
+                - Calcula valores medios por tipo de promoción (ej. Welcome Bonus, Free Spins).
+                - Incluye datos diferenciales que sobresalgan.
+
+                Datos de entrada:
+                {json.dumps(comp_data, ensure_ascii=False, indent=2)}
+                """
+
+                url = "https://api.deepseek.com/v1/chat/completions"
+                headers = {
+                    'Authorization': f'Bearer {self.deepseek_api_key}',
+                    "Content-Type": "application/json"
+                }
+                payload = {
+                    "model": "deepseek-chat",
+                    "messages": [
+                        {"role": "system", "content": "Eres un analista que genera insights de promociones de casinos online."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    "temperature": 0.2,
+                    "response_format": {"type": "json_object"}
+                }
+
+                response = requests.post(url, headers=headers, json=payload)
+                result = response.json()
+
+                # Guardar salida en un JSON
+                analysis_file = self.output_dir / f"country_analysis_{country}.json"
+                with open(analysis_file, "w", encoding="utf-8") as f:
+                    json.dump(result, f, ensure_ascii=False, indent=2)
+
+                logger.info(f"AI analysis saved to {analysis_file}")
+
+            except Exception as e:
+                logger.error(f"DeepSeek analysis failed: {e}")
+
+
+            ########## FIN ANÁLISIS IA DE LA SALIDA ######################
             
             # Step 5: Generate summary report
             summary = self.generate_summary_report(country, comparison_result, new_count, updated_count)

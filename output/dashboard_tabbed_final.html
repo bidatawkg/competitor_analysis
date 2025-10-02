@@ -1,168 +1,354 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>Competitor Promotions Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-body { font-family: Arial, sans-serif; margin: 20px; }
-.tab button { background: #eee; border: none; padding: 10px; cursor: pointer; }
-.tabcontent { display: none; padding: 20px; border-top: none; }
-.stats-row { display: flex; gap: 20px; margin-bottom: 20px; }
-.stat-box { flex: 1; background: #f5f5f5; padding: 15px; text-align: center; border-radius: 8px; }
-.promotions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
-.promo-card { border: 1px solid #ddd; padding: 10px; border-radius: 8px; background: #fff; }
-.filter-row { margin: 15px 0; }
-.charts-row { display: flex; gap: 20px; justify-content: space-around; margin: 20px 0; }
-.chart-box { flex: 1; width: 500px; height: 550px; }
-.chart-box canvas { max-width: 100% !important; max-height: 300px !important; }
+:root {
+  --bg: #0b0f19;
+  --panel: #131a29;
+  --muted: #718096;
+  --text: #e5e9f0;
+  --accent: #6aa0ff;
+  --accent-2: #9b76ff;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 14px;
+}
+body { margin:0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+.container { max-width: 1280px; margin:auto; padding:20px; }
+h1 { font-size:28px; margin-bottom:10px; }
+.subtitle { font-size:13px; color:var(--muted); }
+.nav { display:flex; gap:10px; margin:20px 0; flex-wrap:wrap; }
+.pill { border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05); padding:10px 16px; border-radius:999px; cursor:pointer; color:var(--text); }
+.pill--active { background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; }
+.country { display:none; background: var(--panel); padding:18px; border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:20px; }
+.section-head { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+.stats { display:flex; gap:12px; }
+.stat { background:rgba(255,255,255,.05); padding:10px 14px; border-radius:10px; text-align:center; }
+.stat__num { font-size:20px; font-weight:700; }
+.stat__label { font-size:12px; color:var(--muted); }
+.controls { display:flex; gap:16px; flex-wrap:wrap; margin:14px 0; }
+.control { display:flex; flex-direction:column; gap:6px; }
+.select,.input { background:var(--panel); border:1px solid rgba(255,255,255,.1); color:var(--text); padding:8px 12px; border-radius:8px; }
+.charts { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px; margin:10px 0; }
+.chart { background:rgba(255,255,255,.05); padding:12px; border-radius:10px; }
+.chart canvas { width:100% !important; height:320px !important; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; margin-top:10px; }
+.card { background:var(--panel); border-radius:12px; padding:14px; box-shadow:var(--shadow); }
+.card__head { display:flex; justify-content:space-between; align-items:center; }
+.badge { font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(106,160,255,.2); }
+.link { font-size:12px; background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; padding:6px 10px; border-radius:8px; text-decoration:none; }
+.card__title { font-size:16px; font-weight:600; margin:6px 0; }
+.card__amount { font-weight:700; color:#c7f464; margin:0 0 6px; }
+.card__desc { font-size:13px; color:var(--muted); }
+.analysis { margin:20px 0; padding:16px; background:rgba(255,255,255,.03); border-radius:12px; }
+.analysis h3 { margin-bottom:10px; font-size:18px; }
+.analysis-section { margin-bottom:12px; }
+.analysis-section h4 { font-size:15px; margin:6px 0; color: var(--accent); }
+.analysis-section ul { margin:0; padding-left:18px; font-size:13px; }
+.analysis-section li { margin:4px 0; }
 </style>
 </head>
 <body>
-
-<h1>Competitor Promotions Dashboard</h1>
-<div class="tab"><button class="tablinks" onclick="openTab(event, 'SA')">SA</button></div>
-
-        <div id="SA" class="tabcontent">
-            <h2>SA - Market Overview</h2>
-            <div class="stats-row">
-                <div class="stat-box"><h3>1</h3><p>Competitors</p></div>
-                <div class="stat-box"><h3>6</h3><p>Total Promotions</p></div>
-                <div class="stat-box"><h3>6</h3><p>New Promotions</p></div>
-                <div class="stat-box"><h3>4</h3><p>Bonus Types</p></div>
+<div class="container">
+  <h1>Competitor Promotions Dashboard</h1>
+  <div class="subtitle">Generado el 2025-10-02 16:09</div>
+  <div class="nav"><button class="pill pill--active" onclick="openTab(event, 'SA')">SA</button></div>
+  
+        <section id="SA" class="country" style="display:block;">
+            <div class="section-head">
+                <h2 class="country__title">SA</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Competidores</div></div>
+                    <div class="stat"><div class="stat__num">19</div><div class="stat__label">Promociones</div></div>
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Tipos de bonus</div></div>
+                </div>
             </div>
 
-            <div class="filter-row">
-                <label for="filter-SA">Filter by Bonus Type:</label>
-                <select id="filter-SA" onchange="filterPromotions('SA')">
-                    <option value="All">All</option>
-                    <option value="Jackpot">Jackpot</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Tournament">Tournament</option>
-                </select>
+            <div class="controls">
+                <div class="control">
+                    <label>Tipo de promoción</label>
+                    <select class="select" id="type-SA" onchange="filterCards('SA')">
+                        <option value="ALL">Todos</option>
+                        <option value="Jackpot">Jackpot</option><option value="Other">Other</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Deposit Bonus">Deposit Bonus</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Buscar</label>
+                    <input class="input" type="search" id="search-SA" placeholder="Filtrar por texto..." oninput="filterCards('SA')" />
+                </div>
             </div>
 
-            <div class="charts-row">
-                <div class="chart-box"><canvas id="pie_SA"></canvas></div>
-                <div class="chart-box"><canvas id="bar_SA"></canvas></div>
+            <div class="charts">
+                <div class="chart"><canvas id="donut-SA"></canvas></div>
+                <div class="chart"><canvas id="stacked-SA"></canvas></div>
             </div>
 
-            <div class="promotions-grid" id="promos-SA">
+            
+            <div class="analysis">
+                <h3>Key Market Insights (SA)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>888 Casino</strong>: Jackpot - 275,174.63€ <a href='https://www.888casino.com/offers' target='_blank'>Link</a></li><li><strong>888 Casino</strong>: Jackpot - 275,151.73€ <a href='https://www.888casino.com' target='_blank'>Link</a></li><li><strong>Casinia</strong>: Jackpot - £65,100 <a href='https://casinia.bet' target='_blank'>Link</a></li><li><strong>Rabona</strong>: Welcome Bonus - Up to 500% <a href='https://www.rabona.casino' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>888 Casino</strong>: Flaming Wild, Crown Don, Blaze Fire, White Witch, Wolf Gold, Gonzo's <em>(Jackpot promotion featuring various slot games)</em></li><li><strong>Casinia</strong>: Eye of Horus, Fishin’ Frenzy <em>(No-wagering free spins on specified games)</em></li><li><strong>Rabona</strong>: Mega Moolah <em>(Access to 216 jackpot games, including popular ones like 'Mega Moolah')</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: Approx. 100% up to €500 + 200 free spins (common among Casinia, EmirBet, Rabona)</li><li><strong>Free Spins</strong>: Approx. 150-200 free spins (Casinia: 200-350, Rabona: 200, Rooster bet: 50)</li><li><strong>Jackpot</strong>: High variability, with amounts like €275k (888 Casino) and £65k (Casinia)</li><li><strong>Deposit Bonus</strong>: Approx. 100% up to €100-€500 (Casinia, Rabona)</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>888 Casino offers the highest jackpot amounts (over €275k), significantly above competitors.</li><li>Casinia provides a unique 'bonus crab' feature in multiple promotions, adding a gamified element.</li><li>Rabona's limited-time offer of up to 500% bonus is the highest percentage bonus found.</li><li>Casinia offers no-wagering free spins (350 on specific games), which is rare and player-friendly.</li><li>Multiple competitors (Casinia, Rabona) include crypto-specific bonuses, indicating a trend towards cryptocurrency integration.</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-SA">
                 
-            <div class="promo-card" data-bonus-type="Tournament">
-                <h2>Rabona</h2>
-                <h4>Tournament</h4>
-                <p><strong style="color:red">1500 €</strong></p>
-                <p>bonus crab niveles vip español centro de ayuda torneos activo finalizado deportes los maestros bolsa de premios: 1500 € apuesta mín.: 10,00 € termina</p>
-                <a href="https://www.rabona.com/tournaments" target="_blank">Visit site</a>
-            </div>
+            <article class="card" data-type="Jackpot" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://www.888casino.com/offers" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">275,174.63€</p>
+                <p class="card__desc">jackpot gold 275.174,63€ nuevos juegos de casino online flaming wild crown don premiote jackpot blaze fire blaze white witch wolf gold 4 pack gonzo's</p>
+            </article>
             
-            <div class="promo-card" data-bonus-type="Welcome Bonus">
-                <h2>Rabona</h2>
-                <h4>Welcome Bonus</h4>
-                <p><strong style="color:red">up to 500%</strong></p>
-                <p>bonuses and much more skip to content limited time offer from rabona! get up to 500% bonus on first deposit. sign up now! english français italiano en</p>
-                <a href="https://rabona.casino" target="_blank">Visit site</a>
-            </div>
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 FS + 1 bonus crab</p>
+                <p class="card__desc">Welcome bonus 100% up to €500 + 200 free spins + 1 bonus crab. Includes tournaments, VIP levels, and bonus crab shop.</p>
+            </article>
             
-            <div class="promo-card" data-bonus-type="Welcome Bonus">
-                <h2>Rabona</h2>
-                <h4>Welcome Bonus</h4>
-                <p><strong style="color:red">100%</strong></p>
-                <p>welcome bonus of 100% of first time deposit sign up on rabona casino rabona sportsbook & casino rabona casino is a popular online gambling site</p>
-                <a href="https://www.rabona.casino" target="_blank">Visit site</a>
-            </div>
+            <article class="card" data-type="Deposit Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://www.casinia.bet/offers" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">1000£ + 250 FS</p>
+                <p class="card__desc">Bonus for first deposit 1000£ + 250 free spins</p>
+            </article>
             
-            <div class="promo-card" data-bonus-type="Free Spins">
-                <h2>Rabona</h2>
-                <h4>Free Spins</h4>
-                <p><strong style="color:red">200 free spins (20 daily for 10 days)</strong></p>
-                <p>free spins. a deposit of at least €20 is required. players receive 20 free spins daily for ten days. the bonus and winnings from free spins have a 35x</p>
-                <a href="https://rabona.casino" target="_blank">Visit site</a>
-            </div>
+            <article class="card" data-type="Deposit Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">€100, 3,000 USDT, 200 USDT</p>
+                <p class="card__desc">Deposit bonus 100% up to €100. Casino crypto welcome bonus 200% up to 3,000 USDT. Sport crypto welcome bonus 100% up to 200 USDT.</p>
+            </article>
             
-            <div class="promo-card" data-bonus-type="Jackpot">
-                <h2>Rabona</h2>
-                <h4>Jackpot</h4>
-                <p><strong style="color:red">N/A</strong></p>
-                <p>jackpots: there are 216 jackpot games, including popular ones like 'mega moolah', offering players chances to win big. special categories: rabona high</p>
-                <a href="https://rabona.casino" target="_blank">Visit site</a>
-            </div>
+            <article class="card" data-type="Free Spins" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://www.casinia.bet" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">350</p>
+                <p class="card__desc">free spins! enjoy 350 no-wagering free spins on games like eye of horus, fishin’ frenzy, and more. details casinia online website slot games slot game</p>
+            </article>
             
-            <div class="promo-card" data-bonus-type="Tournament">
-                <h2>Rabona</h2>
-                <h4>Tournament</h4>
-                <p><strong style="color:red">Not specified</strong></p>
-                <p>tournaments from popular games such as call of duty, counter strike, and dota 2. odds and features: while rabona’s odds match those of leading provide</p>
-                <a href="https://www.rabona.casino" target="_blank">Visit site</a>
-            </div>
+            <article class="card" data-type="Jackpot" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">£65,100</p>
+                <p class="card__desc">jackpot 65100£ register trustworthy payments & exchanges on casinia-casino the payment methods featured on the site are convenient and secure for all</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">jackpots sports live betting wheel of fortune new spin rally new challenges tournaments bonus crab shop vip levels english help centre casino live casino</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://www.casinia.bet" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">Bonus promo code no deposit bonus for app sign in and registration. Marketing slogan: Luck lives in every bet! Play now spin on - win on!</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">200 free spins + 100% up to £500</p>
+                <p class="card__desc">Welcome bonus for signing up, you get 200 free spins, 100% up to £500, and 1 bonus crab. Reload bonus disbursed daily from Monday to Thursday</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 Free Spins</p>
+                <p class="card__desc">welcome bonus 100% up to €500 + 200 fs + 1 bonus crab join now sport first deposit bonus 100% up to €100 join now casino crypto welcome bonus 200% up</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 FS</p>
+                <p class="card__desc">Casino welcome bonus 100% up to €500 + 200 free spins + 1 bonus crab</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="EmirBet">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://emirbet.casino" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">EmirBet</h3>
+                <p class="card__amount">Up to €1000 + 150 free spins</p>
+                <p class="card__desc">bonus up to €1000 + 150 free spins games live casino sports betting bonuses games live casino sports betting bonuses sign up login emirbet emit bet ca</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://rabona.com" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">100% up to 200 USDT</p>
+                <p class="card__desc">bonus crab niveles vip español centro de ayuda deportes apuestas en vivo casino bono de bienvenida crypto para deportes 100% hasta 200 usdt ¡únete ya!</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://www.rabona.casino" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">200 free spins (20 daily for 10 days)</p>
+                <p class="card__desc">free spins. a deposit of at least €20 is required. players receive 20 free spins daily for ten days. the bonus and winnings from free spins have a 35x</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://www.rabona.casino" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">jackpots: there are 216 jackpot games, including popular ones like 'mega moolah', offering players chances to win big. special categories: rabona high</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.rabona.casino" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">Up to 500%</p>
+                <p class="card__desc">Get up to 500% bonus on first deposit. Sign up now!</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.rabona.casino" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">100%</p>
+                <p class="card__desc">Sign up now and enjoy welcome bonus of 100% of first time deposit at Rabona Casino and Rabona Sportsbook</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://rooster-bet.org" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">50 Free Spins</p>
+                <p class="card__desc">50 free spins upon registration, loyalty program VIP club with exclusive offers, 35x wagering requirements, welcome bonus for new players</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://rooster-bet.org" target="_blank" rel="noopener">Abrir</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">50 Free Spins</p>
+                <p class="card__desc">Free spins no deposit bonus 50 free spins upon registration, loyalty program VIP club with exclusive offers, wagering requirement 35x, welcome bonus</p>
+            </article>
             
             </div>
 
             <script>
-                const data_SA = [{"id": 623, "competitor": "Rabona", "country": "SA", "title": "Found 'bonus' on page", "description": "bonus crab niveles vip espa\u00f1ol centro de ayuda torneos activo finalizado deportes los maestros bolsa de premios: 1500 \u20ac apuesta m\u00edn.: 10,00 \u20ac termina", "bonus_amount": "1500 \u20ac", "bonus_type": "Tournament", "conditions": "apuesta m\u00edn.: 10,00 \u20ac", "valid_until": "", "url": "https://www.rabona.com/tournaments", "scraped_at": "2025-10-02T13:02:09.561998", "hash_id": "-4296971047541542395", "created_at": "2025-10-02 11:03:39"}, {"id": 630, "competitor": "Rabona", "country": "SA", "title": "Found 'bonus' on page", "description": "bonuses and much more skip to content limited time offer from rabona! get up to 500% bonus on first deposit. sign up now! english fran\u00e7ais italiano en", "bonus_amount": "up to 500%", "bonus_type": "Welcome Bonus", "conditions": "First deposit", "valid_until": "Limited time offer", "url": "https://rabona.casino", "scraped_at": "2025-10-02T13:00:01.771679", "hash_id": "2568219313531727278", "created_at": "2025-10-02 11:03:39"}, {"id": 635, "competitor": "Rabona", "country": "SA", "title": "Found 'welcome' on page", "description": "welcome bonus of 100% of first time deposit sign up on rabona casino rabona sportsbook & casino rabona casino is a popular online gambling site", "bonus_amount": "100%", "bonus_type": "Welcome Bonus", "conditions": "First time deposit", "valid_until": "No especificado", "url": "https://www.rabona.casino", "scraped_at": "2025-10-02T12:59:56.374696", "hash_id": "9005826316230759902", "created_at": "2025-10-02 11:03:39"}, {"id": 627, "competitor": "Rabona", "country": "SA", "title": "Found 'free spins' on page", "description": "free spins. a deposit of at least \u20ac20 is required. players receive 20 free spins daily for ten days. the bonus and winnings from free spins have a 35x", "bonus_amount": "200 free spins (20 daily for 10 days)", "bonus_type": "Free Spins", "conditions": "Minimum deposit of \u20ac20. 35x wagering requirement on bonus and winnings.", "valid_until": "Not specified", "url": "https://rabona.casino", "scraped_at": "2025-10-02T13:00:01.771679", "hash_id": "-4424531012605499470", "created_at": "2025-10-02 11:03:39"}, {"id": 628, "competitor": "Rabona", "country": "SA", "title": "Found 'jackpot' on page", "description": "jackpots: there are 216 jackpot games, including popular ones like 'mega moolah', offering players chances to win big. special categories: rabona high", "bonus_amount": "N/A", "bonus_type": "Jackpot", "conditions": "216 jackpot games available", "valid_until": "N/A", "url": "https://rabona.casino", "scraped_at": "2025-10-02T13:00:01.771679", "hash_id": "-8788992609481031285", "created_at": "2025-10-02 11:03:39"}, {"id": 631, "competitor": "Rabona", "country": "SA", "title": "tournament", "description": "tournaments from popular games such as call of duty, counter strike, and dota 2. odds and features: while rabona\u2019s odds match those of leading provide", "bonus_amount": "Not specified", "bonus_type": "Tournament", "conditions": "Not specified", "valid_until": "Not specified", "url": "https://www.rabona.casino", "scraped_at": "2025-10-02T12:59:56.374696", "hash_id": "7867939040301090270", "created_at": "2025-10-02 11:03:39"}];
-                renderCharts("SA", data_SA);
+                (function() {
+                    const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Other", "Welcome Bonus"], "typeCounts": [2, 3, 4, 1, 9], "competitors": ["888 Casino", "Casinia", "EmirBet", "Rabona", "Rooster bet"], "stackedByType": [[0, 2, 0, 0, 0], [0, 1, 0, 1, 1], [1, 2, 0, 1, 0], [0, 1, 0, 0, 0], [0, 4, 1, 3, 1]]};
+                    console.log("Chart payload for SA", payload);
+                    renderDonut("donut-SA", payload.types, payload.typeCounts);
+                    renderStacked("stacked-SA", payload.competitors, payload.types, payload.stackedByType);
+                })();
             </script>
-        </div>
+        </section>
         
-
+</div>
 <script>
-function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
+function openTab(evt, country) {
+  document.querySelectorAll('.country').forEach(sec => sec.style.display='none');
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('pill--active'));
+  document.getElementById(country).style.display='block';
+  evt.currentTarget.classList.add('pill--active');
 }
-document.querySelector(".tab button").click();
-
-function filterPromotions(country) {
-    const select = document.getElementById("filter-" + country);
-    const value = select.value;
-    const cards = document.querySelectorAll("#promos-" + country + " .promo-card");
-    cards.forEach(c => {
-        if (value === "All" || c.dataset.bonusType === value) {
-            c.style.display = "block";
-        } else {
-            c.style.display = "none";
-        }
-    });
+function filterCards(country) {
+  const typeVal = document.getElementById('type-'+country).value;
+  const q = document.getElementById('search-'+country).value.toLowerCase().trim();
+  document.querySelectorAll('#grid-'+country+' .card').forEach(card => {
+    const ctype = card.getAttribute('data-type')||'';
+    const text = card.innerText.toLowerCase();
+    const byType = (typeVal==='ALL')||(ctype===typeVal);
+    const byText = q===''||text.indexOf(q)!==-1;
+    card.style.display=(byType&&byText)?'':'none';
+  });
 }
-
-function renderCharts(country, data) {
-    const counts = {};
-    const compCounts = {};
-    data.forEach(p => {
-        counts[p.bonus_type] = (counts[p.bonus_type] || 0) + 1;
-        compCounts[p.competitor] = (compCounts[p.competitor] || 0) + 1;
-    });
-
-    const ctxPie = document.getElementById("pie_" + country).getContext("2d");
-    new Chart(ctxPie, {
-        type: "pie",
-        data: {
-            labels: Object.keys(counts),
-            datasets: [{ data: Object.values(counts), backgroundColor: ["#4e79a7","#f28e2b","#e15759","#76b7b2","#59a14f","#edc949"] }]
-        }
-    });
-
-    const ctxBar = document.getElementById("bar_" + country).getContext("2d");
-    new Chart(ctxBar, {
-        type: "bar",
-        data: {
-            labels: Object.keys(compCounts),
-            datasets: [{ label: "Promotions", data: Object.values(compCounts), backgroundColor: "#4e79a7" }]
-        },
-        options: { responsive: true, plugins: { legend: { display: false } } }
-    });
+function renderDonut(canvasId, labels, data) {
+  const colors = ["#6aa0ff","#9b76ff","#f6ad55","#48bb78","#f56565","#ed64a6","#38b2ac"];
+  new Chart(document.getElementById(canvasId), {
+    type:'doughnut',
+    data:{labels:labels,datasets:[{data:data,backgroundColor:colors}]},
+    options:{plugins:{legend:{position:'bottom',labels:{color:'#e5e9f0'}}}}
+  });
+}
+function renderStacked(canvasId, competitors, types, stackedByType) {
+  const colors = ["#6aa0ff","#9b76ff","#f6ad55","#48bb78","#f56565","#ed64a6","#38b2ac"];
+  const datasets = types.map((t,i)=>({label:t,data:stackedByType[i],stack:'stack-1',backgroundColor:colors[i % colors.length]}));
+  new Chart(document.getElementById(canvasId), {
+    type:'bar',
+    data:{labels:competitors,datasets:datasets},
+    options:{scales:{x:{stacked:true,ticks:{color:'#e5e9f0'}},y:{stacked:true,ticks:{color:'#e5e9f0'}}},plugins:{legend:{position:'bottom',labels:{color:'#e5e9f0'}}}}
+  });
 }
 </script>
-
 </body>
 </html>
         
