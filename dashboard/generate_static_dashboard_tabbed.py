@@ -13,7 +13,6 @@ class TabbedStaticDashboardGenerator:
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
     def load_and_clean_country_data(self, country_code: str):
-        """Load cleaned JSON promotions and remove duplicates with fuzzy similarity"""
         json_path = max(
             self.output_dir.glob(f"clean_promotions_new_{country_code}_*.json"),
             key=os.path.getctime,
@@ -34,14 +33,14 @@ class TabbedStaticDashboardGenerator:
         unique = []
         for p in promos:
             desc_p = (p.get("description") or "").lower()
-            btype_p = (p.get("bonus_type") or "").lower()
-            comp_p = (p.get("competitor") or "").lower()
+            btype_p = (p.get("bonus_type") or "").strip().lower()
+            comp_p = (p.get("competitor") or "").strip().lower()
 
             is_dup = False
             for u in unique:
                 desc_u = (u.get("description") or "").lower()
-                btype_u = (u.get("bonus_type") or "").lower()
-                comp_u = (u.get("competitor") or "").lower()
+                btype_u = (u.get("bonus_type") or "").strip().lower()
+                comp_u = (u.get("competitor") or "").strip().lower()
 
                 if comp_p == comp_u and btype_p == btype_u:
                     if self._is_similar(desc_p, desc_u):
@@ -76,25 +75,22 @@ class TabbedStaticDashboardGenerator:
 
     def generate_country_tab(self, country, promotions, visible=False):
         total_promos = len(promotions)
-        competitors = {p.get("competitor", "Unknown") for p in promotions}
-        bonus_types = {p.get("bonus_type", "Other") for p in promotions}
+        competitors = {p.get("competitor", "Unknown").strip() for p in promotions}
+        bonus_types = {p.get("bonus_type", "Other").strip() for p in promotions}
 
-        # Datos para gráficos
-        type_counts = Counter([p.get("bonus_type", "Other") for p in promotions])
+        type_counts = Counter([p.get("bonus_type", "Other").strip() for p in promotions])
         comp_types = defaultdict(lambda: Counter())
         for p in promotions:
-            comp_types[p.get("competitor", "Unknown")][p.get("bonus_type", "Other")] += 1
+            comp_types[p.get("competitor", "Unknown").strip()][p.get("bonus_type", "Other").strip()] += 1
 
         types_sorted = sorted(type_counts.keys())
         competitors_sorted = sorted(comp_types.keys())
 
-        # Garantizar que no estén vacíos
         if not types_sorted:
             types_sorted = ["N/A"]
         if not competitors_sorted:
             competitors_sorted = ["N/A"]
 
-        # Matriz consistente
         stacked_matrix = []
         for t in types_sorted:
             row = []
@@ -109,35 +105,36 @@ class TabbedStaticDashboardGenerator:
             "stackedByType": stacked_matrix,
         }
 
+        if not any(chart_payload["typeCounts"]):
+            chart_payload["types"] = ["No data"]
+            chart_payload["typeCounts"] = [1]
+        if not any(sum(r) for r in chart_payload["stackedByType"]):
+            chart_payload["competitors"] = ["No data"]
+            chart_payload["stackedByType"] = [[1]]
+
+        # --- Insights AI ---
         analysis_html = ""
         analysis = self.load_country_analysis(country)
         if analysis and "analysis" in analysis:
             a = analysis["analysis"]
 
-            # Promociones agresivas
             promo_list = "".join(
                 f"<li><strong>{p['competitor']}</strong>: {p['bonus_type']} - {p['bonus_amount']} "
                 f"<a href='{p['url']}' target='_blank'>Link</a></li>"
                 for p in a.get("most_aggressive_promotions", [])
             )
 
-            # Juegos destacados
             games_list = "".join(
                 f"<li><strong>{g['competitor']}</strong>: {g['game']} <em>({g['context']})</em></li>"
                 for g in a.get("highlighted_games", [])
             )
 
-            # Valores promedio
             avg_list = "".join(
                 f"<li><strong>{v['bonus_type']}</strong>: {v['average_bonus']}</li>"
                 for v in a.get("average_values_by_promo_type", [])
             )
 
-            # Datos distintivos
-            distinctive = "".join(
-                f"<li>{d}</li>"
-                for d in a.get("distinctive_data", [])
-            )
+            distinctive = "".join(f"<li>{d}</li>" for d in a.get("distinctive_data", []))
 
             analysis_html = f"""
             <div class="analysis">
@@ -161,13 +158,11 @@ class TabbedStaticDashboardGenerator:
             </div>
             """
 
-
-        # Tarjetas
         cards = []
         for p in promotions:
-            bonus_type = p.get("bonus_type", "Other")
+            bonus_type = p.get("bonus_type", "Other").strip()
             amount = p.get("bonus_amount", "N/A")
-            competitor = p.get("competitor", "N/A")
+            competitor = p.get("competitor", "N/A").strip()
             desc = p.get("description", "")
             url = p.get("url", "#")
 
@@ -220,18 +215,17 @@ class TabbedStaticDashboardGenerator:
             </div>
 
             <script>
-                (function() {{
-                    const payload = {json.dumps(chart_payload)};
-                    console.log("Chart payload for {country}", payload);
-                    renderDonut("donut-{country}", payload.types, payload.typeCounts);
-                    renderStacked("stacked-{country}", payload.competitors, payload.types, payload.stackedByType);
-                }})();
+            (function() {{
+                const payload = {json.dumps(chart_payload)};
+                console.log("Chart payload for {country}", payload);
+                renderDonut("donut-{country}", payload.types, payload.typeCounts);
+                renderStacked("stacked-{country}", payload.competitors, payload.types, payload.stackedByType);
+            }})();
             </script>
         </section>
         """
 
     def load_country_analysis(self, country_code: str):
-        """Load AI-generated country-level analysis if available"""
         json_path = max(
             self.output_dir.glob(f"country_analysis_{country_code}.json"),
             key=os.path.getctime,
@@ -241,112 +235,124 @@ class TabbedStaticDashboardGenerator:
             return None
         with open(json_path, "r", encoding="utf-8") as f:
             data = json.load(f)
-        # El JSON viene envuelto por DeepSeek, extraemos el mensaje
         try:
             content = data["choices"][0]["message"]["content"]
             return json.loads(content)
         except Exception:
             return data
 
-
     def _wrap_html(self, tabs, contents):
         now = datetime.now().strftime("%Y-%m-%d %H:%M")
         return f"""
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Competitor Promotions Dashboard</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-:root {{
-  --bg: #0b0f19;
-  --panel: #131a29;
-  --muted: #718096;
-  --text: #e5e9f0;
-  --accent: #6aa0ff;
-  --accent-2: #9b76ff;
-  --shadow: 0 10px 30px rgba(0,0,0,.35);
-  --radius: 14px;
-}}
-body {{ margin:0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }}
-.container {{ max-width: 1280px; margin:auto; padding:20px; }}
-h1 {{ font-size:28px; margin-bottom:10px; }}
-.subtitle {{ font-size:13px; color:var(--muted); }}
-.nav {{ display:flex; gap:10px; margin:20px 0; flex-wrap:wrap; }}
-.pill {{ border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05); padding:10px 16px; border-radius:999px; cursor:pointer; color:var(--text); }}
-.pill--active {{ background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; }}
-.country {{ display:none; background: var(--panel); padding:18px; border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:20px; }}
-.section-head {{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }}
-.stats {{ display:flex; gap:12px; }}
-.stat {{ background:rgba(255,255,255,.05); padding:10px 14px; border-radius:10px; text-align:center; }}
-.stat__num {{ font-size:20px; font-weight:700; }}
-.stat__label {{ font-size:12px; color:var(--muted); }}
-.controls {{ display:flex; gap:16px; flex-wrap:wrap; margin:14px 0; }}
-.control {{ display:flex; flex-direction:column; gap:6px; }}
-.select,.input {{ background:var(--panel); border:1px solid rgba(255,255,255,.1); color:var(--text); padding:8px 12px; border-radius:8px; }}
-.charts {{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px; margin:10px 0; }}
-.chart {{ background:rgba(255,255,255,.05); padding:12px; border-radius:10px; }}
-.chart canvas {{ width:100% !important; height:320px !important; }}
-.grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; margin-top:10px; }}
-.card {{ background:var(--panel); border-radius:12px; padding:14px; box-shadow:var(--shadow); }}
-.card__head {{ display:flex; justify-content:space-between; align-items:center; }}
-.badge {{ font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(106,160,255,.2); }}
-.link {{ font-size:12px; background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; padding:6px 10px; border-radius:8px; text-decoration:none; }}
-.card__title {{ font-size:16px; font-weight:600; margin:6px 0; }}
-.card__amount {{ font-weight:700; color:#c7f464; margin:0 0 6px; }}
-.card__desc {{ font-size:13px; color:var(--muted); }}
-.analysis {{ margin:20px 0; padding:16px; background:rgba(255,255,255,.03); border-radius:12px; }}
-.analysis h3 {{ margin-bottom:10px; font-size:18px; }}
-.analysis-section {{ margin-bottom:12px; }}
-.analysis-section h4 {{ font-size:15px; margin:6px 0; color: var(--accent); }}
-.analysis-section ul {{ margin:0; padding-left:18px; font-size:13px; }}
-.analysis-section li {{ margin:4px 0; }}
-</style>
-</head>
-<body>
-<div class="container">
-  <h1>Competitor Promotions Dashboard</h1>
-  <div class="subtitle">Generado el {now}</div>
-  <div class="nav">{tabs}</div>
-  {contents}
-</div>
-<script>
-function openTab(evt, country) {{
-  document.querySelectorAll('.country').forEach(sec => sec.style.display='none');
-  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('pill--active'));
-  document.getElementById(country).style.display='block';
-  evt.currentTarget.classList.add('pill--active');
-}}
-function filterCards(country) {{
-  const typeVal = document.getElementById('type-'+country).value;
-  const q = document.getElementById('search-'+country).value.toLowerCase().trim();
-  document.querySelectorAll('#grid-'+country+' .card').forEach(card => {{
-    const ctype = card.getAttribute('data-type')||'';
-    const text = card.innerText.toLowerCase();
-    const byType = (typeVal==='ALL')||(ctype===typeVal);
-    const byText = q===''||text.indexOf(q)!==-1;
-    card.style.display=(byType&&byText)?'':'none';
-  }});
-}}
-function renderDonut(canvasId, labels, data) {{
-  const colors = ["#6aa0ff","#9b76ff","#f6ad55","#48bb78","#f56565","#ed64a6","#38b2ac"];
-  new Chart(document.getElementById(canvasId), {{
-    type:'doughnut',
-    data:{{labels:labels,datasets:[{{data:data,backgroundColor:colors}}]}},
-    options:{{plugins:{{legend:{{position:'bottom',labels:{{color:'#e5e9f0'}}}}}}}}
-  }});
-}}
-function renderStacked(canvasId, competitors, types, stackedByType) {{
-  const colors = ["#6aa0ff","#9b76ff","#f6ad55","#48bb78","#f56565","#ed64a6","#38b2ac"];
-  const datasets = types.map((t,i)=>({{label:t,data:stackedByType[i],stack:'stack-1',backgroundColor:colors[i % colors.length]}}));
-  new Chart(document.getElementById(canvasId), {{
-    type:'bar',
-    data:{{labels:competitors,datasets:datasets}},
-    options:{{scales:{{x:{{stacked:true,ticks:{{color:'#e5e9f0'}}}},y:{{stacked:true,ticks:{{color:'#e5e9f0'}}}}}},plugins:{{legend:{{position:'bottom',labels:{{color:'#e5e9f0'}}}}}}}}
-  }});
-}}
-</script>
-</body>
-</html>
-        """
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <title>Competitors Dashboard</title>
+
+    <!-- Chart.js antes de cualquier uso -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Funciones de gráficos disponibles ANTES de los scripts inline -->
+    <script>
+    function renderDonut(canvasId, labels, data) {{
+    const colors = ["#6aa0ff","#9b76ff","#f6ad55","#48bb78","#f56565","#ed64a6","#38b2ac"];
+    new Chart(document.getElementById(canvasId), {{
+        type:'doughnut',
+        data:{{labels:labels,datasets:[{{data:data,backgroundColor:colors}}]}},
+        options:{{plugins:{{legend:{{position:'bottom',labels:{{color:'#e5e9f0'}}}}}}}}
+    }});
+    }}
+    function renderStacked(canvasId, competitors, types, stackedByType) {{
+    const colors = ["#6aa0ff","#9b76ff","#f6ad55","#48bb78","#f56565","#ed64a6","#38b2ac"];
+    const datasets = types.map((t,i)=>({{label:t,data:stackedByType[i],stack:'stack-1',backgroundColor:colors[i % colors.length]}}));
+    new Chart(document.getElementById(canvasId), {{
+        type:'bar',
+        data:{{labels:competitors,datasets:datasets}},
+        options:{{scales:{{x:{{stacked:true,ticks:{{color:'#e5e9f0'}}}},y:{{stacked:true,ticks:{{color:'#e5e9f0'}}}}}},plugins:{{legend:{{position:'bottom',labels:{{color:'#e5e9f0'}}}}}}}}
+    }});
+    }}
+    </script>
+
+    <!-- CSS COMPLETO (tema oscuro + layout + cards + charts + insights) -->
+    <style>
+    :root {{
+    --bg: #0b0f19;
+    --panel: #131a29;
+    --muted: #718096;
+    --text: #e5e9f0;
+    --accent: #6aa0ff;
+    --accent-2: #9b76ff;
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+    --radius: 14px;
+    }}
+    * {{ box-sizing: border-box; }}
+    body {{ margin:0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); }}
+    .container {{ max-width: 1280px; margin:auto; padding:20px; }}
+    h1 {{ font-size:28px; margin-bottom:10px; }}
+    .subtitle {{ font-size:13px; color:var(--muted); }}
+    .nav {{ display:flex; gap:10px; margin:20px 0; flex-wrap:wrap; }}
+    .pill {{ border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05); padding:10px 16px; border-radius:999px; cursor:pointer; color:var(--text); }}
+    .pill--active {{ background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; }}
+    .country {{ display:none; background: var(--panel); padding:18px; border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:20px; }}
+    .section-head {{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }}
+    .stats {{ display:flex; gap:12px; }}
+    .stat {{ background:rgba(255,255,255,.05); padding:10px 14px; border-radius:10px; text-align:center; min-width:110px; }}
+    .stat__num {{ font-size:20px; font-weight:700; }}
+    .stat__label {{ font-size:12px; color:var(--muted); }}
+    .controls {{ display:flex; gap:16px; flex-wrap:wrap; margin:14px 0; }}
+    .control {{ display:flex; flex-direction:column; gap:6px; }}
+    .select,.input {{ background:var(--panel); border:1px solid rgba(255,255,255,.1); color:var(--text); padding:8px 12px; border-radius:8px; }}
+    .select:focus,.input:focus {{ outline:none; border-color: rgba(106,160,255,.6); }}
+    .charts {{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px; margin:10px 0; }}
+    .chart {{ background:rgba(255,255,255,.05); padding:12px; border-radius:10px; min-height: 340px; height: 340px; display:flex; justify-content:center; align-items:center;}}
+    .chart canvas {{width:100%; height:100%;}}
+    .grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; margin-top:10px; }}
+    .card {{ background:var(--panel); border-radius:12px; padding:14px; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.06); }}
+    .card__head {{ display:flex; justify-content:space-between; align-items:center; }}
+    .badge {{ font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(106,160,255,.2); }}
+    .link {{ font-size:12px; background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; padding:6px 10px; border-radius:8px; text-decoration:none; }}
+    .card__title {{ font-size:16px; font-weight:600; margin:6px 0; }}
+    .card__amount {{ font-weight:700; color:#c7f464; margin:0 0 6px; }}
+    .card__desc {{ font-size:13px; color:var(--muted); }}
+    .analysis {{ margin:20px 0; padding:16px; background:rgba(255,255,255,.03); border-radius:12px; border:1px solid rgba(255,255,255,.06); }}
+    .analysis h3 {{ margin-bottom:10px; font-size:18px; }}
+    .analysis-section {{ margin-bottom:12px; }}
+    .analysis-section h4 {{ font-size:15px; margin:6px 0; color: var(--accent); }}
+    .analysis-section ul {{ margin:0; padding-left:18px; font-size:13px; }}
+    .analysis-section li {{ margin:4px 0; }}
+    .empty {{ color: var(--muted); font-size:14px; padding:12px; }}
+    </style>
+    </head>
+    <body>
+    <div class="container">
+    <h1>Competitors Dashboard</h1>
+    <div class="subtitle">Generado el {now}</div>
+    <div class="nav">{tabs}</div>
+    {contents}
+    </div>
+
+    <!-- Funciones de interacción generales -->
+    <script>
+    function openTab(evt, country) {{
+    document.querySelectorAll('.country').forEach(sec => sec.style.display='none');
+    document.querySelectorAll('.pill').forEach(p=>p.classList.remove('pill--active'));
+    document.getElementById(country).style.display='block';
+    evt.currentTarget.classList.add('pill--active');
+    }}
+    function filterCards(country) {{
+    const typeVal = document.getElementById('type-'+country).value;
+    const q = document.getElementById('search-'+country).value.toLowerCase().trim();
+    document.querySelectorAll('#grid-'+country+' .card').forEach(card => {{
+        const ctype = card.getAttribute('data-type')||'';
+        const text = card.innerText.toLowerCase();
+        const byType = (typeVal==='ALL')||(ctype===typeVal);
+        const byText = q===''||text.indexOf(q)!==-1;
+        card.style.display=(byType&&byText)?'':'none';
+    }});
+    }}
+    </script>
+    </body>
+    </html>
+            """
+

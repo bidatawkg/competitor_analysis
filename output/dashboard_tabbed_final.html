@@ -1,62 +1,90 @@
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Competitor Promotions Dashboard</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-:root {
-  --bg: #0b0f19;
-  --panel: #131a29;
-  --muted: #718096;
-  --text: #e5e9f0;
-  --accent: #6aa0ff;
-  --accent-2: #9b76ff;
-  --shadow: 0 10px 30px rgba(0,0,0,.35);
-  --radius: 14px;
-}
-body { margin:0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
-.container { max-width: 1280px; margin:auto; padding:20px; }
-h1 { font-size:28px; margin-bottom:10px; }
-.subtitle { font-size:13px; color:var(--muted); }
-.nav { display:flex; gap:10px; margin:20px 0; flex-wrap:wrap; }
-.pill { border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05); padding:10px 16px; border-radius:999px; cursor:pointer; color:var(--text); }
-.pill--active { background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; }
-.country { display:none; background: var(--panel); padding:18px; border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:20px; }
-.section-head { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
-.stats { display:flex; gap:12px; }
-.stat { background:rgba(255,255,255,.05); padding:10px 14px; border-radius:10px; text-align:center; }
-.stat__num { font-size:20px; font-weight:700; }
-.stat__label { font-size:12px; color:var(--muted); }
-.controls { display:flex; gap:16px; flex-wrap:wrap; margin:14px 0; }
-.control { display:flex; flex-direction:column; gap:6px; }
-.select,.input { background:var(--panel); border:1px solid rgba(255,255,255,.1); color:var(--text); padding:8px 12px; border-radius:8px; }
-.charts { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px; margin:10px 0; }
-.chart { background:rgba(255,255,255,.05); padding:12px; border-radius:10px; }
-.chart canvas { width:100% !important; height:320px !important; }
-.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; margin-top:10px; }
-.card { background:var(--panel); border-radius:12px; padding:14px; box-shadow:var(--shadow); }
-.card__head { display:flex; justify-content:space-between; align-items:center; }
-.badge { font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(106,160,255,.2); }
-.link { font-size:12px; background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; padding:6px 10px; border-radius:8px; text-decoration:none; }
-.card__title { font-size:16px; font-weight:600; margin:6px 0; }
-.card__amount { font-weight:700; color:#c7f464; margin:0 0 6px; }
-.card__desc { font-size:13px; color:var(--muted); }
-.analysis { margin:20px 0; padding:16px; background:rgba(255,255,255,.03); border-radius:12px; }
-.analysis h3 { margin-bottom:10px; font-size:18px; }
-.analysis-section { margin-bottom:12px; }
-.analysis-section h4 { font-size:15px; margin:6px 0; color: var(--accent); }
-.analysis-section ul { margin:0; padding-left:18px; font-size:13px; }
-.analysis-section li { margin:4px 0; }
-</style>
-</head>
-<body>
-<div class="container">
-  <h1>Competitor Promotions Dashboard</h1>
-  <div class="subtitle">Generado el 2025-10-02 16:09</div>
-  <div class="nav"><button class="pill pill--active" onclick="openTab(event, 'SA')">SA</button></div>
-  
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <title>Competitors Dashboard</title>
+
+    <!-- Chart.js antes de cualquier uso -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Funciones de gráficos disponibles ANTES de los scripts inline -->
+    <script>
+    function renderDonut(canvasId, labels, data) {
+    const colors = ["#6aa0ff","#9b76ff","#f6ad55","#48bb78","#f56565","#ed64a6","#38b2ac"];
+    new Chart(document.getElementById(canvasId), {
+        type:'doughnut',
+        data:{labels:labels,datasets:[{data:data,backgroundColor:colors}]},
+        options:{plugins:{legend:{position:'bottom',labels:{color:'#e5e9f0'}}}}
+    });
+    }
+    function renderStacked(canvasId, competitors, types, stackedByType) {
+    const colors = ["#6aa0ff","#9b76ff","#f6ad55","#48bb78","#f56565","#ed64a6","#38b2ac"];
+    const datasets = types.map((t,i)=>({label:t,data:stackedByType[i],stack:'stack-1',backgroundColor:colors[i % colors.length]}));
+    new Chart(document.getElementById(canvasId), {
+        type:'bar',
+        data:{labels:competitors,datasets:datasets},
+        options:{scales:{x:{stacked:true,ticks:{color:'#e5e9f0'}},y:{stacked:true,ticks:{color:'#e5e9f0'}}},plugins:{legend:{position:'bottom',labels:{color:'#e5e9f0'}}}}
+    });
+    }
+    </script>
+
+    <!-- CSS COMPLETO (tema oscuro + layout + cards + charts + insights) -->
+    <style>
+    :root {
+    --bg: #0b0f19;
+    --panel: #131a29;
+    --muted: #718096;
+    --text: #e5e9f0;
+    --accent: #6aa0ff;
+    --accent-2: #9b76ff;
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+    --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); }
+    .container { max-width: 1280px; margin:auto; padding:20px; }
+    h1 { font-size:28px; margin-bottom:10px; }
+    .subtitle { font-size:13px; color:var(--muted); }
+    .nav { display:flex; gap:10px; margin:20px 0; flex-wrap:wrap; }
+    .pill { border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05); padding:10px 16px; border-radius:999px; cursor:pointer; color:var(--text); }
+    .pill--active { background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; }
+    .country { display:none; background: var(--panel); padding:18px; border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:20px; }
+    .section-head { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+    .stats { display:flex; gap:12px; }
+    .stat { background:rgba(255,255,255,.05); padding:10px 14px; border-radius:10px; text-align:center; min-width:110px; }
+    .stat__num { font-size:20px; font-weight:700; }
+    .stat__label { font-size:12px; color:var(--muted); }
+    .controls { display:flex; gap:16px; flex-wrap:wrap; margin:14px 0; }
+    .control { display:flex; flex-direction:column; gap:6px; }
+    .select,.input { background:var(--panel); border:1px solid rgba(255,255,255,.1); color:var(--text); padding:8px 12px; border-radius:8px; }
+    .select:focus,.input:focus { outline:none; border-color: rgba(106,160,255,.6); }
+    .charts { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px; margin:10px 0; }
+    .chart { background:rgba(255,255,255,.05); padding:12px; border-radius:10px; min-height: 340px; height: 340px; display:flex; justify-content:center; align-items:center;}
+    .chart canvas {width:100%; height:100%;}
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; margin-top:10px; }
+    .card { background:var(--panel); border-radius:12px; padding:14px; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.06); }
+    .card__head { display:flex; justify-content:space-between; align-items:center; }
+    .badge { font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(106,160,255,.2); }
+    .link { font-size:12px; background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; padding:6px 10px; border-radius:8px; text-decoration:none; }
+    .card__title { font-size:16px; font-weight:600; margin:6px 0; }
+    .card__amount { font-weight:700; color:#c7f464; margin:0 0 6px; }
+    .card__desc { font-size:13px; color:var(--muted); }
+    .analysis { margin:20px 0; padding:16px; background:rgba(255,255,255,.03); border-radius:12px; border:1px solid rgba(255,255,255,.06); }
+    .analysis h3 { margin-bottom:10px; font-size:18px; }
+    .analysis-section { margin-bottom:12px; }
+    .analysis-section h4 { font-size:15px; margin:6px 0; color: var(--accent); }
+    .analysis-section ul { margin:0; padding-left:18px; font-size:13px; }
+    .analysis-section li { margin:4px 0; }
+    .empty { color: var(--muted); font-size:14px; padding:12px; }
+    </style>
+    </head>
+    <body>
+    <div class="container">
+    <h1>Competitors Dashboard</h1>
+    <div class="subtitle">Generado el 2025-10-02 16:53</div>
+    <div class="nav"><button class="pill pill--active" onclick="openTab(event, 'SA')">SA</button></div>
+    
         <section id="SA" class="country" style="display:block;">
             <div class="section-head">
                 <h2 class="country__title">SA</h2>
@@ -72,7 +100,7 @@ h1 { font-size:28px; margin-bottom:10px; }
                     <label>Tipo de promoción</label>
                     <select class="select" id="type-SA" onchange="filterCards('SA')">
                         <option value="ALL">Todos</option>
-                        <option value="Jackpot">Jackpot</option><option value="Other">Other</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Deposit Bonus">Deposit Bonus</option>
+                        <option value="Deposit Bonus">Deposit Bonus</option><option value="Other">Other</option><option value="Jackpot">Jackpot</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Free Spins">Free Spins</option>
                     </select>
                 </div>
                 <div class="control">
@@ -303,52 +331,37 @@ h1 { font-size:28px; margin-bottom:10px; }
             </div>
 
             <script>
-                (function() {
-                    const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Other", "Welcome Bonus"], "typeCounts": [2, 3, 4, 1, 9], "competitors": ["888 Casino", "Casinia", "EmirBet", "Rabona", "Rooster bet"], "stackedByType": [[0, 2, 0, 0, 0], [0, 1, 0, 1, 1], [1, 2, 0, 1, 0], [0, 1, 0, 0, 0], [0, 4, 1, 3, 1]]};
-                    console.log("Chart payload for SA", payload);
-                    renderDonut("donut-SA", payload.types, payload.typeCounts);
-                    renderStacked("stacked-SA", payload.competitors, payload.types, payload.stackedByType);
-                })();
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Other", "Welcome Bonus"], "typeCounts": [2, 3, 4, 1, 9], "competitors": ["888 Casino", "Casinia", "EmirBet", "Rabona", "Rooster bet"], "stackedByType": [[0, 2, 0, 0, 0], [0, 1, 0, 1, 1], [1, 2, 0, 1, 0], [0, 1, 0, 0, 0], [0, 4, 1, 3, 1]]};
+                console.log("Chart payload for SA", payload);
+                renderDonut("donut-SA", payload.types, payload.typeCounts);
+                renderStacked("stacked-SA", payload.competitors, payload.types, payload.stackedByType);
+            })();
             </script>
         </section>
         
-</div>
-<script>
-function openTab(evt, country) {
-  document.querySelectorAll('.country').forEach(sec => sec.style.display='none');
-  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('pill--active'));
-  document.getElementById(country).style.display='block';
-  evt.currentTarget.classList.add('pill--active');
-}
-function filterCards(country) {
-  const typeVal = document.getElementById('type-'+country).value;
-  const q = document.getElementById('search-'+country).value.toLowerCase().trim();
-  document.querySelectorAll('#grid-'+country+' .card').forEach(card => {
-    const ctype = card.getAttribute('data-type')||'';
-    const text = card.innerText.toLowerCase();
-    const byType = (typeVal==='ALL')||(ctype===typeVal);
-    const byText = q===''||text.indexOf(q)!==-1;
-    card.style.display=(byType&&byText)?'':'none';
-  });
-}
-function renderDonut(canvasId, labels, data) {
-  const colors = ["#6aa0ff","#9b76ff","#f6ad55","#48bb78","#f56565","#ed64a6","#38b2ac"];
-  new Chart(document.getElementById(canvasId), {
-    type:'doughnut',
-    data:{labels:labels,datasets:[{data:data,backgroundColor:colors}]},
-    options:{plugins:{legend:{position:'bottom',labels:{color:'#e5e9f0'}}}}
-  });
-}
-function renderStacked(canvasId, competitors, types, stackedByType) {
-  const colors = ["#6aa0ff","#9b76ff","#f6ad55","#48bb78","#f56565","#ed64a6","#38b2ac"];
-  const datasets = types.map((t,i)=>({label:t,data:stackedByType[i],stack:'stack-1',backgroundColor:colors[i % colors.length]}));
-  new Chart(document.getElementById(canvasId), {
-    type:'bar',
-    data:{labels:competitors,datasets:datasets},
-    options:{scales:{x:{stacked:true,ticks:{color:'#e5e9f0'}},y:{stacked:true,ticks:{color:'#e5e9f0'}}},plugins:{legend:{position:'bottom',labels:{color:'#e5e9f0'}}}}
-  });
-}
-</script>
-</body>
-</html>
-        
+    </div>
+
+    <!-- Funciones de interacción generales -->
+    <script>
+    function openTab(evt, country) {
+    document.querySelectorAll('.country').forEach(sec => sec.style.display='none');
+    document.querySelectorAll('.pill').forEach(p=>p.classList.remove('pill--active'));
+    document.getElementById(country).style.display='block';
+    evt.currentTarget.classList.add('pill--active');
+    }
+    function filterCards(country) {
+    const typeVal = document.getElementById('type-'+country).value;
+    const q = document.getElementById('search-'+country).value.toLowerCase().trim();
+    document.querySelectorAll('#grid-'+country+' .card').forEach(card => {
+        const ctype = card.getAttribute('data-type')||'';
+        const text = card.innerText.toLowerCase();
+        const byType = (typeVal==='ALL')||(ctype===typeVal);
+        const byText = q===''||text.indexOf(q)!==-1;
+        card.style.display=(byType&&byText)?'':'none';
+    });
+    }
+    </script>
+    </body>
+    </html>
+            
