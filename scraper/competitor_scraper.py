@@ -102,17 +102,20 @@ class CompetitorScraper:
                 {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
                 {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
             ],
+            # "SA": [
+            #     {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+            #     {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
+            #     {"name": "betfinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+            #     {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+            #     {"name": "1x bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+            #     {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+            #     {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+            #     {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
+            #     {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+            #     {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+            # ],
             "SA": [
-                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "betfinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "1x bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
             ],
             "KW": [
                 {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},

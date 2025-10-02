@@ -21,6 +21,7 @@ sys.path.append(str(base_dir / "database"))
 
 from scraper.competitor_scraper import CompetitorScraper, PromotionData
 from database.db_manager import DatabaseManager
+from database.deepseek_cleaner import DeepSeekCleaner
 
 if sys.platform.startswith("win"):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
@@ -64,19 +65,39 @@ class CompetitorAnalysisSystem:
             # Step 2: Store in database
             logger.info("Step 2: Storing data in database...")
             new_count, updated_count, duplicate_count = self.db_manager.insert_promotions(promotions)
+
+            # Step 2.5: Clean promotions with DeepSeek
+            logger.info("Step 2.5: Cleaning promotions with DeepSeek...")
+            cleaner = DeepSeekCleaner(self.db_manager.db_path)
+            await cleaner.clean_latest_promotions(limit=100)
             
-            # Step 3: Compare with previous data
-            logger.info("Step 3: Comparing with previous data...")
-            current_date = datetime.now().isoformat()[:10]  # YYYY-MM-DD format
-            comparison_result = self.db_manager.compare_with_previous(country, current_date)
+            # # Step 3: Compare with previous data
+            # logger.info("Step 3: Comparing with previous data...")
+            # current_date = datetime.now().isoformat()[:10]  # YYYY-MM-DD format
+            # comparison_result = self.db_manager.compare_with_previous_clean(country, current_date)
+
+            # # Step 4: Export results (CLEAN & ONLY NEW)
+            # logger.info("Step 4: Exporting CLEAN-only NEW results...")
+            # csv_file = self.db_manager.export_clean_to_csv(country, self.output_dir)
+            # json_file = self.db_manager.export_clean_to_json(country, self.output_dir)
+
+            # Step 3: Compare with previous data (SEMANTIC & DEDUPED)
+            logger.info("Step 3: Comparing with previous data (semantic & dedup)...")
+            current_date = datetime.now().date().isoformat()
+            comparison_result = self.db_manager.compare_with_previous_clean_semantic(country, current_date)
+
+            # Step 4: Export results (CLEAN & ONLY NEW & DEDUPED)
+            logger.info("Step 4: Exporting CLEAN-only NEW results (semantic & deduped)...")
+            csv_file = self.db_manager.export_clean_new_semantic_to_csv(country, self.output_dir)
+            json_file = self.db_manager.export_clean_new_semantic_to_json(country, self.output_dir)
+
             
-            # Step 4: Export results
-            logger.info("Step 4: Exporting results...")
-            csv_file = self.db_manager.export_to_csv(country, self.output_dir)
-            json_file = self.db_manager.export_to_json(country, self.output_dir)
-            
-            # Export comparison results
-            comp_csv, comp_json = self.db_manager.export_comparison_results(country, self.output_dir)
+            # # Export CLEAN comparison results (only NEW for dashboard)
+            # comp_csv, comp_json = self.db_manager.export_clean_comparison_results(country, self.output_dir) 
+
+            # Export CLEAN comparison results (only NEW for dashboard)
+            comp_csv, comp_json = self.db_manager.export_clean_comparison_results_semantic(country, self.output_dir)
+
             
             # Step 5: Generate summary report
             summary = self.generate_summary_report(country, comparison_result, new_count, updated_count)
@@ -103,18 +124,41 @@ class CompetitorAnalysisSystem:
             logger.error(f"Error in full analysis: {e}")
             raise
         
-    def generate_summary_report(self, country: str, comparison_result: Dict, new_count: int, updated_count: int) -> Dict[str, Any]:
-        """Generate a summary report of the analysis"""
-        stats = self.db_manager.get_statistics(country)
+    # def generate_summary_report(self, country: str, comparison_result: Dict, new_count: int, updated_count: int) -> Dict[str, Any]:
+    #     """Generate a summary report of the analysis"""
+    #     stats = self.db_manager.get_statistics(country)
         
+    #     summary = {
+    #         'analysis_date': datetime.now().isoformat(),
+    #         'country': country,
+    #         'database_statistics': stats,
+    #         'scraping_results': {
+    #             'new_promotions_found': new_count,
+    #             'updated_promotions': updated_count,
+    #             'total_active_promotions': stats.get('active_promotions', 0)
+    #         },
+    #         'comparison_results': {
+    #             'new_promotions_count': comparison_result.get('new_count', 0),
+    #             'removed_promotions_count': comparison_result.get('removed_count', 0),
+    #             'competitors_analyzed': comparison_result.get('competitors_analyzed', [])
+    #         },
+    #         'key_insights': self.generate_insights(stats, comparison_result)
+    #     }
+        
+    #     return summary
+
+    def generate_summary_report(self, country: str, comparison_result: Dict, new_count: int, updated_count: int) -> Dict[str, Any]:
+        # Usa estadísticas CLEAN
+        stats = self.db_manager.get_statistics_clean(country)
+
         summary = {
             'analysis_date': datetime.now().isoformat(),
             'country': country,
             'database_statistics': stats,
             'scraping_results': {
-                'new_promotions_found': new_count,
-                'updated_promotions': updated_count,
-                'total_active_promotions': stats.get('active_promotions', 0)
+                'new_promotions_found': comparison_result.get('new_count', 0),
+                'updated_promotions': 0,  # si quieres, mantenlo en 0 o impleméntalo clean
+                'total_active_promotions': stats.get('total_promotions', 0)
             },
             'comparison_results': {
                 'new_promotions_count': comparison_result.get('new_count', 0),
@@ -123,8 +167,8 @@ class CompetitorAnalysisSystem:
             },
             'key_insights': self.generate_insights(stats, comparison_result)
         }
-        
         return summary
+
         
     def generate_insights(self, stats: Dict, comparison_result: Dict) -> List[str]:
         """Generate key insights from the analysis"""
