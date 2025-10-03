@@ -82,30 +82,313 @@
     <body>
     <div class="container">
     <h1>Competitors Dashboard</h1>
-    <div class="subtitle">Generado el 2025-10-02 16:53</div>
-    <div class="nav"><button class="pill pill--active" onclick="openTab(event, 'SA')">SA</button></div>
+    <div class="subtitle">Generated on 2025-10-03 11:48</div>
+    <div class="nav"><button class="pill pill--active" onclick="openTab(event, 'AE')">AE</button>
+<button class="pill " onclick="openTab(event, 'SA')">SA</button>
+<button class="pill " onclick="openTab(event, 'KW')">KW</button>
+<button class="pill " onclick="openTab(event, 'QA')">QA</button>
+<button class="pill " onclick="openTab(event, 'OM')">OM</button>
+<button class="pill " onclick="openTab(event, 'BH')">BH</button>
+<button class="pill " onclick="openTab(event, 'JO')">JO</button>
+<button class="pill " onclick="openTab(event, 'NZ')">NZ</button></div>
     
-        <section id="SA" class="country" style="display:block;">
+        <section id="AE" class="country" style="display:block;">
             <div class="section-head">
-                <h2 class="country__title">SA</h2>
+                <h2 class="country__title">AE</h2>
                 <div class="stats">
-                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Competidores</div></div>
-                    <div class="stat"><div class="stat__num">19</div><div class="stat__label">Promociones</div></div>
-                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Tipos de bonus</div></div>
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">21</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">6</div><div class="stat__label">Bonus types</div></div>
                 </div>
             </div>
 
             <div class="controls">
                 <div class="control">
-                    <label>Tipo de promoción</label>
-                    <select class="select" id="type-SA" onchange="filterCards('SA')">
-                        <option value="ALL">Todos</option>
-                        <option value="Deposit Bonus">Deposit Bonus</option><option value="Other">Other</option><option value="Jackpot">Jackpot</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Free Spins">Free Spins</option>
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-AE" onchange="filterCards('AE')">
+                        <option value="ALL">All</option>
+                        <option value="Deposit Bonus">Deposit Bonus</option><option value="Other">Other</option><option value="Jackpot">Jackpot</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Tournament">Tournament</option>
                     </select>
                 </div>
                 <div class="control">
-                    <label>Buscar</label>
-                    <input class="input" type="search" id="search-SA" placeholder="Filtrar por texto..." oninput="filterCards('SA')" />
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-AE" placeholder="Filter by text..." oninput="filterCards('AE')" />
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart"><canvas id="donut-AE"></canvas></div>
+                <div class="chart"><canvas id="stacked-AE"></canvas></div>
+            </div>
+
+            
+            <div class="analysis">
+                <h3>Key Market Insights (AE)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>Casinia</strong>: Welcome Bonus - 200% up to 3,000 USDT + 100% up to €100 + 100% up to 200 USDT <a href='https://casinia.com' target='_blank'>Link</a></li><li><strong>Casinia</strong>: Jackpot - £65,100 <a href='https://casinia.bet' target='_blank'>Link</a></li><li><strong>EmirBet</strong>: Welcome Bonus - Up to €1000 + 150 Free Spins <a href='https://emirbet.casino' target='_blank'>Link</a></li><li><strong>Rabona</strong>: Tournament - 1500 € <a href='https://rabona.com/tournaments' target='_blank'>Link</a></li><li><strong>Rooster bet</strong>: Deposit Bonus - 100% up to $1000 <a href='https://roosterbet.bet' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>Casinia</strong>: Jackpot <em>(Jackpot of £65,100 mentioned, with additional references to daily and hot jackpots across multiple entries.)</em></li><li><strong>Casinia</strong>: Free Spins on Eye of Horus, Fishin’ Frenzy <em>(350 no-wagering free spins specifically on games like Eye of Horus and Fishin’ Frenzy.)</em></li><li><strong>Rabona</strong>: VIP Tournament: Los Maestros <em>(Tournament with a prize pool of 1500 € and minimum bet of 10.00 €.)</em></li><li><strong>Rabona</strong>: Jackpots <em>(Mentions daily jackpots, hot jackpots, and lucky jackpots, though no specific amounts are detailed beyond general references.)</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: Approx. 150% match up to €500 equivalent + 150 free spins (based on common offers from Casinia, EmirBet, Rabona)</li><li><strong>Free Spins</strong>: Approx. 150 free spins (ranging from 50 to 350, with Casinia offering 350 no-wagering spins as a standout)</li><li><strong>Deposit Bonus</strong>: Approx. 100% match up to C$88 or $1000 (based on 888 Casino and Rooster bet offers)</li><li><strong>Jackpot</strong>: Not calculable due to varied unspecified amounts, but Casinia highlights a £65,100 jackpot.</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>Casinia offers a high-value crypto welcome bonus of 200% up to 3,000 USDT, which is significantly more aggressive than standard fiat currency bonuses.</li><li>Multiple competitors (Casinia, Rabona) emphasize jackpots and tournaments, with Casinia specifying a large £65,100 jackpot and Rabona hosting VIP tournaments like 'Los Maestros'.</li><li>Casinia provides 350 no-wagering free spins, a rare and player-friendly condition compared to typical wagering requirements.</li><li>Rooster bet and 888 Casino have lower bonus amounts (e.g., C$88, 50 free spins) but include no-deposit options, appealing to risk-averse players.</li><li>EmirBet and Rabona integrate sports betting into their casino promotions, highlighting a trend toward multi-product bonus structures in the AE market.</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-AE">
+                
+            <article class="card" data-type="Deposit Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">C$88 free deposit bonus at 888casino official for Canadian online gaming</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">bonus – c$88 free get bonus log in 888casino official ready for a thrill? 888 casino is your gateway to top-tier online gaming in canada.</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins with zero strings attached (well, almost). this 888 casino no deposit bonus lets you dive straight in, test the waters, and get the reels spinning</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">New players at 888 casino can kick things off with a deposit match bonus</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 FS</p>
+                <p class="card__desc">Casino welcome bonus 100% up to €500 + 200 free spins + 1 bonus crab. Includes VIP levels and access to live casino and sports betting.</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">200% up to 3,000 USDT + 100% up to €100 + 100% up to 200 USDT</p>
+                <p class="card__desc">deposit bonus 100% up to €100 join now casino crypto welcome bonus 200% up to 3,000 usdt join now sport crypto welcome bonus 100% up to 200 usdt join</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">350 Free Spins</p>
+                <p class="card__desc">Free spins! enjoy 350 no-wagering free spins on games like Eye of Horus, Fishin’ Frenzy, and more.</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">£65,100</p>
+                <p class="card__desc">jackpot 65100£ register trustworthy payments & exchanges on casinia-casino the payment methods featured on the site are convenient and secure for all</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">jackpots sports live betting wheel of fortune new spin rally new challenges tournaments bonus crab shop vip levels english help centre casino live casino</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">Bonus promo code no deposit bonus app sign in register. Luck lives in every bet! Play now spin on – win on!</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">200 free spins + 100% up to £500</p>
+                <p class="card__desc">Welcome bonus for signing up, you get 200 free spins, 100% up to £500, and 1 bonus crab. Reload bonus disbursed daily from Monday to Thursday</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">€500 + 200 FS + €100 + 200% crypto</p>
+                <p class="card__desc">welcome bonus 100% up to €500 + 200 free spins + 1 bonus crab, sport first deposit bonus 100% up to €100, casino crypto welcome bonus 200% up</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="EmirBet">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://emirbet.casino" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">EmirBet</h3>
+                <p class="card__amount">Up to €1000 + 150 Free Spins</p>
+                <p class="card__desc">bonus up to €1000 + 150 free spins games live casino sports betting bonuses games live casino sports betting bonuses sign up login emirbet emit bet ca</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://rabona.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">100% up to 200 USDT</p>
+                <p class="card__desc">bonus crab niveles vip español centro de ayuda deportes apuestas en vivo casino bono de bienvenida crypto para deportes 100% hasta 200 usdt ¡únete ya!</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://www.rabona.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">jackpots jackpots diarios jackpots calientes nuevos jackpots lucky jackpots jackpots todos los jackpots copas colecciones tienda desafíos torneos bonu</p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://rabona.com/tournaments" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">1500 €</p>
+                <p class="card__desc">VIP tournament with a prize pool. Active and finished tournaments available.</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.rabona.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">200 USDT</p>
+                <p class="card__desc">100% welcome bonus up to 200 USDT for crypto sports betting</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://rooster-bet.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">50 Free Spins</p>
+                <p class="card__desc">50 free spins upon registration, loyalty program VIP club with exclusive offers, 35x wagering requirements, welcome bonus for new players</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">100% up to $1000</p>
+                <p class="card__desc">bonus 100% up to $1000 games sport cybersport promo tournaments lotteries</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://rooster-bet.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">50 Free Spins</p>
+                <p class="card__desc">Free spins no deposit bonus 50 free spins upon registration, loyalty program VIP club with exclusive offers, wagering requirement 35x, welcome bonus</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins get bonus navigation open close an overview of rooster bet casino canada main advantages of rooster bet popular games and slots at rooster</p>
+            </article>
+            
+            </div>
+
+            <script>
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Other", "Tournament", "Welcome Bonus"], "typeCounts": [2, 4, 3, 2, 1, 9], "competitors": ["888 Casino", "Casinia", "EmirBet", "Rabona", "Rooster bet"], "stackedByType": [[1, 0, 0, 0, 1], [1, 1, 0, 0, 2], [0, 2, 0, 1, 0], [1, 1, 0, 0, 0], [0, 0, 0, 1, 0], [1, 4, 1, 2, 1]]};
+                console.log("Chart payload for AE", payload);
+                renderDonut("donut-AE", payload.types, payload.typeCounts);
+                renderStacked("stacked-AE", payload.competitors, payload.types, payload.stackedByType);
+            })();
+            </script>
+        </section>
+        
+
+        <section id="SA" class="country" >
+            <div class="section-head">
+                <h2 class="country__title">SA</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">21</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">6</div><div class="stat__label">Bonus types</div></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-SA" onchange="filterCards('SA')">
+                        <option value="ALL">All</option>
+                        <option value="Deposit Bonus">Deposit Bonus</option><option value="Other">Other</option><option value="Jackpot">Jackpot</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Tournament">Tournament</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-SA" placeholder="Filter by text..." oninput="filterCards('SA')" />
                 </div>
             </div>
 
@@ -119,79 +402,109 @@
                 <h3>Key Market Insights (SA)</h3>
                 <div class="analysis-section">
                     <h4>🎯 More aggressive promotions</h4>
-                    <ul><li><strong>888 Casino</strong>: Jackpot - 275,174.63€ <a href='https://www.888casino.com/offers' target='_blank'>Link</a></li><li><strong>888 Casino</strong>: Jackpot - 275,151.73€ <a href='https://www.888casino.com' target='_blank'>Link</a></li><li><strong>Casinia</strong>: Jackpot - £65,100 <a href='https://casinia.bet' target='_blank'>Link</a></li><li><strong>Rabona</strong>: Welcome Bonus - Up to 500% <a href='https://www.rabona.casino' target='_blank'>Link</a></li></ul>
+                    <ul><li><strong>Casinia</strong>: Welcome Bonus - 200% up to 3,000 USDT <a href='https://casinia.com/promotions' target='_blank'>Link</a></li><li><strong>EmirBet</strong>: Welcome Bonus - Up to €1000 + 150 Free Spins <a href='https://emirbet.casino' target='_blank'>Link</a></li><li><strong>Rooster bet</strong>: Deposit Bonus - 100% up to $1000 <a href='https://roosterbet.bet' target='_blank'>Link</a></li></ul>
                 </div>
                 <div class="analysis-section">
                     <h4>🎮 Highlighted games</h4>
-                    <ul><li><strong>888 Casino</strong>: Flaming Wild, Crown Don, Blaze Fire, White Witch, Wolf Gold, Gonzo's <em>(Jackpot promotion featuring various slot games)</em></li><li><strong>Casinia</strong>: Eye of Horus, Fishin’ Frenzy <em>(No-wagering free spins on specified games)</em></li><li><strong>Rabona</strong>: Mega Moolah <em>(Access to 216 jackpot games, including popular ones like 'Mega Moolah')</em></li></ul>
+                    <ul><li><strong>Casinia</strong>: Eye of Horus, Fishin' Frenzy <em>(350 no-wagering free spins on specific games)</em></li><li><strong>Casinia</strong>: Jackpot <em>(Jackpot prize of £65,100 mentioned)</em></li><li><strong>Casinia</strong>: The Masters Tournament <em>(Tournament with €1,500 prize pool, minimum bet €10)</em></li><li><strong>Rabona</strong>: VIP Tournament: Los Maestros <em>(Tournament with 1500 € prize pool, minimum bet 10 €)</em></li></ul>
                 </div>
                 <div class="analysis-section">
                     <h4>📊 Average values by promotion type</h4>
-                    <ul><li><strong>Welcome Bonus</strong>: Approx. 100% up to €500 + 200 free spins (common among Casinia, EmirBet, Rabona)</li><li><strong>Free Spins</strong>: Approx. 150-200 free spins (Casinia: 200-350, Rabona: 200, Rooster bet: 50)</li><li><strong>Jackpot</strong>: High variability, with amounts like €275k (888 Casino) and £65k (Casinia)</li><li><strong>Deposit Bonus</strong>: Approx. 100% up to €100-€500 (Casinia, Rabona)</li></ul>
+                    <ul><li><strong>Welcome Bonus</strong>: 150% up to €1,100 equivalent (considering max amounts across multiple currencies)</li><li><strong>Deposit Bonus</strong>: 100% up to €500 equivalent</li><li><strong>Free Spins</strong>: 200 free spins</li><li><strong>Tournament</strong>: €1,500 prize pool</li></ul>
                 </div>
                 <div class="analysis-section">
                     <h4>⭐ Differential data</h4>
-                    <ul><li>888 Casino offers the highest jackpot amounts (over €275k), significantly above competitors.</li><li>Casinia provides a unique 'bonus crab' feature in multiple promotions, adding a gamified element.</li><li>Rabona's limited-time offer of up to 500% bonus is the highest percentage bonus found.</li><li>Casinia offers no-wagering free spins (350 on specific games), which is rare and player-friendly.</li><li>Multiple competitors (Casinia, Rabona) include crypto-specific bonuses, indicating a trend towards cryptocurrency integration.</li></ul>
+                    <ul><li>Casinia offers multiple welcome bonuses including crypto-specific options with high percentages (200%) and maximum amounts up to 3,000 USDT</li><li>Casinia provides no-wagering free spins (350) on specific games like Eye of Horus and Fishin' Frenzy, which is rare in the market</li><li>Multiple competitors (Casinia, Rabona) feature tournaments with substantial prize pools (€1,500) and structured betting requirements</li><li>Casinia includes unique features like 'Bonus Crab' in their welcome packages, adding gamification elements to promotions</li><li>Currency diversity is notable with promotions offered in CAD, EUR, USD, USDT, and GBP across different competitors</li></ul>
                 </div>
             </div>
             
 
             <div class="grid" id="grid-SA">
                 
-            <article class="card" data-type="Jackpot" data-competitor="888 Casino">
+            <article class="card" data-type="Deposit Bonus" data-competitor="888 Casino">
                 <header class="card__head">
-                    <div class="badge">Jackpot</div>
-                    <a class="link" href="https://www.888casino.com/offers" target="_blank" rel="noopener">Abrir</a>
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">888 Casino</h3>
-                <p class="card__amount">275,174.63€</p>
-                <p class="card__desc">jackpot gold 275.174,63€ nuevos juegos de casino online flaming wild crown don premiote jackpot blaze fire blaze white witch wolf gold 4 pack gonzo's</p>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">C$88 free deposit bonus at 888casino official for Canadian online gaming</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">bonus – c$88 free get bonus log in 888casino official ready for a thrill? 888 casino is your gateway to top-tier online gaming in canada.</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins with zero strings attached (well, almost). this 888 casino no deposit bonus lets you dive straight in, test the waters, and get the reels spinning</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">New players at 888 casino can kick things off with a deposit match bonus</p>
             </article>
             
             <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
                 <header class="card__head">
                     <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Casinia</h3>
-                <p class="card__amount">100% up to €500 + 200 FS + 1 bonus crab</p>
-                <p class="card__desc">Welcome bonus 100% up to €500 + 200 free spins + 1 bonus crab. Includes tournaments, VIP levels, and bonus crab shop.</p>
+                <p class="card__amount">200% up to 3,000 USDT</p>
+                <p class="card__desc">deposit bonus 100% up to €100 read more casino crypto welcome bonus 200% up to 3,000 usdt read more sport crypto welcome bonus 100% up to 200 usdt</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 Free Spins</p>
+                <p class="card__desc">Tournaments bonus crab shop VIP levels English help centre promotions all casino sports crypto specials casino welcome bonus 100% up to €500 + 200 fs</p>
             </article>
             
             <article class="card" data-type="Deposit Bonus" data-competitor="Casinia">
                 <header class="card__head">
                     <div class="badge">Deposit Bonus</div>
-                    <a class="link" href="https://www.casinia.bet/offers" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Casinia</h3>
-                <p class="card__amount">1000£ + 250 FS</p>
-                <p class="card__desc">Bonus for first deposit 1000£ + 250 free spins</p>
-            </article>
-            
-            <article class="card" data-type="Deposit Bonus" data-competitor="Casinia">
-                <header class="card__head">
-                    <div class="badge">Deposit Bonus</div>
-                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Abrir</a>
-                </header>
-                <h3 class="card__title">Casinia</h3>
-                <p class="card__amount">€100, 3,000 USDT, 200 USDT</p>
-                <p class="card__desc">Deposit bonus 100% up to €100. Casino crypto welcome bonus 200% up to 3,000 USDT. Sport crypto welcome bonus 100% up to 200 USDT.</p>
+                <p class="card__amount">750 USDT + 100 FS</p>
+                <p class="card__desc">free spins read more sport weekend reload bonus 50% up to €750 read more casino weekend crypto reload bonus 75% up to 750 usdt + 100 fs read more spo</p>
             </article>
             
             <article class="card" data-type="Free Spins" data-competitor="Casinia">
                 <header class="card__head">
                     <div class="badge">Free Spins</div>
-                    <a class="link" href="https://www.casinia.bet" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Casinia</h3>
-                <p class="card__amount">350</p>
-                <p class="card__desc">free spins! enjoy 350 no-wagering free spins on games like eye of horus, fishin’ frenzy, and more. details casinia online website slot games slot game</p>
+                <p class="card__amount">350 free spins</p>
+                <p class="card__desc">Free spins! enjoy 350 no-wagering free spins on games like Eye of Horus, Fishin' Frenzy, and more.</p>
             </article>
             
             <article class="card" data-type="Jackpot" data-competitor="Casinia">
                 <header class="card__head">
                     <div class="badge">Jackpot</div>
-                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Casinia</h3>
                 <p class="card__amount">£65,100</p>
@@ -201,7 +514,7 @@
             <article class="card" data-type="Jackpot" data-competitor="Casinia">
                 <header class="card__head">
                     <div class="badge">Jackpot</div>
-                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Casinia</h3>
                 <p class="card__amount">Not specified</p>
@@ -211,27 +524,27 @@
             <article class="card" data-type="Other" data-competitor="Casinia">
                 <header class="card__head">
                     <div class="badge">Other</div>
-                    <a class="link" href="https://www.casinia.bet" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Casinia</h3>
                 <p class="card__amount">Not specified</p>
-                <p class="card__desc">Bonus promo code no deposit bonus for app sign in and registration. Marketing slogan: Luck lives in every bet! Play now spin on - win on!</p>
+                <p class="card__desc">Bonus promo code no deposit bonus for app sign in and registration. Luck lives in every bet! Play now and spin to win!</p>
             </article>
             
-            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+            <article class="card" data-type="Tournament" data-competitor="Casinia">
                 <header class="card__head">
-                    <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Abrir</a>
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://casinia.com/tournaments" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Casinia</h3>
-                <p class="card__amount">200 free spins + 100% up to £500</p>
-                <p class="card__desc">Welcome bonus for signing up, you get 200 free spins, 100% up to £500, and 1 bonus crab. Reload bonus disbursed daily from Monday to Thursday</p>
+                <p class="card__amount">€1,500</p>
+                <p class="card__desc">Tournament 'The Masters' with a prize pool of €1,500. Minimum bet: €10.00.</p>
             </article>
             
             <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
                 <header class="card__head">
                     <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Casinia</h3>
                 <p class="card__amount">100% up to €500 + 200 Free Spins</p>
@@ -241,7 +554,17 @@
             <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
                 <header class="card__head">
                     <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">200 free spins + 100% up to £500</p>
+                <p class="card__desc">Welcome bonus for signing up, you get 200 free spins, 100% up to £500, and 1 bonus crab. Reload bonus disbursed daily from Monday to Thursday</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Casinia</h3>
                 <p class="card__amount">100% up to €500 + 200 FS</p>
@@ -251,7 +574,253 @@
             <article class="card" data-type="Welcome Bonus" data-competitor="EmirBet">
                 <header class="card__head">
                     <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://emirbet.casino" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="https://emirbet.casino" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">EmirBet</h3>
+                <p class="card__amount">Up to €1000 + 150 Free Spins</p>
+                <p class="card__desc">bonus up to €1000 + 150 free spins games live casino sports betting bonuses games live casino sports betting bonuses sign up login emirbet emit bet ca</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://rabona.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">100% up to 200 USDT</p>
+                <p class="card__desc">bonus crab niveles vip español centro de ayuda deportes apuestas en vivo casino bono de bienvenida crypto para deportes 100% hasta 200 usdt ¡únete ya!</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://rabona.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">jackpots jackpots diarios jackpots calientes nuevos jackpots lucky jackpots jackpots todos los jackpots copas colecciones tienda desafíos torneos bonu</p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://rabona.com/tournaments" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">1500 €</p>
+                <p class="card__desc">Active tournament with a prize pool. Minimum bet requirement.</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">100% up to $1000</p>
+                <p class="card__desc">bonus 100% up to $1000 games sport cybersport promo tournaments lotteries</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins get bonus navigation open close an overview of rooster bet casino canada main advantages of rooster bet popular games and slots at rooster bet</p>
+            </article>
+            
+            </div>
+
+            <script>
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Other", "Tournament", "Welcome Bonus"], "typeCounts": [3, 3, 3, 2, 2, 8], "competitors": ["888 Casino", "Casinia", "EmirBet", "Rabona", "Rooster bet"], "stackedByType": [[1, 1, 0, 0, 1], [1, 1, 0, 0, 1], [0, 2, 0, 1, 0], [1, 1, 0, 0, 0], [0, 1, 0, 1, 0], [1, 5, 1, 1, 0]]};
+                console.log("Chart payload for SA", payload);
+                renderDonut("donut-SA", payload.types, payload.typeCounts);
+                renderStacked("stacked-SA", payload.competitors, payload.types, payload.stackedByType);
+            })();
+            </script>
+        </section>
+        
+
+        <section id="KW" class="country" >
+            <div class="section-head">
+                <h2 class="country__title">KW</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">18</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">6</div><div class="stat__label">Bonus types</div></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-KW" onchange="filterCards('KW')">
+                        <option value="ALL">All</option>
+                        <option value="Deposit Bonus">Deposit Bonus</option><option value="Other">Other</option><option value="Jackpot">Jackpot</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Tournament">Tournament</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-KW" placeholder="Filter by text..." oninput="filterCards('KW')" />
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart"><canvas id="donut-KW"></canvas></div>
+                <div class="chart"><canvas id="stacked-KW"></canvas></div>
+            </div>
+
+            
+            <div class="analysis">
+                <h3>Key Market Insights (KW)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>Casinia</strong>: Welcome Bonus - 200% up to 3,000 USDT <a href='https://casinia.com' target='_blank'>Link</a></li><li><strong>EmirBet</strong>: Welcome Bonus - Up to €1000 + 150 free spins <a href='https://emirbet.casino' target='_blank'>Link</a></li><li><strong>Rooster bet</strong>: Deposit Bonus - 100% up to $1000 <a href='https://roosterbet.bet' target='_blank'>Link</a></li><li><strong>Casinia</strong>: Jackpot - £65,100 <a href='https://casinia.bet' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>Casinia</strong>: Eye of Horus, Fishin’ Frenzy <em>(Featured in no-wagering free spins promotion)</em></li><li><strong>Rabona</strong>: VIP Masters Tournament <em>(Tournament with €1500 prize pool and minimum bet requirement)</em></li><li><strong>Casinia</strong>: Jackpots <em>(Multiple jackpot promotions including one with £65,100 prize)</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: 150% match + 175 free spins (based on available data)</li><li><strong>Free Spins</strong>: 275 free spins (based on specified amounts)</li><li><strong>Deposit Bonus</strong>: C$88 (based on specified amounts)</li><li><strong>Jackpot</strong>: £65,100 (based on specified amounts)</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>Casinia offers a unique 'Bonus Crab' system across multiple promotions, which appears to be a loyalty or reward feature not seen with other competitors</li><li>Multiple competitors (Casinia, Rabona) are offering cryptocurrency-specific bonuses, indicating a focus on crypto-friendly markets in KW</li><li>Rabona provides tournament-based promotions with clear prize pools and betting requirements, which is less common among the competitors</li><li>888 Casino offers a no-strings-attached free spins bonus with minimal conditions, which is relatively rare in the market</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-KW">
+                
+            <article class="card" data-type="Deposit Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">C$88 free deposit bonus at 888casino official site for online gaming in Canada</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">bonus – c$88 free get bonus log in 888casino official ready for a thrill? 888 casino is your gateway to top-tier online gaming in canada.</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins with zero strings attached (well, almost). this 888 casino no deposit bonus lets you dive straight in, test the waters, and get the reels spinning</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">New players at 888 casino can kick things off with a deposit match bonus</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 FS</p>
+                <p class="card__desc">Casino welcome bonus 100% up to €500 + 200 free spins + 1 bonus crab. Includes VIP levels and access to live casino and sports betting.</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">€100, 3,000 USDT, 200 USDT</p>
+                <p class="card__desc">Deposit bonus 100% up to €100 for casino, crypto welcome bonus 200% up to 3,000 USDT for casino, and crypto welcome bonus 100% up to 200 USDT for sports</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">350</p>
+                <p class="card__desc">Free spins! enjoy 350 no-wagering free spins on games like eye of horus, fishin’ frenzy, and more.</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">£65,100</p>
+                <p class="card__desc">jackpot 65100£ register trustworthy payments & exchanges on casinia-casino the payment methods featured on the site are convenient and secure for all</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">jackpots sports live betting wheel of fortune new spin rally new challenges tournaments bonus crab shop vip levels english help centre casino live casino</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">Bonus promo code no deposit bonus for new players. Sign in and register to claim your offer. Spin and win with this promotional offer.</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">200 free spins + 100% up to £500</p>
+                <p class="card__desc">Welcome bonus for signing up, you get 200 free spins, 100% up to £500, and 1 bonus crab. Reload bonus disbursed daily from Monday to Thursday</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 Free Spins + 1 Bonus Crab (Casino), 100% up to €100 (Sport), 200% (Crypto Casino)</p>
+                <p class="card__desc">welcome bonus 100% up to €500 + 200 fs + 1 bonus crab join now sport first deposit bonus 100% up to €100 join now casino crypto welcome bonus 200% up</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="EmirBet">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://emirbet.casino" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">EmirBet</h3>
                 <p class="card__amount">Up to €1000 + 150 free spins</p>
@@ -261,81 +830,1351 @@
             <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
                 <header class="card__head">
                     <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://rabona.com" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="https://rabona.com" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Rabona</h3>
                 <p class="card__amount">100% up to 200 USDT</p>
                 <p class="card__desc">bonus crab niveles vip español centro de ayuda deportes apuestas en vivo casino bono de bienvenida crypto para deportes 100% hasta 200 usdt ¡únete ya!</p>
             </article>
             
-            <article class="card" data-type="Free Spins" data-competitor="Rabona">
-                <header class="card__head">
-                    <div class="badge">Free Spins</div>
-                    <a class="link" href="https://www.rabona.casino" target="_blank" rel="noopener">Abrir</a>
-                </header>
-                <h3 class="card__title">Rabona</h3>
-                <p class="card__amount">200 free spins (20 daily for 10 days)</p>
-                <p class="card__desc">free spins. a deposit of at least €20 is required. players receive 20 free spins daily for ten days. the bonus and winnings from free spins have a 35x</p>
-            </article>
-            
             <article class="card" data-type="Jackpot" data-competitor="Rabona">
                 <header class="card__head">
                     <div class="badge">Jackpot</div>
-                    <a class="link" href="https://www.rabona.casino" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="https://rabona.com/tournaments" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Rabona</h3>
                 <p class="card__amount">Not specified</p>
-                <p class="card__desc">jackpots: there are 216 jackpot games, including popular ones like 'mega moolah', offering players chances to win big. special categories: rabona high</p>
+                <p class="card__desc">Hot jackpots, new jackpots, lucky jackpots, daily jackpots, all jackpots</p>
             </article>
             
-            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+            <article class="card" data-type="Tournament" data-competitor="Rabona">
                 <header class="card__head">
-                    <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://www.rabona.casino" target="_blank" rel="noopener">Abrir</a>
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://rabona.com/tournaments" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Rabona</h3>
-                <p class="card__amount">Up to 500%</p>
-                <p class="card__desc">Get up to 500% bonus on first deposit. Sign up now!</p>
+                <p class="card__amount">1500 €</p>
+                <p class="card__desc">VIP tournament with a prize pool. Active and finished tournaments available.</p>
             </article>
             
-            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+            <article class="card" data-type="Deposit Bonus" data-competitor="Rooster bet">
                 <header class="card__head">
-                    <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://www.rabona.casino" target="_blank" rel="noopener">Abrir</a>
-                </header>
-                <h3 class="card__title">Rabona</h3>
-                <p class="card__amount">100%</p>
-                <p class="card__desc">Sign up now and enjoy welcome bonus of 100% of first time deposit at Rabona Casino and Rabona Sportsbook</p>
-            </article>
-            
-            <article class="card" data-type="Welcome Bonus" data-competitor="Rooster bet">
-                <header class="card__head">
-                    <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://rooster-bet.org" target="_blank" rel="noopener">Abrir</a>
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Rooster bet</h3>
-                <p class="card__amount">50 Free Spins</p>
-                <p class="card__desc">50 free spins upon registration, loyalty program VIP club with exclusive offers, 35x wagering requirements, welcome bonus for new players</p>
+                <p class="card__amount">100% up to $1000</p>
+                <p class="card__desc">bonus 100% up to $1000 games sport cybersport promo tournaments lotteries</p>
             </article>
             
             <article class="card" data-type="Free Spins" data-competitor="Rooster bet">
                 <header class="card__head">
                     <div class="badge">Free Spins</div>
-                    <a class="link" href="https://rooster-bet.org" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">Rooster bet</h3>
-                <p class="card__amount">50 Free Spins</p>
-                <p class="card__desc">Free spins no deposit bonus 50 free spins upon registration, loyalty program VIP club with exclusive offers, wagering requirement 35x, welcome bonus</p>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins get bonus navigation open close an overview of rooster bet casino canada main advantages of rooster bet popular games and slots at rooster bet</p>
             </article>
             
             </div>
 
             <script>
             (function() {
-                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Other", "Welcome Bonus"], "typeCounts": [2, 3, 4, 1, 9], "competitors": ["888 Casino", "Casinia", "EmirBet", "Rabona", "Rooster bet"], "stackedByType": [[0, 2, 0, 0, 0], [0, 1, 0, 1, 1], [1, 2, 0, 1, 0], [0, 1, 0, 0, 0], [0, 4, 1, 3, 1]]};
-                console.log("Chart payload for SA", payload);
-                renderDonut("donut-SA", payload.types, payload.typeCounts);
-                renderStacked("stacked-SA", payload.competitors, payload.types, payload.stackedByType);
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Other", "Tournament", "Welcome Bonus"], "typeCounts": [2, 3, 3, 2, 1, 7], "competitors": ["888 Casino", "Casinia", "EmirBet", "Rabona", "Rooster bet"], "stackedByType": [[1, 0, 0, 0, 1], [1, 1, 0, 0, 1], [0, 2, 0, 1, 0], [1, 1, 0, 0, 0], [0, 0, 0, 1, 0], [1, 4, 1, 1, 0]]};
+                console.log("Chart payload for KW", payload);
+                renderDonut("donut-KW", payload.types, payload.typeCounts);
+                renderStacked("stacked-KW", payload.competitors, payload.types, payload.stackedByType);
+            })();
+            </script>
+        </section>
+        
+
+        <section id="QA" class="country" >
+            <div class="section-head">
+                <h2 class="country__title">QA</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">21</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">6</div><div class="stat__label">Bonus types</div></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-QA" onchange="filterCards('QA')">
+                        <option value="ALL">All</option>
+                        <option value="Deposit Bonus">Deposit Bonus</option><option value="Other">Other</option><option value="Jackpot">Jackpot</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Tournament">Tournament</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-QA" placeholder="Filter by text..." oninput="filterCards('QA')" />
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart"><canvas id="donut-QA"></canvas></div>
+                <div class="chart"><canvas id="stacked-QA"></canvas></div>
+            </div>
+
+            
+            <div class="analysis">
+                <h3>Key Market Insights (QA)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>Casinia</strong>: Welcome Bonus - 200% up to 3,000 USDT <a href='https://casinia.com/promotions' target='_blank'>Link</a></li><li><strong>EmirBet</strong>: Welcome Bonus - Up to €1000 + 150 Free Spins <a href='https://emirbet.casino' target='_blank'>Link</a></li><li><strong>Rooster bet</strong>: Deposit Bonus - 100% up to $1000 <a href='https://roosterbet.bet' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>Casinia</strong>: The Masters Tournament <em>(Tournament with €1,500 prize pool, minimum bet €10.00)</em></li><li><strong>Rabona</strong>: VIP Tournament <em>(Active tournament 'Los Maestros' with 1500 € prize pool, minimum bet 10.00 €)</em></li><li><strong>Casinia</strong>: Jackpot <em>(Jackpot of 65100£ with trustworthy payments and exchanges)</em></li><li><strong>Casinia</strong>: Free Spins on Eye of Horus, Fishin' Frenzy <em>(350 no-wagering free spins on specific games)</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: 150% match up to ~€500 equivalent + free spins</li><li><strong>Deposit Bonus</strong>: ~75% match up to ~€500 equivalent</li><li><strong>Free Spins</strong>: ~150 free spins</li><li><strong>Tournament</strong>: €1,500 prize pool</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>Casinia offers the highest crypto welcome bonus at 200% up to 3,000 USDT</li><li>Multiple competitors (Casinia, Rabona) offer crypto-specific bonuses in USDT</li><li>Casinia provides no-wagering free spins (350 FS), which is rare and player-friendly</li><li>Jackpot promotion by Casinia (65,100£) is significantly higher than typical bonus amounts</li><li>888 Casino offers C$88 free deposit bonus specifically targeting Canadian market despite QA country focus</li><li>Rooster bet has consistent 35x wagering requirements across multiple promotions</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-QA">
+                
+            <article class="card" data-type="Deposit Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">C$88 free deposit bonus at 888casino official for Canadian online gaming</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88 Free</p>
+                <p class="card__desc">bonus – c$88 free get bonus log in 888casino official ready for a thrill? 888 casino is your gateway to top-tier online gaming in canada.</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins with zero strings attached (well, almost). this 888 casino no deposit bonus lets you dive straight in, test the waters, and get the reels spinning</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">New players at 888 casino can kick things off with a deposit match bonus</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">200% up to 3,000 USDT</p>
+                <p class="card__desc">deposit bonus 100% up to €100 read more casino crypto welcome bonus 200% up to 3,000 usdt read more sport crypto welcome bonus 100% up to 200 usdt</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 FS</p>
+                <p class="card__desc">Casino welcome bonus offering 100% match up to €500 plus 200 free spins</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 Free Spins + 1 Bonus Crab</p>
+                <p class="card__desc">bonus crab shop vip levels english help centre promotions all casino sports crypto specials casino welcome bonus 100% up to €500 + 200 fs + 1 bonus cr</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">750 USDT + 100 Free Spins</p>
+                <p class="card__desc">free spins read more sport weekend reload bonus 50% up to €750 read more casino weekend crypto reload bonus 75% up to 750 usdt + 100 fs read more spo</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">350 free spins</p>
+                <p class="card__desc">Free spins! enjoy 350 no-wagering free spins on games like eye of horus, fishin' frenzy, and more.</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">65100£</p>
+                <p class="card__desc">jackpot 65100£ register trustworthy payments & exchanges on casinia-casino the payment methods featured on the site are convenient and secure for all</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">Bonus promo code no deposit bonus for new players. App sign in and register to claim the offer. Spin and win with free play opportunity.</p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://casinia.com/tournaments" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">€1,500</p>
+                <p class="card__desc">Tournament 'The Masters' with a prize pool of €1,500. Minimum bet: €10.00.</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 FS</p>
+                <p class="card__desc">Welcome bonus 100% up to €500 + 200 free spins + 1 bonus crab. Also includes sport first deposit bonus 100% up to €100 and casino crypto welcome bonus 200%</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="EmirBet">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://emirbet.casino" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">EmirBet</h3>
+                <p class="card__amount">Up to €1000 + 150 Free Spins</p>
+                <p class="card__desc">bonus up to €1000 + 150 free spins games live casino sports betting bonuses games live casino sports betting bonuses sign up login emirbet emit bet ca</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.rabona.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">100% up to 200 USDT</p>
+                <p class="card__desc">bonus crab niveles vip español centro de ayuda deportes apuestas en vivo casino bono de bienvenida crypto para deportes 100% hasta 200 usdt ¡únete ya!</p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://rabona.com/tournaments" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">1500 €</p>
+                <p class="card__desc">Active tournament 'Los Maestros' with a prize pool. Minimum bet requirement.</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://rabona.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">200 USDT</p>
+                <p class="card__desc">100% welcome bonus up to 200 USDT for crypto sports betting</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://rooster-bet.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">50 Free Spins</p>
+                <p class="card__desc">50 free spins upon registration, loyalty program VIP club with exclusive offers, 35x wagering requirements, welcome bonus for new players</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">100% up to $1000</p>
+                <p class="card__desc">bonus 100% up to $1000 games sport cybersport promo tournaments lotteries</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://rooster-bet.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">50 Free Spins</p>
+                <p class="card__desc">Free spins no deposit bonus 50 free spins upon registration, loyalty program VIP club with exclusive offers, wagering requirement 35x, welcome bonus</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins get bonus navigation open close an overview of rooster bet casino canada main advantages of rooster bet popular games and slots at rooster</p>
+            </article>
+            
+            </div>
+
+            <script>
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Other", "Tournament", "Welcome Bonus"], "typeCounts": [3, 4, 1, 2, 2, 9], "competitors": ["888 Casino", "Casinia", "EmirBet", "Rabona", "Rooster bet"], "stackedByType": [[1, 1, 0, 0, 1], [1, 1, 0, 0, 2], [0, 1, 0, 0, 0], [1, 1, 0, 0, 0], [0, 1, 0, 1, 0], [1, 4, 1, 2, 1]]};
+                console.log("Chart payload for QA", payload);
+                renderDonut("donut-QA", payload.types, payload.typeCounts);
+                renderStacked("stacked-QA", payload.competitors, payload.types, payload.stackedByType);
+            })();
+            </script>
+        </section>
+        
+
+        <section id="OM" class="country" >
+            <div class="section-head">
+                <h2 class="country__title">OM</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">18</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Bonus types</div></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-OM" onchange="filterCards('OM')">
+                        <option value="ALL">All</option>
+                        <option value="Deposit Bonus">Deposit Bonus</option><option value="Other">Other</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Tournament">Tournament</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-OM" placeholder="Filter by text..." oninput="filterCards('OM')" />
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart"><canvas id="donut-OM"></canvas></div>
+                <div class="chart"><canvas id="stacked-OM"></canvas></div>
+            </div>
+
+            
+            <div class="analysis">
+                <h3>Key Market Insights (OM)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>Casinia</strong>: Welcome Bonus - 200% up to 3,000 USDT <a href='https://casinia.com/promotions' target='_blank'>Link</a></li><li><strong>Rooster bet</strong>: Deposit Bonus - 100% up to $1000 <a href='https://roosterbet.bet' target='_blank'>Link</a></li><li><strong>EmirBet</strong>: Welcome Bonus - Up to €1000 + 150 free spins <a href='https://emirbet.casino' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>Casinia</strong>: Eye of Horus, Fishin' Frenzy <em>(350 no-wagering free spins on specific games)</em></li><li><strong>Casinia</strong>: The Masters Tournament <em>(Tournament with €1,500 prize pool (finished))</em></li><li><strong>Rabona</strong>: VIP Tournament 'Los Maestros' <em>(Tournament with 1500€ prize pool (finished))</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: 150% match up to ~€600 equivalent + 150 free spins</li><li><strong>Deposit Bonus</strong>: ~€500 equivalent</li><li><strong>Free Spins</strong>: 275 free spins</li><li><strong>Tournament</strong>: €1,500 prize pool</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>Casinia offers a unique 'Bonus Crab' feature in multiple promotions, which appears to be a loyalty or additional reward system not seen with other competitors.</li><li>Multiple competitors (Casinia, Rabona) are running tournaments with substantial prize pools (€1,500), indicating a focus on competitive gaming elements.</li><li>There's significant currency diversity in bonus offers, with promotions denominated in CAD, EUR, USD, USDT, and GBP, suggesting a globally targeted approach despite the OM country focus.</li><li>Casinia stands out with no-wagering free spins (350 FS), which is highly player-friendly compared to standard wagering requirements.</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-OM">
+                
+            <article class="card" data-type="Deposit Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">C$88 free deposit bonus at 888casino official - ready for a thrill? 888 casino is your gateway to top-tier online gaming in Canada</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">bonus – c$88 free get bonus log in 888casino official ready for a thrill? 888 casino is your gateway to top-tier online gaming in canada.</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins with zero strings attached (well, almost). this 888 casino no deposit bonus lets you dive straight in, test the waters, and get the reels spinning</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">New players at 888 casino can kick things off with a deposit match bonus</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">200% up to 3,000 USDT</p>
+                <p class="card__desc">deposit bonus 100% up to €100 read more casino crypto welcome bonus 200% up to 3,000 usdt read more sport crypto welcome bonus 100% up to 200 usdt</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 FS</p>
+                <p class="card__desc">Casino welcome bonus 100% up to €500 + 200 free spins</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 Free Spins + 1 Bonus Crab</p>
+                <p class="card__desc">bonus crab shop vip levels english help centre promotions all casino sports crypto specials casino welcome bonus 100% up to €500 + 200 fs + 1 bonus cr</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">€750, 750 USDT + 100 FS</p>
+                <p class="card__desc">free spins read more sport weekend reload bonus 50% up to €750 read more casino weekend crypto reload bonus 75% up to 750 usdt + 100 fs read more spo</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">350 free spins</p>
+                <p class="card__desc">Free spins! enjoy 350 no-wagering free spins on games like Eye of Horus, Fishin' Frenzy, and more.</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">Bonus promo code no deposit bonus for app sign in and registration. Marketing message: Luck lives in every bet! Play now spin on - win on!</p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://casinia.com/tournaments" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">€1,500</p>
+                <p class="card__desc">Tournament 'The Masters' with a prize pool of €1,500. Minimum bet: €10.00. Active status: Finished.</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">€500 + 200 FS</p>
+                <p class="card__desc">Welcome bonus 100% up to €500 + 200 free spins + 1 bonus crab. Also includes sport first deposit bonus 100% up to €100 and casino crypto welcome bonus 200%</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">200 free spins + 100% up to £500</p>
+                <p class="card__desc">Welcome bonus for signing up, you get 200 free spins, 100% up to £500, and 1 bonus crab. Reload bonus disbursed daily from Monday to Thursday</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="EmirBet">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://emirbet.casino" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">EmirBet</h3>
+                <p class="card__amount">Up to €1000 + 150 free spins</p>
+                <p class="card__desc">bonus up to €1000 + 150 free spins games live casino sports betting bonuses games live casino sports betting bonuses sign up login emirbet emit bet ca</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://rabona.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">100% up to 200 USDT</p>
+                <p class="card__desc">bonus crab niveles vip español centro de ayuda deportes apuestas en vivo casino bono de bienvenida crypto para deportes 100% hasta 200 usdt ¡únete ya!</p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://rabona.com/tournaments" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">1500 €</p>
+                <p class="card__desc">Active tournament 'Los Maestros' with a prize pool of 1500€. Minimum bet: 10.00€. Status: Finished.</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">100% up to $1000</p>
+                <p class="card__desc">bonus 100% up to $1000 games sport cybersport promo tournaments lotteries</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins get bonus navigation open close an overview of rooster bet casino canada main advantages of rooster bet popular games and slots at rooster</p>
+            </article>
+            
+            </div>
+
+            <script>
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Other", "Tournament", "Welcome Bonus"], "typeCounts": [3, 3, 2, 2, 8], "competitors": ["888 Casino", "Casinia", "EmirBet", "Rabona", "Rooster bet"], "stackedByType": [[1, 1, 0, 0, 1], [1, 1, 0, 0, 1], [1, 1, 0, 0, 0], [0, 1, 0, 1, 0], [1, 5, 1, 1, 0]]};
+                console.log("Chart payload for OM", payload);
+                renderDonut("donut-OM", payload.types, payload.typeCounts);
+                renderStacked("stacked-OM", payload.competitors, payload.types, payload.stackedByType);
+            })();
+            </script>
+        </section>
+        
+
+        <section id="BH" class="country" >
+            <div class="section-head">
+                <h2 class="country__title">BH</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">21</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">6</div><div class="stat__label">Bonus types</div></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-BH" onchange="filterCards('BH')">
+                        <option value="ALL">All</option>
+                        <option value="Deposit Bonus">Deposit Bonus</option><option value="Other">Other</option><option value="Jackpot">Jackpot</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Tournament">Tournament</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-BH" placeholder="Filter by text..." oninput="filterCards('BH')" />
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart"><canvas id="donut-BH"></canvas></div>
+                <div class="chart"><canvas id="stacked-BH"></canvas></div>
+            </div>
+
+            
+            <div class="analysis">
+                <h3>Key Market Insights (BH)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>Casinia</strong>: Welcome Bonus - 200% up to 3,000 USDT <a href='https://casinia.com/promotions' target='_blank'>Link</a></li><li><strong>EmirBet</strong>: Welcome Bonus - Up to €1000 + 150 free spins <a href='https://www.emirbet.casino' target='_blank'>Link</a></li><li><strong>Rooster bet</strong>: Deposit Bonus - 100% up to $1000 <a href='https://roosterbet.bet' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>Casinia</strong>: Eye of Horus, Fishin’ Frenzy <em>(350 no-wagering free spins on these specific games)</em></li><li><strong>Casinia</strong>: Jackpot <em>(Jackpot prize of £65,100 mentioned)</em></li><li><strong>Casinia</strong>: The Masters Tournament <em>(Tournament with €1,500 prize pool, min bet €10)</em></li><li><strong>Rabona</strong>: VIP Tournament: Los Maestros <em>(VIP tournament with €1,500 prize pool)</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: Approx. 150% match up to €500 equivalent + additional perks (free spins, bonus crab)</li><li><strong>Deposit Bonus</strong>: C$88 or 100% up to $1000</li><li><strong>Free Spins</strong>: Approx. 200 free spins (ranging from unspecified to 350)</li><li><strong>Tournament</strong>: €1,500 prize pool</li><li><strong>Jackpot</strong>: £65,100</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>Casinia offers a unique 'Bonus Crab' feature in multiple welcome bonuses, which is not seen with other competitors.</li><li>888 Casino provides a no-deposit free spins bonus, allowing players to start without an initial deposit.</li><li>Multiple competitors (Casinia, Rabona) use cryptocurrency (USDT) for bonuses, appealing to crypto users.</li><li>Casinia has the most diverse promotion types, including tournaments, jackpots, and multiple welcome bonuses with varied currencies (€, £, USDT).</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-BH">
+                
+            <article class="card" data-type="Deposit Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">C$88 free deposit bonus at 888casino official for online gaming in Canada</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">bonus – c$88 free get bonus log in 888casino official ready for a thrill? 888 casino is your gateway to top-tier online gaming in canada.</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins with zero strings attached (well, almost). this 888 casino no deposit bonus lets you dive straight in, test the waters, and get the reels spinning</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">New players at 888 casino can kick things off with a deposit match bonus</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">200% up to 3,000 USDT</p>
+                <p class="card__desc">deposit bonus 100% up to €100 read more casino crypto welcome bonus 200% up to 3,000 usdt read more sport crypto welcome bonus 100% up to 200 usdt</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 Free Spins</p>
+                <p class="card__desc">Casino welcome bonus 100% up to €500 + 200 fs</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 Free Spins + 1 Bonus Crab</p>
+                <p class="card__desc">tournaments bonus crab shop vip levels english help centre casino live casino sports casino welcome bonus 100% up to €500 + 200 fs + 1 bonus crab join</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">€750, 750 USDT + 100 FS</p>
+                <p class="card__desc">free spins read more sport weekend reload bonus 50% up to €750 read more casino weekend crypto reload bonus 75% up to 750 usdt + 100 fs read more spo</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">350 free spins</p>
+                <p class="card__desc">Free spins! enjoy 350 no-wagering free spins on games like eye of horus, fishin’ frenzy, and more.</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">£65,100</p>
+                <p class="card__desc">jackpot 65100£ register trustworthy payments & exchanges on casinia-casino the payment methods featured on the site are convenient and secure for all</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">jackpots sports live betting wheel of fortune new spin rally new challenges tournaments bonus crab shop vip levels</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">Bonus promo code no deposit bonus for new players. Register and sign in to claim your bonus. Spin and win with this promotional offer.</p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://casinia.com/tournaments" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">€1,500</p>
+                <p class="card__desc">Tournament with a prize pool of €1,500. Minimum bet: €10.00. Ends in: 19d 04:46:06</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 Free Spins + 1 Bonus Crab (Casino), 100% up to €100 (Sports), 200% (Crypto Casino)</p>
+                <p class="card__desc">welcome bonus 100% up to €500 + 200 fs + 1 bonus crab join now sport first deposit bonus 100% up to €100 join now casino crypto welcome bonus 200% up</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">200 free spins + 100% up to £500</p>
+                <p class="card__desc">Welcome bonus for signing up, you get 200 free spins, 100% up to £500, and 1 bonus crab. Reload bonus disbursed daily from Monday to Thursday</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 FS</p>
+                <p class="card__desc">Casino welcome bonus 100% up to €500 + 200 free spins + 1 bonus crab</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="EmirBet">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.emirbet.casino" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">EmirBet</h3>
+                <p class="card__amount">Up to €1000 + 150 free spins</p>
+                <p class="card__desc">bonus up to €1000 + 150 free spins games live casino sports betting bonuses games live casino sports betting bonuses sign up login emirbet emit bet ca</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://rabona.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">100% up to 200 USDT</p>
+                <p class="card__desc">bonus crab niveles vip español centro de ayuda deportes apuestas en vivo casino bono de bienvenida crypto para deportes 100% hasta 200 usdt ¡únete ya!</p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://rabona.com/tournaments" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">1500 €</p>
+                <p class="card__desc">VIP tournament with a prize pool. Active and finished tournaments available.</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">100% up to $1000</p>
+                <p class="card__desc">bonus 100% up to $1000 games sport cybersport promo tournaments lotteries</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">Unspecified</p>
+                <p class="card__desc">free spins get bonus navigation open close an overview of rooster bet casino canada main advantages of rooster bet popular games and slots at rooster bet</p>
+            </article>
+            
+            </div>
+
+            <script>
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Other", "Tournament", "Welcome Bonus"], "typeCounts": [3, 3, 2, 2, 2, 9], "competitors": ["888 Casino", "Casinia", "EmirBet", "Rabona", "Rooster bet"], "stackedByType": [[1, 1, 0, 0, 1], [1, 1, 0, 0, 1], [0, 2, 0, 0, 0], [1, 1, 0, 0, 0], [0, 1, 0, 1, 0], [1, 6, 1, 1, 0]]};
+                console.log("Chart payload for BH", payload);
+                renderDonut("donut-BH", payload.types, payload.typeCounts);
+                renderStacked("stacked-BH", payload.competitors, payload.types, payload.stackedByType);
+            })();
+            </script>
+        </section>
+        
+
+        <section id="JO" class="country" >
+            <div class="section-head">
+                <h2 class="country__title">JO</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">20</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">6</div><div class="stat__label">Bonus types</div></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-JO" onchange="filterCards('JO')">
+                        <option value="ALL">All</option>
+                        <option value="Deposit Bonus">Deposit Bonus</option><option value="Other">Other</option><option value="Jackpot">Jackpot</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Tournament">Tournament</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-JO" placeholder="Filter by text..." oninput="filterCards('JO')" />
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart"><canvas id="donut-JO"></canvas></div>
+                <div class="chart"><canvas id="stacked-JO"></canvas></div>
+            </div>
+
+            
+            <div class="analysis">
+                <h3>Key Market Insights (JO)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>Casinia</strong>: Welcome Bonus - 200% up to 3,000 USDT <a href='https://casinia.com' target='_blank'>Link</a></li><li><strong>EmirBet</strong>: Welcome Bonus - Up to €1000 + 150 Free Spins <a href='https://emirbet.casino' target='_blank'>Link</a></li><li><strong>Rooster bet</strong>: Deposit Bonus - 100% up to $1000 <a href='https://roosterbet.bet' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>Casinia</strong>: Eye of Horus, Fishin’ Frenzy <em>(350 no-wagering free spins on specific slot games)</em></li><li><strong>Casinia</strong>: Jackpot <em>(Jackpot prize of £65,100)</em></li><li><strong>Casinia</strong>: The Masters Tournament <em>(Tournament with €1,500 prize pool, minimum bet €10)</em></li><li><strong>Rabona</strong>: VIP Tournament 'Los Maestros' <em>(Tournament with 1500 € prize pool, minimum bet 10.00 €)</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: 150% up to €500 equivalent + additional perks (free spins, bonus crab)</li><li><strong>Deposit Bonus</strong>: 100% up to €1000 equivalent</li><li><strong>Free Spins</strong>: 200 free spins</li><li><strong>Tournament</strong>: €1,500 prize pool</li><li><strong>Jackpot</strong>: £65,100</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>Casinia offers a unique 'Bonus Crab' feature in multiple promotions, adding an extra layer of reward beyond traditional bonuses.</li><li>Multiple competitors (Casinia, Rabona) use cryptocurrency (USDT) for bonuses, appealing to crypto-savvy players.</li><li>Casinia provides 350 no-wagering free spins, which is highly attractive due to the absence of playthrough requirements.</li><li>The highest bonus percentage is 200% (Casinia's Crypto Welcome Bonus), significantly above the typical 100% match.</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-JO">
+                
+            <article class="card" data-type="Deposit Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">C$88 free deposit bonus at 888casino official for Canadian online gaming</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">C$88</p>
+                <p class="card__desc">bonus – c$88 free get bonus log in 888casino official ready for a thrill? 888 casino is your gateway to top-tier online gaming in canada.</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins with zero strings attached (well, almost). this 888 casino no deposit bonus lets you dive straight in, test the waters, and get the reels spinning</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://888-casino.org" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">New players at 888 casino can kick things off with a deposit match bonus</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">200% up to 3,000 USDT</p>
+                <p class="card__desc">deposit bonus 100% up to €100 join now casino crypto welcome bonus 200% up to 3,000 usdt join now sport crypto welcome bonus 100% up to 200 usdt join</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 FS</p>
+                <p class="card__desc">Casino welcome bonus 100% up to €500 + 200 free spins</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 Free Spins + 1 Bonus Crab</p>
+                <p class="card__desc">tournaments bonus crab shop vip levels english help centre casino live casino sports casino welcome bonus 100% up to €500 + 200 fs + 1 bonus crab join</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Up to €750 + 100 FS, Up to 750 USDT + 100 FS</p>
+                <p class="card__desc">free spins read more sport weekend reload bonus 50% up to €750 read more casino weekend crypto reload bonus 75% up to 750 usdt + 100 fs read more spo</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">350</p>
+                <p class="card__desc">free spins! enjoy 350 no-wagering free spins on games like eye of horus, fishin’ frenzy, and more. details casinia online website slot games slot game</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">£65,100</p>
+                <p class="card__desc">jackpot 65100£ register trustworthy payments & exchanges on casinia-casino the payment methods featured on the site are convenient and secure for all</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">jackpots sports live betting wheel of fortune new spin rally new challenges tournaments bonus crab shop vip levels english help centre casino live casino</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">Bonus promo code no deposit bonus for new players. Sign in and register to claim your offer. Spin and win with this promotion.</p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://casinia.com/tournaments" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">€1,500</p>
+                <p class="card__desc">Tournament with a prize pool of €1,500. Minimum bet: €10.00. Ends in: 19d 04:28:02</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 FS</p>
+                <p class="card__desc">Welcome bonus 100% up to €500 + 200 free spins + 1 bonus crab. Sport first deposit bonus 100% up to €100. Casino crypto welcome bonus 200%</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casinia.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">200 free spins + 100% up to £500</p>
+                <p class="card__desc">Welcome bonus for signing up, you get 200 free spins, 100% up to £500, and 1 bonus crab. Reload bonus disbursed daily from Monday to Thursday</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="EmirBet">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://emirbet.casino" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">EmirBet</h3>
+                <p class="card__amount">Up to €1000 + 150 Free Spins</p>
+                <p class="card__desc">bonus up to €1000 + 150 free spins games live casino sports betting bonuses games live casino sports betting bonuses sign up login emirbet emit bet ca</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://rabona.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">100% up to 200 USDT</p>
+                <p class="card__desc">bonus crab niveles vip español centro de ayuda deportes apuestas en vivo casino bono de bienvenida crypto para deportes 100% hasta 200 usdt ¡únete ya!</p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://rabona.com/tournaments" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">1500 €</p>
+                <p class="card__desc">Active tournament 'Los Maestros' with a prize pool. Minimum bet requirement applies.</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">100% up to $1000</p>
+                <p class="card__desc">bonus 100% up to $1000 games sport cybersport promo tournaments lotteries login sign up login sign up games sport cybersport promo tournaments lotteri</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Rooster bet">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://roosterbet.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rooster bet</h3>
+                <p class="card__amount">Unspecified</p>
+                <p class="card__desc">Free spins get bonus navigation open close an overview of rooster bet casino canada main advantages of rooster bet popular games and slots at rooster bet</p>
+            </article>
+            
+            </div>
+
+            <script>
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Other", "Tournament", "Welcome Bonus"], "typeCounts": [3, 3, 2, 2, 2, 8], "competitors": ["888 Casino", "Casinia", "EmirBet", "Rabona", "Rooster bet"], "stackedByType": [[1, 1, 0, 0, 1], [1, 1, 0, 0, 1], [0, 2, 0, 0, 0], [1, 1, 0, 0, 0], [0, 1, 0, 1, 0], [1, 5, 1, 1, 0]]};
+                console.log("Chart payload for JO", payload);
+                renderDonut("donut-JO", payload.types, payload.typeCounts);
+                renderStacked("stacked-JO", payload.competitors, payload.types, payload.stackedByType);
+            })();
+            </script>
+        </section>
+        
+
+        <section id="NZ" class="country" >
+            <div class="section-head">
+                <h2 class="country__title">NZ</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">6</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">16</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">6</div><div class="stat__label">Bonus types</div></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-NZ" onchange="filterCards('NZ')">
+                        <option value="ALL">All</option>
+                        <option value="Deposit Bonus">Deposit Bonus</option><option value="Other">Other</option><option value="Jackpot">Jackpot</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Tournament">Tournament</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-NZ" placeholder="Filter by text..." oninput="filterCards('NZ')" />
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart"><canvas id="donut-NZ"></canvas></div>
+                <div class="chart"><canvas id="stacked-NZ"></canvas></div>
+            </div>
+
+            
+            <div class="analysis">
+                <h3>Key Market Insights (NZ)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>betvictor</strong>: Welcome Bonus - up to NZ$1500 <a href='https://www.betvictor.co.nz' target='_blank'>Link</a></li><li><strong>highroller</strong>: Welcome Bonus - 100% up to $500 + 200 Free Spins <a href='https://www.highroller.nz/offers' target='_blank'>Link</a></li><li><strong>highroller</strong>: Tournament - $5,000 prize pool <a href='https://www.highroller.nz/promotions' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>Jackpot City</strong>: Fly X Foxpot Pachinko, 9 Masks of Fire, Animals of Africa <em>(Jackpot games highlighted in promotion)</em></li><li><strong>Wildz</strong>: Battle of Myths Jackpot, Very Pink 2023 Hit Slot <em>(Featured jackpot and slot games in bonus description)</em></li><li><strong>highroller</strong>: Selected slots for tournament <em>(Tournament focused on landing biggest wins on selected slots)</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: Up to $833.33 + 133 Free Spins</li><li><strong>Deposit Bonus</strong>: Up to $433.33 + 133 Free Spins</li><li><strong>Free Spins</strong>: 200 Free Spins</li><li><strong>Tournament</strong>: $5,000 prize pool</li><li><strong>Jackpot</strong>: Not specified</li><li><strong>Other</strong>: 500 currency units</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>Highroller dominates with multiple aggressive promotions including a $10.8 million total prize pool across drops and races</li><li>betvictor offers the highest single bonus amount at NZ$1500</li><li>Multiple competitors use jackpot games as key promotional hooks</li><li>Highroller's tournament requires only $0.40 bets to qualify for leaderboard positions</li><li>Currency inconsistency observed with some promotions in AUD while others use NZD or unspecified currency</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-NZ">
+                
+            <article class="card" data-type="Jackpot" data-competitor="Jackpot City">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://jackpotcity.net" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Jackpot City</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">jackpotcity – play your favourite casino games for free! thursday, october 2, 2025 latest: fly x foxpot pachinko 9 masks of fire ™ animals of africa ™</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Spincasino">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://spincasino.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Spincasino</h3>
+                <p class="card__amount">Up to $400 AUD</p>
+                <p class="card__desc">Spin Casino will double your first deposit up to $400 AUD, giving you twice as much to play with</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Spincasino">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://spincasino.bet" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Spincasino</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">free spins] from spinstralia! get bonus</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="Wildz">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://wildz.net" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Wildz</h3>
+                <p class="card__amount">1000 Crown Coins</p>
+                <p class="card__desc">1000 Crown Coins, Very Pink 2023 Hit Slot, Battle of Myths Jackpot. Show all (152) net games.</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Wildz">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://wildz.net" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Wildz</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">jackpot show all (152) net gains dream drop fire and roses joker 2 all-in king millions enchanted wolf rising rewards king millions gonzo's quest mega</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="betvictor">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://www.betvictor.co.nz" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">betvictor</h3>
+                <p class="card__amount">up to NZ$1500</p>
+                <p class="card__desc">bonus up to nz$1500 games sport cybersport promo tournaments lotteries</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="betvictor">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.betvictor.co.nz" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">betvictor</h3>
+                <p class="card__amount">up to NZ$1500</p>
+                <p class="card__desc">welcome bonus up to nz$1500 games sport cybersport promo tournaments lotteries</p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="highroller">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://www.highroller.nz" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">highroller</h3>
+                <p class="card__amount">$10.8 million (total prize pool)</p>
+                <p class="card__desc">free spins! $10.8m in non-stop drops & races – ready to win big? level up at highroller – play more, earn more! $3.6m in monthly cash prizes – join dr</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="highroller">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://www.highroller.nz" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">highroller</h3>
+                <p class="card__amount">up to $500 + 200 free spins</p>
+                <p class="card__desc">bonus up to $500 + 200 free spins! $10.8m in non-stop drops & races – ready to win big? level up at highroller – play more, earn more! $3.6m in monthly</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="highroller">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://www.highroller.nz/offers" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">highroller</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">jackpot splash! sunday swagger – your happy hour bonus! every week – pick & play! deposit & get free spins – your choice!</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="highroller">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.highroller.nz/offers" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">highroller</h3>
+                <p class="card__amount">100% up to $500 + 200 Free Spins</p>
+                <p class="card__desc">100% bonus up to $500 plus 200 free spins. $10.8M in non-stop drops & races. Level up at Highroller.</p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="highroller">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://www.highroller.nz/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">highroller</h3>
+                <p class="card__amount">100% up to $500 + 200 Free Spins</p>
+                <p class="card__desc">bonuses at highroller nz skip to content pokies live casino promotions expand let’s roll – 100% bonus up to $500 + 200 free spins! $10.8m in non-stop</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="highroller">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.highroller.nz/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">highroller</h3>
+                <p class="card__amount">Up to $500 + 200 Free Spins</p>
+                <p class="card__desc">100% deposit bonus up to $500 plus 200 free spins for $10.</p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="highroller">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://www.highroller.nz/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">highroller</h3>
+                <p class="card__amount">$5,000 prize pool</p>
+                <p class="card__desc">Grab your share of a $5,000 prize pool by landing the biggest wins on selected slots. Every $0.40 bet could also land you a spot on the leaderboard.</p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="highroller">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.highroller.nz/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">highroller</h3>
+                <p class="card__amount">Up to $500 + 200 Free Spins</p>
+                <p class="card__desc">Welcome bonus works at Highroller, offering a parachute bonus. 100% bonus up to $500 + 200 free spins!</p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="skycitycasino">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://skycitycasino.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">skycitycasino</h3>
+                <p class="card__amount">1,000 skycoins</p>
+                <p class="card__desc">bonus + 1,000 skycoins we're sorry but skycity casino doesn't work properly without javascript enabled. please enable it to continue. register log in</p>
+            </article>
+            
+            </div>
+
+            <script>
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Other", "Tournament", "Welcome Bonus"], "typeCounts": [3, 2, 3, 3, 1, 4], "competitors": ["Jackpot City", "Spincasino", "Wildz", "betvictor", "highroller", "skycitycasino"], "stackedByType": [[0, 1, 0, 0, 2, 0], [0, 1, 0, 0, 1, 0], [1, 0, 1, 0, 1, 0], [0, 0, 1, 1, 0, 1], [0, 0, 0, 0, 1, 0], [0, 0, 0, 1, 3, 0]]};
+                console.log("Chart payload for NZ", payload);
+                renderDonut("donut-NZ", payload.types, payload.typeCounts);
+                renderStacked("stacked-NZ", payload.competitors, payload.types, payload.stackedByType);
             })();
             </script>
         </section>

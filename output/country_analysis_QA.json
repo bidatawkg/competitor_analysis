@@ -1,0 +1,28 @@
+{
+  "id": "58c72c42-b668-4994-bdba-fcd2311d3a75",
+  "object": "chat.completion",
+  "created": 1759420411,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"country\": \"QA\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Casino Crypto Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"200% up to 3,000 USDT\",\n                \"url\": \"https://casinia.com/promotions\"\n            },\n            {\n                \"competitor\": \"EmirBet\",\n                \"title\": \"Found 'bonus' on page\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"Up to €1000 + 150 Free Spins\",\n                \"url\": \"https://emirbet.casino\"\n            },\n            {\n                \"competitor\": \"Rooster bet\",\n                \"title\": \"Found 'bonus' on page\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"100% up to $1000\",\n                \"url\": \"https://roosterbet.bet\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"The Masters Tournament\",\n                \"context\": \"Tournament with €1,500 prize pool, minimum bet €10.00\"\n            },\n            {\n                \"competitor\": \"Rabona\",\n                \"game\": \"VIP Tournament\",\n                \"context\": \"Active tournament 'Los Maestros' with 1500 € prize pool, minimum bet 10.00 €\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"Jackpot\",\n                \"context\": \"Jackpot of 65100£ with trustworthy payments and exchanges\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"Free Spins on Eye of Horus, Fishin' Frenzy\",\n                \"context\": \"350 no-wagering free spins on specific games\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"150% match up to ~€500 equivalent + free spins\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"~75% match up to ~€500 equivalent\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"~150 free spins\"\n            },\n            {\n                \"bonus_type\": \"Tournament\",\n                \"average_bonus\": \"€1,500 prize pool\"\n            }\n        ],\n        \"distinctive_data\": [\"Casinia offers the highest crypto welcome bonus at 200% up to 3,000 USDT\", \"Multiple competitors (Casinia, Rabona) offer crypto-specific bonuses in USDT\", \"Casinia provides no-wagering free spins (350 FS), which is rare and player-friendly\", \"Jackpot promotion by Casinia (65,100£) is significantly higher than typical bonus amounts\", \"888 Casino offers C$88 free deposit bonus specifically targeting Canadian market despite QA country focus\", \"Rooster bet has consistent 35x wagering requirements across multiple promotions\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4454,
+    "completion_tokens": 689,
+    "total_tokens": 5143,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 4454
+  },
+  "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
+}

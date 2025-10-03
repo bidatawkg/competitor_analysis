@@ -61,8 +61,7 @@ class URLFinder:
             return []
             
         try:
-            prompt = f"""Find official website URLs for "{competitor_name}" casino in {country}.
-            Return only valid URLs, one per line. No explanations."""
+            prompt = f"""List only the official and currently accessible URLs of "{competitor_name}" casino in {country}. Output only valid URLs, one per line. No additional text, comments, or explanations."""
             
             headers = {
                 'Authorization': f'Bearer {self.deepseek_api_key}',
@@ -157,35 +156,6 @@ class URLFinder:
         """Generate promotion URLs from base URL"""
         paths = ['/promotions', '/bonuses', '/offers', '/welcome-bonus', '/tournaments']
         return [urljoin(base_url, path) for path in paths]
-
-# VPN Configurations
-# VPN_CONFIGS = {
-    # 'UAE': {
-        # 'country_code': 'AE',
-        # 'proxies': [
-            # # Replace with your VPN service details
-            # {'server': 'http://uae-proxy.example.com:8080', 'username': 'user', 'password': 'pass'}
-        # ],
-        # 'vpn_service': 'NordVPN',  # Change to your VPN provider
-        # 'location': 'Dubai, UAE'
-    # },
-    # 'Saudi Arabia': {
-        # 'country_code': 'SA', 
-        # 'proxies': [
-            # {'server': 'http://sa-proxy.example.com:8080', 'username': 'user', 'password': 'pass'}
-        # ],
-        # 'vpn_service': 'NordVPN',
-        # 'location': 'Riyadh, Saudi Arabia'
-    # },
-    # 'Kuwait': {
-        # 'country_code': 'KW',
-        # 'proxies': [
-            # {'server': 'http://kw-proxy.example.com:8080', 'username': 'user', 'password': 'pass'}
-        # ],
-        # 'vpn_service': 'NordVPN', 
-        # 'location': 'Kuwait City, Kuwait'
-    # }
-# }
 
 # Ejemplo de configuración con servicios gratuitos
 VPN_CONFIGS = {

@@ -170,7 +170,7 @@ class TabbedStaticDashboardGenerator:
             <article class="card" data-type="{bonus_type}" data-competitor="{competitor}">
                 <header class="card__head">
                     <div class="badge">{bonus_type}</div>
-                    <a class="link" href="{url}" target="_blank" rel="noopener">Abrir</a>
+                    <a class="link" href="{url}" target="_blank" rel="noopener">Open</a>
                 </header>
                 <h3 class="card__title">{competitor}</h3>
                 <p class="card__amount">{amount}</p>
@@ -183,23 +183,23 @@ class TabbedStaticDashboardGenerator:
             <div class="section-head">
                 <h2 class="country__title">{country}</h2>
                 <div class="stats">
-                    <div class="stat"><div class="stat__num">{len(competitors)}</div><div class="stat__label">Competidores</div></div>
-                    <div class="stat"><div class="stat__num">{total_promos}</div><div class="stat__label">Promociones</div></div>
-                    <div class="stat"><div class="stat__num">{len(bonus_types)}</div><div class="stat__label">Tipos de bonus</div></div>
+                    <div class="stat"><div class="stat__num">{len(competitors)}</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">{total_promos}</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">{len(bonus_types)}</div><div class="stat__label">Bonus types</div></div>
                 </div>
             </div>
 
             <div class="controls">
                 <div class="control">
-                    <label>Tipo de promoción</label>
+                    <label>Promotion Type</label>
                     <select class="select" id="type-{country}" onchange="filterCards('{country}')">
-                        <option value="ALL">Todos</option>
+                        <option value="ALL">All</option>
                         {''.join(f'<option value="{b}">{b}</option>' for b in bonus_types)}
                     </select>
                 </div>
                 <div class="control">
-                    <label>Buscar</label>
-                    <input class="input" type="search" id="search-{country}" placeholder="Filtrar por texto..." oninput="filterCards('{country}')" />
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-{country}" placeholder="Filter by text..." oninput="filterCards('{country}')" />
                 </div>
             </div>
 
@@ -327,7 +327,7 @@ class TabbedStaticDashboardGenerator:
     <body>
     <div class="container">
     <h1>Competitors Dashboard</h1>
-    <div class="subtitle">Generado el {now}</div>
+    <div class="subtitle">Generated on {now}</div>
     <div class="nav">{tabs}</div>
     {contents}
     </div>

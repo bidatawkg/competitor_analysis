@@ -195,63 +195,6 @@ class CompetitorScraper:
         logger.info("setup_browser skipped (Playwright runs in executor)")
 
         
-        
-    # async def setup_browser(self, proxy: Optional[Dict] = None) -> None:
-    #     """Setup browser with proxy configuration"""
-    #     try:
-    #         playwright = await async_playwright().start()
-            
-    #         browser_args = {
-    #             'headless': self.headless,
-    #             'args': [
-    #                 '--no-sandbox',
-    #                 '--disable-blink-features=AutomationControlled',
-    #                 '--disable-web-security',
-    #                 '--disable-features=VizDisplayCompositor',
-    #                 '--disable-dev-shm-usage',
-    #                 '--disable-gpu',
-    #                 '--disable-software-rasterizer'
-    #             ]
-    #         }
-            
-    #         if proxy and self.use_proxy:
-    #             browser_args['proxy'] = proxy
-    #             logger.info(f"Using proxy: {proxy['server']}")
-                
-    #         self.browser = await playwright.chromium.launch(**browser_args)
-            
-    #         # Create context with stealth settings
-    #         context_args = {
-    #             'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    #             'viewport': {'width': 1920, 'height': 1080},
-    #             'locale': 'en-US',
-    #             'timezone_id': 'Asia/Dubai',
-    #             'ignore_https_errors': True
-    #         }
-            
-    #         self.context = await self.browser.new_context(**context_args)
-            
-    #         # Add stealth scripts
-    #         await self.context.add_init_script("""
-    #             Object.defineProperty(navigator, 'webdriver', {
-    #                 get: () => undefined,
-    #             });
-                
-    #             Object.defineProperty(navigator, 'plugins', {
-    #                 get: () => [1, 2, 3, 4, 5],
-    #             });
-                
-    #             Object.defineProperty(navigator, 'languages', {
-    #                 get: () => ['en-US', 'en'],
-    #             });
-    #         """)
-            
-    #         logger.info("Browser setup completed successfully")
-            
-    #     except Exception as e:
-    #         logger.error(f"Browser setup failed: {e}")
-    #         raise
-        
     async def close_browser(self) -> None:
         """Close browser and context"""
         if self.context:
@@ -384,50 +327,6 @@ class CompetitorScraper:
             promotions = self.extract_promotions_from_text(soup, competitor, url, current_time)
             
         return promotions
-
-    # def scrape_competitor_promotions_sync(self, competitor_name: str, url: str, country: str) -> List[PromotionData]:
-    #     """Scrape synchronously using sync_playwright (works better on Windows)"""
-    #     promotions = []
-    #     try:
-    #         with sync_playwright() as p:
-    #             proxy_config = None
-    #             vpn_config = get_vpn_config(country)
-    #             if vpn_config and vpn_config.get("proxies"):
-    #                 proxy = vpn_config["proxies"][0]
-    #                 proxy_config = {
-    #                     "server": proxy["server"],
-    #                     "username": proxy.get("username"),
-    #                     "password": proxy.get("password")
-    #                 }
-
-    #             browser = p.chromium.launch(headless=True, proxy=proxy_config)
-    #             context = browser.new_context(
-    #                 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-    #                         "AppleWebKit/537.36 (KHTML, like Gecko) "
-    #                         "Chrome/120.0.0.0 Safari/537.36",
-    #                 viewport={"width": 1920, "height": 1080},
-    #                 locale="en-US",
-    #                 timezone_id="Asia/Riyadh"
-    #             )
-    #             page = context.new_page()
-    #             page.goto(url, timeout=30000)
-
-    #             html = page.content()
-    #             soup = BeautifulSoup(html, "html.parser")
-
-    #             # Reusa tu lógica existente de extracción
-    #             competitor_stub = CompetitorInfo(
-    #                 name=competitor_name, country=country, url=url,
-    #                 search_terms=["bonus", "promotion", "welcome", "free", "deposit"]
-    #             )
-    #             promotions = self.extract_promotions_from_text(
-    #                 soup, competitor_stub, url, datetime.now().isoformat()
-    #             )
-
-    #             browser.close()
-    #     except Exception as e:
-    #         logger.error(f"Sync scraping failed for {url}: {e}")
-    #     return promotions
 
 
     def parse_promotion_element(self, element, competitor: CompetitorInfo, url: str, current_time: str) -> Optional[PromotionData]:
@@ -600,67 +499,6 @@ class CompetitorScraper:
                     
         return promotions[:10]  # Limit to 10 promotions per page
     
-    # async def scrape_competitor_promotions(self, competitor_name: str, url: str, country: str) -> List[PromotionData]:
-    #     """Scrape promotions from a specific competitor URL"""
-    #     print("AQUÍ ESTÁ ENTRANDO EN EL SCRAPE_COMPETITOR_PROMOTIONS *********************")
-    #     promotions = []
-        
-    #     try:
-    #         async with async_playwright() as p:
-    #             # Configure browser with VPN if available
-    #             browser_args = ['--no-sandbox', '--disable-dev-shm-usage']
-                
-    #             # Add proxy configuration if available
-    #             vpn_config = get_vpn_config(country)
-    #             print("ESTO ES LO QUE TIENE VPN CONFIG *************************")
-    #             print(vpn_config)
-    #             proxy_config = None
-    #             if vpn_config and vpn_config.get('proxies'):
-    #                 print("ENTRA EN EL IF *************************")
-    #                 proxy = vpn_config['proxies'][0]  # Use first proxy
-    #                 proxy_config = {
-    #                     'server': proxy['server'],
-    #                     'username': proxy.get('username'),
-    #                     'password': proxy.get('password')
-    #                 }
-                
-    #             browser = await p.chromium.launch(
-    #                 headless=True,
-    #                 args=browser_args,
-    #                 proxy=proxy_config
-    #             )
-                
-    #             context = await browser.new_context(
-    #                 user_agent=random.choice(self.user_agents),
-    #                 viewport={'width': 1920, 'height': 1080},
-    #                 locale='en-US',
-    #                 timezone_id=self._get_timezone_for_country(country)
-    #             )
-                
-    #             page = await context.new_page()
-                
-    #             try:
-    #                 # Navigate to URL
-    #                 await page.goto(url, wait_until='networkidle', timeout=30000)
-    #                 await asyncio.sleep(random.uniform(2, 4))
-                    
-    #                 # Handle popups and cookies
-    #                 await self._handle_popups(page)
-                    
-    #                 # Extract promotions
-    #                 promotions_data = await self._extract_promotions_from_page(page, competitor_name, country)
-    #                 promotions.extend(promotions_data)
-                    
-    #             except Exception as e:
-    #                 logger.error(f"Error scraping {url}: {e}")
-                    
-    #             finally:
-    #                 await browser.close()
-                    
-    #     except Exception as e:
-    #         logger.error(f"Error setting up browser for {url}: {e}")
-            
-    #     return promotions
 
     async def scrape_competitor_promotions(self, competitor_name: str, url: str, country: str) -> List[PromotionData]:
         try:
@@ -717,7 +555,6 @@ class CompetitorScraper:
         
     async def scrape_all_competitors(self, country: str) -> List[PromotionData]:
         """Scrape all competitors for a country with fallback options"""
-        logger.info(f"AQUÍ ESTÁ ENTRANDO EN EL SCRAPE_ALL_COMPETITORS *********************")
         self.current_country = country
         all_promotions = []
         
