@@ -1,28 +1,28 @@
 {
-  "id": "40988901-49ed-44ad-a641-8a4d689c7cb7",
+  "id": "84defbfb-1c90-4dee-903d-e0b0cd34466e",
   "object": "chat.completion",
-  "created": 1759424170,
+  "created": 1760005878,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"NZ\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"betvictor\",\n                \"title\": \"Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"up to NZ$1500\",\n                \"url\": \"https://www.betvictor.co.nz\"\n            },\n            {\n                \"competitor\": \"highroller\",\n                \"title\": \"Let's Roll - 100% Bonus up to $500 + 200 Free Spins\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to $500 + 200 Free Spins\",\n                \"url\": \"https://www.highroller.nz/offers\"\n            },\n            {\n                \"competitor\": \"highroller\",\n                \"title\": \"Tournament\",\n                \"bonus_type\": \"Tournament\",\n                \"bonus_amount\": \"$5,000 prize pool\",\n                \"url\": \"https://www.highroller.nz/promotions\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"Jackpot City\",\n                \"game\": \"Fly X Foxpot Pachinko, 9 Masks of Fire, Animals of Africa\",\n                \"context\": \"Jackpot games highlighted in promotion\"\n            },\n            {\n                \"competitor\": \"Wildz\",\n                \"game\": \"Battle of Myths Jackpot, Very Pink 2023 Hit Slot\",\n                \"context\": \"Featured jackpot and slot games in bonus description\"\n            },\n            {\n                \"competitor\": \"highroller\",\n                \"game\": \"Selected slots for tournament\",\n                \"context\": \"Tournament focused on landing biggest wins on selected slots\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"Up to $833.33 + 133 Free Spins\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"Up to $433.33 + 133 Free Spins\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"200 Free Spins\"\n            },\n            {\n                \"bonus_type\": \"Tournament\",\n                \"average_bonus\": \"$5,000 prize pool\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"Not specified\"\n            },\n            {\n                \"bonus_type\": \"Other\",\n                \"average_bonus\": \"500 currency units\"\n            }\n        ],\n        \"distinctive_data\": [\"Highroller dominates with multiple aggressive promotions including a $10.8 million total prize pool across drops and races\", \"betvictor offers the highest single bonus amount at NZ$1500\", \"Multiple competitors use jackpot games as key promotional hooks\", \"Highroller's tournament requires only $0.40 bets to qualify for leaderboard positions\", \"Currency inconsistency observed with some promotions in AUD while others use NZD or unspecified currency\"]\n    }\n}"
+        "content": "{\n    \"country\": \"NZ\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Spincasino\",\n                \"title\": \"Play at Spin Casino – Get a $1000 Welcome Bonus Today!\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$1000\",\n                \"url\": \"https://spincasino.bet\"\n            },\n            {\n                \"competitor\": \"Wildz\",\n                \"title\": \"Wildz Casino New Zealand – Spin, Win & Grin with $1000 offer\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$1000\",\n                \"url\": \"https://wildz.bet\"\n            },\n            {\n                \"competitor\": \"highroller\",\n                \"title\": \"Let’s Roll – 100% Bonus up to $500 + 200 Free Spins!\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"$500 + 200 Free Spins\",\n                \"url\": \"https://www.highroller.nz\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"betvictor\",\n                \"game\": \"Football\",\n                \"context\": \"Free bets specifically for football betting\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"$1000\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"$500 + 200 Free Spins\"\n            },\n            {\n                \"bonus_type\": \"Other\",\n                \"average_bonus\": \"£30\"\n            }\n        ],\n        \"distinctive_data\": [\"Two competitors (Spincasino and Wildz) offer identical $1000 Welcome Bonuses, suggesting intense competition for new players\", \"Bet Victor uses pounds (£30) instead of New Zealand dollars, which is unusual for a NZ-focused promotion\", \"Highroller combines a cash bonus with a substantial 200 free spins, offering both value and gameplay variety\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 3643,
-    "completion_tokens": 670,
-    "total_tokens": 4313,
+    "prompt_tokens": 1179,
+    "completion_tokens": 464,
+    "total_tokens": 1643,
     "prompt_tokens_details": {
       "cached_tokens": 0
     },
     "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 3643
+    "prompt_cache_miss_tokens": 1179
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

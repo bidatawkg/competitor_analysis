@@ -1,0 +1,46 @@
+{
+  "comparison_date": "2025-10-09",
+  "country": "SA",
+  "new_promotions": [
+    {
+      "id": 18,
+      "competitor": "Casinia",
+      "country": "SA",
+      "title": "Pełne Doświadczenie Gry Online | Casinia Casino",
+      "description": "Welcome bonus 100% up to 2,250 PLN + 200 Free Spins + 1 Bonus Crab",
+      "bonus_amount": "100% up to 2,250 PLN + 200 FS + 1 Bonus Crab",
+      "bonus_type": "Welcome Bonus",
+      "conditions": "Welcome bonus package",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://www.casinia.net",
+      "scraped_at": "2025-10-09T12:06:21.847215",
+      "hash_id": "-5498897504304048716",
+      "created_at": "2025-10-09 10:08:35"
+    },
+    {
+      "id": 17,
+      "competitor": "Casinia",
+      "country": "SA",
+      "title": "Turnieje w Casinia Casino | Droga do Mistrzostwa",
+      "description": "Tournaments in Casinia Casino: Your Path to the Champion Title and Attractive",
+      "bonus_amount": "",
+      "bonus_type": "Tournament",
+      "conditions": "Participation in casino tournaments for a chance to win prizes and champion titles",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://www.casinia.net/tournaments",
+      "scraped_at": "2025-10-09T12:06:35.705856",
+      "hash_id": "3454833394083387372",
+      "created_at": "2025-10-09 10:08:35"
+    }
+  ],
+  "removed_promotions": [],
+  "total_current": 2,
+  "total_previous": 0,
+  "new_count": 2,
+  "removed_count": 0,
+  "competitors_analyzed": [
+    "Casinia"
+  ]
+}

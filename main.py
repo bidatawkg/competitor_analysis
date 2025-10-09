@@ -115,7 +115,7 @@ class CompetitorAnalysisSystem:
                 # Construir prompt
                 prompt = f"""
                 Analiza todas las promociones de todos los competidores en el país {country}.
-                El resultado debe ser un JSON estructurado a nivel país con la siguiente forma:
+                El resultado debe ser un JSON estructurado a nivel país con todos los textos en inglés y la siguiente forma :
 
                 {{
                   "country": "{country}",

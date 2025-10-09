@@ -39,7 +39,7 @@ class FinalAnalysisRunner:
     
     def __init__(self):
         self.countries = ["AE", "SA", "KW", "QA", "OM", "BH", "JO", "NZ"]
-        # self.countries = ["SA"]
+        # self.countries = ["AE"]
         self.analysis_system = CompetitorAnalysisSystem()
         self.dashboard_generator = TabbedStaticDashboardGenerator()
         

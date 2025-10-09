@@ -1,28 +1,28 @@
 {
-  "id": "a1f25010-6851-45aa-8fd0-8fed371c3f59",
+  "id": "27e9960e-bdda-4094-a8b3-e3dc8a8af37b",
   "object": "chat.completion",
-  "created": 1759417691,
+  "created": 1760004267,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"AE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Crypto Welcome Bonuses\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"200% up to 3,000 USDT + 100% up to €100 + 100% up to 200 USDT\",\n                \"url\": \"https://casinia.com\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"£65,100\",\n                \"url\": \"https://casinia.bet\"\n            },\n            {\n                \"competitor\": \"EmirBet\",\n                \"title\": \"Found 'bonus' on page\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"Up to €1000 + 150 Free Spins\",\n                \"url\": \"https://emirbet.casino\"\n            },\n            {\n                \"competitor\": \"Rabona\",\n                \"title\": \"VIP Tournament: Los Maestros\",\n                \"bonus_type\": \"Tournament\",\n                \"bonus_amount\": \"1500 €\",\n                \"url\": \"https://rabona.com/tournaments\"\n            },\n            {\n                \"competitor\": \"Rooster bet\",\n                \"title\": \"Found 'bonus' on page\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"100% up to $1000\",\n                \"url\": \"https://roosterbet.bet\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"Jackpot\",\n                \"context\": \"Jackpot of £65,100 mentioned, with additional references to daily and hot jackpots across multiple entries.\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"Free Spins on Eye of Horus, Fishin’ Frenzy\",\n                \"context\": \"350 no-wagering free spins specifically on games like Eye of Horus and Fishin’ Frenzy.\"\n            },\n            {\n                \"competitor\": \"Rabona\",\n                \"game\": \"VIP Tournament: Los Maestros\",\n                \"context\": \"Tournament with a prize pool of 1500 € and minimum bet of 10.00 €.\"\n            },\n            {\n                \"competitor\": \"Rabona\",\n                \"game\": \"Jackpots\",\n                \"context\": \"Mentions daily jackpots, hot jackpots, and lucky jackpots, though no specific amounts are detailed beyond general references.\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"Approx. 150% match up to €500 equivalent + 150 free spins (based on common offers from Casinia, EmirBet, Rabona)\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"Approx. 150 free spins (ranging from 50 to 350, with Casinia offering 350 no-wagering spins as a standout)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"Approx. 100% match up to C$88 or $1000 (based on 888 Casino and Rooster bet offers)\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"Not calculable due to varied unspecified amounts, but Casinia highlights a £65,100 jackpot.\"\n            }\n        ],\n        \"distinctive_data\": [\"Casinia offers a high-value crypto welcome bonus of 200% up to 3,000 USDT, which is significantly more aggressive than standard fiat currency bonuses.\", \"Multiple competitors (Casinia, Rabona) emphasize jackpots and tournaments, with Casinia specifying a large £65,100 jackpot and Rabona hosting VIP tournaments like 'Los Maestros'.\", \"Casinia provides 350 no-wagering free spins, a rare and player-friendly condition compared to typical wagering requirements.\", \"Rooster bet and 888 Casino have lower bonus amounts (e.g., C$88, 50 free spins) but include no-deposit options, appealing to risk-averse players.\", \"EmirBet and Rabona integrate sports betting into their casino promotions, highlighting a trend toward multi-product bonus structures in the AE market.\"]\n    }\n}"
+        "content": "{\n    \"country\": \"AE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Rabona\",\n                \"title\": \"Rabona Casino Review, Sign Up Info, Bonuses and Much More\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"up to 500%\",\n                \"url\": \"https://www.rabona.casino\"\n            },\n            {\n                \"competitor\": \"EmirBet\",\n                \"title\": \"Emirbet Casino | Bonus up to €1000 + 150 free spins\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"up to €1000 + 150 free spins\",\n                \"url\": \"https://emirbet.casino\"\n            },\n            {\n                \"competitor\": \"Rooster bet\",\n                \"title\": \"Rooster Bet — Sign Up and Get Bonus 100% UP TO $1000\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to $1000\",\n                \"url\": \"https://roosterbet.bet\"\n            }\n        ],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"Mixed (percentage and fixed amounts, with free spins and bonus crabs included)\"\n            }\n        ],\n        \"distinctive_data\": [\"All promotions are Welcome Bonuses with no wagering conditions specified\", \"Rabona offers a unique 'Bonus Crab' as part of their promotion\", \"Multiple currency types used across promotions (CAD, EUR, USD) despite being in the UAE (AED)\", \"No deposit bonus offered by 888 Casino (C$88)\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 4450,
-    "completion_tokens": 993,
-    "total_tokens": 5443,
+    "prompt_tokens": 1422,
+    "completion_tokens": 388,
+    "total_tokens": 1810,
     "prompt_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 320
     },
-    "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 4450
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 1102
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

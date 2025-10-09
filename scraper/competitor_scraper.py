@@ -64,6 +64,7 @@ class PromotionData:
     bonus_amount: str
     bonus_type: str
     conditions: str
+    wagering: str
     valid_until: str
     url: str
     scraped_at: str
@@ -102,6 +103,9 @@ class CompetitorScraper:
                 {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
                 {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
             ],
+            # "AE": [
+            #     {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+            # ],
             "SA": [
                 {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
                 {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
@@ -351,6 +355,9 @@ class CompetitorScraper:
             
             # Extract conditions
             conditions = self.extract_conditions(text)
+
+            # Extract wagering requirement (if present)
+            wagering = self.extract_wagering(text)
             
             # Extract validity
             valid_until = self.extract_validity(text)
@@ -367,6 +374,7 @@ class CompetitorScraper:
                 bonus_amount=bonus_amount,
                 bonus_type=bonus_type,
                 conditions=conditions,
+                wagering=wagering,
                 valid_until=valid_until,
                 url=url,
                 scraped_at=current_time,
@@ -437,6 +445,20 @@ class CompetitorScraper:
                         break
                         
         return '; '.join(conditions[:3])  # Limit to 3 conditions
+    
+    def extract_wagering(self, text: str) -> str:
+        """Extract wagering requirements (e.g., 35x bonus, 50x, 20x spins)"""
+        patterns = [
+            r'(\d+\s*[xX]\s*(?:bonus|deposit|wager)?)',
+            r'wagering\s*requirement\s*[:\-]?\s*(\d+[xX])',
+            r'playthrough\s*[:\-]?\s*(\d+[xX])',
+            r'rollover\s*[:\-]?\s*(\d+[xX])'
+        ]
+        for pattern in patterns:
+            match = re.search(pattern, text, re.IGNORECASE)
+            if match:
+                return match.group(1).strip()
+        return ""
         
     def extract_validity(self, text: str) -> str:
         """Extract validity period from text"""
@@ -489,6 +511,7 @@ class CompetitorScraper:
                         bonus_amount=bonus_amount,
                         bonus_type=self.extract_bonus_type(paragraph),
                         conditions=self.extract_conditions(paragraph),
+                        wagering=self.extract_wagering(paragraph),
                         valid_until=self.extract_validity(paragraph),
                         url=url,
                         scraped_at=current_time,
@@ -572,6 +595,7 @@ class CompetitorScraper:
             # await self.setup_browser(proxy)
 
             # Try async browser setup first using VPN config
+            logger.info(f"🔄 Connecting to VPN for {country}...")
             vpn_config = get_vpn_config(country)
             proxy = None
             if vpn_config and vpn_config.get("proxies"):
@@ -657,6 +681,7 @@ class CompetitorScraper:
                                                 bonus_amount=self.extract_bonus_amount(sentence),
                                                 bonus_type=self.extract_bonus_type(sentence),
                                                 conditions='',
+                                                wagering=self.extract_wagering(sentence),
                                                 valid_until='',
                                                 url=url,
                                                 scraped_at=datetime.now().isoformat(),

@@ -33,6 +33,7 @@ class DeepSeekCleaner:
                     bonus_amount TEXT,
                     bonus_type TEXT,
                     conditions TEXT,
+                    wagering TEXT,
                     valid_until TEXT,
                     url TEXT,
                     scraped_at TEXT NOT NULL,
@@ -73,6 +74,8 @@ class DeepSeekCleaner:
 
                 - Descarta promociones que no tengan relación con casinos.
 
+                - Incluye el requisito de apuesta (“wagering requirement”) si está mencionado (por ejemplo: 35x, 50x bonus, etc.). Si no aparece, deja el campo vacío.
+
                 - Descarta textos vagos o sin información suficiente sobre la oferta (ej. sin monto del bono, condiciones poco claras o inexistentes).
 
                 2. Idioma de salida: Todas las respuestas deben estar en inglés.
@@ -84,6 +87,7 @@ class DeepSeekCleaner:
                     "bonus_amount": "string",
                     "bonus_type": "Welcome Bonus | Deposit Bonus | Free Spins | Cashback | Tournament | Jackpot | Other",
                     "conditions": "string",
+                    "wagering": "string",
                     "valid_until": "string"
                 }}
                 4. Condición de salida: Si la promoción no es relevante, responde únicamente con null.
@@ -127,11 +131,11 @@ class DeepSeekCleaner:
                 cursor.execute("""
                     INSERT OR REPLACE INTO clean_promotions (
                         competitor, country, title, description, bonus_amount,
-                        bonus_type, conditions, valid_until, url, scraped_at, hash_id
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        bonus_type, conditions, wagering, valid_until, url, scraped_at, hash_id
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     cp["competitor"], cp["country"], cp["title"], cp["description"],
-                    cp["bonus_amount"], cp["bonus_type"], cp["conditions"],
+                    cp["bonus_amount"], cp["bonus_type"], cp["conditions"], cp.get("wagering", ""),
                     cp["valid_until"], cp["url"], cp["scraped_at"], cp["hash_id"]
                 ))
             conn.commit()

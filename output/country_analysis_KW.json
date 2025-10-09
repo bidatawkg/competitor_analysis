@@ -1,28 +1,28 @@
 {
-  "id": "354521ad-2f32-47ce-b578-183b2fb76230",
+  "id": "0d15a708-ad5b-4655-90e2-298283899390",
   "object": "chat.completion",
-  "created": 1759419512,
+  "created": 1760004738,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"KW\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Crypto Welcome Bonuses\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"200% up to 3,000 USDT\",\n                \"url\": \"https://casinia.com\"\n            },\n            {\n                \"competitor\": \"EmirBet\",\n                \"title\": \"Found 'bonus' on page\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"Up to €1000 + 150 free spins\",\n                \"url\": \"https://emirbet.casino\"\n            },\n            {\n                \"competitor\": \"Rooster bet\",\n                \"title\": \"Found 'bonus' on page\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"100% up to $1000\",\n                \"url\": \"https://roosterbet.bet\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"£65,100\",\n                \"url\": \"https://casinia.bet\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"Eye of Horus, Fishin’ Frenzy\",\n                \"context\": \"Featured in no-wagering free spins promotion\"\n            },\n            {\n                \"competitor\": \"Rabona\",\n                \"game\": \"VIP Masters Tournament\",\n                \"context\": \"Tournament with €1500 prize pool and minimum bet requirement\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"Jackpots\",\n                \"context\": \"Multiple jackpot promotions including one with £65,100 prize\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"150% match + 175 free spins (based on available data)\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"275 free spins (based on specified amounts)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"C$88 (based on specified amounts)\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"£65,100 (based on specified amounts)\"\n            }\n        ],\n        \"distinctive_data\": [\"Casinia offers a unique 'Bonus Crab' system across multiple promotions, which appears to be a loyalty or reward feature not seen with other competitors\", \"Multiple competitors (Casinia, Rabona) are offering cryptocurrency-specific bonuses, indicating a focus on crypto-friendly markets in KW\", \"Rabona provides tournament-based promotions with clear prize pools and betting requirements, which is less common among the competitors\", \"888 Casino offers a no-strings-attached free spins bonus with minimal conditions, which is relatively rare in the market\"]\n    }\n}"
+        "content": "{\n    \"country\": \"KW\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"title\": \"Best Online Casino - Play and Win Real Money | Lucky Dreams\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"150% bonus + 10% cashback OR up to 10,000 €/$ + 500 Free Spins\",\n                \"url\": \"https://luckydreams.casino\"\n            }\n        ],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"150% bonus + 10% cashback OR up to 10,000 €/$ + 500 Free Spins\"\n            }\n        ],\n        \"distinctive_data\": [\"Only one competitor (LuckyDreams) currently active in KW with a dual-option Welcome Bonus offering both high percentage (150%) and high maximum amount (up to 10,000 €/$) alternatives\", \"VIP package requires high minimum deposit of 500 €/$ for premium benefits\", \"Combination of percentage bonus and cashback in one promotion package\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 3899,
-    "completion_tokens": 680,
-    "total_tokens": 4579,
+    "prompt_tokens": 668,
+    "completion_tokens": 271,
+    "total_tokens": 939,
     "prompt_tokens_details": {
       "cached_tokens": 0
     },
     "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 3899
+    "prompt_cache_miss_tokens": 668
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "competitor": "EmirBet",
+    "country": "AE",
+    "title": "Emirbet Casino | Bonus up to €1000 + 150 free spins",
+    "description": "Welcome offer for new players at Emirbet Casino",
+    "bonus_amount": "€1000 + 150 free spins",
+    "bonus_type": "Welcome Bonus",
+    "conditions": "Sign up required to claim the bonus",
+    "wagering": "",
+    "valid_until": "",
+    "url": "https://emirbet.casino",
+    "scraped_at": "2025-10-09T11:54:53.573988",
+    "hash_id": "-1099714082464210758",
+    "created_at": "2025-10-09 09:55:06"
+  }
+]

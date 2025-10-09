@@ -157,96 +157,41 @@ class URLFinder:
         paths = ['/promotions', '/bonuses', '/offers', '/welcome-bonus', '/tournaments']
         return [urljoin(base_url, path) for path in paths]
 
-# Ejemplo de configuración con servicios gratuitos
-VPN_CONFIGS = {
-    'AE': {
-        'country_code': 'AE',
-        'proxies': [
-            # ProtonVPN Free (necesitas crear cuenta)
-            {'server': 'http://free.protonvpn.com:8080', 'username': '3KVsdJTDZmZMltlf', 'password': 'BpB9r8UNKMTcaOCU0LC19VHE8KXI3WZI'}
-        ],
-        'vpn_service': 'ProtonVPN',
-        'location': 'Dubai, UAE'
-    },
-    'SA': {
-        'country_code': 'SA', 
-        'proxies': [
-            {'server': 'http://free.protonvpn.com:8080', 'username': '3KVsdJTDZmZMltlf', 'password': 'BpB9r8UNKMTcaOCU0LC19VHE8KXI3WZI'}
-        ],
-        'vpn_service': 'ProtonVPN',
-        'location': 'Riyadh, Saudi Arabia'
-    },
-    'KW': {
-        'country_code': 'KW', 
-        'proxies': [
-            {'server': 'http://free.protonvpn.com:8080', 'username': '3KVsdJTDZmZMltlf', 'password': 'BpB9r8UNKMTcaOCU0LC19VHE8KXI3WZI'}
-        ],
-        'vpn_service': 'ProtonVPN',
-        'location': 'Kuwait City, Kuwait'
-    },
-    'QA': {
-        'country_code': 'QA',
-        'proxies': [
-            # ProtonVPN Free (necesitas crear cuenta)
-            {
-                'server': 'http://free.protonvpn.com:8080',
-                'username': '3KVsdJTDZmZMltlf',
-                'password': 'BpB9r8UNKMTcaOCU0LC19VHE8KXI3WZI'
-            }
-        ],
-        'vpn_service': 'ProtonVPN',
-        'location': 'Doha, Qatar'
-    },
-    'OM': {
-        'country_code': 'OM',
-        'proxies': [
-            {
-                'server': 'http://free.protonvpn.com:8080',
-                'username': '3KVsdJTDZmZMltlf',
-                'password': 'BpB9r8UNKMTcaOCU0LC19VHE8KXI3WZI'
-            }
-        ],
-        'vpn_service': 'ProtonVPN',
-        'location': 'Muscat, Oman'
-    },
-    'BH': {
-        'country_code': 'BH',
-        'proxies': [
-            {
-                'server': 'http://free.protonvpn.com:8080',
-                'username': '3KVsdJTDZmZMltlf',
-                'password': 'BpB9r8UNKMTcaOCU0LC19VHE8KXI3WZI'
-            }
-        ],
-        'vpn_service': 'ProtonVPN',
-        'location': 'Manama, Bahrain'
-    },
-    'JO': {
-        'country_code': 'JO',
-        'proxies': [
-            {
-                'server': 'http://free.protonvpn.com:8080',
-                'username': '3KVsdJTDZmZMltlf',
-                'password': 'BpB9r8UNKMTcaOCU0LC19VHE8KXI3WZI'
-            }
-        ],
-        'vpn_service': 'ProtonVPN',
-        'location': 'Amman, Jordan'
-    },
-    'NZ': {
-        'country_code': 'NZ',
-        'proxies': [
-            {
-                'server': 'http://free.protonvpn.com:8080',
-                'username': '3KVsdJTDZmZMltlf',
-                'password': 'BpB9r8UNKMTcaOCU0LC19VHE8KXI3WZI'
-            }
-        ],
-        'vpn_service': 'ProtonVPN',
-        'location': 'Auckland, New Zealand'
-    }
-    
+
+import subprocess
+import time
+import logging
+
+logger = logging.getLogger(__name__)
+
+NORDVPN_COUNTRIES = {
+    "AE": "United Arab Emirates",
+    "SA": "Saudi Arabia",
+    "KW": "Kuwait",
+    "QA": "Qatar",
+    "OM": "Oman",
+    "BH": "Bahrain",
+    "JO": "Jordan",
+    "NZ": "New Zealand",
 }
 
-def get_vpn_config(country: str ) -> Dict:
-    return VPN_CONFIGS.get(country, {})
+def get_vpn_config(country: str):
+    """Connect to NordVPN (Windows app version)"""
+    try:
+        nord_country = NORDVPN_COUNTRIES.get(country.upper(), country)
+        logger.info(f"🔄 Connecting to NordVPN GUI for {nord_country}...")
+
+        # Launch connection via Windows PowerShell (requires app installed)
+        cmd = f'powershell.exe -Command "Start-Process \\"nordvpn://{nord_country}\\""'
+        subprocess.run(cmd, shell=True)
+        time.sleep(8)  # wait for connection
+
+        logger.info(f"✅ Attempted VPN connection to {nord_country} (check NordVPN app)")
+        return True
+
+    except Exception as e:
+        logger.error(f"Error connecting to NordVPN app: {e}")
+        return False
+
+    subprocess.run('powershell.exe -Command "Start-Process nordvpn://disconnect"', shell=True)
+

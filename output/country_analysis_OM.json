@@ -1,28 +1,28 @@
 {
-  "id": "0b945084-d1f4-4ae9-83bd-35ae622d1d69",
+  "id": "5c88ac48-a582-4f14-b9f4-ffd430450ddf",
   "object": "chat.completion",
-  "created": 1759421287,
+  "created": 1760005180,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"OM\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Casino Crypto Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"200% up to 3,000 USDT\",\n                \"url\": \"https://casinia.com/promotions\"\n            },\n            {\n                \"competitor\": \"Rooster bet\",\n                \"title\": \"Found 'bonus' on page\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"100% up to $1000\",\n                \"url\": \"https://roosterbet.bet\"\n            },\n            {\n                \"competitor\": \"EmirBet\",\n                \"title\": \"Found 'bonus' on page\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"Up to €1000 + 150 free spins\",\n                \"url\": \"https://emirbet.casino\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"Eye of Horus, Fishin' Frenzy\",\n                \"context\": \"350 no-wagering free spins on specific games\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"The Masters Tournament\",\n                \"context\": \"Tournament with €1,500 prize pool (finished)\"\n            },\n            {\n                \"competitor\": \"Rabona\",\n                \"game\": \"VIP Tournament 'Los Maestros'\",\n                \"context\": \"Tournament with 1500€ prize pool (finished)\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"150% match up to ~€600 equivalent + 150 free spins\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"~€500 equivalent\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"275 free spins\"\n            },\n            {\n                \"bonus_type\": \"Tournament\",\n                \"average_bonus\": \"€1,500 prize pool\"\n            }\n        ],\n        \"distinctive_data\": [\"Casinia offers a unique 'Bonus Crab' feature in multiple promotions, which appears to be a loyalty or additional reward system not seen with other competitors.\", \"Multiple competitors (Casinia, Rabona) are running tournaments with substantial prize pools (€1,500), indicating a focus on competitive gaming elements.\", \"There's significant currency diversity in bonus offers, with promotions denominated in CAD, EUR, USD, USDT, and GBP, suggesting a globally targeted approach despite the OM country focus.\", \"Casinia stands out with no-wagering free spins (350 FS), which is highly player-friendly compared to standard wagering requirements.\"]\n    }\n}"
+        "content": "{\n    \"country\": \"OM\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [],\n        \"distinctive_data\": [\"No promotions found for any competitors in the country OM on the comparison date 2025-10-09. The total current and previous promotion counts are zero, and no competitors were analyzed.\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 3962,
-    "completion_tokens": 641,
-    "total_tokens": 4603,
+    "prompt_tokens": 401,
+    "completion_tokens": 96,
+    "total_tokens": 497,
     "prompt_tokens_details": {
       "cached_tokens": 0
     },
     "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 3962
+    "prompt_cache_miss_tokens": 401
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

@@ -34,6 +34,7 @@ class PromotionData:
     bonus_amount: str
     bonus_type: str
     conditions: str
+    wagering: str
     valid_until: str
     url: str
     scraped_at: str
@@ -64,6 +65,7 @@ class DatabaseManager:
                     bonus_amount TEXT,
                     bonus_type TEXT,
                     conditions TEXT,
+                    wagering TEXT,
                     valid_until TEXT,
                     url TEXT,
                     scraped_at TEXT NOT NULL,
@@ -122,12 +124,12 @@ class DatabaseManager:
                         cursor.execute("""
                             UPDATE promotions SET
                                 title = ?, description = ?, bonus_amount = ?,
-                                bonus_type = ?, conditions = ?, valid_until = ?,
+                                bonus_type = ?, conditions = ?, wagering = ?, valid_until = ?,
                                 url = ?, scraped_at = ?, is_active = 1
                             WHERE hash_id = ?
                         """, (
                             promotion.title, promotion.description, promotion.bonus_amount,
-                            promotion.bonus_type, promotion.conditions, promotion.valid_until,
+                            promotion.bonus_type, promotion.conditions, promotion.wagering, promotion.valid_until,
                             promotion.url, promotion.scraped_at, promotion.hash_id
                         ))
                         
@@ -140,12 +142,12 @@ class DatabaseManager:
                         cursor.execute("""
                             INSERT INTO promotions (
                                 competitor, country, title, description, bonus_amount,
-                                bonus_type, conditions, valid_until, url, scraped_at, hash_id
-                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                                bonus_type, conditions, wagering, valid_until, url, scraped_at, hash_id
+                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                         """, (
                             promotion.competitor, promotion.country, promotion.title,
                             promotion.description, promotion.bonus_amount, promotion.bonus_type,
-                            promotion.conditions, promotion.valid_until, promotion.url,
+                            promotion.conditions, promotion.wagering, promotion.valid_until, promotion.url,
                             promotion.scraped_at, promotion.hash_id
                         ))
                         new_count += 1

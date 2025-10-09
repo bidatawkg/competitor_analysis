@@ -1,0 +1,81 @@
+{
+  "comparison_date": "2025-10-09",
+  "country": "NZ",
+  "new_promotions": [
+    {
+      "id": 86,
+      "competitor": "Spincasino",
+      "country": "NZ",
+      "title": "Play at Spin Casino – Get a $1000 Welcome Bonus Today!",
+      "description": "Spinch gives you the real deal! Welcome bonus offer.",
+      "bonus_amount": "$1000",
+      "bonus_type": "Welcome Bonus",
+      "conditions": "Welcome offer. Terms and conditions apply.",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://spincasino.bet",
+      "scraped_at": "2025-10-09T12:28:11.166124",
+      "hash_id": "-2437454662423970479",
+      "created_at": "2025-10-09 10:31:23"
+    },
+    {
+      "id": 87,
+      "competitor": "Wildz",
+      "country": "NZ",
+      "title": "Wildz Casino New Zealand – Spin, Win & Grin with $1000 offer",
+      "description": "Begin Your Adventure with Wildz Casino's Generous Welcome Bonus",
+      "bonus_amount": "$1000",
+      "bonus_type": "Welcome Bonus",
+      "conditions": "Welcome bonus offer for new players",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://wildz.bet",
+      "scraped_at": "2025-10-09T12:28:03.190339",
+      "hash_id": "2793758551058258378",
+      "created_at": "2025-10-09 10:31:23"
+    },
+    {
+      "id": 85,
+      "competitor": "betvictor",
+      "country": "NZ",
+      "title": "Bet Victor — Login, GET £30 IN FOOTBALL FREE BETS",
+      "description": "Bet Victor Step into the world of Bet Victor, where top-notch gaming and rewarding experiences await",
+      "bonus_amount": "£30",
+      "bonus_type": "Other",
+      "conditions": "Login required. Free bets are for football.",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://www.betvictor.casino",
+      "scraped_at": "2025-10-09T12:29:09.376458",
+      "hash_id": "1166042184337173407",
+      "created_at": "2025-10-09 10:31:23"
+    },
+    {
+      "id": 84,
+      "competitor": "highroller",
+      "country": "NZ",
+      "title": "Let’s Roll – 100% Bonus up to $500 + 200 Free Spins!",
+      "description": "100% Bonus up to $500 + 200 Free Spins",
+      "bonus_amount": "$500 + 200 Free Spins",
+      "bonus_type": "Deposit Bonus",
+      "conditions": "Minimum deposit: $10",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://www.highroller.nz",
+      "scraped_at": "2025-10-09T12:29:30.750832",
+      "hash_id": "-7295680253829236840",
+      "created_at": "2025-10-09 10:31:23"
+    }
+  ],
+  "removed_promotions": [],
+  "total_current": 4,
+  "total_previous": 0,
+  "new_count": 4,
+  "removed_count": 0,
+  "competitors_analyzed": [
+    "highroller",
+    "Wildz",
+    "betvictor",
+    "Spincasino"
+  ]
+}
