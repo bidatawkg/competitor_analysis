@@ -1,28 +1,28 @@
 {
-  "id": "27e9960e-bdda-4094-a8b3-e3dc8a8af37b",
+  "id": "d2ee5c66-fdc1-49ae-9cc7-111c71206133",
   "object": "chat.completion",
-  "created": 1760004267,
+  "created": 1760090002,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"AE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Rabona\",\n                \"title\": \"Rabona Casino Review, Sign Up Info, Bonuses and Much More\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"up to 500%\",\n                \"url\": \"https://www.rabona.casino\"\n            },\n            {\n                \"competitor\": \"EmirBet\",\n                \"title\": \"Emirbet Casino | Bonus up to €1000 + 150 free spins\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"up to €1000 + 150 free spins\",\n                \"url\": \"https://emirbet.casino\"\n            },\n            {\n                \"competitor\": \"Rooster bet\",\n                \"title\": \"Rooster Bet — Sign Up and Get Bonus 100% UP TO $1000\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to $1000\",\n                \"url\": \"https://roosterbet.bet\"\n            }\n        ],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"Mixed (percentage and fixed amounts, with free spins and bonus crabs included)\"\n            }\n        ],\n        \"distinctive_data\": [\"All promotions are Welcome Bonuses with no wagering conditions specified\", \"Rabona offers a unique 'Bonus Crab' as part of their promotion\", \"Multiple currency types used across promotions (CAD, EUR, USD) despite being in the UAE (AED)\", \"No deposit bonus offered by 888 Casino (C$88)\"]\n    }\n}"
+        "content": "{\n    \"country\": \"AE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"292,286.42€\",\n                \"url\": \"https://888casino.com\"\n            },\n            {\n                \"competitor\": \"EmirBet\",\n                \"title\": \"Deposit Bonus\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"€10 Free Bet + up to 10% Cashback\",\n                \"url\": \"https://emirbet.net\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Jackpot Gold, Flaming Wild Crown, Don Premiote Jackpot, Blaze Fire, Blaze White Witch, Wolf Gold 4 Pack, Gonzo's\",\n                \"context\": \"Jackpot promotion featuring various slot games\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"292,286.42€\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"€10 Free Bet + up to 10% Cashback\"\n            }\n        ],\n        \"distinctive_data\": [\"888 Casino offers an exceptionally high jackpot of 292,286.42€, which is significantly larger than typical promotions in the region.\", \"EmirBet provides a combination of a free bet and weekly cashback, focusing on ongoing player retention rather than one-time bonuses.\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1422,
-    "completion_tokens": 388,
-    "total_tokens": 1810,
+    "prompt_tokens": 818,
+    "completion_tokens": 377,
+    "total_tokens": 1195,
     "prompt_tokens_details": {
       "cached_tokens": 320
     },
     "prompt_cache_hit_tokens": 320,
-    "prompt_cache_miss_tokens": 1102
+    "prompt_cache_miss_tokens": 498
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

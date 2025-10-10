@@ -175,7 +175,7 @@ class TabbedStaticDashboardGenerator:
                 <h3 class="card__title">{competitor}</h3>
                 <p class="card__amount">{amount}</p>
                 <p class="card__desc">{desc}</p>
-                <p class="card__wagering"><strong>Wagering:</strong> {wagering}</p>
+                <p class="card__wagering"><strong>Wagering:</strong> {p.get('wagering', 'N/A')}</p>
             </article>
             """)
 

@@ -1,28 +1,28 @@
 {
-  "id": "e3dd1d00-5cd8-49a3-ab99-4e5a0b897577",
+  "id": "0d19814a-24c4-4ded-8640-69098136af99",
   "object": "chat.completion",
-  "created": 1760004510,
+  "created": 1760023173,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"SA\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Pełne Doświadczenie Gry Online | Casinia Casino\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to 2,250 PLN + 200 FS + 1 Bonus Crab\",\n                \"url\": \"https://www.casinia.net\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"Tournaments\",\n                \"context\": \"Participation in casino tournaments for a chance to win prizes and champion titles\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"100% up to 2,250 PLN + 200 FS + 1 Bonus Crab\"\n            },\n            {\n                \"bonus_type\": \"Tournament\",\n                \"average_bonus\": \"N/A\"\n            }\n        ],\n        \"distinctive_data\": [\"Only one competitor (Casinia) analyzed with two promotions: a comprehensive welcome package and tournaments.\", \"Welcome bonus includes a unique 'Bonus Crab' item alongside traditional cash and free spins.\", \"Tournaments focus on competitive play and champion titles rather than standard bonus offers.\"]\n    }\n}"
+        "content": "{\n    \"country\": \"SA\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [],\n        \"distinctive_data\": [\"No promotions found for any competitors in SA on the analysis date.\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 805,
-    "completion_tokens": 304,
-    "total_tokens": 1109,
+    "prompt_tokens": 401,
+    "completion_tokens": 71,
+    "total_tokens": 472,
     "prompt_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 320
     },
-    "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 805
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 81
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

@@ -1,28 +1,28 @@
 {
-  "id": "84defbfb-1c90-4dee-903d-e0b0cd34466e",
+  "id": "3e3e9ad4-1714-4fb0-8300-1d50e2d39b6c",
   "object": "chat.completion",
-  "created": 1760005878,
+  "created": 1760023279,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"NZ\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Spincasino\",\n                \"title\": \"Play at Spin Casino – Get a $1000 Welcome Bonus Today!\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$1000\",\n                \"url\": \"https://spincasino.bet\"\n            },\n            {\n                \"competitor\": \"Wildz\",\n                \"title\": \"Wildz Casino New Zealand – Spin, Win & Grin with $1000 offer\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$1000\",\n                \"url\": \"https://wildz.bet\"\n            },\n            {\n                \"competitor\": \"highroller\",\n                \"title\": \"Let’s Roll – 100% Bonus up to $500 + 200 Free Spins!\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"$500 + 200 Free Spins\",\n                \"url\": \"https://www.highroller.nz\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"betvictor\",\n                \"game\": \"Football\",\n                \"context\": \"Free bets specifically for football betting\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"$1000\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"$500 + 200 Free Spins\"\n            },\n            {\n                \"bonus_type\": \"Other\",\n                \"average_bonus\": \"£30\"\n            }\n        ],\n        \"distinctive_data\": [\"Two competitors (Spincasino and Wildz) offer identical $1000 Welcome Bonuses, suggesting intense competition for new players\", \"Bet Victor uses pounds (£30) instead of New Zealand dollars, which is unusual for a NZ-focused promotion\", \"Highroller combines a cash bonus with a substantial 200 free spins, offering both value and gameplay variety\"]\n    }\n}"
+        "content": "{\n    \"country\": \"NZ\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Jackpot City\",\n                \"title\": \"Jackpot City NZ - Welcome Bonus up to 1600 NZD\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"up to 1600 NZD\",\n                \"url\": \"https://www.jackpotcity.nz/welcome-bonus\"\n            },\n            {\n                \"competitor\": \"highroller\",\n                \"title\": \"Let’s Roll – 100% Bonus up to $500 + 200 Free Spins!\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$500 + 200 Free Spins\",\n                \"url\": \"https://www.highroller.nz/promotions\"\n            },\n            {\n                \"competitor\": \"highroller\",\n                \"title\": \"Let’s Roll – 100% Bonus up to $500 + 200 Free Spins!\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"$500 + 200 Free Spins\",\n                \"url\": \"https://www.highroller.nz\"\n            }\n        ],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"up to 1600 NZD / 100% up to $500 + 200 Free Spins / 100%\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"$500 + 200 Free Spins\"\n            }\n        ],\n        \"distinctive_data\": [\"Jackpot City offers the highest maximum bonus amount (up to 1600 NZD) among competitors.\", \"Highroller provides a combination of cash bonus and free spins in both Welcome and Deposit Bonuses.\", \"Skycity Casino's Welcome Bonus is a straightforward 100% match without specified maximum amount.\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1179,
-    "completion_tokens": 464,
-    "total_tokens": 1643,
+    "prompt_tokens": 1225,
+    "completion_tokens": 440,
+    "total_tokens": 1665,
     "prompt_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 320
     },
-    "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 1179
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 905
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

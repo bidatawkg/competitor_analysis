@@ -135,7 +135,7 @@ class DeepSeekCleaner:
                     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     cp["competitor"], cp["country"], cp["title"], cp["description"],
-                    cp["bonus_amount"], cp["bonus_type"], cp["conditions"], cp.get("wagering", ""),
+                    cp["bonus_amount"], cp["bonus_type"], cp["conditions"], cp["wagering"],
                     cp["valid_until"], cp["url"], cp["scraped_at"], cp["hash_id"]
                 ))
             conn.commit()

@@ -1,161 +1,244 @@
-#!/usr/bin/env python3
-"""
-URL Finder Module - Uses AI to find competitor URLs automatically
-"""
-
 import asyncio
 import aiohttp
-import json
 import logging
-from typing import List, Dict, Optional
 import re
-from urllib.parse import urljoin, urlparse
-import os
+import html
+from urllib.parse import urlparse, parse_qs, unquote, quote_plus  # extiende lo que ya tienes
+from bs4 import BeautifulSoup
 
-from dotenv import load_dotenv  # Optional dependency
-load_dotenv()  # Optional
+logger = logging.getLogger("scraper.url_finder")
 
-logging.basicConfig(level=logging.INFO )
-logger = logging.getLogger(__name__)
+DUCKDUCKGO_SEARCH = "https://duckduckgo.com/html/?q="
+
+# 🌍 TLDs más usados por región
+COUNTRY_TLDS = {
+    "AE": [".ae", ".com", ".net", ".casino", ".bet"],
+    "QA": [".qa", ".com", ".net", ".casino", ".bet"],
+    "OM": [".om", ".com", ".net", ".casino", ".bet"],
+    "BH": [".bh", ".com", ".net", ".casino", ".bet"],
+    "KW": [".kw", ".com", ".net", ".casino", ".bet"],
+    "SA": [".sa", ".com", ".net", ".casino", ".bet"],
+    "JO": [".jo", ".com", ".net", ".casino", ".bet"],
+    "NZ": [".nz", ".com", ".net", ".casino", ".bet"],
+}
+
 
 class URLFinder:
-    def __init__(self, deepseek_api_key: Optional[str] = None):
-        self.deepseek_api_key = deepseek_api_key or os.getenv('DEEPSEEK_API_KEY')
-        
-    async def find_competitor_urls(self, competitor_name: str, country: str) -> Dict[str, List[str]]:
-        """Find URLs for a competitor using AI and patterns"""
-        logger.info(f"Finding URLs for {competitor_name} in {country}")
-        
-        # Try AI first
-        ai_urls = await self._find_urls_with_ai(competitor_name, country)
-        
-        # Pattern-based backup
-        pattern_urls = self._generate_pattern_urls(competitor_name)
-        
-        # Validate URLs
-        all_urls = list(set(ai_urls + pattern_urls))
-        validated_urls = await self._validate_urls(all_urls)
-        
-        # Categorize
-        main_urls = []
-        promotion_urls = []
-        
-        for url in validated_urls:
-            if self._is_promotion_url(url):
-                promotion_urls.append(url)
-            else:
-                main_urls.append(url)
-                
-        if not promotion_urls and main_urls:
-            promotion_urls = self._generate_promotion_urls(main_urls[0])
-            
-        return {
-            'main_urls': main_urls[:3],
-            'promotion_urls': promotion_urls[:5]
+    """Busca URLs oficiales o de promociones para un competidor."""
+
+    async def search_duckduckgo(self, session, competitor: str, country: str):
+        """Busca el dominio oficial del casino usando DuckDuckGo (HTML endpoint)."""
+        # Si la marca ya contiene "casino", no lo añadimos; si no, lo añadimos para acotar.
+        q_brand = competitor if "casino" in competitor.lower() else f"{competitor} casino"
+        # No confíes en 'OR' de DDG; mejor filtramos por TLD tras parsear resultados.
+        q = quote_plus(q_brand)
+        url = DUCKDUCKGO_SEARCH + q
+
+        headers = {
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/120.0.0.0 Safari/537.36"
+            ),
+            "Accept-Language": "en-QA,en;q=0.9,ar-QA;q=0.8",
         }
-        
-    async def _find_urls_with_ai(self, competitor_name: str, country: str) -> List[str]:
-        """Use DeepSeek AI to find URLs"""
-        if not self.deepseek_api_key:
-            logger.warning("DeepSeek API key not provided")
-            return []
-            
+
         try:
-            prompt = f"""List only the official and currently accessible URLs of "{competitor_name}" casino in {country}. Output only valid URLs, one per line. No additional text, comments, or explanations."""
-            
-            headers = {
-                'Authorization': f'Bearer {self.deepseek_api_key}',
-                'Content-Type': 'application/json'
-            }
-            
-            data = {
-                'model': 'deepseek-chat',
-                'messages': [{'role': 'user', 'content': prompt}],
-                'max_tokens': 500,
-                'temperature': 0.1
-            }
-            
-            async with aiohttp.ClientSession( ) as session:
-                async with session.post(
-                    'https://api.deepseek.com/v1/chat/completions',
-                    headers=headers,
-                    json=data,
-                    timeout=30
-                 ) as response:
-                    if response.status == 200:
-                        result = await response.json()
-                        content = result['choices'][0]['message']['content']
-                        return self._extract_urls_from_text(content)
-                    else:
-                        logger.error(f"DeepSeek API error: {response.status}")
-                        return []
+            async with session.get(url, timeout=15, headers=headers) as resp:
+                if resp.status != 200:
+                    return []
+                html_text = await resp.text()
+                soup = BeautifulSoup(html_text, "html.parser")
+
+                # Permite enlaces directos y redirecciones /l/?uddg=
+                raw_urls = []
+                for a in soup.select("a.result__a"):
+                    href = a.get("href", "")
+                    if href.startswith("/l/"):
+                        q = parse_qs(urlparse(href).query)
+                        uddg = q.get("uddg", [None])[0]
+                        if uddg:
+                            raw_urls.append(unquote(uddg))
+                    elif href.startswith("http"):
+                        raw_urls.append(href)
+
+                # Normaliza a dominios y filtra basura/redes sociales
+                ban = ("facebook.", "twitter.", "x.com", "instagram.", "youtube.", "linkedin.", "tiktok.")
+                allowed_tlds = {".com", ".net", ".casino", ".bet", f".{country.lower()}"}
+                domains = []
+                for u in raw_urls:
+                    p = urlparse(u)
+                    if not p.scheme.startswith("http"):
+                        continue
+                    netloc = p.netloc.lower()
+                    if any(b in netloc for b in ban):
+                        continue
+                    # Filtra por TLD permitidos
+                    if not any(netloc.endswith(t) for t in allowed_tlds):
+                        continue
+                    domains.append(f"{p.scheme}://{netloc}")
+
+                return list(dict.fromkeys(domains))  # únicos y en orden
         except Exception as e:
-            logger.error(f"AI URL search error: {e}")
+            logger.warning(f"DuckDuckGo search failed for {competitor}: {e}")
             return []
-            
-    def _generate_pattern_urls(self, competitor_name: str) -> List[str]:
-        """Generate URLs using common patterns"""
+
+    def generate_heuristics(self, competitor: str, country: str):
+        """Fallback: genera URLs razonables sin mutilar la marca."""
+        tokens = re.findall(r"[a-z0-9]+", competitor.lower())
+        name_compact = "".join(tokens)                   # justcasino
+        name_hyphen = "-".join(tokens)                   # just-casino
+
+        # Si "casino" era palabra separada (p. ej. "Just Casino"), añade variante sin esa palabra
+        if "casino" in tokens:
+            name_sin_casino = "".join(t for t in tokens if t != "casino")  # just
+            bases = [name_compact, name_hyphen, name_sin_casino]
+        else:
+            bases = [name_compact, name_hyphen]
+
+        tlds = COUNTRY_TLDS.get(country.upper(), [".com", ".net", ".casino", ".bet"])
         urls = []
-        base_names = [
-            competitor_name.lower().replace(" ", ""),
-            competitor_name.lower().replace(" ", "-"),
-            competitor_name.lower().replace("casino", "").replace("bet", "").strip()
-        ]
-        
-        tlds = ['.com', '.net', '.org', '.casino', '.bet']
-        
-        for base_name in base_names:
-            if len(base_name) > 2:
-                for tld in tlds:
-                    urls.extend([
-                        f"https://{base_name}{tld}",
-                        f"https://www.{base_name}{tld}"
-                    ] )
-        return urls[:15]
-        
-    def _extract_urls_from_text(self, text: str) -> List[str]:
-        """Extract URLs from text"""
-        url_pattern = r'https?://[^\s<>"{}|\\^`\[\]]+'
-        urls = re.findall(url_pattern, text )
-        return [re.sub(r'[.,;!?]+$', '', url) for url in urls if self._is_valid_url(url)]
-        
-    def _is_valid_url(self, url: str) -> bool:
-        """Check URL validity"""
+        for base in dict.fromkeys(bases):  # únicos, conserva orden
+            for tld in tlds:
+                urls.append(f"https://{base}{tld}")
+                urls.append(f"https://www.{base}{tld}")
+        return urls
+
+    def build_brand_pattern(self, competitor: str) -> re.Pattern:
+        # tokens alfanuméricos del nombre de marca
+        tokens = re.findall(r'[a-z0-9]+', competitor.lower())
+        if not tokens:
+            return re.compile(r"$^")  # nada coincide
+        # permite espacios, guiones o guiones bajos entre tokens
+        pattern = r"\b" + r"[\s\-_]*".join(tokens) + r"\b"
+        return re.compile(pattern, re.I)
+
+    # async def check_url(self, session, url, brand_pattern: re.Pattern):
+    #     """Verifica si una URL pertenece realmente a la marca"""
+    #     headers = {
+    #         "User-Agent": (
+    #             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    #             "AppleWebKit/537.36 (KHTML, like Gecko) "
+    #             "Chrome/120.0.0.0 Safari/537.36"
+    #         ),
+    #         "Accept-Language": "en-QA,en;q=0.9,ar-QA;q=0.8",
+    #     }
+
+    #     try:
+    #         async with session.get(
+    #             url, timeout=8, allow_redirects=True, headers=headers
+    #         ) as resp:
+    #             headers_obj = getattr(resp, "headers", {})
+    #             if not hasattr(headers_obj, "get"):
+    #                 return False  # seguridad ante casos raros
+
+    #             ctype = headers_obj.get("Content-Type", "")
+    #             if resp.status < 400 and "text/html" in ctype:
+    #                 text = await resp.text(errors="ignore")
+    #                 if len(text) < 300:
+    #                     return False
+    #                 if re.search(r"(404|forbidden|access\s+denied|not\s+found)", text, re.I):
+    #                     return False
+
+    #                 soup = BeautifulSoup(text, "html.parser")
+    #                 title = (soup.title.string or "") if soup.title else ""
+    #                 metas = " ".join(m.get("content", "") for m in soup.find_all("meta"))
+
+    #                 # Busca la marca en title, meta o texto
+    #                 hay_marca = bool(
+    #                     brand_pattern.search(title)
+    #                     or brand_pattern.search(metas)
+    #                     or brand_pattern.search(text)
+    #                 )
+    #                 return hay_marca
+    #     except Exception as e:
+    #         logger.debug(f"Error checking {url}: {e}")
+    #     return False
+
+    async def check_url(self, session, url, brand_pattern: re.Pattern):
+        """Verifica si una URL realmente pertenece a la marca."""
+        headers = {
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/120.0.0.0 Safari/537.36"
+            ),
+            "Accept-Language": "en-US,en;q=0.9,ar;q=0.8",
+        }
+
         try:
-            parsed = urlparse(url)
-            return bool(parsed.netloc) and bool(parsed.scheme)
-        except:
-            return False
-            
-    async def _validate_urls(self, urls: List[str]) -> List[str]:
-        """Validate URLs by checking accessibility"""
-        valid_urls = []
-        async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=10 )) as session:
-            tasks = [self._check_url(session, url) for url in urls]
-            results = await asyncio.gather(*tasks, return_exceptions=True)
-            
-            for url, is_valid in zip(urls, results):
-                if is_valid is True:
-                    valid_urls.append(url)
-        return valid_urls
-        
-    async def _check_url(self, session: aiohttp.ClientSession, url: str ) -> bool:
-        """Check single URL"""
-        try:
-            async with session.head(url, allow_redirects=True) as response:
-                return response.status < 400
-        except:
-            return False
-            
-    def _is_promotion_url(self, url: str) -> bool:
-        """Check if URL is promotion-related"""
-        keywords = ['promotion', 'bonus', 'offer', 'deal', 'welcome', 'free', 'tournament']
-        return any(keyword in url.lower() for keyword in keywords)
-        
-    def _generate_promotion_urls(self, base_url: str) -> List[str]:
-        """Generate promotion URLs from base URL"""
-        paths = ['/promotions', '/bonuses', '/offers', '/welcome-bonus', '/tournaments']
-        return [urljoin(base_url, path) for path in paths]
+            async with session.get(
+                url, timeout=15, allow_redirects=True, headers=headers
+            ) as resp:
+                headers_obj = getattr(resp, "headers", {})
+                if not hasattr(headers_obj, "get"):
+                    return False
+
+                ctype = headers_obj.get("Content-Type", "")
+                if resp.status < 400 and "text/html" in ctype:
+                    text = await resp.text(errors="ignore")
+                    if len(text) < 300:
+                        return False
+                    if re.search(r"(404|forbidden|access\s+denied|not\s+found)", text, re.I):
+                        return False
+
+                    soup = BeautifulSoup(text, "html.parser")
+                    title = (soup.title.string or "") if soup.title else ""
+                    metas = " ".join(m.get("content", "") for m in soup.find_all("meta"))
+
+                    hay_marca = bool(
+                        brand_pattern.search(title)
+                        or brand_pattern.search(metas)
+                        or brand_pattern.search(text)
+                    )
+                    return hay_marca
+        except Exception as e:
+            logger.debug(f"Error checking {url}: {e}")
+        return False
+
+
+
+    async def validate_urls(self, urls, brand_pattern: re.Pattern):
+        """Filtra solo las URLs cuya página parezca ser de la marca."""
+        valid = []
+        async with aiohttp.ClientSession() as session:
+            tasks = [self.check_url(session, u, brand_pattern) for u in urls[:20]]
+            results = await asyncio.gather(*tasks, return_exceptions=False)
+            for u, ok in zip(urls[:20], results):
+                if ok:
+                    valid.append(u)
+        return valid
+
+    async def find_competitor_urls(self, competitor: str, country: str):
+        logger.info(f"Searching URLs for {competitor} ({country})")
+        brand_pattern = self.build_brand_pattern(competitor)
+
+        async with aiohttp.ClientSession() as session:
+            found_domains = await self.search_duckduckgo(session, competitor, country)
+
+        if not found_domains:
+            logger.warning(f"No real search results for {competitor}, using fallback")
+            found_domains = self.generate_heuristics(competitor, country)
+
+        # prepara candidatos con paths típicos
+        base_candidates = found_domains[:5]  # un poco más amplio
+        urls = []
+        for d in base_candidates:
+            d = d.rstrip("/")
+            urls.append(d)
+            for path in ["/promotions", "/offers", "/bonuses", "/welcome-bonus"]:
+                urls.append(d + path)
+
+        valid = await self.validate_urls(urls, brand_pattern)
+
+        # Deriva los main válidos de los válidos (dominios base)
+        valid_main = sorted({u.split("/", 3)[0] + "//" + urlparse(u).netloc for u in valid})
+
+        logger.info(f"✅ Found {len(valid)} valid URLs for {competitor}")
+        return {
+            "main_urls": valid_main or base_candidates,  # si nada pasa el filtro, devuelve candidatos para depurar
+            "promotion_urls": [u for u in valid if any(u.startswith(m) for m in valid_main)] or [],
+        }
 
 
 import subprocess

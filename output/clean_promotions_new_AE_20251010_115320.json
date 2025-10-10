@@ -1,0 +1,34 @@
+[
+  {
+    "id": 191,
+    "competitor": "888 Casino",
+    "country": "AE",
+    "title": "Found 'jackpot' on page",
+    "description": "jackpot gold 292.286,42€ nuevos juegos de casino online flaming wild crown don premiote jackpot blaze fire blaze white witch wolf gold 4 pack gonzo's",
+    "bonus_amount": "292,286.42€",
+    "bonus_type": "Jackpot",
+    "conditions": "Jackpot promotion featuring various slot games",
+    "wagering": "",
+    "valid_until": "",
+    "url": "https://888casino.com",
+    "scraped_at": "2025-10-10T11:45:24.828801",
+    "hash_id": "5899617935232731636",
+    "created_at": "2025-10-10 09:53:20"
+  },
+  {
+    "id": 189,
+    "competitor": "EmirBet",
+    "country": "AE",
+    "title": "Deposit Bonus",
+    "description": "€10 free bet on first bets, weekly cashback refund up to 10% on losses, payment methods, emirbet",
+    "bonus_amount": "€10 Free Bet + up to 10% Cashback",
+    "bonus_type": "Deposit Bonus",
+    "conditions": "Free bet on first cash bets, weekly cashback on losses",
+    "wagering": "",
+    "valid_until": "",
+    "url": "https://emirbet.net",
+    "scraped_at": "2025-10-10T11:51:38.861869",
+    "hash_id": "-9114901197841536446",
+    "created_at": "2025-10-10 09:53:20"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "comparison_date": "2025-10-09",
+  "country": "QA",
+  "new_promotions": [
+    {
+      "id": 135,
+      "competitor": "Casinia",
+      "country": "QA",
+      "title": "Pełne Doświadczenie Gry Online | Casinia Casino",
+      "description": "Welcome bonus 100% up to 2,250 PLN + 200 Free Spins + 1 Bonus Crab",
+      "bonus_amount": "100% up to 2,250 PLN + 200 FS + 1 Bonus Crab",
+      "bonus_type": "Welcome Bonus",
+      "conditions": "Welcome bonus package",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://casinia.net",
+      "scraped_at": "2025-10-09T16:38:36.872248",
+      "hash_id": "2094574636204884927",
+      "created_at": "2025-10-09 14:49:28"
+    }
+  ],
+  "removed_promotions": [],
+  "total_current": 1,
+  "total_previous": 0,
+  "new_count": 1,
+  "removed_count": 0,
+  "competitors_analyzed": [
+    "Casinia"
+  ]
+}

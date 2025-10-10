@@ -1,28 +1,28 @@
 {
-  "id": "ee13f6ba-7cc9-4d1f-ab12-68e6bc29707d",
+  "id": "8ea1e64e-6a50-4de3-b4f2-723ff162c095",
   "object": "chat.completion",
-  "created": 1760004967,
+  "created": 1760023001,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"QA\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [],\n        \"distinctive_data\": [\"No promotions found for any competitors in the country QA as of the comparison date 2025-10-09\", \"Total current and previous promotions are zero, indicating no active promotions in the market\"]\n    }\n}"
+        "content": "{\n    \"country\": \"QA\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Pełne Doświadczenie Gry Online | Casinia Casino\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to 2,250 PLN + 200 FS + 1 Bonus Crab\",\n                \"url\": \"https://casinia.net\"\n            }\n        ],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"100% up to 2,250 PLN + 200 FS + 1 Bonus Crab\"\n            }\n        ],\n        \"distinctive_data\": [\"Only one competitor (Casinia) currently active in QA with a single promotion\", \"Promotion includes unique 'Bonus Crab' item alongside traditional bonus components\", \"Welcome package combines percentage match, free spins, and special item bonus\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 401,
-    "completion_tokens": 97,
-    "total_tokens": 498,
+    "prompt_tokens": 611,
+    "completion_tokens": 226,
+    "total_tokens": 837,
     "prompt_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 320
     },
-    "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 401
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 291
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

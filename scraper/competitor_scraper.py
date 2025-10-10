@@ -31,6 +31,14 @@ import sys, asyncio
 if sys.platform.startswith("win"):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
+logging.basicConfig(
+    stream=sys.stdout,
+    encoding="utf-8",
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+
+
 
 # from dotenv import load_dotenv  # Optional dependency
 # load_dotenv()  # Optional
@@ -64,11 +72,11 @@ class PromotionData:
     bonus_amount: str
     bonus_type: str
     conditions: str
-    wagering: str
     valid_until: str
     url: str
     scraped_at: str
     hash_id: str
+    wagering: str = ""
 
 class CompetitorScraper:
     """Main scraper class for competitor analysis"""
@@ -206,12 +214,14 @@ class CompetitorScraper:
         if self.browser:
             await self.browser.close()
             
-    async def find_competitor_urls(self, competitor: Dict) -> List[str]:
+    # async def find_competitor_urls(self, competitor: Dict) -> List[str]:
+    async def find_competitor_urls(self, competitor: CompetitorInfo) -> List[str]:
+
         """Find actual URLs for competitor using AI"""
         try:
             # Use AI to find URLs
             url_result = await self.url_finder.find_competitor_urls(
-                competitor["name"], 
+                competitor.name, 
                 self.current_country
             )
             
@@ -219,16 +229,16 @@ class CompetitorScraper:
             all_urls = url_result['main_urls'] + url_result['promotion_urls']
             
             if all_urls:
-                logger.info(f"Found {len(all_urls)} URLs for {competitor['name']}")
+                logger.info(f"Found {len(all_urls)} URLs for {competitor.name}")
                 for url in all_urls:
                     print(url)                    
                 return all_urls
             else:
-                logger.warning(f"No URLs found for {competitor['name']}")
+                logger.warning(f"No URLs found for {competitor.name}")
                 return []
                 
         except Exception as e:
-            logger.error(f"Error finding URLs for {competitor['name']}: {e}")
+            logger.error(f"Error finding URLs for {competitor.name}: {e}")
             return []
 
         
@@ -363,11 +373,11 @@ class CompetitorScraper:
             valid_until = self.extract_validity(text)
             
             # Create hash for deduplication
-            hash_content = f"{competitor['name']}_{title}_{bonus_amount}_{bonus_type}"
+            hash_content = f"{competitor.name}_{title}_{bonus_amount}_{bonus_type}"
             hash_id = str(hash(hash_content))
             
             return PromotionData(
-                competitor=competitor['name'],
+                competitor=competitor.name,
                 country=competitor.country,
                 title=title,
                 description=text[:500],  # Limit description length
@@ -500,11 +510,11 @@ class CompetitorScraper:
                 if bonus_amount:  # Only create promotion if we found a bonus amount
                     title = paragraph.split('.')[0][:100]  # First sentence as title
                     
-                    hash_content = f"{competitor['name']}_{title}_{bonus_amount}"
+                    hash_content = f"{competitor.name}_{title}_{bonus_amount}"
                     hash_id = str(hash(hash_content))
                     
                     promotion = PromotionData(
-                        competitor=competitor['name'],
+                        competitor=competitor.name,
                         country=competitor.country,
                         title=title,
                         description=paragraph[:500],
@@ -596,35 +606,61 @@ class CompetitorScraper:
 
             # Try async browser setup first using VPN config
             logger.info(f"🔄 Connecting to VPN for {country}...")
-            vpn_config = get_vpn_config(country)
-            proxy = None
-            if vpn_config and vpn_config.get("proxies"):
-                proxy = vpn_config["proxies"][0]  # Usamos el primer proxy disponible
+
+            vpn_ok = get_vpn_config(country)  # True/False
+            proxy = None  # No asumas estructura de dict aquí
+            if isinstance(vpn_ok, dict) and vpn_ok.get("proxies"):
+                proxy = vpn_ok["proxies"][0]
                 logger.info(f"Using proxy for {country}: {proxy}")
             else:
-                logger.info(f"No proxy configured for {country}, running without proxy")
+                logger.info(f"No proxy configured (or simple VPN boolean), running without proxy")
+
+
+
+            # vpn_config = get_vpn_config(country)
+            # proxy = None
+            # if vpn_config and vpn_config.get("proxies"):
+            #     proxy = vpn_config["proxies"][0]  # Usamos el primer proxy disponible
+            #     logger.info(f"Using proxy for {country}: {proxy}")
+            # else:
+            #     logger.info(f"No proxy configured for {country}, running without proxy")
 
             await self.setup_browser(proxy)
 
             
-            for competitor in competitors:
+            # for competitor in competitors:
+            #     try:
+            #         print("entra en el bucle de competitors")
+            #         print(competitor)
+            #         logger.info(f"Scraping {competitor.name}...")
+                    
+            #         # Find URLs for this competitor
+            #         urls = await self.find_competitor_urls(competitor)
+            for competitor_dict in competitors:
                 try:
+                    competitor = CompetitorInfo(
+                        name=competitor_dict["name"],
+                        country=country,
+                        url="",  # se llenará luego
+                        search_terms=competitor_dict["search_terms"]
+                    )
+
                     print("entra en el bucle de competitors")
                     print(competitor)
-                    logger.info(f"Scraping {competitor['name']}...")
-                    
+                    logger.info(f"Scraping {competitor.name}...")
+
                     # Find URLs for this competitor
                     urls = await self.find_competitor_urls(competitor)
                     
                     if not urls:
-                        logger.warning(f"No URLs found for {competitor['name']}, skipping...")
+                        logger.warning(f"No URLs found for {competitor.name}, skipping...")
                         continue
                         
                     # Scrape each URL
                     for url in urls:
                         try:
                             logger.info(f"Scraping URL: {url}")
-                            promotions = await self.scrape_competitor_promotions(competitor['name'], url, country)
+                            promotions = await self.scrape_competitor_promotions(competitor.name, url, country)
                             all_promotions.extend(promotions)
                             
                             await asyncio.sleep(random.uniform(2, 5))
@@ -634,7 +670,7 @@ class CompetitorScraper:
                             continue
                             
                 except Exception as e:
-                    logger.error(f"Error scraping competitor {competitor['name']}: {e}")
+                    logger.error(f"Error scraping competitor {competitor.name}: {e}")
                     continue
                     
         except Exception as e:
@@ -656,7 +692,14 @@ class CompetitorScraper:
         all_promotions = []
         
         async with aiohttp.ClientSession() as session:
-            for competitor in competitors:
+            # for competitor in competitors:
+            for competitor_dict in competitors:
+                competitor = CompetitorInfo(
+                    name=competitor_dict["name"],
+                    country=country,
+                    url="",
+                    search_terms=competitor_dict["search_terms"]
+                )
                 try:
                     urls = await self.find_competitor_urls(competitor)
                     
@@ -672,9 +715,9 @@ class CompetitorScraper:
                                     sentences = text_content.split('.')
                                     
                                     for sentence in sentences:
-                                        if any(term in sentence.lower() for term in competitor['search_terms']) and len(sentence) > 30:
+                                        if any(term in sentence.lower() for term in competitor.search_terms) and len(sentence) > 30:
                                             promotion = PromotionData(
-                                                competitor=competitor['name'],
+                                                competitor=competitor.name,
                                                 country=country,
                                                 title=sentence[:100],
                                                 description=sentence[:500],
@@ -695,7 +738,7 @@ class CompetitorScraper:
                             continue
                             
                 except Exception as e:
-                    logger.error(f"Fallback failed for {competitor['name']}: {e}")
+                    logger.error(f"Fallback failed for {competitor.name}: {e}")
                     continue
                     
         return all_promotions

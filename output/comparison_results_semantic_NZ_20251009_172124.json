@@ -1,0 +1,80 @@
+{
+  "comparison_date": "2025-10-09",
+  "country": "NZ",
+  "new_promotions": [
+    {
+      "id": 177,
+      "competitor": "Jackpot City",
+      "country": "NZ",
+      "title": "Jackpot City NZ - Welcome Bonus up to 1600 NZD",
+      "description": "Jackpot City NZ is one of the most popular online casinos in New Zealand, known for its rich history and a strong reputation among Kiwi players",
+      "bonus_amount": "up to 1600 NZD",
+      "bonus_type": "Welcome Bonus",
+      "conditions": "",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://www.jackpotcity.nz/welcome-bonus",
+      "scraped_at": "2025-10-09T17:19:54.572319",
+      "hash_id": "6297177034789266082",
+      "created_at": "2025-10-09 15:21:24"
+    },
+    {
+      "id": 174,
+      "competitor": "highroller",
+      "country": "NZ",
+      "title": "Let’s Roll – 100% Bonus up to $500 + 200 Free Spins!",
+      "description": "Promotions and Bonuses at Highroller NZ. Let’s Roll – 100% Bonus up to $500 + 200 Free Spins!",
+      "bonus_amount": "$500 + 200 Free Spins",
+      "bonus_type": "Welcome Bonus",
+      "conditions": "100% first deposit bonus",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://www.highroller.nz/promotions",
+      "scraped_at": "2025-10-09T17:20:43.715229",
+      "hash_id": "1302111403886998644",
+      "created_at": "2025-10-09 15:21:24"
+    },
+    {
+      "id": 175,
+      "competitor": "highroller",
+      "country": "NZ",
+      "title": "Let’s Roll – 100% Bonus up to $500 + 200 Free Spins!",
+      "description": "100% Bonus up to $500 + 200 Free Spins",
+      "bonus_amount": "$500 + 200 Free Spins",
+      "bonus_type": "Deposit Bonus",
+      "conditions": "Minimum deposit: $10",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://www.highroller.nz",
+      "scraped_at": "2025-10-09T17:20:42.841897",
+      "hash_id": "6652147275240133370",
+      "created_at": "2025-10-09 15:21:24"
+    },
+    {
+      "id": 176,
+      "competitor": "skycitycasino",
+      "country": "NZ",
+      "title": "Skycity Casino Review 2025 | 100% Welcome Bonus",
+      "description": "Skycity Online Casino Review 2025. Skycity has long been a name recognized by Kiwi players who appreciate real-world and digital gambling venues",
+      "bonus_amount": "100%",
+      "bonus_type": "Welcome Bonus",
+      "conditions": "",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://www.skycitycasino.nz",
+      "scraped_at": "2025-10-09T17:20:22.486099",
+      "hash_id": "-4045932173693350882",
+      "created_at": "2025-10-09 15:21:24"
+    }
+  ],
+  "removed_promotions": [],
+  "total_current": 4,
+  "total_previous": 0,
+  "new_count": 4,
+  "removed_count": 0,
+  "competitors_analyzed": [
+    "skycitycasino",
+    "highroller",
+    "Jackpot City"
+  ]
+}
