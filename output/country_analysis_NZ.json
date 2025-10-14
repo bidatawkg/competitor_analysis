@@ -1,28 +1,28 @@
 {
-  "id": "3e3e9ad4-1714-4fb0-8300-1d50e2d39b6c",
+  "id": "b34639b0-fda6-432b-9dfb-3a199803873b",
   "object": "chat.completion",
-  "created": 1760023279,
+  "created": 1760456050,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"NZ\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Jackpot City\",\n                \"title\": \"Jackpot City NZ - Welcome Bonus up to 1600 NZD\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"up to 1600 NZD\",\n                \"url\": \"https://www.jackpotcity.nz/welcome-bonus\"\n            },\n            {\n                \"competitor\": \"highroller\",\n                \"title\": \"Let’s Roll – 100% Bonus up to $500 + 200 Free Spins!\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$500 + 200 Free Spins\",\n                \"url\": \"https://www.highroller.nz/promotions\"\n            },\n            {\n                \"competitor\": \"highroller\",\n                \"title\": \"Let’s Roll – 100% Bonus up to $500 + 200 Free Spins!\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"$500 + 200 Free Spins\",\n                \"url\": \"https://www.highroller.nz\"\n            }\n        ],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"up to 1600 NZD / 100% up to $500 + 200 Free Spins / 100%\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"$500 + 200 Free Spins\"\n            }\n        ],\n        \"distinctive_data\": [\"Jackpot City offers the highest maximum bonus amount (up to 1600 NZD) among competitors.\", \"Highroller provides a combination of cash bonus and free spins in both Welcome and Deposit Bonuses.\", \"Skycity Casino's Welcome Bonus is a straightforward 100% match without specified maximum amount.\"]\n    }\n}"
+        "content": "{\n    \"country\": \"NZ\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"leovegas\",\n                \"title\": \"100% Deposit Match & 3,000 Free Spins\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"Up to $1,000 + 3,000 Free Spins\",\n                \"url\": \"https://leovegas.com\"\n            },\n            {\n                \"competitor\": \"betvictor\",\n                \"title\": \"Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"NZ$1500 + 200 FS\",\n                \"url\": \"https://www.betvictor.nz\"\n            },\n            {\n                \"competitor\": \"casumo\",\n                \"title\": \"Welcome Offer\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"110% up to $1100 + 60 spins\",\n                \"url\": \"https://casumo.com/promotions\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"betvictor\",\n                \"game\": \"Gonzo’s Quest\",\n                \"context\": \"Free spins and expanding symbols on Gonzo’s Quest (NetEnt) with avalanche reels and increasing multipliers\"\n            },\n            {\n                \"competitor\": \"betvictor\",\n                \"game\": \"Sweet Bonanza\",\n                \"context\": \"Free spins on Sweet Bonanza (Pragmatic)\"\n            },\n            {\n                \"competitor\": \"christchurchcasino\",\n                \"game\": \"Pragmatic Play Megaways games\",\n                \"context\": \"Free spins on Pragmatic Play Megaways games with minimum deposit\"\n            },\n            {\n                \"competitor\": \"leovegas\",\n                \"game\": \"Halloween Tournament\",\n                \"context\": \"Tournament with $25,000 prize pool for 500 players\"\n            },\n            {\n                \"competitor\": \"casumo\",\n                \"game\": \"Jackpot Splash\",\n                \"context\": \"Year-long jackpot celebration from 15.01.2025 to 21.12.2025\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"Up to NZ$1,150 + 940 Free Spins\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"20-200 Free Spins\"\n            },\n            {\n                \"bonus_type\": \"Tournament\",\n                \"average_bonus\": \"$15,000 prize pool\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"Up to $1,100 + 60 Free Spins\"\n            }\n        ],\n        \"distinctive_data\": [\"LeoVegas offers the highest number of free spins (3,000) in their welcome bonus, significantly more than competitors\", \"BetVictor provides the highest cash bonus amount (NZ$1,500) in their welcome offer\", \"Casumo has the longest running promotion with their Jackpot Splash lasting almost a full year\", \"Multiple competitors are highlighting specific game providers and mechanics (NetEnt, Pragmatic Play, Megaways)\", \"Tournament prizes range from $5,000 to $25,000, showing significant prize pool investments\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1225,
-    "completion_tokens": 440,
-    "total_tokens": 1665,
+    "prompt_tokens": 4307,
+    "completion_tokens": 737,
+    "total_tokens": 5044,
     "prompt_tokens_details": {
-      "cached_tokens": 320
+      "cached_tokens": 0
     },
-    "prompt_cache_hit_tokens": 320,
-    "prompt_cache_miss_tokens": 905
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 4307
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

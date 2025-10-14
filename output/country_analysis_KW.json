@@ -1,28 +1,28 @@
 {
-  "id": "0d15a708-ad5b-4655-90e2-298283899390",
+  "id": "f707930c-90da-4e13-9cca-2e8bf89fb57d",
   "object": "chat.completion",
-  "created": 1760004738,
+  "created": 1760453751,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"KW\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"title\": \"Best Online Casino - Play and Win Real Money | Lucky Dreams\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"150% bonus + 10% cashback OR up to 10,000 €/$ + 500 Free Spins\",\n                \"url\": \"https://luckydreams.casino\"\n            }\n        ],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"150% bonus + 10% cashback OR up to 10,000 €/$ + 500 Free Spins\"\n            }\n        ],\n        \"distinctive_data\": [\"Only one competitor (LuckyDreams) currently active in KW with a dual-option Welcome Bonus offering both high percentage (150%) and high maximum amount (up to 10,000 €/$) alternatives\", \"VIP package requires high minimum deposit of 500 €/$ for premium benefits\", \"Combination of percentage bonus and cashback in one promotion package\"]\n    }\n}"
+        "content": "{\n    \"country\": \"KW\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"€300,128.89 (Jackpot Gold), €488.16 (Ultimate Buffalo Cash)\",\n                \"url\": \"https://www.888casino.com\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Deposit Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to €100 + 200% up to 3,000 USDT + 100% up to 200 USDT\",\n                \"url\": \"https://www.casinia.com\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to €500 + 200 FS\",\n                \"url\": \"https://www.casinia.com\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Jackpot Gold, Ultimate Buffalo Cash, The Sweetest Cash Collect, Flaming Wild Crown\",\n                \"context\": \"Multiple jackpot games with significant prize amounts highlighted\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"Tournaments, VIP levels, Bonus crab shop\",\n                \"context\": \"Additional gaming features included in welcome bonuses\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"Approx. 133% match bonus + 133 free spins (based on Casinia and Rabona offers)\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"€300,128.89 (single large jackpot amount from 888 Casino)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"€10 Free Bet + 10% cashback (from EmirBet)\"\n            }\n        ],\n        \"distinctive_data\": [\"888 Casino offers exceptionally high jackpot prizes (over €300,000), which is significantly higher than typical casino bonuses\", \"Casinia provides multiple welcome bonuses including crypto options (up to 200% match in USDT), showing strong crypto integration\", \"EmirBet offers a unique weekly cashback refund of up to 10% on losses, providing ongoing player protection\", \"Rabona focuses specifically on crypto sports betting welcome bonuses, targeting a niche market\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 668,
-    "completion_tokens": 271,
-    "total_tokens": 939,
+    "prompt_tokens": 1725,
+    "completion_tokens": 592,
+    "total_tokens": 2317,
     "prompt_tokens_details": {
       "cached_tokens": 0
     },
     "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 668
+    "prompt_cache_miss_tokens": 1725
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

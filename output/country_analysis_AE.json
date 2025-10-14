@@ -1,28 +1,28 @@
 {
-  "id": "d2ee5c66-fdc1-49ae-9cc7-111c71206133",
+  "id": "5383d549-49c6-445a-9639-4acfbb1b8aee",
   "object": "chat.completion",
-  "created": 1760090002,
+  "created": 1760436310,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"AE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"292,286.42€\",\n                \"url\": \"https://888casino.com\"\n            },\n            {\n                \"competitor\": \"EmirBet\",\n                \"title\": \"Deposit Bonus\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"€10 Free Bet + up to 10% Cashback\",\n                \"url\": \"https://emirbet.net\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Jackpot Gold, Flaming Wild Crown, Don Premiote Jackpot, Blaze Fire, Blaze White Witch, Wolf Gold 4 Pack, Gonzo's\",\n                \"context\": \"Jackpot promotion featuring various slot games\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"292,286.42€\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"€10 Free Bet + up to 10% Cashback\"\n            }\n        ],\n        \"distinctive_data\": [\"888 Casino offers an exceptionally high jackpot of 292,286.42€, which is significantly larger than typical promotions in the region.\", \"EmirBet provides a combination of a free bet and weekly cashback, focusing on ongoing player retention rather than one-time bonuses.\"]\n    }\n}"
+        "content": "{\n    \"country\": \"AE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"$7,777 + 300 free spins\",\n                \"url\": \"https://justcasino.com\"\n            },\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Found 'welcome' on page\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$7,777 + 300 Free Spins and 100% up to $1,111 + 100 Free Spins\",\n                \"url\": \"https://justcasino.com\"\n            },\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"title\": \"Found 'welcome' on page\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"up to $7,777 + 300 free spins\",\n                \"url\": \"https://www.luckydreams.com/bonuses\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"game\": \"Book of Dead\",\n                \"context\": \"Featured in free spins promotion\"\n            },\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"game\": \"Top Wanted Dead or a Wild\",\n                \"context\": \"Featured in free spins promotion\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"100% up to $1,111 + 100 free spins (common base) with some offering up to $7,777 + 300 free spins\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"100% up to $1,111 + 100 free spins\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"100-300 free spins (varies by promotion)\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"$7,777 + 300 free spins\"\n            }\n        ],\n        \"distinctive_data\": [\"JustCasino offers a large welcome package combining $7,777 + 300 free spins with a 100% deposit match up to $1,111 + 100 free spins, making it one of the most aggressive promotions.\", \"LuckyDreams has unique daily promotions: Monday Boost with 300 free spins, Crazy Tuesday with 77 free spins and 33% crypto bonus, and Wild Wednesday with 100% deposit bonus.\", \"Both competitors emphasize no bonus code requirements for many promotions, simplifying the user experience.\", \"Promotions are available in multiple languages and regions, indicating a broad targeting strategy.\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 818,
-    "completion_tokens": 377,
-    "total_tokens": 1195,
+    "prompt_tokens": 4401,
+    "completion_tokens": 638,
+    "total_tokens": 5039,
     "prompt_tokens_details": {
-      "cached_tokens": 320
+      "cached_tokens": 0
     },
-    "prompt_cache_hit_tokens": 320,
-    "prompt_cache_miss_tokens": 498
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 4401
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

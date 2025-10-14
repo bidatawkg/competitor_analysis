@@ -25,7 +25,7 @@ from bs4 import BeautifulSoup
 import aiohttp
 from pathlib import Path
 
-from .url_finder import URLFinder, get_vpn_config
+from .url_finder import URLFinder, connect_cyberghost
 
 import sys, asyncio
 if sys.platform.startswith("win"):
@@ -607,7 +607,7 @@ class CompetitorScraper:
             # Try async browser setup first using VPN config
             logger.info(f"🔄 Connecting to VPN for {country}...")
 
-            vpn_ok = get_vpn_config(country)  # True/False
+            vpn_ok = connect_cyberghost(country)  # True/False
             proxy = None  # No asumas estructura de dict aquí
             if isinstance(vpn_ok, dict) and vpn_ok.get("proxies"):
                 proxy = vpn_ok["proxies"][0]

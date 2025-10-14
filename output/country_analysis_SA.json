@@ -1,28 +1,28 @@
 {
-  "id": "0d19814a-24c4-4ded-8640-69098136af99",
+  "id": "830d429d-aee8-4518-b50c-4a0cd5ee2fdb",
   "object": "chat.completion",
-  "created": 1760023173,
+  "created": 1760452431,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"SA\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [],\n        \"distinctive_data\": [\"No promotions found for any competitors in SA on the analysis date.\"]\n    }\n}"
+        "content": "{\n    \"country\": \"SA\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"welcome offer $7,777 + 300 free spins\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$7,777 + 300 Free Spins and 100% up to $1,111 + 100 Free Spins\",\n                \"url\": \"https://justcasino.com\"\n            },\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"$7,777 + 300 free spins\",\n                \"url\": \"https://justcasino.com\"\n            },\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Deposit Bonus\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"100% up to $1,111 + 100 free spins\",\n                \"url\": \"https://www.justcasino.com\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"1x bet\",\n                \"game\": \"Champions League stars\",\n                \"context\": \"Star League: bet on Champions League stars and win 70,000 USD!\"\n            },\n            {\n                \"competitor\": \"1x bet\",\n                \"game\": \"Asian football stars\",\n                \"context\": \"Asian league elite place bets on asian football stars\"\n            },\n            {\n                \"competitor\": \"JustCasino\",\n                \"game\": \"Jackpots\",\n                \"context\": \"Tournament with payments deal promo featuring just jackpots\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"$4,444 + 200 free spins (based on $7,777 + 300 FS and up to €1,500 + 150 FS)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"100% up to $1,111 + 100 free spins (most common offer)\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"Free Spins / Free Bets (amount not specified in most cases)\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"$7,777 + 300 free spins\"\n            }\n        ],\n        \"distinctive_data\": [\"JustCasino dominates the market with the highest bonus amounts, including a massive $7,777 + 300 free spins welcome package and jackpot offer\", \"1x bet stands out with sports betting integration, offering large cash prizes (70,000 USD) for betting on specific sports events like Champions League and Asian football\", \"EmirBet offers the most player-friendly conditions with a €10 free bet and weekly cashback refund up to 10% on losses\", \"Multiple promotions from JustCasino mention 'no bonus code required' and availability for multiple regions/languages\", \"JustCasino has the most diverse promotion types including welcome bonuses, deposit bonuses, free spins, jackpots, and tournaments\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 401,
-    "completion_tokens": 71,
-    "total_tokens": 472,
+    "prompt_tokens": 3490,
+    "completion_tokens": 713,
+    "total_tokens": 4203,
     "prompt_tokens_details": {
-      "cached_tokens": 320
+      "cached_tokens": 0
     },
-    "prompt_cache_hit_tokens": 320,
-    "prompt_cache_miss_tokens": 81
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 3490
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }
