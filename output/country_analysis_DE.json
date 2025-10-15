@@ -1,0 +1,28 @@
+{
+  "id": "9e6dde0f-45a6-4d5c-9724-90ec8748a78f",
+  "object": "chat.completion",
+  "created": 1760540829,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"country\": \"DE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Casombie\",\n                \"title\": \"Welcome Bonus 200% up to 3,000 €\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"200% up to 3,000 €\",\n                \"url\": \"https://www.casombie.com\"\n            },\n            {\n                \"competitor\": \"N1 Casino\",\n                \"title\": \"Welcome Package\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"4,000 €/$ + 200 Free Spins\",\n                \"url\": \"https://n1casino.com\"\n            },\n            {\n                \"competitor\": \"Playzilla\",\n                \"title\": \"Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"200% up to €100 + 500 free spins\",\n                \"url\": \"https://www.playzilla.com\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"Playzilla\",\n                \"game\": \"Sizzling Hot Deluxe\",\n                \"context\": \"Jackpot game with demo available\"\n            },\n            {\n                \"competitor\": \"Playzilla\",\n                \"game\": \"Follow the Cash\",\n                \"context\": \"Jackpot game with demo available\"\n            },\n            {\n                \"competitor\": \"Playzilla\",\n                \"game\": \"Rabbit Penguin King\",\n                \"context\": \"Jackpot game with demo available\"\n            },\n            {\n                \"competitor\": \"N1 Casino\",\n                \"game\": \"Pragmatic Play\",\n                \"context\": \"Mentioned in welcome package description\"\n            },\n            {\n                \"competitor\": \"N1 Casino\",\n                \"game\": \"BGaming\",\n                \"context\": \"Mentioned in welcome package description\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"Approx. 150% match + €1,300 + 150 free spins\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"25% match up to €1,000 + 30 free spins\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"300 free spins\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"€17,170,238\"\n            }\n        ],\n        \"distinctive_data\": [\"Casombie offers the highest percentage match (200%) with a substantial maximum of €3,000\", \"N1 Casino provides the most comprehensive welcome package with up to €4,000 + 200 free spins across multiple deposits\", \"Playzilla features a massive progressive jackpot of over €17 million\", \"Vegadream offers free spins but with unclear game availability, which is unusual\", \"Multiple competitors (Casombie, Playzilla) offer crypto payment options, indicating adaptation to modern payment trends\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4082,
+    "completion_tokens": 677,
+    "total_tokens": 4759,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 4082
+  },
+  "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
+}

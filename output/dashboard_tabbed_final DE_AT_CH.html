@@ -1,0 +1,784 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <title>Competitors Dashboard</title>
+
+    <!-- Chart.js antes de cualquier uso -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Funciones de gráficos disponibles ANTES de los scripts inline -->
+    <script>
+    function renderDonut(canvasId, labels, data) {
+    const colors = ["#6aa0ff","#9b76ff","#f6ad55","#48bb78","#f56565","#ed64a6","#38b2ac"];
+    new Chart(document.getElementById(canvasId), {
+        type:'doughnut',
+        data:{labels:labels,datasets:[{data:data,backgroundColor:colors}]},
+        options:{plugins:{legend:{position:'bottom',labels:{color:'#e5e9f0'}}}}
+    });
+    }
+    function renderStacked(canvasId, competitors, types, stackedByType) {
+    const colors = ["#6aa0ff","#9b76ff","#f6ad55","#48bb78","#f56565","#ed64a6","#38b2ac"];
+    const datasets = types.map((t,i)=>({label:t,data:stackedByType[i],stack:'stack-1',backgroundColor:colors[i % colors.length]}));
+    new Chart(document.getElementById(canvasId), {
+        type:'bar',
+        data:{labels:competitors,datasets:datasets},
+        options:{scales:{x:{stacked:true,ticks:{color:'#e5e9f0'}},y:{stacked:true,ticks:{color:'#e5e9f0'}}},plugins:{legend:{position:'bottom',labels:{color:'#e5e9f0'}}}}
+    });
+    }
+    </script>
+
+    <!-- CSS COMPLETO (tema oscuro + layout + cards + charts + insights) -->
+    <style>
+    :root {
+    --bg: #0b0f19;
+    --panel: #131a29;
+    --muted: #718096;
+    --text: #e5e9f0;
+    --accent: #6aa0ff;
+    --accent-2: #9b76ff;
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+    --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); }
+    .container { max-width: 1280px; margin:auto; padding:20px; }
+    h1 { font-size:28px; margin-bottom:10px; }
+    .subtitle { font-size:13px; color:var(--muted); }
+    .nav { display:flex; gap:10px; margin:20px 0; flex-wrap:wrap; }
+    .pill { border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05); padding:10px 16px; border-radius:999px; cursor:pointer; color:var(--text); }
+    .pill--active { background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; }
+    .country { display:none; background: var(--panel); padding:18px; border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:20px; }
+    .section-head { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+    .stats { display:flex; gap:12px; }
+    .stat { background:rgba(255,255,255,.05); padding:10px 14px; border-radius:10px; text-align:center; min-width:110px; }
+    .stat__num { font-size:20px; font-weight:700; }
+    .stat__label { font-size:12px; color:var(--muted); }
+    .controls { display:flex; gap:16px; flex-wrap:wrap; margin:14px 0; }
+    .control { display:flex; flex-direction:column; gap:6px; }
+    .select,.input { background:var(--panel); border:1px solid rgba(255,255,255,.1); color:var(--text); padding:8px 12px; border-radius:8px; }
+    .select:focus,.input:focus { outline:none; border-color: rgba(106,160,255,.6); }
+    .charts { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px; margin:10px 0; }
+    .chart { background:rgba(255,255,255,.05); padding:12px; border-radius:10px; min-height: 340px; height: 340px; display:flex; justify-content:center; align-items:center;}
+    .chart canvas {width:100%; height:100%;}
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; margin-top:10px; }
+    .card { background:var(--panel); border-radius:12px; padding:14px; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.06); }
+    .card__head { display:flex; justify-content:space-between; align-items:center; }
+    .badge { font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(106,160,255,.2); }
+    .link { font-size:12px; background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; padding:6px 10px; border-radius:8px; text-decoration:none; }
+    .card__title { font-size:16px; font-weight:600; margin:6px 0; }
+    .card__amount { font-weight:700; color:#c7f464; margin:0 0 6px; }
+    .card__desc { font-size:13px; color:var(--muted); }
+    .analysis { margin:20px 0; padding:16px; background:rgba(255,255,255,.03); border-radius:12px; border:1px solid rgba(255,255,255,.06); }
+    .analysis h3 { margin-bottom:10px; font-size:18px; }
+    .analysis-section { margin-bottom:12px; }
+    .analysis-section h4 { font-size:15px; margin:6px 0; color: var(--accent); }
+    .analysis-section ul { margin:0; padding-left:18px; font-size:13px; }
+    .analysis-section li { margin:4px 0; }
+    .empty { color: var(--muted); font-size:14px; padding:12px; }
+    </style>
+    </head>
+    <body>
+    <div class="container">
+    <h1>Competitors Dashboard</h1>
+    <div class="subtitle">Generated on 2025-10-15 17:39</div>
+    <div class="nav"><button class="pill pill--active" onclick="openTab(event, 'DE')">DE</button>
+<button class="pill " onclick="openTab(event, 'AT')">AT</button>
+<button class="pill " onclick="openTab(event, 'CH')">CH</button></div>
+    
+        <section id="DE" class="country" style="display:block;">
+            <div class="section-head">
+                <h2 class="country__title">DE</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">13</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">4</div><div class="stat__label">Bonus types</div></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-DE" onchange="filterCards('DE')">
+                        <option value="ALL">All</option>
+                        <option value="Jackpot">Jackpot</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Deposit Bonus">Deposit Bonus</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-DE" placeholder="Filter by text..." oninput="filterCards('DE')" />
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart"><canvas id="donut-DE"></canvas></div>
+                <div class="chart"><canvas id="stacked-DE"></canvas></div>
+            </div>
+
+            
+            <div class="analysis">
+                <h3>Key Market Insights (DE)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>Casombie</strong>: Welcome Bonus - 200% up to 3,000 € <a href='https://www.casombie.com' target='_blank'>Link</a></li><li><strong>N1 Casino</strong>: Welcome Bonus - 4,000 €/$ + 200 Free Spins <a href='https://n1casino.com' target='_blank'>Link</a></li><li><strong>Playzilla</strong>: Welcome Bonus - 200% up to €100 + 500 free spins <a href='https://www.playzilla.com' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>Playzilla</strong>: Sizzling Hot Deluxe <em>(Jackpot game with demo available)</em></li><li><strong>Playzilla</strong>: Follow the Cash <em>(Jackpot game with demo available)</em></li><li><strong>Playzilla</strong>: Rabbit Penguin King <em>(Jackpot game with demo available)</em></li><li><strong>N1 Casino</strong>: Pragmatic Play <em>(Mentioned in welcome package description)</em></li><li><strong>N1 Casino</strong>: BGaming <em>(Mentioned in welcome package description)</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: Approx. 150% match + €1,300 + 150 free spins</li><li><strong>Deposit Bonus</strong>: 25% match up to €1,000 + 30 free spins</li><li><strong>Free Spins</strong>: 300 free spins</li><li><strong>Jackpot</strong>: €17,170,238</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>Casombie offers the highest percentage match (200%) with a substantial maximum of €3,000</li><li>N1 Casino provides the most comprehensive welcome package with up to €4,000 + 200 free spins across multiple deposits</li><li>Playzilla features a massive progressive jackpot of over €17 million</li><li>Vegadream offers free spins but with unclear game availability, which is unusual</li><li>Multiple competitors (Casombie, Playzilla) offer crypto payment options, indicating adaptation to modern payment trends</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-DE">
+                
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casombie">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.casombie.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casombie</h3>
+                <p class="card__amount">200% up to 3,000 €</p>
+                <p class="card__desc">Welcome bonus of 200% up to 3,000 €. The casino offers a VIP program, live casino, sports betting, and crypto payments.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="ExciteWin">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.excitewin.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">ExciteWin</h3>
+                <p class="card__amount">Up to €500 + 200 Free Spins</p>
+                <p class="card__desc">Welcome bonus 100% up to €500 + 200 free spins. First deposit bonus 100% up to €100.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="ExciteWin">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.excitewin.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">ExciteWin</h3>
+                <p class="card__amount">Up to €500 + 200 FS</p>
+                <p class="card__desc">First deposit bonus 100% up to €100 and welcome bonus 100% up to €500 + 200 free spins</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="N1 Casino">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://n1casino.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">N1 Casino</h3>
+                <p class="card__amount">25% up to €/$1,000 + 30 FS</p>
+                <p class="card__desc">25% deposit bonus up to €/$1,000. Monday reload bonus 25% up to €/$1,000 + 30 free spins. Friday route bonus. Bonus code: rally21</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="N1 Casino">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://www.n1casino.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">N1 Casino</h3>
+                <p class="card__amount">25% up to €/$1,000 + 30 FS</p>
+                <p class="card__desc">25% deposit bonus up to €/$1,000. Monday reload bonus 25% up to €/$1,000 + 30 free spins. Bonus codes: rally21 for sign up, rally21 for Friday route bonus.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="N1 Casino">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://n1casino.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">N1 Casino</h3>
+                <p class="card__amount">25% up to 1,000 €/$ + 30 FS</p>
+                <p class="card__desc">Sign up Monday reload 25% up to 1,000 €/$ + 30 free spins. Friday route bonus. Bonus code: rally21</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="N1 Casino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://n1casino.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">N1 Casino</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">Welcome bonus, promo codes and freespins for players at online casino n1</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="N1 Casino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://n1casino.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">N1 Casino</h3>
+                <p class="card__amount">Up to 1000 €/$ + 150 FS, Up to 1000 €/$, Up to 1000 €/$ + 50 FS</p>
+                <p class="card__desc">1st deposit bonus 100% up to 1,000 €/$ + 150 free spins. 2nd deposit bonus 75% up to 1,000 €/$. 3rd deposit bonus 100% up to 1,000 €/$ + 50 free spins.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="N1 Casino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://n1casino.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">N1 Casino</h3>
+                <p class="card__amount">4000 €/$ + 200 Free Spins</p>
+                <p class="card__desc">welcome package 4,000 €/$ + 200 fs join now top see all gates of n1 1000 pragmaticplay demo new exclusive n1 million bgaming demo exclusive book of th</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="N1 Casino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.n1casino.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">N1 Casino</h3>
+                <p class="card__amount">4,000 €/$ + 200 Free Spins</p>
+                <p class="card__desc">welcome package 4,000 €/$ + 200 fs join now top see all new games see all promotions see all 4. deposit bonus 25% up to 1,000 €/$ sign up monday reload</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Playzilla">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://playzilla.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Playzilla</h3>
+                <p class="card__amount">€ 17,170,238</p>
+                <p class="card__desc">jackpot € 17,170,238 jackpot games play demo sizzling hot deluxe novomatic new play demo follow the cash rabbit penguin king new play demo 25 coins vo</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Playzilla">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.playzilla.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Playzilla</h3>
+                <p class="card__amount">200% up to €100 + 500 free spins, 100% up to €100</p>
+                <p class="card__desc">Welcome bonus 200% up to €100 + 500 free spins on first deposit. Also includes a first deposit bonus of 100% up to €100.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Vegadream">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://vegadream.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Vegadream</h3>
+                <p class="card__amount">300 free spins</p>
+                <p class="card__desc">Bonus + 300 free spins for your search. No games available register login menu homepage promotions walk of dreams live casino</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            </div>
+
+            <script>
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Welcome Bonus"], "typeCounts": [3, 1, 1, 8], "competitors": ["Casombie", "ExciteWin", "N1 Casino", "Playzilla", "Vegadream"], "stackedByType": [[0, 0, 3, 0, 0], [0, 0, 0, 0, 1], [0, 0, 0, 1, 0], [1, 2, 4, 1, 0]]};
+                console.log("Chart payload for DE", payload);
+                renderDonut("donut-DE", payload.types, payload.typeCounts);
+                renderStacked("stacked-DE", payload.competitors, payload.types, payload.stackedByType);
+            })();
+            </script>
+        </section>
+        
+
+        <section id="AT" class="country" >
+            <div class="section-head">
+                <h2 class="country__title">AT</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">4</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">18</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">6</div><div class="stat__label">Bonus types</div></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-AT" onchange="filterCards('AT')">
+                        <option value="ALL">All</option>
+                        <option value="Tournament">Tournament</option><option value="Other">Other</option><option value="Jackpot">Jackpot</option><option value="Deposit Bonus">Deposit Bonus</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-AT" placeholder="Filter by text..." oninput="filterCards('AT')" />
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart"><canvas id="donut-AT"></canvas></div>
+                <div class="chart"><canvas id="stacked-AT"></canvas></div>
+            </div>
+
+            
+            <div class="analysis">
+                <h3>Key Market Insights (AT)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>NeoSpin</strong>: Deposit Bonus - 100% up to €1,000 +100 free spins <a href='https://neospin.com/promotions' target='_blank'>Link</a></li><li><strong>Bitstarz</strong>: Welcome Bonus - 100% bonus + 180 free spins + up to €400/4 BTC <a href='https://www.bitstarz.com/bonuses' target='_blank'>Link</a></li><li><strong>Bitstarz</strong>: Tournament - €15,000 + 5,000 Free Spins <a href='https://bitstarz.com/bonuses' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>Bitstarz</strong>: Jackpotz Mania <em>(Jackpot promotion with top prizes of J$230,824.91, J$183,811.94, and J$116,089.94, featuring a countdown timer and Bonuz Mania for extra prizes.)</em></li><li><strong>Bitstarz</strong>: Piggyz Mania Tournament <em>(Tournament requiring a minimum $50 deposit to activate Piggyz cash bonuses and spins.)</em></li><li><strong>Bitstarz</strong>: Slot Wars & Table Wars Tournaments <em>(Tournaments with €5,000 + 5,000 free spins for slot players and €10,000 for table game players, encouraging play across different game types.)</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: Up to €400 + 165 free spins (based on Bitstarz, CatCasino, and Hell Spin offers)</li><li><strong>Free Spins</strong>: Approximately 300 free spins (based on Bitstarz offers ranging from 32 to 702+ spins)</li><li><strong>Deposit Bonus</strong>: Up to €700 + 50 free spins (based on NeoSpin and Bitstarz offers)</li><li><strong>Tournament</strong>: Prize pools averaging around €5,000-€15,000 + free spins (based on Bitstarz tournament data)</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>Bitstarz dominates the market with the highest number and variety of promotions, including large tournament prize pools and cryptocurrency options (BTC).</li><li>NeoSpin offers the highest deposit bonus value at up to €1,000 + 100 free spins, making it the most aggressive in terms of deposit match.</li><li>Bitstarz promotions heavily feature jackpots and tournaments with countdown timers, creating urgency and engagement.</li><li>CatCasino and Hell Spin have simpler, more traditional welcome bonuses without the complexity of tournaments or high-value crypto options.</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-AT">
+                
+            <article class="card" data-type="Free Spins" data-competitor="Bitstarz">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://bitstarz.com/welcome-bonus" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Bitstarz</h3>
+                <p class="card__amount">180 free spins</p>
+                <p class="card__desc">bonus + 180 free spins withdraw within 5 min easy deposits instant cashouts get bonus dav**** won $26,719 bel**** won $21,423 roc**** won $27,120 sup*</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Bitstarz">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://bitstarz.com/bonuses" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Bitstarz</h3>
+                <p class="card__amount">479 Free Spins</p>
+                <p class="card__desc">bonus & free spins rewards - bitstarz casino log in sign up help we have awarded 3 2 , 4 7 9 , 7 0 2 free spins and counting... sign up now level up &</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Bitstarz">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://bitstarz.com/welcome-bonus" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Bitstarz</h3>
+                <p class="card__amount">Up to 5 BTC / $500 + 180 Free Spins</p>
+                <p class="card__desc">deposit free spins for signup 100% deposit match up to 5 btc/500$ bonus + 180 free spins withdraw within 5 min easy deposits instant cashouts get bonu</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Bitstarz">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://bitstarz.com/bonuses" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Bitstarz</h3>
+                <p class="card__amount">Up to €400 or 4 BTC</p>
+                <p class="card__desc">deposit get up to €400 or 4 btc on your next three deposits don’t worry, there’s plenty of bonuses to come after that vip club customize your own vip</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Bitstarz">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://bitstarz.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Bitstarz</h3>
+                <p class="card__amount">5x deposit amount</p>
+                <p class="card__desc">deposit 2 play your bonuz mania spins 3 receive the first piggyz cash in the amount of 5x your deposit jackpotz mania</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Bitstarz">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://www.bitstarz.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Bitstarz</h3>
+                <p class="card__amount">Free Spins</p>
+                <p class="card__desc">free spins 0% ending in 22 d 20 : 46 : 53 originals tournament 1. iovi*** 13564 350 usd 2. s1n8*** 11771 250 usd 3. paul*** 9437 100 usd 4. al***** 73</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="Bitstarz">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://www.bitstarz.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Bitstarz</h3>
+                <p class="card__amount">J$230,824.91, J$183,811.94, J$116,089.94</p>
+                <p class="card__desc">jackpotz mania 1. sad**** j$230,824.91 2. bus**** j$183,811.94 3. arm**** j$116,089.94 ending in 16 d 08 : 46 : 54 bonuz mania earn extra prizes on each</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Bitstarz">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://www.bitstarz.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Bitstarz</h3>
+                <p class="card__amount">Piggyz cash</p>
+                <p class="card__desc">Tournaments Piggyz Mania. How to activate your Piggyz: 1. Make a min $50 deposit 2. Play your bonuz mania spins 3. Receive the first Piggyz cash in the amount</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Bitstarz">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://www.bitstarz.com/bonuses" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Bitstarz</h3>
+                <p class="card__amount">€5,000 + 5,000 Free Spins and €10,000</p>
+                <p class="card__desc">Tournaments with €5,000 prize pool + 5,000 free spins for slot players. €10,000 table wars for players who prefer table games.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Bitstarz">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://bitstarz.com/bonuses" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Bitstarz</h3>
+                <p class="card__amount">€15,000 + 5,000 Free Spins</p>
+                <p class="card__desc">Tournaments with €5,000 + 5,000 Free Spins in Slot Wars where you win prizes by playing your favorite slots, and €10,000 Table Wars for everyone who is more into table games.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Bitstarz">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://bitstarz.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Bitstarz</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">How to activate your Piggyz: 1. Make a min $50 deposit</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Bitstarz">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.bitstarz.com/bonuses" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Bitstarz</h3>
+                <p class="card__amount">100% bonus + 180 free spins + up to €400/4 BTC</p>
+                <p class="card__desc">Welcome package receive a 100% bonus + 180 free spins on your first deposit. Get up to €400 or 4 BTC on your next three deposits</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="CatCasino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://catcasino.at" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">CatCasino</h3>
+                <p class="card__amount">Up to 400 EUR + 150 Free Spins</p>
+                <p class="card__desc">Free spins and regular promotions: welcome bonus up to 400 EUR + 150 free spins. No Cat Casino no deposit bonus available for new players.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="Hell Spin">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://hellspin.at" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Hell Spin</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">bonus app spiele live-dealer anmelden registrieren 96 / 100 online casino von österreichischen spielern vertraut hellspin österreich jetzt registriere</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Hell Spin">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.hellspin.at" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Hell Spin</h3>
+                <p class="card__amount">up to 400 €</p>
+                <p class="card__desc">Promotions and bonuses for new and existing players. Read on for our complete Hellspin review. First bonus package up to 400 €</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="NeoSpin">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://neospin.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">NeoSpin</h3>
+                <p class="card__amount">100% up to €1,000 +100 free spins</p>
+                <p class="card__desc">Deposit bonus 100% up to €1,000 +100 free spins. How to activate the bonus: Login to your Neospin account, enter the promocode NEO1 to opt-in the bonus, make deposit.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="NeoSpin">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://neospin.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">NeoSpin</h3>
+                <p class="card__amount">40</p>
+                <p class="card__desc">Free spins will be credited over 4 days starting from the activation date — 25 free spins on the first day and 25 per day for the following days.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="NeoSpin">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://neospin.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">NeoSpin</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">Welcome bonus, enter the promo code neo1 before making a deposit of at least EUR/USD 20, AUD/CAD/NZD 30, NOK 200, BTC 0.00022, ETH 0.01, LTC 0.3, DOGE</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            </div>
+
+            <script>
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Other", "Tournament", "Welcome Bonus"], "typeCounts": [3, 3, 1, 1, 4, 6], "competitors": ["Bitstarz", "CatCasino", "Hell Spin", "NeoSpin"], "stackedByType": [[2, 0, 0, 1], [2, 0, 0, 1], [1, 0, 0, 0], [0, 0, 1, 0], [4, 0, 0, 0], [3, 1, 1, 1]]};
+                console.log("Chart payload for AT", payload);
+                renderDonut("donut-AT", payload.types, payload.typeCounts);
+                renderStacked("stacked-AT", payload.competitors, payload.types, payload.stackedByType);
+            })();
+            </script>
+        </section>
+        
+
+        <section id="CH" class="country" >
+            <div class="section-head">
+                <h2 class="country__title">CH</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">4</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">12</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Bonus types</div></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-CH" onchange="filterCards('CH')">
+                        <option value="ALL">All</option>
+                        <option value="Tournament">Tournament</option><option value="Other">Other</option><option value="Deposit Bonus">Deposit Bonus</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-CH" placeholder="Filter by text..." oninput="filterCards('CH')" />
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart"><canvas id="donut-CH"></canvas></div>
+                <div class="chart"><canvas id="stacked-CH"></canvas></div>
+            </div>
+
+            
+            <div class="analysis">
+                <h3>Key Market Insights (CH)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>Dazard</strong>: Welcome Bonus - Up to 8200 € + 150 Free Spins + 100 Free Spins <a href='https://dazard.com' target='_blank'>Link</a></li><li><strong>Dazard</strong>: Free Spins - Up to €8200 in free spins + 100% deposit match + 100 free spins <a href='https://dazard.com' target='_blank'>Link</a></li><li><strong>Crowngold</strong>: Welcome Bonus - Up to €750 + 225 free spins <a href='https://crowngold.com/promotions' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>Dazard</strong>: Bgaming Drops Frenzy Fest Turbo <em>(Tournament with €4,000,000 prize pool)</em></li><li><strong>Dazard</strong>: Playson & Booongo games (Coin Empire, 3 Oaks, Turbo Wins) <em>(Featured in tournaments and network campaigns)</em></li><li><strong>Crowngold</strong>: Gravity Blackjack <em>(Mentioned with €5,433 last big win)</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: Up to €750 + 225 free spins (Crowngold), Up to 8200 € + 150 Free Spins + 100 Free Spins (Dazard)</li><li><strong>Free Spins</strong>: Up to €8200 in free spins + 100% deposit match + 100 free spins (Dazard), Not specified (Crowngold)</li><li><strong>Deposit Bonus</strong>: 100% match + 100 Free Spins (Dazard), Not specified (SlotsVader)</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>Dazard offers the highest bonus amounts with up to €8200 in free spins and a €4,000,000 tournament prize pool.</li><li>Crowngold emphasizes fast cashout times (12 minutes average) across multiple promotions.</li><li>SlotsVader and FeliceBet focus on VIP and personalized rewards without specific bonus amounts.</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-CH">
+                
+            <article class="card" data-type="Free Spins" data-competitor="Crowngold">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://crowngold.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Crowngold</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">Free spins start winning 12 min average cashout time. €11,413 total cashout last month 7000+ licensed games €5,433 last big win in gravity blackjack</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Crowngold">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://crowngold.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Crowngold</h3>
+                <p class="card__amount">up to €750 + 225 free spins</p>
+                <p class="card__desc">welcome pack up to €750 + 225 free spins start winning 12 min average cashout time. €11,413 total cashout last month 7000+ licensed games €5,433 last</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Crowngold">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://crowngold.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Crowngold</h3>
+                <p class="card__amount">€750 + 225 free spins</p>
+                <p class="card__desc">Tournaments for VIP loyalty. Welcome pack up to €750 + 225 free spins. Start winning with 12 min average cashout time. €11,413 total cash</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Crowngold">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://crowngold.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Crowngold</h3>
+                <p class="card__amount">Up to €750 + 225 free spins</p>
+                <p class="card__desc">Welcome pack up to €750 + 225 free spins. Start winning. 12 min average cash. Promotions include wheel of fortune and tournaments. VIP loyalty info available on login.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="Dazard">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://dazard.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Dazard</h3>
+                <p class="card__amount">100% match + 100 Free Spins</p>
+                <p class="card__desc">deposit bonus +100% bonus +100 free spins bgaming drops frenzy fest turbo €4,000,000 are here! join telegram bonus 50% on deposit + 30 fs join in depo</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="Dazard">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://dazard.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Dazard</h3>
+                <p class="card__amount">Up to €8200 in free spins + 100% deposit match + 100 free spins</p>
+                <p class="card__desc">Free spins up to 8200 € games of the week tournament play and win get your first deposit bonus +100% bonus +100 free spins bgaming drops frenzy fest</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="Dazard">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://dazard.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Dazard</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">Tournaments featuring Playson & Booongo games including Coin Empire, 3 Oaks, Turbo Wins. Network campaign with Playson & Booongo. The Big Sunday Blast. Games of the week from BGaming with drops.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Dazard">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://dazard.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Dazard</h3>
+                <p class="card__amount">Up to 8200 € + 150 Free Spins + 100 Free Spins</p>
+                <p class="card__desc">welcome pack +300% bonus +150 free spins up to 8200 € games of the week tournament play and win get your first deposit bonus +100% bonus +100 free spins</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="FeliceBet">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://felicebet.net" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">FeliceBet</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">welcomes you with a joyful stream of bonuses designed to delight. kick things off with a generous welcome bonus, followed by weekly reloads, free spin</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="SlotsVader">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://slotsvader.net" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">SlotsVader</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">deposit bonus offers and weekly cashback deals to free spins, vip loyalty rewards, and personalized promotions designed to elevate your gameplay.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="SlotsVader">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://slotsvader.net" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">SlotsVader</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">free spins, vip loyalty rewards, and personalized promotions designed to elevate your gameplay. explore an evolving lineup of top-rated titles</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Other" data-competitor="SlotsVader">
+                <header class="card__head">
+                    <div class="badge">Other</div>
+                    <a class="link" href="https://slotsvader.net" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">SlotsVader</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">Welcome to the Rainbet Casino VIP Club, where high-stakes players enjoy elite perks and rewards! Get access to tailored bonuses, higher cashback deals</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            </div>
+
+            <script>
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Other", "Tournament", "Welcome Bonus"], "typeCounts": [2, 3, 1, 1, 5], "competitors": ["Crowngold", "Dazard", "FeliceBet", "SlotsVader"], "stackedByType": [[0, 1, 0, 1], [1, 1, 0, 1], [0, 0, 0, 1], [0, 1, 0, 0], [3, 1, 1, 0]]};
+                console.log("Chart payload for CH", payload);
+                renderDonut("donut-CH", payload.types, payload.typeCounts);
+                renderStacked("stacked-CH", payload.competitors, payload.types, payload.stackedByType);
+            })();
+            </script>
+        </section>
+        
+    </div>
+
+    <!-- Funciones de interacción generales -->
+    <script>
+    function openTab(evt, country) {
+    document.querySelectorAll('.country').forEach(sec => sec.style.display='none');
+    document.querySelectorAll('.pill').forEach(p=>p.classList.remove('pill--active'));
+    document.getElementById(country).style.display='block';
+    evt.currentTarget.classList.add('pill--active');
+    }
+    function filterCards(country) {
+    const typeVal = document.getElementById('type-'+country).value;
+    const q = document.getElementById('search-'+country).value.toLowerCase().trim();
+    document.querySelectorAll('#grid-'+country+' .card').forEach(card => {
+        const ctype = card.getAttribute('data-type')||'';
+        const text = card.innerText.toLowerCase();
+        const byType = (typeVal==='ALL')||(ctype===typeVal);
+        const byText = q===''||text.indexOf(q)!==-1;
+        card.style.display=(byType&&byText)?'':'none';
+    });
+    }
+    </script>
+    </body>
+    </html>
+            

@@ -22,6 +22,9 @@ COUNTRY_TLDS = {
     "SA": [".sa", ".com", ".net", ".casino", ".bet"],
     "JO": [".jo", ".com", ".net", ".casino", ".bet"],
     "NZ": [".nz", ".com", ".net", ".casino", ".bet"],
+    "DE": [".de", ".com", ".net", ".casino", ".bet"],
+    "AT": [".at", ".com", ".net", ".casino", ".bet"],
+    "CH": [".ch", ".com", ".net", ".casino", ".bet"],
 }
 
 

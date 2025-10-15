@@ -5,6 +5,9 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
+# NUEVO: extractor avanzado de wagering
+from scraper.wager_extractor import extract_wagering_from_text, find_candidate_tc_links, to_display_string
+
 # Configura logging del worker
 logging.basicConfig(
     level=logging.INFO,
@@ -61,6 +64,37 @@ def scrape_with_playwright(competitor_name, url, country, search_terms):
         logging.info(f"[Worker] Extracted {len(promotions)} promotions from {url}")
     except Exception as e:
         logging.error(f"[Worker] Error scraping {url}: {e}", exc_info=True)
+
+    # === NUEVO: completar wagering desde T&C si falta ===
+    try:
+        tc_links = find_candidate_tc_links(html, url)[:5]
+        logger.info(f"[DEBUG] Found {len(tc_links)} T&C links for {url}: {tc_links}")
+        if tc_links:
+            for promo in promotions:
+                if promo.get("wagering"):
+                    continue
+                best_res = None
+                for tc in tc_links:
+                    try:
+                        page.goto(tc, timeout=30000)
+                        page.wait_for_load_state("networkidle", timeout=10000)
+                        time.sleep(3)  # deja tiempo extra para cargar JS dinámico
+                        tc_text = page.inner_text("body", timeout=10000)
+                        logger.debug(f"[DEBUG] T&C text snippet ({url}): {tc_text[:500]}")
+                        logger.debug(f"[DEBUG] Snippet from T&C ({tc}): {tc_text[:400]}")
+                        res = extract_wagering_from_text(tc_text)
+                        if res and res.get("confidence", 0) >= 0.8:
+                            best_res = res
+                            break
+                        if res and res.get("confidence", 0) >= 0.6 and not best_res:
+                            best_res = res
+                    except Exception:
+                        continue
+                if best_res:
+                    promo["wagering"] = to_display_string(best_res)
+    except Exception:
+        pass
+    # === FIN NUEVO ===
 
     return promotions
 

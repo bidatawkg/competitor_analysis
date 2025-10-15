@@ -1,0 +1,28 @@
+{
+  "id": "104d419f-3d9d-4c43-b71e-17114621b0d2",
+  "object": "chat.completion",
+  "created": 1760541776,
+  "model": "deepseek-chat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n    \"country\": \"AT\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"NeoSpin\",\n                \"title\": \"Deposit Bonus\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"100% up to €1,000 +100 free spins\",\n                \"url\": \"https://neospin.com/promotions\"\n            },\n            {\n                \"competitor\": \"Bitstarz\",\n                \"title\": \"Welcome Package\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% bonus + 180 free spins + up to €400/4 BTC\",\n                \"url\": \"https://www.bitstarz.com/bonuses\"\n            },\n            {\n                \"competitor\": \"Bitstarz\",\n                \"title\": \"Slot Wars & Table Wars Tournaments\",\n                \"bonus_type\": \"Tournament\",\n                \"bonus_amount\": \"€15,000 + 5,000 Free Spins\",\n                \"url\": \"https://bitstarz.com/bonuses\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"Bitstarz\",\n                \"game\": \"Jackpotz Mania\",\n                \"context\": \"Jackpot promotion with top prizes of J$230,824.91, J$183,811.94, and J$116,089.94, featuring a countdown timer and Bonuz Mania for extra prizes.\"\n            },\n            {\n                \"competitor\": \"Bitstarz\",\n                \"game\": \"Piggyz Mania Tournament\",\n                \"context\": \"Tournament requiring a minimum $50 deposit to activate Piggyz cash bonuses and spins.\"\n            },\n            {\n                \"competitor\": \"Bitstarz\",\n                \"game\": \"Slot Wars & Table Wars Tournaments\",\n                \"context\": \"Tournaments with €5,000 + 5,000 free spins for slot players and €10,000 for table game players, encouraging play across different game types.\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"Up to €400 + 165 free spins (based on Bitstarz, CatCasino, and Hell Spin offers)\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"Approximately 300 free spins (based on Bitstarz offers ranging from 32 to 702+ spins)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"Up to €700 + 50 free spins (based on NeoSpin and Bitstarz offers)\"\n            },\n            {\n                \"bonus_type\": \"Tournament\",\n                \"average_bonus\": \"Prize pools averaging around €5,000-€15,000 + free spins (based on Bitstarz tournament data)\"\n            }\n        ],\n        \"distinctive_data\": [\"Bitstarz dominates the market with the highest number and variety of promotions, including large tournament prize pools and cryptocurrency options (BTC).\", \"NeoSpin offers the highest deposit bonus value at up to €1,000 + 100 free spins, making it the most aggressive in terms of deposit match.\", \"Bitstarz promotions heavily feature jackpots and tournaments with countdown timers, creating urgency and engagement.\", \"CatCasino and Hell Spin have simpler, more traditional welcome bonuses without the complexity of tournaments or high-value crypto options.\"]\n    }\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5109,
+    "completion_tokens": 761,
+    "total_tokens": 5870,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 5109
+  },
+  "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
+}

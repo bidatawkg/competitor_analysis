@@ -1,28 +1,28 @@
 {
-  "id": "5383d549-49c6-445a-9639-4acfbb1b8aee",
+  "id": "80d97afc-e897-4ab9-8ee4-b212a2d1d843",
   "object": "chat.completion",
-  "created": 1760436310,
+  "created": 1760532438,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"AE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"$7,777 + 300 free spins\",\n                \"url\": \"https://justcasino.com\"\n            },\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Found 'welcome' on page\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$7,777 + 300 Free Spins and 100% up to $1,111 + 100 Free Spins\",\n                \"url\": \"https://justcasino.com\"\n            },\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"title\": \"Found 'welcome' on page\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"up to $7,777 + 300 free spins\",\n                \"url\": \"https://www.luckydreams.com/bonuses\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"game\": \"Book of Dead\",\n                \"context\": \"Featured in free spins promotion\"\n            },\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"game\": \"Top Wanted Dead or a Wild\",\n                \"context\": \"Featured in free spins promotion\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"100% up to $1,111 + 100 free spins (common base) with some offering up to $7,777 + 300 free spins\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"100% up to $1,111 + 100 free spins\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"100-300 free spins (varies by promotion)\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"$7,777 + 300 free spins\"\n            }\n        ],\n        \"distinctive_data\": [\"JustCasino offers a large welcome package combining $7,777 + 300 free spins with a 100% deposit match up to $1,111 + 100 free spins, making it one of the most aggressive promotions.\", \"LuckyDreams has unique daily promotions: Monday Boost with 300 free spins, Crazy Tuesday with 77 free spins and 33% crypto bonus, and Wild Wednesday with 100% deposit bonus.\", \"Both competitors emphasize no bonus code requirements for many promotions, simplifying the user experience.\", \"Promotions are available in multiple languages and regions, indicating a broad targeting strategy.\"]\n    }\n}"
+        "content": "{\n    \"country\": \"AE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Tournament Promotion\",\n                \"bonus_type\": \"Tournament\",\n                \"bonus_amount\": \"$7,777 + 300 free spins\",\n                \"url\": \"https://justcasino.com\"\n            },\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"$7,777 + 300 free spins\",\n                \"url\": \"https://justcasino.com\"\n            },\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"title\": \"Welcome to Lucky Dreams Casino\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$7,777 + 300 free spins\",\n                \"url\": \"https://www.luckydreams.com/bonuses\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"JustCasino\",\n                \"game\": \"Jackpot\",\n                \"context\": \"Jackpot promotion offering $7,777 + 300 free spins, targeted at multiple regions/languages\"\n            },\n            {\n                \"competitor\": \"JustCasino\",\n                \"game\": \"Tournament\",\n                \"context\": \"Tournament promotion with jackpots, offering $7,777 + 300 free spins for participation\"\n            },\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"game\": \"Jackpot\",\n                \"context\": \"Jackpot promotion as part of welcome offer, up to $7,777 for new players\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"$7,777 + 300 free spins (high-value offers from JustCasino and LuckyDreams)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"100% up to $1,111 + 75 free spins (average of 100 free spins on first deposit and 50 on second across competitors)\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"77 free spins (based on daily promotions like Monday Boost from LuckyDreams)\"\n            },\n            {\n                \"bonus_type\": \"Other\",\n                \"average_bonus\": \"300 free spins + 77 free spins + 33% bonus + 100% bonus (from LuckyDreams' daily promotions)\"\n            }\n        ],\n        \"distinctive_data\": [\"JustCasino and LuckyDreams both offer identical high-value welcome bonuses of $7,777 + 300 free spins, suggesting intense competition.\", \"LuckyDreams stands out with recurring daily promotions (Monday Boost, Crazy Tuesday, etc.), offering variety beyond one-time welcome bonuses.\", \"EmirBet's promotion is less aggressive, focusing on a €10 free bet and 10% cashback, which is modest compared to competitors.\", \"Multiple promotions from JustCasino and LuckyDreams mention no bonus code required, simplifying user access.\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 4401,
-    "completion_tokens": 638,
-    "total_tokens": 5039,
+    "prompt_tokens": 4955,
+    "completion_tokens": 696,
+    "total_tokens": 5651,
     "prompt_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 2560
     },
-    "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 4401
+    "prompt_cache_hit_tokens": 2560,
+    "prompt_cache_miss_tokens": 2395
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

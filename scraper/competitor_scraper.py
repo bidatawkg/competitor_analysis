@@ -38,6 +38,12 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 
+# NUEVO: extractor avanzado de wagering
+from .wager_extractor import (
+    extract_wagering_from_text,
+    find_candidate_tc_links,
+    to_display_string,
+)
 
 
 # from dotenv import load_dotenv  # Optional dependency
@@ -200,7 +206,46 @@ class CompetitorScraper:
                 {"name": "christchurchcasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
                 {"name": "highroller", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
                 {"name": "casumo", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+            ],
+            "DE": [
+                {"name": "Locowin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Vulkan Vegas", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Neon54", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "GG.BET", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "ExciteWin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Playzilla", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Ice Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Casombie", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Vegadream", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "N1 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+            ],
+
+            "AT": [
+                {"name": "20Bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "SpinBetter", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Nomini", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "CasinoRex", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "CatCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Bitstarz", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "22Bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Hell Spin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "NeoSpin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Wild Fortune", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+            ],
+
+            "CH": [
+                {"name": "Spins of Glory", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Lucky Dreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Caspero", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Azurslot", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Dazard", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "SlotsVader", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Rockwin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "FeliceBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "SlotsMafia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
+                {"name": "Crowngold", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
             ]
+
         }
 
     async def setup_browser(self, proxy: Optional[Dict] = None) -> None:
@@ -456,19 +501,28 @@ class CompetitorScraper:
                         
         return '; '.join(conditions[:3])  # Limit to 3 conditions
     
+    # def extract_wagering(self, text: str) -> str:
+    #     """Extract wagering requirements (e.g., 35x bonus, 50x, 20x spins)"""
+    #     patterns = [
+    #         r'(\d+\s*[xX]\s*(?:bonus|deposit|wager)?)',
+    #         r'wagering\s*requirement\s*[:\-]?\s*(\d+[xX])',
+    #         r'playthrough\s*[:\-]?\s*(\d+[xX])',
+    #         r'rollover\s*[:\-]?\s*(\d+[xX])'
+    #     ]
+    #     for pattern in patterns:
+    #         match = re.search(pattern, text, re.IGNORECASE)
+    #         if match:
+    #             return match.group(1).strip()
+    #     return ""
+
     def extract_wagering(self, text: str) -> str:
-        """Extract wagering requirements (e.g., 35x bonus, 50x, 20x spins)"""
-        patterns = [
-            r'(\d+\s*[xX]\s*(?:bonus|deposit|wager)?)',
-            r'wagering\s*requirement\s*[:\-]?\s*(\d+[xX])',
-            r'playthrough\s*[:\-]?\s*(\d+[xX])',
-            r'rollover\s*[:\-]?\s*(\d+[xX])'
-        ]
-        for pattern in patterns:
-            match = re.search(pattern, text, re.IGNORECASE)
-            if match:
-                return match.group(1).strip()
-        return ""
+        """
+        Nuevo: usa reglas multi-idioma y normaliza resultado a '35x (bonus)' / '35x (deposit)' / '50% (bonus)'.
+        Mantiene compatibilidad de tipo (devuelve str).
+        """
+        res = extract_wagering_from_text(text or "")
+        return to_display_string(res)
+
         
     def extract_validity(self, text: str) -> str:
         """Extract validity period from text"""
@@ -535,12 +589,14 @@ class CompetitorScraper:
 
     async def scrape_competitor_promotions(self, competitor_name: str, url: str, country: str) -> List[PromotionData]:
         try:
-            worker_path = Path(__file__).parent / "playwright_worker.py"
+            # worker_path = Path(__file__).parent / "playwright_worker.py"
+            worker_module = "scraper.playwright_worker"
+
 
             # 🔹 En Windows usamos subprocess.run en lugar de asyncio
             if sys.platform.startswith("win"):
                 proc = subprocess.run(
-                    [sys.executable, str(worker_path), competitor_name, url, country,
+                    [sys.executable, "-m", worker_module, competitor_name, url, country,
                     ",".join(["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"])],
                     capture_output=True,
                     text=True
@@ -779,6 +835,48 @@ def run_playwright_task(competitor_name, url, country, search_terms):
             browser.close()
     except Exception as e:
         logger.error(f"Playwright sync scraping failed for {url}: {e}")
+    
+    # === NUEVO: intento profundo en T&C si falta wagering ===
+    try:
+        # (a) detecta posibles enlaces de T&C en la página
+        tc_links = find_candidate_tc_links(html, url)[:3]  # limita a 3 por rendimiento
+
+        if tc_links:
+            for i, promo in enumerate(promotions):
+                # promo puede ser dataclass PromotionData o dict, soportamos ambos
+                current_wagering = getattr(promo, "wagering", None) if hasattr(promo, "wagering") else promo.get("wagering", "")
+                if current_wagering:
+                    continue  # ya tenemos wagering
+
+                best_res = None
+                # (b) recorre T&C links hasta extraer algo con confianza suficiente
+                for tc in tc_links:
+                    try:
+                        page.goto(tc, timeout=25000)
+                        page.wait_for_load_state("domcontentloaded", timeout=5000)
+                        tc_text = page.inner_text("body", timeout=5000)
+                        res = extract_wagering_from_text(tc_text)
+                        if res and res.get("confidence", 0) >= 0.8:
+                            best_res = res
+                            break
+                        # si no llega a 0.8 pero hay algo, guárdalo como plan B
+                        if res and res.get("confidence", 0) >= 0.6 and not best_res:
+                            best_res = res
+                    except Exception:
+                        continue
+
+                # (c) si encontramos algo, volcamos al campo `wagering`
+                if best_res:
+                    wag_str = to_display_string(best_res)
+                    if hasattr(promo, "wagering"):
+                        setattr(promo, "wagering", wag_str)
+                    else:
+                        promo["wagering"] = wag_str
+    except Exception as _:
+        # No queremos romper el scraping por un fallo en esta fase
+        pass
+    # === FIN NUEVO ===
+
     return promotions
 
 
