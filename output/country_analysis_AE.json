@@ -1,28 +1,28 @@
 {
-  "id": "80d97afc-e897-4ab9-8ee4-b212a2d1d843",
+  "id": "850471c4-a1d3-4be5-9689-e714948e4078",
   "object": "chat.completion",
-  "created": 1760532438,
+  "created": 1760616668,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"AE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Tournament Promotion\",\n                \"bonus_type\": \"Tournament\",\n                \"bonus_amount\": \"$7,777 + 300 free spins\",\n                \"url\": \"https://justcasino.com\"\n            },\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"$7,777 + 300 free spins\",\n                \"url\": \"https://justcasino.com\"\n            },\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"title\": \"Welcome to Lucky Dreams Casino\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$7,777 + 300 free spins\",\n                \"url\": \"https://www.luckydreams.com/bonuses\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"JustCasino\",\n                \"game\": \"Jackpot\",\n                \"context\": \"Jackpot promotion offering $7,777 + 300 free spins, targeted at multiple regions/languages\"\n            },\n            {\n                \"competitor\": \"JustCasino\",\n                \"game\": \"Tournament\",\n                \"context\": \"Tournament promotion with jackpots, offering $7,777 + 300 free spins for participation\"\n            },\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"game\": \"Jackpot\",\n                \"context\": \"Jackpot promotion as part of welcome offer, up to $7,777 for new players\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"$7,777 + 300 free spins (high-value offers from JustCasino and LuckyDreams)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"100% up to $1,111 + 75 free spins (average of 100 free spins on first deposit and 50 on second across competitors)\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"77 free spins (based on daily promotions like Monday Boost from LuckyDreams)\"\n            },\n            {\n                \"bonus_type\": \"Other\",\n                \"average_bonus\": \"300 free spins + 77 free spins + 33% bonus + 100% bonus (from LuckyDreams' daily promotions)\"\n            }\n        ],\n        \"distinctive_data\": [\"JustCasino and LuckyDreams both offer identical high-value welcome bonuses of $7,777 + 300 free spins, suggesting intense competition.\", \"LuckyDreams stands out with recurring daily promotions (Monday Boost, Crazy Tuesday, etc.), offering variety beyond one-time welcome bonuses.\", \"EmirBet's promotion is less aggressive, focusing on a €10 free bet and 10% cashback, which is modest compared to competitors.\", \"Multiple promotions from JustCasino and LuckyDreams mention no bonus code required, simplifying user access.\"]\n    }\n}"
+        "content": "{\n    \"country\": \"AE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"298,886.51€\",\n                \"url\": \"https://www.888casino.com\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Deposit Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"200% up to 3,000 USDT\",\n                \"url\": \"https://casinia.com\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Casino Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to €500 + 200 FS + 1 bonus crab\",\n                \"url\": \"https://casinia.com\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Stars Ablaze, Bubblin' Riches, Fate of Dead, Blitzways, Ultimate Buffalo, The Sweet\",\n                \"context\": \"Featured in jackpot promotion with potential winnings up to €298,886.51\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"133.33% up to €1,266.67 equivalent (including crypto conversions)\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"€298,886.51\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"133.33% up to €1,066.67 equivalent\"\n            }\n        ],\n        \"distinctive_data\": [\"888 Casino offers an exceptionally high jackpot of €298,886.51, significantly larger than typical casino bonuses\", \"Casinia provides multiple crypto-specific welcome bonuses (up to 200% in USDT), which is unusual in the market\", \"Casinia includes unique 'bonus crab' rewards alongside traditional free spins and cash bonuses\", \"The market shows a clear split between high-value jackpot promotions (888 Casino) and comprehensive welcome packages with crypto options (Casinia)\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 4955,
-    "completion_tokens": 696,
-    "total_tokens": 5651,
+    "prompt_tokens": 1752,
+    "completion_tokens": 525,
+    "total_tokens": 2277,
     "prompt_tokens_details": {
-      "cached_tokens": 2560
+      "cached_tokens": 320
     },
-    "prompt_cache_hit_tokens": 2560,
-    "prompt_cache_miss_tokens": 2395
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 1432
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

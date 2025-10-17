@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1412,
+    "competitor": "Wunderino",
+    "country": "DE",
+    "title": "Found 'jackpot' on page",
+    "description": "jackpot soon you! experience over 1000 popular & local games every week new campaigns available on smartphone, tablet, mac and pc security",
+    "bonus_amount": "",
+    "bonus_type": "Jackpot",
+    "conditions": "Experience over 1000 popular and local games; new campaigns available every week; available on smartphone, tablet, Mac, and PC; security mentioned",
+    "wagering": "",
+    "valid_until": "",
+    "url": "https://wunderino.de",
+    "scraped_at": "2025-10-17T11:18:53.008078",
+    "hash_id": "-7025153265224619876",
+    "created_at": "2025-10-17 09:24:31"
+  },
+  {
+    "id": 1411,
+    "competitor": "Wunderino",
+    "country": "DE",
+    "title": "Found bonus on page",
+    "description": "bonus + 100 cash-spins cash-spins: wert 10€. ohne umsatzbedingungen jetzt registrieren bonusbedingungen suche hier: book of dead, synot toplisten auto",
+    "bonus_amount": "100 cash-spins worth €10",
+    "bonus_type": "Free Spins",
+    "conditions": "No wagering requirements mentioned, registration required",
+    "wagering": "",
+    "valid_until": "",
+    "url": "https://www.wunderino.de",
+    "scraped_at": "2025-10-17T11:18:58.542949",
+    "hash_id": "1892529766563896476",
+    "created_at": "2025-10-17 09:24:31"
+  },
+  {
+    "id": 1413,
+    "competitor": "Wunderino",
+    "country": "DE",
+    "title": "Found bonus on page",
+    "description": "bonus + 100 cash-spins cash-spins: value 10€. No wagering conditions. Register now. Bonus terms search here: book of dead, synot toplisten auto",
+    "bonus_amount": "100 cash spins worth €10",
+    "bonus_type": "Free Spins",
+    "conditions": "No wagering conditions mentioned",
+    "wagering": "",
+    "valid_until": "",
+    "url": "https://wunderino.de",
+    "scraped_at": "2025-10-17T11:18:53.008078",
+    "hash_id": "8781749538520812838",
+    "created_at": "2025-10-17 09:24:31"
+  }
+]

@@ -1,28 +1,28 @@
 {
-  "id": "9e6dde0f-45a6-4d5c-9724-90ec8748a78f",
+  "id": "d52d60df-3768-436b-85d0-18e462beebda",
   "object": "chat.completion",
-  "created": 1760540829,
+  "created": 1760735250,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"DE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Casombie\",\n                \"title\": \"Welcome Bonus 200% up to 3,000 €\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"200% up to 3,000 €\",\n                \"url\": \"https://www.casombie.com\"\n            },\n            {\n                \"competitor\": \"N1 Casino\",\n                \"title\": \"Welcome Package\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"4,000 €/$ + 200 Free Spins\",\n                \"url\": \"https://n1casino.com\"\n            },\n            {\n                \"competitor\": \"Playzilla\",\n                \"title\": \"Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"200% up to €100 + 500 free spins\",\n                \"url\": \"https://www.playzilla.com\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"Playzilla\",\n                \"game\": \"Sizzling Hot Deluxe\",\n                \"context\": \"Jackpot game with demo available\"\n            },\n            {\n                \"competitor\": \"Playzilla\",\n                \"game\": \"Follow the Cash\",\n                \"context\": \"Jackpot game with demo available\"\n            },\n            {\n                \"competitor\": \"Playzilla\",\n                \"game\": \"Rabbit Penguin King\",\n                \"context\": \"Jackpot game with demo available\"\n            },\n            {\n                \"competitor\": \"N1 Casino\",\n                \"game\": \"Pragmatic Play\",\n                \"context\": \"Mentioned in welcome package description\"\n            },\n            {\n                \"competitor\": \"N1 Casino\",\n                \"game\": \"BGaming\",\n                \"context\": \"Mentioned in welcome package description\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"Approx. 150% match + €1,300 + 150 free spins\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"25% match up to €1,000 + 30 free spins\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"300 free spins\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"€17,170,238\"\n            }\n        ],\n        \"distinctive_data\": [\"Casombie offers the highest percentage match (200%) with a substantial maximum of €3,000\", \"N1 Casino provides the most comprehensive welcome package with up to €4,000 + 200 free spins across multiple deposits\", \"Playzilla features a massive progressive jackpot of over €17 million\", \"Vegadream offers free spins but with unclear game availability, which is unusual\", \"Multiple competitors (Casombie, Playzilla) offer crypto payment options, indicating adaptation to modern payment trends\"]\n    }\n}"
+        "content": "{\n    \"country\": \"DE\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"NV Casino\",\n                \"title\": \"Found 'bonus' on page\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"€2000 + 225 Free Spins\",\n                \"url\": \"https://nv.casino/de\"\n            },\n            {\n                \"competitor\": \"Bwin\",\n                \"title\": \"Found 'bonus' on page\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"Up to €100\",\n                \"url\": \"https://www.bwin.de/de/engage/lan/sports/dach/generic?wm=5193158&tdpeh=19560_14049767752_130930494691_665955561599_kwd-2846598995_e_c&utm_source=search_google&utm_campaign=14049767752&utm_content=665955561599&utm_medium=e&utm_term=bwin&sb=1&gad_source=1&gad_campaignid=14049767752&gbraid=0AAAAADxF3XuZHpUf_fu-oNGcirsf3dpgA&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qQgvjFW3OR0Y-WToB54P8KFiwr3cA_CbOplYPv_R5gRYFXk1eKb20xoCRO0QAvD_BwE\"\n            },\n            {\n                \"competitor\": \"Wunderino\",\n                \"title\": \"Found bonus on page\",\n                \"bonus_type\": \"Free Spins\",\n                \"bonus_amount\": \"100 cash spins worth €10\",\n                \"url\": \"https://wunderino.de\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"Vulcan Vegas\",\n                \"game\": \"Joker Stoker (Endorphina)\",\n                \"context\": \"Free spins offered as part of a 50% deposit bonus + 20 free spins promotion\"\n            },\n            {\n                \"competitor\": \"Wunderino\",\n                \"game\": \"Book of Dead, Synot\",\n                \"context\": \"Mentioned in bonus description for 100 cash spins worth €10\"\n            },\n            {\n                \"competitor\": \"Wunderino\",\n                \"game\": \"Jackpot games\",\n                \"context\": \"Promoted with over 1000 popular & local games, new campaigns weekly\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"€1033.33 + 75 Free Spins\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"55 Free Spins\"\n            },\n            {\n                \"bonus_type\": \"Cashback\",\n                \"average_bonus\": \"Not quantifiable from available data\"\n            }\n        ],\n        \"distinctive_data\": [\"NV Casino offers the highest welcome bonus at €2000 + 225 free spins, significantly above competitors\", \"Vulcan Vegas has an extremely high wagering requirement of 500:1 for its cashback promotion\", \"Wunderino offers 'cash spins' with no wagering conditions, which is unusual in the market\", \"Multiple competitors (NV Casino, Vulcan Vegas, Wunderino) emphasize loyalty programs with points conversion and VIP benefits\", \"Lowen Play consistently mentions a €100 maximum withdrawal limit for no deposit bonuses and free spins\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 4082,
-    "completion_tokens": 677,
-    "total_tokens": 4759,
+    "prompt_tokens": 4450,
+    "completion_tokens": 792,
+    "total_tokens": 5242,
     "prompt_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 320
     },
-    "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 4082
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 4130
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

@@ -106,147 +106,179 @@ class CompetitorScraper:
         # Competitors configuration
         self.competitors = {
             "AE": [
-                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "BetFinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "1xBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "BetFinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "1xBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ],
             # "AE": [
-            #     {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+            #     {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             # ],
             "SA": [
-                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "betfinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "1x bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "betfinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "1x bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ],
             # "SA": [
-            #     {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+            #     {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             # ],
             "KW": [
-                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "BetFinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "1xBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "BetFinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "1xBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ],
             "QA": [
-                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "BetFinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "1xBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "BetFinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "1xBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ],
             "OM": [
-                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "BetFinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "1xBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "BetFinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "1xBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ],
             "BH": [
-                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "BetFinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "1xBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "BetFinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "1xBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ],
             "JO": [
-                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "betfinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "1x bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+                {"name": "Rabona", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "888 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "betfinal", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "LuckyDreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "1x bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Casinia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Rooster bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "BetObet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "EmirBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "JustCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ],
             "NZ": [
-                {"name": "Jackpot City", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Wildz", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Spincasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "luckynuggetcasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "skycitycasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "leovegas", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "betvictor", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "christchurchcasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},                
-                {"name": "highroller", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "casumo", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+                {"name": "Jackpot City", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Wildz", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Spincasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "luckynuggetcasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "skycitycasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "leovegas", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "betvictor", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "christchurchcasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},                
+                {"name": "highroller", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "casumo", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ],
+            # "DE": [
+            #     {"name": "Locowin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+            #     {"name": "Vulkan Vegas", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+            #     {"name": "Neon54", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+            #     {"name": "GG.BET", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+            #     {"name": "ExciteWin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+            #     {"name": "Playzilla", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+            #     {"name": "Ice Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+            #     {"name": "Casombie", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+            #     {"name": "Vegadream", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+            #     {"name": "N1 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
+            # ],
             "DE": [
-                {"name": "Locowin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Vulkan Vegas", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Neon54", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "GG.BET", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "ExciteWin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Playzilla", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Ice Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Casombie", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Vegadream", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "N1 Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+                {"name": "NV Casino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Tipico", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Bet365", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Vulcan Vegas", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Merkur", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Lotto24", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Bwin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Betano", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Wunderino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Lowen Play", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ],
-
             "AT": [
-                {"name": "20Bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "SpinBetter", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Nomini", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "CasinoRex", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "CatCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Bitstarz", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "22Bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Hell Spin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "NeoSpin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Wild Fortune", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+                {"name": "20Bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "SpinBetter", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Nomini", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "CasinoRex", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "CatCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Bitstarz", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "22Bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Hell Spin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "NeoSpin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Wild Fortune", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ],
 
             "CH": [
-                {"name": "Spins of Glory", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Lucky Dreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Caspero", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Azurslot", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Dazard", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "SlotsVader", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Rockwin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "FeliceBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "SlotsMafia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]},
-                {"name": "Crowngold", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]}
+                {"name": "Spins of Glory", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Lucky Dreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Caspero", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Azurslot", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Dazard", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "SlotsVader", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Rockwin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "FeliceBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "SlotsMafia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Crowngold", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ]
 
         }
+
+        # URLs adicionales fijas por país y casino
+        self.manual_urls = {
+            "DE": {
+                "NV Casino": ["https://nv.casino/de", "https://kelleycarter.com/fan-engagement/nv-casino-official-loyalty-program-benefits-and-rewards/"],
+                "Tipico": ["https://games.tipico.de/de", "https://sports.tipico.de/en", "https://www.tipico.de/de", "https://sports.tipico.de", "https://sportshandle.com/tipico-sportsbook-cashback-program/", ""],
+                "Bet365": ["https://www.bet365.de/#/HO/","https://www.bet365.de/hub/de-de/open-account-offer?affiliate=365_01434640&gad_source=1&gad_campaignid=19720958129&gbraid=0AAAAADOVbuMngrxBrm2Y0lIKeSWKLDvHu&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qVGmrC6mbA0DUJ6yJ5X3OMG40VjmwyZ_ckhL1yVk2MPtAyfmBMnNjxoCX1gQAvD_BwE"],
+                "Vulcan Vegas": ["https://vulkanvegas.com/de/category/allgamess","https://vulkanvegas.com/en/loyalty-program", "https://vulkanvegas.com/en/bonuses"],
+                "Merkur": ["https://merkur.com/", "https://www.merkurbets.de/de/page/neukundenpaket-slots", "https://www.merkurbets.de/de/page/neukundenbonus?utm_source=google&utm_medium=search&utm_campaign=MERKUR-BETS_%5BDE_Brand_MERKUR-BETS%5D&gad_source=1&gad_campaignid=21163655685&gbraid=0AAAAABTT_92Ynk8QXf3gu4YQdvaIVeGm0&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qVzXjPvtMAxDNc54rF2NPoRy4UHpFQNYZg09dfJnRU6CNFY6--drORoC-3AQAvD_BwE"],
+                "Lotto24": ["https://www.lotto24.de/", "https://games.lotto24.de/games/fruits"],
+                "Bwin": ["https://www.bwin.de/de/sports?productId=SPORTSBOOK&rurl=https:%2F%2Fsports.bwin.de%2Fde%2Fsports&wm=5193158&tdpeh=19560_14049767752_130930494691_665955561599_kwd-2846598995_e_c&utm_source=search_google&utm_campaign=14049767752&utm_content=665955561599&utm_medium=e&utm_term=bwin&sb=1&gad_source=1&gad_campaignid=14049767752&gbraid=0AAAAADxF3XuZHpUf_fu-oNGcirsf3dpgA&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qQgvjFW3OR0Y-WToB54P8KFiwr3cA_CbOplYPv_R5gRYFXk1eKb20xoCRO0QAvD_BwE", "https://www.bwin.de/de/engage/lan/sports/dach/generic?wm=5193158&tdpeh=19560_14049767752_130930494691_665955561599_kwd-2846598995_e_c&utm_source=search_google&utm_campaign=14049767752&utm_content=665955561599&utm_medium=e&utm_term=bwin&sb=1&gad_source=1&gad_campaignid=14049767752&gbraid=0AAAAADxF3XuZHpUf_fu-oNGcirsf3dpgA&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qQgvjFW3OR0Y-WToB54P8KFiwr3cA_CbOplYPv_R5gRYFXk1eKb20xoCRO0QAvD_BwE", "https://www.bwin.de/de/slots", "https://worldpokerdeals.com/blog/up-to-40-rakeback-in-the-new-bwin-poker-vip-program-rewards", "https://www.bwin.de/de/engage/lan/sports/dach/generic?wm=5193154&tdpeh=19727_14049767473_137228591994_666030521678_kwd-2806259116_e_c&utm_source=search_google&utm_campaign=14049767473&utm_content=666030521678&utm_medium=e&utm_term=bwin%20bonus%20code&sb=1&gad_source=1&gad_campaignid=14049767473&gbraid=0AAAAADxF3XuIJwAbH7SWtkIs738FPUG95&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qc90hghyR9YTwKu0DwR9hpD_o5ht99-GZp0h_nPLHBUDsx3fmutNDRoCQGUQAvD_BwE"],
+                "Betano": ["https://www.betano.de/", "https://www.betano.de/slots/", "https://www.betano.de/promotions/", "https://promos.betano.de/slots-bonus-400-merkur-spiele/index.html?btag=a_1318b_2675c_GSN_COMP_CAS_Wunderino&cq_plac=&cq_net=g&cq_pos=&cq_med=&cq_plt=gp&cq_src=google_ads&cq_cmp=19594070076&cq_con=143324282617&cq_term=wunderino%20bonus&gad_source=1&gad_campaignid=19594070076&gbraid=0AAAAAC1-GiMloSW5x9RoChz2Dih7o5Knq&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qQBeYGwd58qGRZC1vndfGQDvQMy8pD8_GhR1IPIhzgnMuuHftU-oqhoCVI0QAvD_BwE"],
+                "Wunderino": ["https://www.wunderino.de/de/", "https://www.wunderino.de/de/loyalty/"],
+                "Lowen Play": ["https://www.loewen-play.de/", "https://www.loewen-play.de/bonus"],
+                # Puedes añadir más si quieres
+            },
+            "AT": {
+                "20Bet": ["https://20bet.com/at"]
+            }
+        }
+
 
     async def setup_browser(self, proxy: Optional[Dict] = None) -> None:
         logger.info("setup_browser skipped (Playwright runs in executor)")
@@ -260,31 +292,65 @@ class CompetitorScraper:
             await self.browser.close()
             
     # async def find_competitor_urls(self, competitor: Dict) -> List[str]:
-    async def find_competitor_urls(self, competitor: CompetitorInfo) -> List[str]:
+    # async def find_competitor_urls(self, competitor: CompetitorInfo) -> List[str]:
 
-        """Find actual URLs for competitor using AI"""
+    #     """Find actual URLs for competitor using AI"""
+    #     try:
+    #         # Use AI to find URLs
+    #         url_result = await self.url_finder.find_competitor_urls(
+    #             competitor.name, 
+    #             self.current_country
+    #         )
+            
+    #         # Combine main and promotion URLs
+    #         all_urls = url_result['main_urls'] + url_result['promotion_urls']
+            
+    #         if all_urls:
+    #             logger.info(f"Found {len(all_urls)} URLs for {competitor.name}")
+    #             for url in all_urls:
+    #                 print(url)                    
+    #             return all_urls
+    #         else:
+    #             logger.warning(f"No URLs found for {competitor.name}")
+    #             return []
+                
+    #     except Exception as e:
+    #         logger.error(f"Error finding URLs for {competitor.name}: {e}")
+    #         return []
+
+    async def find_competitor_urls(self, competitor: CompetitorInfo) -> List[str]:
+        """Find actual URLs for competitor using AI and manual additions"""
         try:
-            # Use AI to find URLs
+            # Buscar automáticamente con el URLFinder
             url_result = await self.url_finder.find_competitor_urls(
-                competitor.name, 
+                competitor.name,
                 self.current_country
             )
-            
-            # Combine main and promotion URLs
+
             all_urls = url_result['main_urls'] + url_result['promotion_urls']
-            
+
+            # Si hay URLs manuales configuradas, añádelas
+            manual_for_country = self.manual_urls.get(self.current_country, {})
+            manual_for_brand = manual_for_country.get(competitor.name, [])
+            if manual_for_brand:
+                logger.info(f"✅ Adding manual URLs for {competitor.name}: {manual_for_brand}")
+                all_urls.extend(manual_for_brand)
+
+            # Elimina duplicados y devuelve
+            all_urls = list(dict.fromkeys(all_urls))
             if all_urls:
-                logger.info(f"Found {len(all_urls)} URLs for {competitor.name}")
+                logger.info(f"Found {len(all_urls)} total URLs for {competitor.name}")
                 for url in all_urls:
-                    print(url)                    
+                    print(url)
                 return all_urls
             else:
                 logger.warning(f"No URLs found for {competitor.name}")
                 return []
-                
+
         except Exception as e:
             logger.error(f"Error finding URLs for {competitor.name}: {e}")
             return []
+
 
         
     async def scrape_promotions(self, competitor: CompetitorInfo, urls: List[str]) -> List[PromotionData]:
@@ -597,7 +663,7 @@ class CompetitorScraper:
             if sys.platform.startswith("win"):
                 proc = subprocess.run(
                     [sys.executable, "-m", worker_module, competitor_name, url, country,
-                    ",".join(["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"])],
+                    ",".join(["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"])],
                     capture_output=True,
                     text=True
                 )
@@ -616,7 +682,7 @@ class CompetitorScraper:
             proc = await asyncio.create_subprocess_exec(
                 sys.executable, str(worker_path),
                 competitor_name, url, country,
-                ",".join(["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament"]),
+                ",".join(["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]),
                 stdout=asyncio.subprocess.PIPE,
                 stderr=asyncio.subprocess.PIPE
             )

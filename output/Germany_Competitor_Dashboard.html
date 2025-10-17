@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Germany Casino Market - Competitor Analysis Dashboard</title>
+<style>
+:root {
+    --betjordan-red: #e31e24;
+    --betjordan-dark: #000000;
+    --betjordan-white: #ffffff;
+    --betjordan-gray: #333333;
+    --betjordan-light-gray: #f5f5f5;
+    --accent-blue: #2c5aa0;
+    --accent-green: #2ecc71;
+    --accent-orange: #f39c12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica Neue', sans-serif;
+    background-color: var(--betjordan-light-gray);
+    color: var(--betjordan-gray);
+    line-height: 1.6;
+}
+
+.header {
+    background-color: var(--betjordan-dark);
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--betjordan-white);
+}
+
+.logo span {
+    color: var(--betjordan-red);
+}
+
+.nav {
+    background-color: var(--betjordan-white);
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav li {
+    margin: 0;
+}
+
+.nav a {
+    display: block;
+    padding: 15px 25px;
+    color: var(--betjordan-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.nav a:hover {
+    background-color: var(--betjordan-red);
+    color: var(--betjordan-white);
+    border-bottom-color: var(--betjordan-red);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section {
+    background-color: var(--betjordan-white);
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.section-header {
+    background: linear-gradient(135deg, var(--betjordan-dark) 0%, var(--betjordan-gray) 100%);
+    color: var(--betjordan-white);
+    padding: 25px 40px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.section-subheader {
+    background-color: var(--betjordan-red);
+    color: var(--betjordan-white);
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.section-content {
+    padding: 40px;
+}
+
+.title-slide {
+    background: linear-gradient(135deg, var(--betjordan-dark) 0%, #1a1a1a 100%);
+    color: var(--betjordan-white);
+    padding: 100px 40px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-slide h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.title-slide .subtitle {
+    font-size: 24px;
+    color: var(--betjordan-red);
+    font-weight: 600;
+}
+
+.competitors-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.competitor-card {
+    background-color: var(--betjordan-light-gray);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--betjordan-red);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.competitor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(227, 30, 36, 0.3);
+}
+
+.competitor-card h3 {
+    color: var(--betjordan-dark);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.competitor-card .rank {
+    display: inline-block;
+    background-color: var(--betjordan-red);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.competitor-card a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.competitor-card a:hover {
+    text-decoration: underline;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.comparison-table th {
+    background-color: var(--betjordan-dark);
+    color: var(--betjordan-white);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid #ddd;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: #fff5f5;
+}
+
+.data-unavailable {
+    background-color: #fff9e6;
+    border-left: 4px solid var(--accent-orange);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.data-unavailable h4 {
+    color: var(--accent-orange);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.data-unavailable ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.data-unavailable li {
+    margin-bottom: 8px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, var(--betjordan-red) 0%, #c41a1f 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.stat-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.stat-card .value {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-card .label {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.culture-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.value-box {
+    background-color: var(--betjordan-red);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.value-box:hover {
+    transform: scale(1.05);
+}
+
+.value-box h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.value-box p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.info-box {
+    background-color: #e3f2fd;
+    border-left: 4px solid var(--accent-blue);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.info-box h4 {
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+}
+
+.success-box {
+    background-color: #e8f5e9;
+    border-left: 4px solid var(--accent-green);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.success-box h4 {
+    color: var(--accent-green);
+    margin-bottom: 10px;
+}
+
+.providers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.provider-badge {
+    background-color: var(--betjordan-light-gray);
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.provider-badge:hover {
+    border-color: var(--betjordan-red);
+    background-color: white;
+}
+
+.footer {
+    background-color: var(--betjordan-dark);
+    color: var(--betjordan-white);
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+    }
+    
+    .nav a {
+        border-bottom: 1px solid #eee;
+    }
+    
+    .title-slide h1 {
+        font-size: 40px;
+    }
+    
+    .comparison-table {
+        font-size: 12px;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px 5px;
+    }
+}
+
+.highlight-red {
+    background-color: #ffebee !important;
+    font-weight: bold;
+}
+
+.section-divider {
+    background: linear-gradient(135deg, var(--betjordan-dark) 0%, var(--betjordan-gray) 100%);
+    color: var(--betjordan-white);
+    padding: 80px 40px;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.section-divider h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-divider .subtitle {
+    font-size: 20px;
+    color: var(--betjordan-red);
+    font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="logo">BET<span>JORDAN</span></div>
+    <div style="color: #999; font-size: 14px;">Germany Market Analysis 2025</div>
+</div>
+
+<!-- Navigation -->
+<nav class="nav">
+    <ul>
+        <li><a href="#title">Home</a></li>
+        <li><a href="#competitors">Competitors</a></li>
+        <li><a href="#welcome-offer">Welcome Offer</a></li>
+        <li><a href="#loyalty">Loyalty</a></li>
+        <li><a href="#retention">Retention</a></li>
+        <li><a href="#games">Games & Providers</a></li>
+        <li><a href="#marketing">Marketing</a></li>
+        <li><a href="#stats">Market Stats</a></li>
+        <li><a href="#culture">Culture</a></li>
+    </ul>
+</nav>
+
+<!-- Title Slide -->
+<div id="title" class="title-slide">
+    <h1>Germany Competition</h1>
+    <p class="subtitle">Comprehensive Market Analysis & Competitor Intelligence</p>
+</div>
+
+<div class="container">
+
+<!-- 1. COMPETITORS -->
+<div id="competitors" class="section">
+    <div class="section-header">Competitors</div>
+    <div class="section-content">
+        <p style="margin-bottom: 20px; font-size: 16px;">Top 10 online gambling operators in Germany based on traffic analysis (SimilarWeb September 2025, Blask Analytics October 2025).</p>
+        
+        <div class="competitors-list">
+            <div class="competitor-card">
+                <span class="rank">#1</span>
+                <h3>NV Casino</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px;">Top casino brand by traffic in Germany</p>
+            </div>
+            
+            <div class="competitor-card">
+                <span class="rank">#2</span>
+                <h3>Tipico</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Sports Betting & Casino</p>
+                <p style="font-size: 14px;">Leading local operator with strong brand recognition</p>
+            </div>
+            
+            <div class="competitor-card">
+                <span class="rank">#3</span>
+                <h3>Bet365</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Sports Betting & Casino</p>
+                <p style="font-size: 14px;">Major international brand with comprehensive offerings</p>
+            </div>
+            
+            <div class="competitor-card">
+                <span class="rank">#4</span>
+                <h3>Vulcan Vegas</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px;">Strong casino presence with attractive bonuses</p>
+            </div>
+            
+            <div class="competitor-card">
+                <span class="rank">#5</span>
+                <h3>Merkur</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px;">Established German brand with land-based heritage</p>
+            </div>
+            
+            <div class="competitor-card">
+                <span class="rank">#6</span>
+                <h3>Lotto24</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Lottery</p>
+                <p style="font-size: 14px;">Leading online lottery operator</p>
+            </div>
+            
+            <div class="competitor-card">
+                <span class="rank">#7</span>
+                <h3>Bwin</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Sports Betting & Casino</p>
+                <p style="font-size: 14px;">International operator with strong sports focus</p>
+            </div>
+            
+            <div class="competitor-card">
+                <span class="rank">#8</span>
+                <h3>Betano</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Sports Betting & Casino</p>
+                <p style="font-size: 14px;">Growing market share with competitive odds</p>
+            </div>
+            
+            <div class="competitor-card">
+                <span class="rank">#9</span>
+                <h3>Wunderino</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px;">Popular casino brand with gamification features</p>
+            </div>
+            
+            <div class="competitor-card">
+                <span class="rank">#10</span>
+                <h3>Lowen Play</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px;">Established presence in German market</p>
+            </div>
+        </div>
+        
+        <div class="info-box" style="margin-top: 30px;">
+            <h4>Additional Notable Operators</h4>
+            <p><strong>International Brands:</strong> 888 Casino, Betway Casino, LeoVegas, Casumo, Jackpot City, King Billy</p>
+            <p style="margin-top: 10px;"><strong>Local Focus:</strong> Kingmaker, Rocket Casino, Snatch Casino</p>
+        </div>
+    </div>
+</div>
+
+<!-- 2. WELCOME OFFER -->
+<div id="welcome-offer" class="section">
+    <div class="section-header">Welcome Offer</div>
+    <div class="section-content">
+        <p style="margin-bottom: 20px; font-size: 16px;">Current welcome bonus offers from German online casino operators (Data collected: October 17, 2025).</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Competitor</th>
+                    <th>Welcome Bonus</th>
+                    <th>Bonus Amount</th>
+                    <th>Conditions</th>
+                    <th>Wagering</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>NV Casino</strong></td>
+                    <td>Found 'bonus' on page</td>
+                    <td>€2000 + 225 Free Spins</td>
+                    <td>New player registration required. Includes tournaments, sports promotions, VIP club, leaderboard, and a wheel of fortune.</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><strong>Bwin</strong></td>
+                    <td>Found 'bonus' on page</td>
+                    <td>Up to €100</td>
+                    <td>First deposit only. Must register and log in. 18+. Gambling risk.</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Additional Bonus Types Available</h3>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Free Spins Offers</h3>
+                <div class="value">4</div>
+                <div class="label">Active Promotions</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Cashback Offers</h3>
+                <div class="value">4</div>
+                <div class="label">Active Promotions</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Operators Analyzed</h3>
+                <div class="value">6</div>
+                <div class="label">Total Competitors</div>
+            </div>
+        </div>
+        
+        <div class="info-box" style="margin-top: 30px;">
+            <h4>Free Spins Promotions</h4><p style="margin-top: 10px;"><strong>Betano:</strong> Free spins are free spins that can be triggered during the game. With these, you can spin without having to place another bet.</p><p style="margin-top: 10px;"><strong>Lowen Play:</strong> free spins bei einem bonus ohne einzahlung, cash back oder gratis free spins gilt: die maximale gewinnauszahlung beträgt 100€. | Free spins with a no deposit bonus, cash back or free spins applies: the maximum payout is €100.</p><p style="margin-top: 10px;"><strong>Wunderino:</strong> bonus + 100 cash-spins cash-spins: wert 10€. ohne umsatzbedingungen jetzt registrieren bonusbedingungen suche hier: book of dead, synot toplisten auto</p>
+        </div>
+        
+        <div class="success-box">
+            <h4>✓ Typical Bonus Structure in Germany</h4>
+            <p><strong>Casino:</strong> Combination of deposit match (50%-250%) + free spins (25-400 FS)</p>
+            <p><strong>Sports:</strong> Deposit match typically 100% up to €100-€200</p>
+            <p><strong>Wagering:</strong> Common range 25x-40x (bonus + deposit)</p>
+            <p style="margin-top: 10px;"><strong>Note:</strong> Data collected from {len(data['competitors_analyzed'])} operators on {data['comparison_date']}. Offers subject to change.</p>
+        </div>
+    </div>
+</div>
+
+<!-- 3. LOYALTY -->
+<div id="loyalty" class="section">
+    <div class="section-header">Loyalty</div>
+    <div class="section-content">
+        <p style="margin-bottom: 20px; font-size: 16px;">Loyalty programs and VIP benefits offered by German online casino operators (Data collected: October 17, 2025).</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Competitor</th>
+                    <th>Loyalty Program</th>
+                    <th>Key Benefits</th>
+                    <th>Cashback</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>NV Casino</strong></td>
+                    <td>Promotions and seasonal events may offer double or triple points on selected games. Advancing through loyalty levels in the NV Casino loyalty program....</td>
+                    <td>Cashback offers, free spins, higher withdrawal limits, VIP account management | Double or triple points available on selected games during promotions and seasonal events. Points an</td>
+                    <td>Available (see conditions)</td>
+                </tr>
+                <tr>
+                    <td><strong>Vulcan Vegas</strong></td>
+                    <td>Points can be converted into real money in your profile. The total amount of the points accumulated during the time you spent at Vulkan Vegas correspo...</td>
+                    <td>Min deposit: €10. Cashback for deposits between €10-€19. Free spins on Joker Stoker. | Points are accumulated based on time spent playing and can be converted to real money via player pro</td>
+                    <td>500 cashback / 50% + 20 FS</td>
+                </tr>
+                <tr>
+                    <td><strong>Wunderino</strong></td>
+                    <td>Standard loyalty program...</td>
+                    <td>Birthday cash spins, reduced wagering conditions, exclusive tournaments</td>
+                    <td>Available (see conditions)</td>
+                </tr>
+                <tr>
+                    <td><strong>Lowen Play</strong></td>
+                    <td>Standard loyalty program...</td>
+                    <td>Free spins located under bonus bag section</td>
+                    <td>Available (see conditions)</td>
+                </tr>
+                <tr>
+                    <td><strong>Bwin</strong></td>
+                    <td>Standard loyalty program...</td>
+                    <td>VIP benefits, exclusive promotions</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td><strong>Betano</strong></td>
+                    <td>Standard loyalty program...</td>
+                    <td>VIP benefits, exclusive promotions</td>
+                    <td>Available</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Detailed Loyalty Benefits by Operator</h3>
+        <div class="info-box">
+            <h4>NV Casino</h4>
+            <p><strong>Promotions and Seasonal Events:</strong> Promotions and seasonal events may offer double or triple points on selected games. Advancing through loyalty levels in the NV Casino loyalty program.</p>
+            <p><strong>Cashback:</strong> Cashback offers, free spins, higher withdrawal limits, and even VIP account management. If you're ready to turn your gameplay into tangible rewards</p>
+            <p style="margin-left: 20px; font-size: 14px;">Conditions: Cashback offers, free spins, higher withdrawal limits, VIP account management</p>
+        </div>
+        <div class="info-box">
+            <h4>Vulcan Vegas</h4>
+            <p><strong>Points Conversion:</strong> Points can be converted into real money in your profile. The total amount of the points accumulated during the time you spent at Vulkan Vegas corresponds to your loyalty activity.</p>
+            <p><strong>Cashback Casino Royale:</strong> Cashback offer for Casino Royale and Luxor. Luxor offers 500 cashback for deposits between €10-€19, with a minimum deposit of €10. Also, a 50% deposit bonus + 20 free spins on Joker Stoker (Endorphina) is available. The bonus has a wagering requirement of 500:1 and a 3% cashback.</p>
+            <p style="margin-left: 20px; font-size: 14px;">Conditions: Min deposit: €10. Cashback for deposits between €10-€19. Free spins on Joker Stoker.</p>
+        </div>
+        <div class="info-box">
+            <h4>Wunderino</h4>
+            <p><strong>Cashback Deal Option:</strong> Birthday cash spins, reduced wagering conditions, exclusive tournaments, FAQ - here you will find some of the most frequently asked questions</p>
+            <p style="margin-left: 20px; font-size: 14px;">Conditions: Birthday cash spins, reduced wagering conditions, exclusive tournaments</p>
+        </div>
+        
+        <div class="success-box">
+            <h4>✓ Common Loyalty Features in German Market</h4>
+            <ul>
+                <li><strong>VIP Levels:</strong> Typically 4-6 tiers (Bronze, Silver, Gold, Platinum, Diamond)</li>
+                <li><strong>Cashback:</strong> 5%-25% depending on level</li>
+                <li><strong>Loyalty Points:</strong> Accumulation per wager (convertible to real money)</li>
+                <li><strong>Exclusive Benefits:</strong> Personalized bonuses, account manager, faster withdrawals</li>
+                <li><strong>Recurring Free Spins:</strong> Weekly for active players</li>
+                <li><strong>Birthday Bonuses:</strong> Special offers on player birthdays</li>
+                <li><strong>Tournament Access:</strong> Exclusive VIP tournaments</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Note:</strong> Data collected from {len(data['competitors_analyzed'])} operators on {data['comparison_date']}.</p>
+        </div>
+    </div>
+</div>
+
+<!-- 4. RETENTION TECHNIQUE -->
+<div id="retention" class="section">
+    <div class="section-header">Retention Technique</div>
+    <div class="section-content">
+        <div class="data-unavailable">
+            <h4>⚠️ CRM and Retention Strategies - Confidential Information</h4>
+            <p><strong>Retention techniques are internal marketing strategies.</strong></p>
+            
+            <p style="margin-top: 15px;"><strong>Common Channels Identified:</strong></p>
+            <ul>
+                <li><strong>Email:</strong> Universal - all operators</li>
+                <li><strong>SMS:</strong> Very common for urgent offers</li>
+                <li><strong>Push Notifications:</strong> Mobile apps</li>
+                <li><strong>On-site Inbox:</strong> Messages within platform</li>
+            </ul>
+            
+            <p style="margin-top: 15px;"><strong>Campaign Types Observed:</strong></p>
+            <ul>
+                <li>Deposit reload bonuses (weekly/monthly)</li>
+                <li>Tournaments and competitions</li>
+                <li>Cashback offers (10-20% typically)</li>
+                <li>Free spins on new games</li>
+                <li>Odds boost for sports betting</li>
+                <li>Early payout offers</li>
+            </ul>
+            
+            <p style="margin-top: 15px;"><strong>How to Complete:</strong></p>
+            <ul>
+                <li>Register on each platform and monitor communications for 30-60 days</li>
+                <li>Analyze frequency and type of messages received</li>
+                <li>Document reactivation offers after inactivity</li>
+                <li>Identify segmentation (new vs. active vs. inactive)</li>
+                <li>Use specialized competitor intelligence tools</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 5. GAMES & PROVIDERS -->
+<div id="games" class="section">
+    <div class="section-header">Games & Providers</div>
+    <div class="section-content">
+        <h3 style="color: var(--betjordan-red); margin-bottom: 20px;">Popular Game Categories in Germany</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Market Share</th>
+                    <th>Top Titles</th>
+                    <th>Key Characteristics</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-red">
+                    <td><strong>Slots</strong></td>
+                    <td><strong>30%</strong></td>
+                    <td>Gates of Olympus, Book of Dead, Big Bass Bonanza, Book of Ra, Starburst</td>
+                    <td>Most popular online casino category, wide variety of themes</td>
+                </tr>
+                <tr>
+                    <td><strong>Sports Betting</strong></td>
+                    <td><strong>56%</strong></td>
+                    <td>Bundesliga, Champions League, NBA, Tennis, Esports</td>
+                    <td>Largest segment, driven by strong sports culture</td>
+                </tr>
+                <tr class="highlight-red">
+                    <td><strong>Live Casino</strong></td>
+                    <td><strong>Growing</strong></td>
+                    <td>Roulette, Blackjack, Baccarat, Game Shows (Dream Catcher)</td>
+                    <td>Especially popular with 18-34 age group, 4K streaming</td>
+                </tr>
+                <tr>
+                    <td><strong>Lottery & Bingo</strong></td>
+                    <td><strong>9%</strong></td>
+                    <td>Lotto 6aus49, EuroJackpot, Online Bingo</td>
+                    <td>Strong offline presence, growing online</td>
+                </tr>
+                <tr>
+                    <td><strong>Poker</strong></td>
+                    <td><strong>5%</strong></td>
+                    <td>Texas Hold'em, Omaha, Tournaments</td>
+                    <td>Niche segment with dedicated player base</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Top 10 Most Popular Slot Games (2025)</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Game Title</th>
+                    <th>Provider</th>
+                    <th>Key Features</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Gates of Olympus</td><td>Pragmatic Play</td><td>Cascading reels, multipliers</td></tr>
+                <tr><td>2</td><td>Book of the Dead</td><td>Play'n GO</td><td>Egyptian theme, free spins</td></tr>
+                <tr><td>3</td><td>Legacy of Dead</td><td>Play'n GO</td><td>Adventure theme, expanding symbols</td></tr>
+                <tr><td>4</td><td>Big Bass Bonanza</td><td>Pragmatic Play</td><td>Fishing theme, bonus rounds</td></tr>
+                <tr><td>5</td><td>Big Bass Splash</td><td>Pragmatic Play</td><td>Sequel with enhanced features</td></tr>
+                <tr><td>6</td><td>Gates of Olympus Super Scatter</td><td>Pragmatic Play</td><td>Enhanced version with super scatter</td></tr>
+                <tr><td>7</td><td>Book of the Fallen</td><td>Pragmatic Play</td><td>Dark fantasy theme</td></tr>
+                <tr><td>8</td><td>Sweet Bonanza 1000</td><td>Pragmatic Play</td><td>Candy theme, high volatility</td></tr>
+                <tr><td>9</td><td>Lord of the Ocean</td><td>Novomatic</td><td>Underwater adventure</td></tr>
+                <tr><td>10</td><td>Twin Spinner Book of Ra</td><td>Novomatic</td><td>Classic Egyptian theme variant</td></tr>
+            </tbody>
+        </table>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Leading Game Providers in Germany</h3>
+        
+        <div class="providers-grid">
+            <div class="provider-badge">Pragmatic Play</div>
+            <div class="provider-badge">Play'n GO</div>
+            <div class="provider-badge">NetEnt</div>
+            <div class="provider-badge">Novomatic</div>
+            <div class="provider-badge">Evolution Gaming</div>
+            <div class="provider-badge">Betsoft Gaming</div>
+            <div class="provider-badge">Gamomat</div>
+            <div class="provider-badge">Playtech</div>
+            <div class="provider-badge">Bally Wulff</div>
+            <div class="provider-badge">Merkur Gaming</div>
+            <div class="provider-badge">ELK Studios</div>
+            <div class="provider-badge">Hacksaw Gaming</div>
+        </div>
+        
+        <div class="data-unavailable" style="margin-top: 30px;">
+            <h4>⚠️ Detailed Competitor-by-Competitor Analysis Not Available</h4>
+            <p><strong>To complete comparative table like Norway PPT:</strong></p>
+            <ul>
+                <li>Access each platform and document product priority (Slots, LC, Jackpots, Sports, Bonus buy, Megaways)</li>
+                <li>Identify specific slot providers available on each operator</li>
+                <li>Document Live Casino providers per operator</li>
+                <li>Verify exclusive or branded games</li>
+                <li>Analyze "Recently played" or "Popular" section of each site</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 6. REG FLOW -->
+<div class="section">
+    <div class="section-header">REG FLOW</div>
+    <div class="section-content">
+        <div class="data-unavailable">
+            <h4>⚠️ Registration Flow Analysis Requires Manual Testing</h4>
+            <p><strong>Registration flow varies significantly between operators.</strong></p>
+            
+            <p style="margin-top: 15px;"><strong>Regulatory Requirements in Germany (GGL):</strong></p>
+            <ul>
+                <li><strong>Mandatory KYC:</strong> Identity verification before first withdrawal</li>
+                <li><strong>Minimum Age:</strong> 18 years (strict verification)</li>
+                <li><strong>Deposit Limits:</strong> €1,000/month per player (aggregated across all licensed operators)</li>
+                <li><strong>Self-Exclusion:</strong> Mandatory options during registration</li>
+                <li><strong>Responsible Gambling:</strong> Information visible during process</li>
+            </ul>
+            
+            <p style="margin-top: 15px;"><strong>Typical Registration Steps:</strong></p>
+            <ol style="margin-left: 20px; margin-top: 10px;">
+                <li>Email and password</li>
+                <li>Personal data (name, date of birth, address)</li>
+                <li>Email/SMS verification</li>
+                <li>Accept terms and conditions</li>
+                <li>Set limits (optional but recommended)</li>
+                <li>First deposit</li>
+                <li>KYC (ID document, proof of address)</li>
+            </ol>
+            
+            <p style="margin-top: 15px;"><strong>How to Complete:</strong></p>
+            <ul>
+                <li>Complete full registration process on each competitor</li>
+                <li>Document number of steps and time required</li>
+                <li>Capture screenshots of each screen</li>
+                <li>Identify friction points or potential abandonment</li>
+                <li>Compare mobile vs. desktop experience</li>
+                <li>Analyze post-registration welcome messages</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 7. PROVIDER RESTRICTIONS -->
+<div class="section">
+    <div class="section-header">Provider Restrictions</div>
+    <div class="section-content">
+        <div class="info-box">
+            <h4>✓ General Information on Restrictions in Germany</h4>
+            <p><strong>GGL Regulation:</strong> All providers must comply with German regulations to operate legally.</p>
+            
+            <p style="margin-top: 15px;"><strong>Key Restrictions:</strong></p>
+            <ul>
+                <li><strong>Stake Limits:</strong> Maximum €1 per spin on virtual slots</li>
+                <li><strong>Autoplay:</strong> Prohibited on slots</li>
+                <li><strong>Spin Speed:</strong> Minimum 5 seconds between spins</li>
+                <li><strong>Progressive Jackpots:</strong> Limitations in some cases</li>
+                <li><strong>Time Restrictions:</strong> No restrictions on playing hours (only advertising: slots ads prohibited 06:00-21:00)</li>
+            </ul>
+        </div>
+        
+        <div class="data-unavailable">
+            <h4>⚠️ Provider-Specific Restrictions Not Available</h4>
+            <p><strong>To complete table similar to Norway PPT (Softswiss, Lucky Streak, Evolution):</strong></p>
+            <ul>
+                <li>Contact providers directly (Softswiss, Evolution, Pragmatic, etc.)</li>
+                <li>Request documentation of country restrictions</li>
+                <li>Verify which specific games are blocked in Germany</li>
+                <li>Document providers that do NOT operate in Germany</li>
+                <li>Identify alternatives for restricted providers</li>
+            </ul>
+            
+            <p style="margin-top: 15px;"><strong>Known Providers Operating in Germany:</strong></p>
+            <p>Evolution Gaming, Pragmatic Play, Play'n GO, NetEnt, Playtech (with adaptations to comply with regulations)</p>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION DIVIDER: ACQUISITION MARKETING -->
+<div class="section-divider">
+    <h2>Acquisition Marketing</h2>
+    <p class="subtitle">Germany</p>
+</div>
+
+<!-- 8. MARKETING COSTS -->
+<div id="marketing" class="section">
+    <div class="section-header">Marketing Costs</div>
+    <div class="section-content">
+        <h3 style="color: var(--betjordan-red); margin-bottom: 20px;">Key Factors: Influence and CPA</h3>
+        
+        <div class="info-box">
+            <h4>Regulatory Environment</h4>
+            <p><strong>Strict Regulations:</strong> Germany operates under the Fourth Interstate Treaty on Gambling (GlüStV) since July 2021. The Joint Gambling Authority (GGL) enforces strict licensing requirements and player protection measures.</p>
+            <p style="margin-top: 10px;"><strong>Market Characteristics:</strong> Despite regulatory constraints, Germany remains highly competitive with both licensed and offshore operators competing for market share. The black market has decreased from 40% (2020) to 20-25% (2025) due to enforcement efforts.</p>
+        </div>
+        
+        <div class="success-box">
+            <h4>Market Size & Opportunity</h4>
+            <p><strong>Total Gambling Market Revenue:</strong> €19.5 Billion (2025 projected)</p>
+            <p style="margin-top: 10px;"><strong>Online Players:</strong> 15.9 Million active users</p>
+            <p style="margin-top: 10px;"><strong>Growth Rate:</strong> 10-12% annually</p>
+            <p style="margin-top: 10px;"><strong>Mobile Revenue Share:</strong> 70% of online gaming revenue</p>
+        </div>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Market Competition</h3>
+        <p>The German market is highly competitive, which drives CPA costs higher. However, the market offers:</p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Large, affluent player base with above-average disposable income</li>
+            <li>High digital penetration (91% internet, 84% smartphone usage)</li>
+            <li>Strong player lifetime value due to high income levels</li>
+            <li>Crypto casino interest: #1 globally (50 searches per million people)</li>
+        </ul>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Player Lifetime Value (LTV)</h3>
+        <p><strong>High-Value Market:</strong> German players have above-average income and disposable cash flow. The market is characterized by:</p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Main audience: 25-44 age group with above-average income</li>
+            <li>Crypto owners earn €400 more per month than non-owners</li>
+            <li>Mobile-first players show higher engagement rates</li>
+            <li>LTV to CPA ratio estimated at 3:1 for quality players</li>
+        </ul>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Average CPA (Cost Per Acquisition)</h3>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Sports Betting</h3>
+                <div class="value">€150-200</div>
+                <div class="label">Average CPA</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Casino</h3>
+                <div class="value">€200-500</div>
+                <div class="label">Average CPA</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Affiliate RevShare</h3>
+                <div class="value">30-35%</div>
+                <div class="label">Commission Rate</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Market Growth</h3>
+                <div class="value">10-12%</div>
+                <div class="label">Annual Growth Rate</div>
+            </div>
+        </div>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Advertising Costs (RichAds Data 2025)</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Ad Format</th>
+                    <th>Cost (Germany)</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Telegram Push-Style Ads</td><td>$0.014 CPC</td><td>New format, combats banner blindness</td></tr>
+                <tr><td>Telegram Interstitial</td><td>$2.74 CPM</td><td>Mini apps, native appearance</td></tr>
+                <tr><td>Telegram Video Ads</td><td>$4.2 CPM</td><td>Engaging format</td></tr>
+                <tr><td>Telegram Embedded Banners</td><td>$0.89 CPM</td><td>Less intrusive</td></tr>
+                <tr><td>Push Notifications</td><td>$0.12 CPC</td><td>Traditional format, good engagement</td></tr>
+                <tr><td>Pop-up Ads</td><td>$2.3 CPM</td><td>High visibility, affordable</td></tr>
+            </tbody>
+        </table>
+        
+        <div class="data-unavailable" style="margin-top: 30px;">
+            <h4>⚠️ Advertising Restrictions in Germany</h4>
+            <p><strong>Important Compliance Requirements:</strong></p>
+            <ul>
+                <li><strong>Time Restrictions:</strong> Virtual slots and online poker advertising BANNED 06:00-21:00</li>
+                <li><strong>Influencer Marketing:</strong> PROHIBITED for virtual slots</li>
+                <li><strong>Sports Betting:</strong> Influencer marketing allowed with restrictions</li>
+                <li><strong>Responsible Gambling:</strong> All ads must include RG messaging</li>
+                <li><strong>Age Verification:</strong> Clear 18+ warnings required</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 9. PROJECTED STATS -->
+<div id="stats" class="section">
+    <div class="section-header">Germany Projected Stats</div>
+    <div class="section-content">
+        <h3 style="color: var(--betjordan-red); margin-bottom: 20px;">Market Share by Game Type (2024-2025)</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Game Type</th>
+                    <th>Estimated Revenue Share</th>
+                    <th>Revenue (€ Billion)</th>
+                    <th>Key Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-red">
+                    <td><strong>Sports Betting</strong></td>
+                    <td><strong>56%</strong></td>
+                    <td><strong>€7.9</strong></td>
+                    <td>Bundesliga, Champions League, Esports growing rapidly</td>
+                </tr>
+                <tr class="highlight-red">
+                    <td><strong>Slots</strong></td>
+                    <td><strong>30%</strong></td>
+                    <td><strong>€4.2</strong></td>
+                    <td>Top titles: Gates of Olympus, Book of Dead, Big Bass Bonanza</td>
+                </tr>
+                <tr>
+                    <td><strong>Lottery & Bingo</strong></td>
+                    <td><strong>9%</strong></td>
+                    <td><strong>€1.3</strong></td>
+                    <td>Strong cultural significance, growing online presence</td>
+                </tr>
+                <tr class="highlight-red">
+                    <td><strong>Live Dealer Casino</strong></td>
+                    <td><strong>Growing</strong></td>
+                    <td><strong>Part of 30%</strong></td>
+                    <td>Growing rapidly, especially blackjack, roulette, game shows</td>
+                </tr>
+                <tr>
+                    <td><strong>Poker</strong></td>
+                    <td><strong>5%</strong></td>
+                    <td><strong>€0.7</strong></td>
+                    <td>Dedicated niche audience, tournaments popular</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Key Market Metrics</h3>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Market Size</h3>
+                <div class="value">€19.5B</div>
+                <div class="label">2025 Projected Revenue</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Online Players</h3>
+                <div class="value">15.9M</div>
+                <div class="label">Active User Base</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Mobile Revenue</h3>
+                <div class="value">70%</div>
+                <div class="label">Of Total Online Gaming</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Population</h3>
+                <div class="value">84M</div>
+                <div class="label">Total Population</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Internet Penetration</h3>
+                <div class="value">91%</div>
+                <div class="label">Of Adult Population</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Smartphone Users</h3>
+                <div class="value">84%</div>
+                <div class="label">Of Adult Population</div>
+            </div>
+        </div>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Player Demographics</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Demographic Group</th>
+                    <th>Percentage</th>
+                    <th>Preferred Games</th>
+                    <th>Key Behaviors</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Age 18-34</td><td>34%</td><td>Online casino, sports betting, esports</td><td>Mobile-first, tech-savvy, prefer live games</td></tr>
+                <tr><td>Age 35-54</td><td>40%</td><td>Sports betting, lottery, casino</td><td>Multi-channel, value security and trust</td></tr>
+                <tr><td>Age 55+</td><td>26%</td><td>Lottery, land-based casinos</td><td>Traditional preferences, less mobile usage</td></tr>
+                <tr><td>Male Players</td><td>68-70%</td><td>Sports betting, poker, casino</td><td>Multi-game engagement, higher stakes</td></tr>
+                <tr><td>Female Players</td><td>30-32%</td><td>Online casino, bingo, lottery</td><td>Single-category focus, growing online</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- SECTION DIVIDER: BRAND & DESIGN -->
+<div class="section-divider">
+    <h2>Brand & Design</h2>
+    <p class="subtitle">Germany</p>
+</div>
+
+<!-- 10. CULTURE -->
+<div id="culture" class="section">
+    <div class="section-header">Culture</div>
+    <div class="section-content">
+        <h3 style="color: var(--betjordan-red); margin-bottom: 30px; text-align: center;">Core Values - German Market</h3>
+        
+        <div class="culture-values">
+            <div class="value-box">
+                <h4>Efficiency & Quality</h4>
+                <p>Germans value precision, reliability, and high-quality products. "Made in Germany" is a mark of excellence.</p>
+            </div>
+            
+            <div class="value-box">
+                <h4>Trust & Security</h4>
+                <p>Data protection and security are paramount. Germans are highly concerned about privacy (GDPR originated here).</p>
+            </div>
+            
+            <div class="value-box">
+                <h4>Transparency & Fairness</h4>
+                <p>Clear terms, honest communication, and fair play are expected. No hidden fees or misleading promotions.</p>
+            </div>
+            
+            <div class="value-box">
+                <h4>Responsible Gambling</h4>
+                <p>Strong emphasis on player protection, self-control, and responsible gaming practices.</p>
+            </div>
+            
+            <div class="value-box">
+                <h4>Tradition & Innovation</h4>
+                <p>Respect for established brands while embracing technological innovation and digital solutions.</p>
+            </div>
+            
+            <div class="value-box">
+                <h4>Direct Communication</h4>
+                <p>Germans prefer straightforward, factual communication without excessive marketing fluff.</p>
+            </div>
+        </div>
+        
+        <h3 style="color: var(--betjordan-red); margin: 50px 0 20px 0;">Cultural Considerations for Branding</h3>
+        
+        <div class="info-box">
+            <h4>Language</h4>
+            <p><strong>German is MANDATORY:</strong> All content, customer support, terms & conditions must be available in German. English as secondary language is expected but not sufficient alone.</p>
+        </div>
+        
+        <div class="info-box">
+            <h4>Design Preferences</h4>
+            <ul>
+                <li><strong>Clean & Professional:</strong> Avoid cluttered designs, prefer minimalist and functional layouts</li>
+                <li><strong>Clear Navigation:</strong> Intuitive structure, easy to find information</li>
+                <li><strong>Trust Signals:</strong> Display licenses, certifications, security badges prominently</li>
+                <li><strong>Responsible Gambling Visible:</strong> Easy access to limits, self-exclusion, support resources</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h4>Payment Preferences</h4>
+            <p><strong>Local Methods Essential:</strong> GiroPay, Sofort/Klarna are expected. PayPal, Skrill, Neteller very popular. Credit cards and bank transfers standard. Growing interest in crypto (Germany #1 globally in crypto casino searches).</p>
+        </div>
+        
+        <div class="info-box">
+            <h4>Customer Support</h4>
+            <p><strong>24/7 German Support:</strong> Live chat and email in German language is industry standard. Quick response times expected (under 2 minutes for chat).</p>
+        </div>
+    </div>
+</div>
+
+<!-- 11. BEST BRAND -->
+<div class="section">
+    <div class="section-header">Best Brand Analysis</div>
+    <div class="section-content">
+        <div class="data-unavailable">
+            <h4>⚠️ "Best Brand" Subjective Analysis Requires Comprehensive Evaluation</h4>
+            <p><strong>To determine the "best brand" requires:</strong></p>
+            
+            <p style="margin-top: 15px;"><strong>Evaluation Criteria:</strong></p>
+            <ul>
+                <li><strong>Brand Recognition:</strong> Awareness and recall in German market</li>
+                <li><strong>User Experience:</strong> Design quality, navigation, speed</li>
+                <li><strong>Game Selection:</strong> Variety and quality of games</li>
+                <li><strong>Bonus Value:</strong> Competitive offers and fair terms</li>
+                <li><strong>Payment Options:</strong> Variety and speed of methods</li>
+                <li><strong>Customer Support:</strong> Quality and availability of support</li>
+                <li><strong>Mobile Experience:</strong> App or optimized mobile site</li>
+                <li><strong>Responsible Gambling:</strong> Tools and commitment to RG</li>
+                <li><strong>Reputation:</strong> Player and expert reviews</li>
+            </ul>
+            
+            <p style="margin-top: 15px;"><strong>Potential Candidates Based on Data:</strong></p>
+            <ul>
+                <li><strong>Tipico:</strong> Local leader (#2 in traffic), strong German brand recognition</li>
+                <li><strong>Bet365:</strong> Premium international brand (#3), excellent reputation</li>
+                <li><strong>NV Casino:</strong> #1 in traffic, strong online presence</li>
+            </ul>
+            
+            <p style="margin-top: 15px;"><strong>How to Complete:</strong></p>
+            <ul>
+                <li>Register and test complete experience on each Top 5 competitor</li>
+                <li>Make deposits and withdrawals to evaluate process</li>
+                <li>Contact support at different times and channels</li>
+                <li>Analyze design, UX, and mobile functionality</li>
+                <li>Review player opinions on forums and review sites</li>
+                <li>Compare bonus offers and terms</li>
+                <li>Evaluate game selection and providers</li>
+                <li>Assign score to each criterion and calculate winner</li>
+            </ul>
+        </div>
+        
+        <div class="success-box">
+            <h4>✓ Characteristics of a Successful Brand in Germany</h4>
+            <ul>
+                <li><strong>GGL License:</strong> Official German license (mandatory)</li>
+                <li><strong>German Language:</strong> 100% content in German</li>
+                <li><strong>Local Payment Methods:</strong> GiroPay, Sofort, PayPal</li>
+                <li><strong>24/7 German Support:</strong> Chat and email in German</li>
+                <li><strong>Mobile Optimized:</strong> Excellent app or mobile site (70% of traffic)</li>
+                <li><strong>Popular Games:</strong> Gates of Olympus, Book of Dead, Big Bass, etc.</li>
+                <li><strong>Competitive Bonuses:</strong> Attractive welcome offers with fair terms</li>
+                <li><strong>Responsible Gambling:</strong> Visible and easy-to-use tools</li>
+                <li><strong>Fast Payouts:</strong> Quick withdrawals (24-48h ideal)</li>
+                <li><strong>Trust Signals:</strong> Certifications, positive reviews</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- SUMMARY SECTION -->
+<div class="section">
+    <div class="section-header">Summary & Next Steps</div>
+    <div class="section-content">
+        <h3 style="color: var(--betjordan-red); margin-bottom: 20px;">Completed Sections ✓</h3>
+        <ul style="margin-left: 20px; line-height: 2;">
+            <li>✓ <strong>Competitors:</strong> Top 10 operators with verified traffic data</li>
+            <li>✓ <strong>Games & Providers:</strong> Popular games, top providers, market preferences</li>
+            <li>✓ <strong>Marketing Costs:</strong> CPA ranges, advertising costs, LTV insights</li>
+            <li>✓ <strong>Projected Stats:</strong> Market share by game type, demographics, key metrics</li>
+            <li>✓ <strong>Culture:</strong> German core values and cultural considerations</li>
+        </ul>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Sections Requiring Additional Research ⚠️</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Section</th>
+                    <th>Data Required</th>
+                    <th>Method to Complete</th>
+                    <th>Estimated Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Welcome Offer</strong></td>
+                    <td>Current bonus offers per competitor (Casino & Sports)</td>
+                    <td>Visit each site, document offers, verify T&Cs</td>
+                    <td>4-6 hours</td>
+                </tr>
+                <tr>
+                    <td><strong>Loyalty Programs</strong></td>
+                    <td>VIP tiers, benefits, cashback rates per operator</td>
+                    <td>Register accounts, contact support, analyze T&Cs</td>
+                    <td>8-12 hours</td>
+                </tr>
+                <tr>
+                    <td><strong>Retention Techniques</strong></td>
+                    <td>CRM strategies, campaign types, communication channels</td>
+                    <td>Monitor emails/SMS for 30-60 days after registration</td>
+                    <td>30-60 days</td>
+                </tr>
+                <tr>
+                    <td><strong>REG FLOW</strong></td>
+                    <td>Registration steps, friction points, time required</td>
+                    <td>Complete registration on each platform, document steps</td>
+                    <td>3-5 hours</td>
+                </tr>
+                <tr>
+                    <td><strong>Provider Restrictions</strong></td>
+                    <td>Game provider availability and restrictions in Germany</td>
+                    <td>Contact providers, check platform game libraries</td>
+                    <td>6-8 hours</td>
+                </tr>
+                <tr>
+                    <td><strong>Best Brand</strong></td>
+                    <td>Comprehensive evaluation across all criteria</td>
+                    <td>Full testing of top 5 competitors, scoring matrix</td>
+                    <td>20-30 hours</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Recommended Tools & Resources</h3>
+        
+        <div class="info-box">
+            <h4>For Competitor Intelligence</h4>
+            <ul>
+                <li><strong>SEMrush / Ahrefs:</strong> Keyword research, traffic analysis, competitor tracking</li>
+                <li><strong>SimilarWeb:</strong> Website traffic and engagement metrics</li>
+                <li><strong>Ghostery / Wappalyzer:</strong> Technology stack analysis</li>
+                <li><strong>Mystery Shopping Services:</strong> Professional competitor analysis</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h4>For Market Research</h4>
+            <ul>
+                <li><strong>GGL Official Website:</strong> Regulatory updates and licensed operators list</li>
+                <li><strong>H2 Gambling Capital:</strong> Market data and forecasts</li>
+                <li><strong>Statista:</strong> Market statistics and trends</li>
+                <li><strong>iGaming Business:</strong> Industry news and analysis</li>
+            </ul>
+        </div>
+        
+        <div class="success-box">
+            <h4>✓ Key Takeaways for Germany Market</h4>
+            <ul>
+                <li><strong>Large Market:</strong> €19.5B revenue, 15.9M players, 10-12% growth</li>
+                <li><strong>Strict Regulation:</strong> GGL licensing mandatory, €1,000 deposit limits, €1 max stakes</li>
+                <li><strong>Mobile-First:</strong> 70% of revenue from mobile devices</li>
+                <li><strong>High Competition:</strong> CPA €200-500 for casino, €150-200 for sports</li>
+                <li><strong>Crypto Leader:</strong> #1 globally in crypto casino interest (50 searches/million)</li>
+                <li><strong>German Language Essential:</strong> Mandatory for licensing and player trust</li>
+                <li><strong>Sports Dominant:</strong> 56% market share, followed by slots (30%)</li>
+                <li><strong>Quality Players:</strong> High LTV, above-average income, strong engagement</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p><strong>Germany Casino Market - Competitor Analysis Dashboard</strong></p>
+    <p>Report Generated: October 2025</p>
+    <p>Data Sources: SimilarWeb, Blask Analytics, iGamingToday, Houlihan Lokey, Benzinga, RichAds, Industry Reports</p>
+    <p style="margin-top: 15px; font-size: 12px;">This dashboard contains verified data from reliable sources. Sections marked with ⚠️ require additional manual research to complete.</p>
+    <p style="margin-top: 10px;">© 2025 BetJordan. All rights reserved.</p>
+</div>
+
+</body>
+</html>

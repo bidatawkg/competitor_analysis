@@ -70,8 +70,10 @@ class DeepSeekCleaner:
                 ---
                 Tu tarea es:
 
-                1. Filtrar relevancia: Devuelve resultados solo si la promoción está claramente relacionada con el sector de casinos online (ejemplo: bonus, free spins, promociones, torneos, jackpots, wagering).
+                1. Filtrar relevancia: Devuelve resultados solo si la promoción está claramente relacionada con el sector de casinos online (ejemplo: bonus, free spins, promociones, torneos, jackpots, wagering, Cashback, loyalty points, vip levels or exclusive benefits). Además de promociones, incluye todo lo relacionado con loyalty. Programas VIP, niveles o beneficios exclusivos para clientes.
 
+                - Los textos pueden venir en diferentes idiomas, haz las traducciones necesarias para poder hacer la limpieza correctamente.
+                
                 - Descarta promociones que no tengan relación con casinos.
 
                 - Incluye el requisito de apuesta (“wagering requirement”) si está mencionado (por ejemplo: 35x, 50x bonus, etc.). Si no aparece, deja el campo vacío.
@@ -85,7 +87,7 @@ class DeepSeekCleaner:
                     "title": "string",
                     "description": "string",
                     "bonus_amount": "string",
-                    "bonus_type": "Welcome Bonus | Deposit Bonus | Free Spins | Cashback | Tournament | Jackpot | Other",
+                    "bonus_type": "Welcome Bonus | Deposit Bonus | Free Spins | Cashback | Tournament | Jackpot | vip levels | loyalty points | Exclusive_benefits | Other",
                     "conditions": "string",
                     "wagering": "string",
                     "valid_until": "string"

@@ -1,378 +1,331 @@
-2025-10-15 17:23:25 us=890000 Note: --data-ciphers-fallback with cipher 'AES-256-CBC' disables data channel offload.
-2025-10-15 17:23:25 us=906000 Current Parameter Settings:
-2025-10-15 17:23:25 us=906000   config = 'C:\Users\krilo\Documents\TRABAJO\NUEVOS COMPETIDORES\FINAL\competitor_analysis\VPN\CH.ovpn'
-2025-10-15 17:23:25 us=906000   mode = 0
-2025-10-15 17:23:25 us=906000   show_ciphers = DISABLED
-2025-10-15 17:23:25 us=906000   show_digests = DISABLED
-2025-10-15 17:23:25 us=906000   show_engines = DISABLED
-2025-10-15 17:23:25 us=906000   genkey = DISABLED
-2025-10-15 17:23:25 us=906000   genkey_filename = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   key_pass_file = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   show_tls_ciphers = DISABLED
-2025-10-15 17:23:25 us=906000   connect_retry_max = 0
-2025-10-15 17:23:25 us=906000 Connection profiles [0]:
-2025-10-15 17:23:25 us=906000   proto = udp
-2025-10-15 17:23:25 us=906000   local = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   local_port = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   remote = '87-1-ch.cg-dialup.net'
-2025-10-15 17:23:25 us=906000   remote_port = '443'
-2025-10-15 17:23:25 us=906000   remote_float = DISABLED
-2025-10-15 17:23:25 us=906000   bind_defined = DISABLED
-2025-10-15 17:23:25 us=906000   bind_local = DISABLED
-2025-10-15 17:23:25 us=906000   bind_ipv6_only = DISABLED
-2025-10-15 17:23:25 us=906000   connect_retry_seconds = 1
-2025-10-15 17:23:25 us=906000   connect_timeout = 120
-2025-10-15 17:23:25 us=906000   socks_proxy_server = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   socks_proxy_port = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   tun_mtu = 1500
-2025-10-15 17:23:25 us=906000   tun_mtu_defined = ENABLED
-2025-10-15 17:23:25 us=906000   link_mtu = 1500
-2025-10-15 17:23:25 us=906000   link_mtu_defined = DISABLED
-2025-10-15 17:23:25 us=906000   tun_mtu_extra = 0
-2025-10-15 17:23:25 us=906000   tun_mtu_extra_defined = DISABLED
-2025-10-15 17:23:25 us=906000   tls_mtu = 1250
-2025-10-15 17:23:25 us=906000   mtu_discover_type = -1
-2025-10-15 17:23:25 us=906000   fragment = 0
-2025-10-15 17:23:25 us=906000   mssfix = 1492
-2025-10-15 17:23:25 us=906000   mssfix_encap = ENABLED
-2025-10-15 17:23:25 us=906000   mssfix_fixed = DISABLED
-2025-10-15 17:23:25 us=906000   explicit_exit_notification = 2
-2025-10-15 17:23:25 us=906000   tls_auth_file = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   key_direction = not set
-2025-10-15 17:23:25 us=906000   tls_crypt_file = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   tls_crypt_v2_file = '[UNDEF]'
-2025-10-15 17:23:25 us=906000 Connection profiles END
-2025-10-15 17:23:25 us=906000   remote_random = DISABLED
-2025-10-15 17:23:25 us=906000   ipchange = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   dev = 'tun'
-2025-10-15 17:23:25 us=906000   dev_type = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   dev_node = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   tuntap_options.disable_dco = ENABLED
-2025-10-15 17:23:25 us=906000   lladdr = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   topology = 1
-2025-10-15 17:23:25 us=906000   ifconfig_local = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   ifconfig_remote_netmask = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   ifconfig_noexec = DISABLED
-2025-10-15 17:23:25 us=906000   ifconfig_nowarn = DISABLED
-2025-10-15 17:23:25 us=906000   ifconfig_ipv6_local = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   ifconfig_ipv6_netbits = 0
-2025-10-15 17:23:25 us=906000   ifconfig_ipv6_remote = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   shaper = 0
-2025-10-15 17:23:25 us=906000   mtu_test = 0
-2025-10-15 17:23:25 us=906000   mlock = DISABLED
-2025-10-15 17:23:25 us=906000   keepalive_ping = 0
-2025-10-15 17:23:25 us=906000   keepalive_timeout = 0
-2025-10-15 17:23:25 us=906000   inactivity_timeout = 0
-2025-10-15 17:23:25 us=906000   session_timeout = 0
-2025-10-15 17:23:25 us=906000   inactivity_minimum_bytes = 0
-2025-10-15 17:23:25 us=906000   ping_send_timeout = 5
-2025-10-15 17:23:25 us=906000   ping_rec_timeout = 0
-2025-10-15 17:23:25 us=906000   ping_rec_timeout_action = 0
-2025-10-15 17:23:25 us=906000   ping_timer_remote = DISABLED
-2025-10-15 17:23:25 us=906000   remap_sigusr1 = 0
-2025-10-15 17:23:25 us=906000   persist_tun = ENABLED
-2025-10-15 17:23:25 us=906000   persist_local_ip = DISABLED
-2025-10-15 17:23:25 us=906000   persist_remote_ip = DISABLED
-2025-10-15 17:23:25 us=906000   persist_key = ENABLED
-2025-10-15 17:23:25 us=906000   passtos = DISABLED
-2025-10-15 17:23:25 us=906000   resolve_retry_seconds = 1000000000
-2025-10-15 17:23:25 us=906000   resolve_in_advance = DISABLED
-2025-10-15 17:23:25 us=906000   username = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   groupname = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   chroot_dir = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   cd_dir = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   writepid = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   up_script = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   down_script = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   down_pre = DISABLED
-2025-10-15 17:23:25 us=906000   up_restart = DISABLED
-2025-10-15 17:23:25 us=906000   up_delay = DISABLED
-2025-10-15 17:23:25 us=906000   daemon = DISABLED
-2025-10-15 17:23:25 us=906000   log = ENABLED
-2025-10-15 17:23:25 us=906000   suppress_timestamps = DISABLED
-2025-10-15 17:23:25 us=906000   machine_readable_output = DISABLED
-2025-10-15 17:23:25 us=906000   nice = 0
-2025-10-15 17:23:25 us=906000   verbosity = 4
-2025-10-15 17:23:25 us=906000   mute = 0
-2025-10-15 17:23:25 us=906000   gremlin = 0
-2025-10-15 17:23:25 us=906000   status_file = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   status_file_version = 1
-2025-10-15 17:23:25 us=906000   status_file_update_freq = 60
-2025-10-15 17:23:25 us=906000   occ = ENABLED
-2025-10-15 17:23:25 us=906000   rcvbuf = 0
-2025-10-15 17:23:25 us=906000   sndbuf = 0
-2025-10-15 17:23:25 us=906000   sockflags = 0
-2025-10-15 17:23:25 us=906000   fast_io = DISABLED
-2025-10-15 17:23:25 us=906000   comp.alg = 0
-2025-10-15 17:23:25 us=906000   comp.flags = 24
-2025-10-15 17:23:25 us=906000   route_script = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   route_default_gateway = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   route_default_metric = 0
-2025-10-15 17:23:25 us=906000   route_noexec = DISABLED
-2025-10-15 17:23:25 us=906000   route_delay = 5
-2025-10-15 17:23:25 us=906000   route_delay_window = 30
-2025-10-15 17:23:25 us=906000   route_delay_defined = ENABLED
-2025-10-15 17:23:25 us=906000   route_nopull = DISABLED
-2025-10-15 17:23:25 us=906000   route_gateway_via_dhcp = DISABLED
-2025-10-15 17:23:25 us=906000   allow_pull_fqdn = DISABLED
-2025-10-15 17:23:25 us=906000   [redirect_default_gateway local=0]
-2025-10-15 17:23:25 us=906000   management_addr = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   management_port = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   management_user_pass = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   management_log_history_cache = 250
-2025-10-15 17:23:25 us=906000   management_echo_buffer_size = 100
-2025-10-15 17:23:25 us=906000   management_client_user = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   management_client_group = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   management_flags = 0
-2025-10-15 17:23:25 us=906000   shared_secret_file = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   key_direction = not set
-2025-10-15 17:23:25 us=906000   ciphername = 'AES-256-CBC'
-2025-10-15 17:23:25 us=906000   ncp_ciphers = 'AES-256-GCM:AES-128-GCM:AES-256-CBC'
-2025-10-15 17:23:25 us=906000   authname = 'SHA256'
-2025-10-15 17:23:25 us=906000   engine = DISABLED
-2025-10-15 17:23:25 us=906000   replay = ENABLED
-2025-10-15 17:23:25 us=906000   mute_replay_warnings = DISABLED
-2025-10-15 17:23:25 us=906000   replay_window = 64
-2025-10-15 17:23:25 us=906000   replay_time = 15
-2025-10-15 17:23:25 us=906000   packet_id_file = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   test_crypto = DISABLED
-2025-10-15 17:23:25 us=906000   tls_server = DISABLED
-2025-10-15 17:23:25 us=906000   tls_client = ENABLED
-2025-10-15 17:23:25 us=906000   ca_file = 'C:/Users/krilo/Documents/TRABAJO/NUEVOS COMPETIDORES/FINAL/competitor_analysis/VPN/ca.crt'
-2025-10-15 17:23:25 us=906000   ca_path = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   dh_file = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   cert_file = 'C:/Users/krilo/Documents/TRABAJO/NUEVOS COMPETIDORES/FINAL/competitor_analysis/VPN/client.crt'
-2025-10-15 17:23:25 us=906000   extra_certs_file = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   priv_key_file = 'C:/Users/krilo/Documents/TRABAJO/NUEVOS COMPETIDORES/FINAL/competitor_analysis/VPN/client.key'
-2025-10-15 17:23:25 us=906000   pkcs12_file = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   cryptoapi_cert = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   cipher_list = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   cipher_list_tls13 = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   tls_cert_profile = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   tls_verify = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   tls_export_peer_cert_dir = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   verify_x509_type = 0
-2025-10-15 17:23:25 us=906000   verify_x509_name = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   crl_file = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   ns_cert_type = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 65535
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_ku[i] = 0
-2025-10-15 17:23:25 us=906000   remote_cert_eku = 'TLS Web Server Authentication'
-2025-10-15 17:23:25 us=906000   ssl_flags = 192
-2025-10-15 17:23:25 us=906000   tls_timeout = 2
-2025-10-15 17:23:25 us=906000   renegotiate_bytes = -1
-2025-10-15 17:23:25 us=906000   renegotiate_packets = 0
-2025-10-15 17:23:25 us=906000   renegotiate_seconds = 3600
-2025-10-15 17:23:25 us=906000   handshake_window = 60
-2025-10-15 17:23:25 us=906000   transition_window = 3600
-2025-10-15 17:23:25 us=906000   single_session = DISABLED
-2025-10-15 17:23:25 us=906000   push_peer_info = DISABLED
-2025-10-15 17:23:25 us=906000   tls_exit = DISABLED
-2025-10-15 17:23:25 us=906000   tls_crypt_v2_metadata = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_protected_authentication = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_private_mode = 00000000
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_cert_private = DISABLED
-2025-10-15 17:23:25 us=906000   pkcs11_pin_cache_period = -1
-2025-10-15 17:23:25 us=906000   pkcs11_id = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   pkcs11_id_management = DISABLED
-2025-10-15 17:23:25 us=906000   server_network = 0.0.0.0
-2025-10-15 17:23:25 us=906000   server_netmask = 0.0.0.0
-2025-10-15 17:23:25 us=906000   server_network_ipv6 = ::
-2025-10-15 17:23:25 us=906000   server_netbits_ipv6 = 0
-2025-10-15 17:23:25 us=906000   server_bridge_ip = 0.0.0.0
-2025-10-15 17:23:25 us=906000   server_bridge_netmask = 0.0.0.0
-2025-10-15 17:23:25 us=906000   server_bridge_pool_start = 0.0.0.0
-2025-10-15 17:23:25 us=906000   server_bridge_pool_end = 0.0.0.0
-2025-10-15 17:23:25 us=906000   ifconfig_pool_defined = DISABLED
-2025-10-15 17:23:25 us=906000   ifconfig_pool_start = 0.0.0.0
-2025-10-15 17:23:25 us=906000   ifconfig_pool_end = 0.0.0.0
-2025-10-15 17:23:25 us=906000   ifconfig_pool_netmask = 0.0.0.0
-2025-10-15 17:23:25 us=906000   ifconfig_pool_persist_filename = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   ifconfig_pool_persist_refresh_freq = 600
-2025-10-15 17:23:25 us=906000   ifconfig_ipv6_pool_defined = DISABLED
-2025-10-15 17:23:25 us=906000   ifconfig_ipv6_pool_base = ::
-2025-10-15 17:23:25 us=906000   ifconfig_ipv6_pool_netbits = 0
-2025-10-15 17:23:25 us=906000   n_bcast_buf = 256
-2025-10-15 17:23:25 us=906000   tcp_queue_limit = 64
-2025-10-15 17:23:25 us=906000   real_hash_size = 256
-2025-10-15 17:23:25 us=906000   virtual_hash_size = 256
-2025-10-15 17:23:25 us=906000   client_connect_script = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   learn_address_script = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   client_disconnect_script = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   client_crresponse_script = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   client_config_dir = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   ccd_exclusive = DISABLED
-2025-10-15 17:23:25 us=906000   tmp_dir = 'C:\Users\krilo\AppData\Local\Temp\'
-2025-10-15 17:23:25 us=906000   push_ifconfig_defined = DISABLED
-2025-10-15 17:23:25 us=906000   push_ifconfig_local = 0.0.0.0
-2025-10-15 17:23:25 us=906000   push_ifconfig_remote_netmask = 0.0.0.0
-2025-10-15 17:23:25 us=906000   push_ifconfig_ipv6_defined = DISABLED
-2025-10-15 17:23:25 us=906000   push_ifconfig_ipv6_local = ::/0
-2025-10-15 17:23:25 us=906000   push_ifconfig_ipv6_remote = ::
-2025-10-15 17:23:25 us=906000   enable_c2c = DISABLED
-2025-10-15 17:23:25 us=906000   duplicate_cn = DISABLED
-2025-10-15 17:23:25 us=906000   cf_max = 0
-2025-10-15 17:23:25 us=906000   cf_per = 0
-2025-10-15 17:23:25 us=906000   cf_initial_max = 100
-2025-10-15 17:23:25 us=906000   cf_initial_per = 10
-2025-10-15 17:23:25 us=906000   max_clients = 1024
-2025-10-15 17:23:25 us=906000   max_routes_per_client = 256
-2025-10-15 17:23:25 us=906000   auth_user_pass_verify_script = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   auth_user_pass_verify_script_via_file = DISABLED
-2025-10-15 17:23:25 us=906000   auth_token_generate = DISABLED
-2025-10-15 17:23:25 us=906000   force_key_material_export = DISABLED
-2025-10-15 17:23:25 us=906000   auth_token_lifetime = 0
-2025-10-15 17:23:25 us=906000   auth_token_secret_file = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   vlan_tagging = DISABLED
-2025-10-15 17:23:25 us=906000   vlan_accept = all
-2025-10-15 17:23:25 us=906000   vlan_pvid = 1
-2025-10-15 17:23:25 us=906000   client = ENABLED
-2025-10-15 17:23:25 us=906000   pull = ENABLED
-2025-10-15 17:23:25 us=906000   auth_user_pass_file = 'C:/Users/krilo/Documents/TRABAJO/NUEVOS COMPETIDORES/FINAL/competitor_analysis/VPN/credentials.txt'
-2025-10-15 17:23:25 us=906000   show_net_up = DISABLED
-2025-10-15 17:23:25 us=906000   route_method = 0
-2025-10-15 17:23:25 us=906000   block_outside_dns = DISABLED
-2025-10-15 17:23:25 us=906000   ip_win32_defined = DISABLED
-2025-10-15 17:23:25 us=906000   ip_win32_type = 3
-2025-10-15 17:23:25 us=906000   dhcp_masq_offset = 0
-2025-10-15 17:23:25 us=906000   dhcp_lease_time = 31536000
-2025-10-15 17:23:25 us=906000   tap_sleep = 0
-2025-10-15 17:23:25 us=906000   dhcp_options = 0x00000000
-2025-10-15 17:23:25 us=906000   dhcp_renew = DISABLED
-2025-10-15 17:23:25 us=906000   dhcp_pre_release = DISABLED
-2025-10-15 17:23:25 us=906000   domain = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   netbios_scope = '[UNDEF]'
-2025-10-15 17:23:25 us=906000   netbios_node_type = 0
-2025-10-15 17:23:25 us=906000   disable_nbt = DISABLED
-2025-10-15 17:23:25 us=906000 OpenVPN 2.6.15 [git:v2.6.15/90bdd59a95170169] Windows [SSL (OpenSSL)] [LZO] [LZ4] [PKCS11] [AEAD] [DCO] built on Sep 22 2025
-2025-10-15 17:23:25 us=906000 Windows version 10.0 (Windows 10 or greater), amd64 executable
-2025-10-15 17:23:25 us=906000 library versions: OpenSSL 3.5.3 16 Sep 2025, LZO 2.10
-2025-10-15 17:23:25 us=906000 DCO version: 1.3.3
-2025-10-15 17:23:25 us=906000 Control Channel MTU parms [ mss_fix:0 max_frag:0 tun_mtu:1250 tun_max_mtu:0 headroom:126 payload:1600 tailroom:126 ET:0 ]
-2025-10-15 17:23:25 us=984000 Data Channel MTU parms [ mss_fix:0 max_frag:0 tun_mtu:1500 tun_max_mtu:1600 headroom:136 payload:1768 tailroom:562 ET:0 ]
-2025-10-15 17:23:25 us=984000 TCP/UDP: Preserving recently used remote address: [AF_INET]84.17.52.32:443
-2025-10-15 17:23:25 us=984000 Socket Buffers: R=[65536->65536] S=[65536->65536]
-2025-10-15 17:23:25 us=984000 UDPv4 link local: (not bound)
-2025-10-15 17:23:25 us=984000 UDPv4 link remote: [AF_INET]84.17.52.32:443
-2025-10-15 17:23:26 us=31000 TLS: Initial packet from [AF_INET]84.17.52.32:443, sid=60420f19 7a9e366b
-2025-10-15 17:23:26 us=93000 VERIFY OK: depth=1, C=RO, L=Bucharest, O=CyberGhost S.A., CN=CyberGhost Root CA, emailAddress=info@cyberghost.ro
-2025-10-15 17:23:26 us=93000 VERIFY KU OK
-2025-10-15 17:23:26 us=93000 Validating certificate extended key usage
-2025-10-15 17:23:26 us=93000 ++ Certificate has EKU (str) TLS Web Server Authentication, expects TLS Web Server Authentication
-2025-10-15 17:23:26 us=93000 VERIFY EKU OK
-2025-10-15 17:23:26 us=93000 VERIFY OK: depth=0, CN=zurich-rack402.nodes.gen4.ninja
-2025-10-15 17:23:26 us=187000 Control Channel: TLSv1.3, cipher TLSv1.3 TLS_AES_256_GCM_SHA384, peer certificate: 4096 bits RSA, signature: RSA-SHA256, peer temporary key: 253 bits X25519
-2025-10-15 17:23:26 us=187000 [zurich-rack402.nodes.gen4.ninja] Peer Connection Initiated with [AF_INET]84.17.52.32:443
-2025-10-15 17:23:26 us=187000 TLS: move_session: dest=TM_ACTIVE src=TM_INITIAL reinit_src=1
-2025-10-15 17:23:26 us=187000 TLS: tls_multi_process: initial untrusted session promoted to trusted
-2025-10-15 17:23:26 us=234000 PUSH: Received control message: 'PUSH_REPLY,redirect-gateway def1,route-ipv6 2000::/3,dhcp-option DNS 10.0.0.243,route-gateway 10.1.4.1,topology subnet,ping 10,ping-restart 60,ifconfig 10.1.4.180 255.255.255.0,peer-id 12,cipher AES-128-GCM,protocol-flags cc-exit tls-ekm dyn-tls-crypt,tun-mtu 1500'
-2025-10-15 17:23:26 us=234000 WARNING: You have specified redirect-gateway and redirect-private at the same time (or the same option multiple times). This is not well supported and may lead to unexpected results
-2025-10-15 17:23:26 us=234000 OPTIONS IMPORT: --ifconfig/up options modified
-2025-10-15 17:23:26 us=234000 OPTIONS IMPORT: route options modified
-2025-10-15 17:23:26 us=234000 OPTIONS IMPORT: route-related options modified
-2025-10-15 17:23:26 us=234000 OPTIONS IMPORT: --ip-win32 and/or --dhcp-option options modified
-2025-10-15 17:23:26 us=234000 OPTIONS IMPORT: tun-mtu set to 1500
-2025-10-15 17:23:26 us=234000 interactive service msg_channel=0
-2025-10-15 17:23:26 us=234000 ROUTE_GATEWAY 192.168.68.1/255.255.255.0 I=11 HWADDR=00:e0:4c:68:20:f7
-2025-10-15 17:23:26 us=250000 GDG6: remote_host_ipv6=n/a
-2025-10-15 17:23:26 us=250000 NOTE: GetBestInterfaceEx returned error: No se ha encontrado el elemento.   (code=1168)
-2025-10-15 17:23:26 us=250000 ROUTE6: default_gateway=UNDEF
-2025-10-15 17:23:26 us=250000 open_tun
-2025-10-15 17:23:26 us=265000 tap-windows6 device [Conexión de área local 2] opened
-2025-10-15 17:23:26 us=265000 TAP-Windows Driver Version 9.27 
-2025-10-15 17:23:26 us=265000 TAP-Windows MTU=1500
-2025-10-15 17:23:26 us=281000 Set TAP-Windows TUN subnet mode network/local/netmask = 10.1.4.0/10.1.4.180/255.255.255.0 [SUCCEEDED]
-2025-10-15 17:23:26 us=281000 Notified TAP-Windows driver to set a DHCP IP/netmask of 10.1.4.180/255.255.255.0 on interface {735BD71C-C8F0-40C2-A4DC-99953BFBD827} [DHCP-serv: 10.1.4.0, lease-time: 31536000]
-2025-10-15 17:23:26 us=281000 DHCP option string: 06040a00 00f3
-2025-10-15 17:23:26 us=281000 Successful ARP Flush on interface [9] {735BD71C-C8F0-40C2-A4DC-99953BFBD827}
-2025-10-15 17:23:26 us=281000 do_ifconfig, ipv4=1, ipv6=0
-2025-10-15 17:23:26 us=281000 IPv4 MTU set to 1500 on interface 9 using SetIpInterfaceEntry()
-2025-10-15 17:23:26 us=281000 Data Channel MTU parms [ mss_fix:1400 max_frag:0 tun_mtu:1500 tun_max_mtu:1600 headroom:136 payload:1768 tailroom:562 ET:0 ]
-2025-10-15 17:23:26 us=281000 Outgoing dynamic tls-crypt: Cipher 'AES-256-CTR' initialized with 256 bit key
-2025-10-15 17:23:26 us=281000 Outgoing dynamic tls-crypt: Using 256 bit message hash 'SHA256' for HMAC authentication
-2025-10-15 17:23:26 us=281000 Incoming dynamic tls-crypt: Cipher 'AES-256-CTR' initialized with 256 bit key
-2025-10-15 17:23:26 us=281000 Incoming dynamic tls-crypt: Using 256 bit message hash 'SHA256' for HMAC authentication
-2025-10-15 17:23:26 us=281000 Outgoing Data Channel: Cipher 'AES-128-GCM' initialized with 128 bit key
-2025-10-15 17:23:26 us=281000 Incoming Data Channel: Cipher 'AES-128-GCM' initialized with 128 bit key
-2025-10-15 17:23:26 us=281000 Data Channel: cipher 'AES-128-GCM', peer-id: 12
-2025-10-15 17:23:26 us=281000 Timers: ping 10, ping-restart 60
-2025-10-15 17:23:26 us=281000 Protocol options: explicit-exit-notify 2, protocol-flags cc-exit tls-ekm dyn-tls-crypt
-2025-10-15 17:23:31 TEST ROUTES: 1/1 succeeded len=0 ret=1 a=0 u/d=up
-2025-10-15 17:23:31 C:\windows\system32\route.exe ADD 84.17.52.32 MASK 255.255.255.255 192.168.68.1
-2025-10-15 17:23:31 ROUTE: CreateIpForwardEntry succeeded with dwForwardMetric1=25 and dwForwardType=4
-2025-10-15 17:23:31 Route addition via ipapi [adaptive] succeeded
-2025-10-15 17:23:31 C:\windows\system32\route.exe ADD 0.0.0.0 MASK 128.0.0.0 10.1.4.1
-2025-10-15 17:23:31 Route addition via ipapi [adaptive] failed because route exists
-2025-10-15 17:23:31 C:\windows\system32\route.exe ADD 128.0.0.0 MASK 128.0.0.0 10.1.4.1
-2025-10-15 17:23:31 Route addition via ipapi [adaptive] failed because route exists
-2025-10-15 17:23:31 WARNING: OpenVPN was configured to add an IPv6 route. However, no IPv6 has been configured for Conexión de área local 2, therefore the route installation may fail or may not work as expected.
-2025-10-15 17:23:31 add_route_ipv6(2000::/3 -> :: metric -1) IF 9
-2025-10-15 17:23:31 IPv6 route addition using ipapi failed because route exists
-2025-10-15 17:23:31 Initialization Sequence Completed
-2025-10-15 17:23:43 us=812000 PID_ERR replay-window backtrack occurred [2] [SSL-0] [00_0000000000000000000000013333333333333344444444444444444444444] 0:698 0:696 t=1760541823[0] r=[-1,64,15,2,1] sl=[6,64,64,528]
-2025-10-15 17:25:16 us=984000 PID_ERR replay-window backtrack occurred [11] [SSL-0] [00_______00_0000000000000000000000000000000000000000000000000000] 0:43120 0:43109 t=1760541916[0] r=[-3,64,15,11,1] sl=[16,64,64,528]
-2025-10-15 17:25:25 us=93000 PID_ERR replay-window backtrack occurred [12] [SSL-0] [000000000000_000000000000000000000000000011111111111111111111111] 0:44679 0:44667 t=1760541925[0] r=[-2,64,15,12,1] sl=[57,64,64,528]
-2025-10-15 17:32:33 us=703000 PID_ERR replay-window backtrack occurred [127] [SSL-0] [0000000000000000000000000000000000000000000000000000000000000000] 0:242124 0:241997 t=1760542353[0] r=[0,64,15,127,1] sl=[25,64,64,528]
-2025-10-15 17:32:33 us=703000 PID_ERR large diff [127] [SSL-0] [0000000000000000000000000000000000000000000000000000000000000000] 0:242124 0:241997 t=1760542353[0] r=[0,64,15,127,1] sl=[25,64,64,528]
-2025-10-15 17:32:33 us=703000 AEAD Decrypt error: bad packet ID (may be a replay): [ #241997 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
-2025-10-15 17:40:06 us=203000 win_ctrl_handler: signal received (code=2)
-2025-10-15 17:40:06 us=203000 win_ctrl_handler: signal (code=2) not handled
+2025-10-17 22:51:09 us=796000 Note: --data-ciphers-fallback with cipher 'AES-256-CBC' disables data channel offload.
+2025-10-17 22:51:09 us=796000 Current Parameter Settings:
+2025-10-17 22:51:09 us=796000   config = 'C:\Users\krilo\Documents\TRABAJO\NUEVOS COMPETIDORES\FINAL\competitor_analysis\VPN\DE.ovpn'
+2025-10-17 22:51:09 us=796000   mode = 0
+2025-10-17 22:51:09 us=796000   show_ciphers = DISABLED
+2025-10-17 22:51:09 us=796000   show_digests = DISABLED
+2025-10-17 22:51:09 us=796000   show_engines = DISABLED
+2025-10-17 22:51:09 us=796000   genkey = DISABLED
+2025-10-17 22:51:09 us=796000   genkey_filename = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   key_pass_file = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   show_tls_ciphers = DISABLED
+2025-10-17 22:51:09 us=796000   connect_retry_max = 0
+2025-10-17 22:51:09 us=796000 Connection profiles [0]:
+2025-10-17 22:51:09 us=796000   proto = udp
+2025-10-17 22:51:09 us=796000   local = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   local_port = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   remote = '87-1-de.cg-dialup.net'
+2025-10-17 22:51:09 us=796000   remote_port = '443'
+2025-10-17 22:51:09 us=796000   remote_float = DISABLED
+2025-10-17 22:51:09 us=796000   bind_defined = DISABLED
+2025-10-17 22:51:09 us=796000   bind_local = DISABLED
+2025-10-17 22:51:09 us=796000   bind_ipv6_only = DISABLED
+2025-10-17 22:51:09 us=796000   connect_retry_seconds = 1
+2025-10-17 22:51:09 us=796000   connect_timeout = 120
+2025-10-17 22:51:09 us=796000   socks_proxy_server = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   socks_proxy_port = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   tun_mtu = 1500
+2025-10-17 22:51:09 us=796000   tun_mtu_defined = ENABLED
+2025-10-17 22:51:09 us=796000   link_mtu = 1500
+2025-10-17 22:51:09 us=796000   link_mtu_defined = DISABLED
+2025-10-17 22:51:09 us=796000   tun_mtu_extra = 0
+2025-10-17 22:51:09 us=796000   tun_mtu_extra_defined = DISABLED
+2025-10-17 22:51:09 us=796000   tls_mtu = 1250
+2025-10-17 22:51:09 us=796000   mtu_discover_type = -1
+2025-10-17 22:51:09 us=796000   fragment = 0
+2025-10-17 22:51:09 us=796000   mssfix = 1492
+2025-10-17 22:51:09 us=796000   mssfix_encap = ENABLED
+2025-10-17 22:51:09 us=796000   mssfix_fixed = DISABLED
+2025-10-17 22:51:09 us=796000   explicit_exit_notification = 2
+2025-10-17 22:51:09 us=796000   tls_auth_file = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   key_direction = not set
+2025-10-17 22:51:09 us=796000   tls_crypt_file = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   tls_crypt_v2_file = '[UNDEF]'
+2025-10-17 22:51:09 us=796000 Connection profiles END
+2025-10-17 22:51:09 us=796000   remote_random = DISABLED
+2025-10-17 22:51:09 us=796000   ipchange = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   dev = 'tun'
+2025-10-17 22:51:09 us=796000   dev_type = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   dev_node = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   tuntap_options.disable_dco = ENABLED
+2025-10-17 22:51:09 us=796000   lladdr = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   topology = 1
+2025-10-17 22:51:09 us=796000   ifconfig_local = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   ifconfig_remote_netmask = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   ifconfig_noexec = DISABLED
+2025-10-17 22:51:09 us=796000   ifconfig_nowarn = DISABLED
+2025-10-17 22:51:09 us=796000   ifconfig_ipv6_local = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   ifconfig_ipv6_netbits = 0
+2025-10-17 22:51:09 us=796000   ifconfig_ipv6_remote = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   shaper = 0
+2025-10-17 22:51:09 us=796000   mtu_test = 0
+2025-10-17 22:51:09 us=796000   mlock = DISABLED
+2025-10-17 22:51:09 us=796000   keepalive_ping = 0
+2025-10-17 22:51:09 us=796000   keepalive_timeout = 0
+2025-10-17 22:51:09 us=796000   inactivity_timeout = 0
+2025-10-17 22:51:09 us=796000   session_timeout = 0
+2025-10-17 22:51:09 us=796000   inactivity_minimum_bytes = 0
+2025-10-17 22:51:09 us=796000   ping_send_timeout = 5
+2025-10-17 22:51:09 us=796000   ping_rec_timeout = 0
+2025-10-17 22:51:09 us=796000   ping_rec_timeout_action = 0
+2025-10-17 22:51:09 us=796000   ping_timer_remote = DISABLED
+2025-10-17 22:51:09 us=796000   remap_sigusr1 = 0
+2025-10-17 22:51:09 us=796000   persist_tun = ENABLED
+2025-10-17 22:51:09 us=796000   persist_local_ip = DISABLED
+2025-10-17 22:51:09 us=796000   persist_remote_ip = DISABLED
+2025-10-17 22:51:09 us=796000   persist_key = ENABLED
+2025-10-17 22:51:09 us=796000   passtos = DISABLED
+2025-10-17 22:51:09 us=796000   resolve_retry_seconds = 1000000000
+2025-10-17 22:51:09 us=796000   resolve_in_advance = DISABLED
+2025-10-17 22:51:09 us=796000   username = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   groupname = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   chroot_dir = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   cd_dir = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   writepid = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   up_script = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   down_script = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   down_pre = DISABLED
+2025-10-17 22:51:09 us=796000   up_restart = DISABLED
+2025-10-17 22:51:09 us=796000   up_delay = DISABLED
+2025-10-17 22:51:09 us=796000   daemon = DISABLED
+2025-10-17 22:51:09 us=796000   log = ENABLED
+2025-10-17 22:51:09 us=796000   suppress_timestamps = DISABLED
+2025-10-17 22:51:09 us=796000   machine_readable_output = DISABLED
+2025-10-17 22:51:09 us=796000   nice = 0
+2025-10-17 22:51:09 us=796000   verbosity = 4
+2025-10-17 22:51:09 us=796000   mute = 0
+2025-10-17 22:51:09 us=796000   gremlin = 0
+2025-10-17 22:51:09 us=796000   status_file = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   status_file_version = 1
+2025-10-17 22:51:09 us=796000   status_file_update_freq = 60
+2025-10-17 22:51:09 us=796000   occ = ENABLED
+2025-10-17 22:51:09 us=796000   rcvbuf = 0
+2025-10-17 22:51:09 us=796000   sndbuf = 0
+2025-10-17 22:51:09 us=796000   sockflags = 0
+2025-10-17 22:51:09 us=796000   fast_io = DISABLED
+2025-10-17 22:51:09 us=796000   comp.alg = 0
+2025-10-17 22:51:09 us=796000   comp.flags = 24
+2025-10-17 22:51:09 us=796000   route_script = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   route_default_gateway = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   route_default_metric = 0
+2025-10-17 22:51:09 us=796000   route_noexec = DISABLED
+2025-10-17 22:51:09 us=796000   route_delay = 5
+2025-10-17 22:51:09 us=796000   route_delay_window = 30
+2025-10-17 22:51:09 us=796000   route_delay_defined = ENABLED
+2025-10-17 22:51:09 us=796000   route_nopull = DISABLED
+2025-10-17 22:51:09 us=796000   route_gateway_via_dhcp = DISABLED
+2025-10-17 22:51:09 us=796000   allow_pull_fqdn = DISABLED
+2025-10-17 22:51:09 us=796000   [redirect_default_gateway local=0]
+2025-10-17 22:51:09 us=796000   management_addr = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   management_port = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   management_user_pass = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   management_log_history_cache = 250
+2025-10-17 22:51:09 us=796000   management_echo_buffer_size = 100
+2025-10-17 22:51:09 us=796000   management_client_user = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   management_client_group = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   management_flags = 0
+2025-10-17 22:51:09 us=796000   shared_secret_file = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   key_direction = not set
+2025-10-17 22:51:09 us=796000   ciphername = 'AES-256-CBC'
+2025-10-17 22:51:09 us=796000   ncp_ciphers = 'AES-256-GCM:AES-128-GCM:AES-256-CBC'
+2025-10-17 22:51:09 us=796000   authname = 'SHA256'
+2025-10-17 22:51:09 us=796000   engine = DISABLED
+2025-10-17 22:51:09 us=796000   replay = ENABLED
+2025-10-17 22:51:09 us=796000   mute_replay_warnings = DISABLED
+2025-10-17 22:51:09 us=796000   replay_window = 64
+2025-10-17 22:51:09 us=796000   replay_time = 15
+2025-10-17 22:51:09 us=796000   packet_id_file = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   test_crypto = DISABLED
+2025-10-17 22:51:09 us=796000   tls_server = DISABLED
+2025-10-17 22:51:09 us=796000   tls_client = ENABLED
+2025-10-17 22:51:09 us=796000   ca_file = 'C:/Users/krilo/Documents/TRABAJO/NUEVOS COMPETIDORES/FINAL/competitor_analysis/VPN/ca.crt'
+2025-10-17 22:51:09 us=796000   ca_path = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   dh_file = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   cert_file = 'C:/Users/krilo/Documents/TRABAJO/NUEVOS COMPETIDORES/FINAL/competitor_analysis/VPN/client.crt'
+2025-10-17 22:51:09 us=796000   extra_certs_file = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   priv_key_file = 'C:/Users/krilo/Documents/TRABAJO/NUEVOS COMPETIDORES/FINAL/competitor_analysis/VPN/client.key'
+2025-10-17 22:51:09 us=796000   pkcs12_file = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   cryptoapi_cert = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   cipher_list = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   cipher_list_tls13 = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   tls_cert_profile = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   tls_verify = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   tls_export_peer_cert_dir = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   verify_x509_type = 0
+2025-10-17 22:51:09 us=796000   verify_x509_name = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   crl_file = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   ns_cert_type = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 65535
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_ku[i] = 0
+2025-10-17 22:51:09 us=796000   remote_cert_eku = 'TLS Web Server Authentication'
+2025-10-17 22:51:09 us=796000   ssl_flags = 192
+2025-10-17 22:51:09 us=796000   tls_timeout = 2
+2025-10-17 22:51:09 us=796000   renegotiate_bytes = -1
+2025-10-17 22:51:09 us=796000   renegotiate_packets = 0
+2025-10-17 22:51:09 us=796000   renegotiate_seconds = 3600
+2025-10-17 22:51:09 us=796000   handshake_window = 60
+2025-10-17 22:51:09 us=796000   transition_window = 3600
+2025-10-17 22:51:09 us=796000   single_session = DISABLED
+2025-10-17 22:51:09 us=796000   push_peer_info = DISABLED
+2025-10-17 22:51:09 us=796000   tls_exit = DISABLED
+2025-10-17 22:51:09 us=796000   tls_crypt_v2_metadata = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_protected_authentication = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_private_mode = 00000000
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_cert_private = DISABLED
+2025-10-17 22:51:09 us=796000   pkcs11_pin_cache_period = -1
+2025-10-17 22:51:09 us=796000   pkcs11_id = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   pkcs11_id_management = DISABLED
+2025-10-17 22:51:09 us=796000   server_network = 0.0.0.0
+2025-10-17 22:51:09 us=796000   server_netmask = 0.0.0.0
+2025-10-17 22:51:09 us=796000   server_network_ipv6 = ::
+2025-10-17 22:51:09 us=796000   server_netbits_ipv6 = 0
+2025-10-17 22:51:09 us=796000   server_bridge_ip = 0.0.0.0
+2025-10-17 22:51:09 us=796000   server_bridge_netmask = 0.0.0.0
+2025-10-17 22:51:09 us=796000   server_bridge_pool_start = 0.0.0.0
+2025-10-17 22:51:09 us=796000   server_bridge_pool_end = 0.0.0.0
+2025-10-17 22:51:09 us=796000   ifconfig_pool_defined = DISABLED
+2025-10-17 22:51:09 us=796000   ifconfig_pool_start = 0.0.0.0
+2025-10-17 22:51:09 us=796000   ifconfig_pool_end = 0.0.0.0
+2025-10-17 22:51:09 us=796000   ifconfig_pool_netmask = 0.0.0.0
+2025-10-17 22:51:09 us=796000   ifconfig_pool_persist_filename = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   ifconfig_pool_persist_refresh_freq = 600
+2025-10-17 22:51:09 us=796000   ifconfig_ipv6_pool_defined = DISABLED
+2025-10-17 22:51:09 us=796000   ifconfig_ipv6_pool_base = ::
+2025-10-17 22:51:09 us=796000   ifconfig_ipv6_pool_netbits = 0
+2025-10-17 22:51:09 us=796000   n_bcast_buf = 256
+2025-10-17 22:51:09 us=796000   tcp_queue_limit = 64
+2025-10-17 22:51:09 us=796000   real_hash_size = 256
+2025-10-17 22:51:09 us=796000   virtual_hash_size = 256
+2025-10-17 22:51:09 us=796000   client_connect_script = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   learn_address_script = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   client_disconnect_script = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   client_crresponse_script = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   client_config_dir = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   ccd_exclusive = DISABLED
+2025-10-17 22:51:09 us=796000   tmp_dir = 'C:\Users\krilo\AppData\Local\Temp\'
+2025-10-17 22:51:09 us=796000   push_ifconfig_defined = DISABLED
+2025-10-17 22:51:09 us=796000   push_ifconfig_local = 0.0.0.0
+2025-10-17 22:51:09 us=796000   push_ifconfig_remote_netmask = 0.0.0.0
+2025-10-17 22:51:09 us=796000   push_ifconfig_ipv6_defined = DISABLED
+2025-10-17 22:51:09 us=796000   push_ifconfig_ipv6_local = ::/0
+2025-10-17 22:51:09 us=796000   push_ifconfig_ipv6_remote = ::
+2025-10-17 22:51:09 us=796000   enable_c2c = DISABLED
+2025-10-17 22:51:09 us=796000   duplicate_cn = DISABLED
+2025-10-17 22:51:09 us=796000   cf_max = 0
+2025-10-17 22:51:09 us=796000   cf_per = 0
+2025-10-17 22:51:09 us=796000   cf_initial_max = 100
+2025-10-17 22:51:09 us=796000   cf_initial_per = 10
+2025-10-17 22:51:09 us=796000   max_clients = 1024
+2025-10-17 22:51:09 us=796000   max_routes_per_client = 256
+2025-10-17 22:51:09 us=796000   auth_user_pass_verify_script = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   auth_user_pass_verify_script_via_file = DISABLED
+2025-10-17 22:51:09 us=796000   auth_token_generate = DISABLED
+2025-10-17 22:51:09 us=796000   force_key_material_export = DISABLED
+2025-10-17 22:51:09 us=796000   auth_token_lifetime = 0
+2025-10-17 22:51:09 us=796000   auth_token_secret_file = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   vlan_tagging = DISABLED
+2025-10-17 22:51:09 us=796000   vlan_accept = all
+2025-10-17 22:51:09 us=796000   vlan_pvid = 1
+2025-10-17 22:51:09 us=796000   client = ENABLED
+2025-10-17 22:51:09 us=796000   pull = ENABLED
+2025-10-17 22:51:09 us=796000   auth_user_pass_file = 'C:/Users/krilo/Documents/TRABAJO/NUEVOS COMPETIDORES/FINAL/competitor_analysis/VPN/credentials.txt'
+2025-10-17 22:51:09 us=796000   show_net_up = DISABLED
+2025-10-17 22:51:09 us=796000   route_method = 0
+2025-10-17 22:51:09 us=796000   block_outside_dns = DISABLED
+2025-10-17 22:51:09 us=796000   ip_win32_defined = DISABLED
+2025-10-17 22:51:09 us=796000   ip_win32_type = 3
+2025-10-17 22:51:09 us=796000   dhcp_masq_offset = 0
+2025-10-17 22:51:09 us=796000   dhcp_lease_time = 31536000
+2025-10-17 22:51:09 us=796000   tap_sleep = 0
+2025-10-17 22:51:09 us=796000   dhcp_options = 0x00000000
+2025-10-17 22:51:09 us=796000   dhcp_renew = DISABLED
+2025-10-17 22:51:09 us=796000   dhcp_pre_release = DISABLED
+2025-10-17 22:51:09 us=796000   domain = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   netbios_scope = '[UNDEF]'
+2025-10-17 22:51:09 us=796000   netbios_node_type = 0
+2025-10-17 22:51:09 us=796000   disable_nbt = DISABLED
+2025-10-17 22:51:09 us=796000 OpenVPN 2.6.15 [git:v2.6.15/90bdd59a95170169] Windows [SSL (OpenSSL)] [LZO] [LZ4] [PKCS11] [AEAD] [DCO] built on Sep 22 2025
+2025-10-17 22:51:09 us=796000 Windows version 10.0 (Windows 10 or greater), amd64 executable
+2025-10-17 22:51:09 us=796000 library versions: OpenSSL 3.5.3 16 Sep 2025, LZO 2.10
+2025-10-17 22:51:09 us=796000 DCO version: 1.3.3
+2025-10-17 22:51:09 us=796000 Control Channel MTU parms [ mss_fix:0 max_frag:0 tun_mtu:1250 tun_max_mtu:0 headroom:126 payload:1600 tailroom:126 ET:0 ]
+2025-10-17 22:51:09 us=859000 Data Channel MTU parms [ mss_fix:0 max_frag:0 tun_mtu:1500 tun_max_mtu:1600 headroom:136 payload:1768 tailroom:562 ET:0 ]
+2025-10-17 22:51:09 us=859000 TCP/UDP: Preserving recently used remote address: [AF_INET]158.173.156.212:443
+2025-10-17 22:51:09 us=859000 Socket Buffers: R=[65536->65536] S=[65536->65536]
+2025-10-17 22:51:09 us=859000 UDPv4 link local: (not bound)
+2025-10-17 22:51:09 us=859000 UDPv4 link remote: [AF_INET]158.173.156.212:443
+2025-10-17 22:51:09 us=890000 TLS: Initial packet from [AF_INET]158.173.156.212:443, sid=008c99e7 f1e3bbf6
+2025-10-17 22:51:09 us=937000 VERIFY OK: depth=1, C=RO, L=Bucharest, O=CyberGhost S.A., CN=CyberGhost Root CA, emailAddress=info@cyberghost.ro
+2025-10-17 22:51:09 us=937000 VERIFY KU OK
+2025-10-17 22:51:09 us=937000 Validating certificate extended key usage
+2025-10-17 22:51:09 us=937000 ++ Certificate has EKU (str) TLS Web Server Authentication, expects TLS Web Server Authentication
+2025-10-17 22:51:09 us=937000 VERIFY EKU OK
+2025-10-17 22:51:09 us=937000 VERIFY OK: depth=0, CN=frankfurt-rack415.nodes.gen4.ninja
+2025-10-17 22:51:11 us=984000 Control Channel: TLSv1.3, cipher TLSv1.3 TLS_AES_256_GCM_SHA384, peer certificate: 4096 bits RSA, signature: RSA-SHA256, peer temporary key: 253 bits X25519
+2025-10-17 22:51:11 us=984000 [frankfurt-rack415.nodes.gen4.ninja] Peer Connection Initiated with [AF_INET]158.173.156.212:443
+2025-10-17 22:51:11 us=984000 TLS: move_session: dest=TM_ACTIVE src=TM_INITIAL reinit_src=1
+2025-10-17 22:51:11 us=984000 TLS: tls_multi_process: initial untrusted session promoted to trusted
+2025-10-17 22:51:12 SENT CONTROL [frankfurt-rack415.nodes.gen4.ninja]: 'PUSH_REQUEST' (status=1)
+2025-10-17 22:51:12 us=15000 AUTH: Received control message: AUTH_FAILED
+2025-10-17 22:51:12 us=15000 SIGTERM received, sending exit notification to peer
+2025-10-17 22:51:14 us=171000 TCP/UDP: Closing socket
+2025-10-17 22:51:14 us=171000 SIGTERM[soft,exit-with-notification] received, process exiting
