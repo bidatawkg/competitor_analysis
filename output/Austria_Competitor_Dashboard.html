@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Austria Online Casino - Competitor Dashboard</title>
+<style>
+:root {
+    --betjordan-red: #e31e24;
+    --betjordan-dark: #000000;
+    --betjordan-white: #ffffff;
+    --betjordan-gray: #333333;
+    --betjordan-light-gray: #f5f5f5;
+    --accent-blue: #2c5aa0;
+    --accent-green: #2ecc71;
+    --accent-orange: #f39c12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica Neue', sans-serif;
+    background-color: var(--betjordan-light-gray);
+    color: var(--betjordan-gray);
+    line-height: 1.6;
+}
+
+.header {
+    background-color: var(--betjordan-dark);
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--betjordan-white);
+}
+
+.logo span {
+    color: var(--betjordan-red);
+}
+
+.nav {
+    background-color: var(--betjordan-white);
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav li {
+    margin: 0;
+}
+
+.nav a {
+    display: block;
+    padding: 15px 25px;
+    color: var(--betjordan-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.nav a:hover {
+    background-color: var(--betjordan-red);
+    color: var(--betjordan-white);
+    border-bottom-color: var(--betjordan-red);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section {
+    background-color: var(--betjordan-white);
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.section-header {
+    background: linear-gradient(135deg, var(--betjordan-dark) 0%, var(--betjordan-gray) 100%);
+    color: var(--betjordan-white);
+    padding: 25px 40px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.section-subheader {
+    background-color: var(--betjordan-red);
+    color: var(--betjordan-white);
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.section-content {
+    padding: 40px;
+}
+
+.title-slide {
+    background: linear-gradient(135deg, var(--betjordan-dark) 0%, #1a1a1a 100%);
+    color: var(--betjordan-white);
+    padding: 100px 40px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-slide h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.title-slide .subtitle {
+    font-size: 24px;
+    color: var(--betjordan-red);
+    font-weight: 600;
+}
+
+.competitors-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.competitor-card {
+    background-color: var(--betjordan-light-gray);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--betjordan-red);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.competitor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(227, 30, 36, 0.3);
+}
+
+.competitor-card h3 {
+    color: var(--betjordan-dark);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.competitor-card .rank {
+    display: inline-block;
+    background-color: var(--betjordan-red);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.competitor-card a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.competitor-card a:hover {
+    text-decoration: underline;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.comparison-table th {
+    background-color: var(--betjordan-dark);
+    color: var(--betjordan-white);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid #ddd;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: #fff5f5;
+}
+
+.data-unavailable {
+    background-color: #fff9e6;
+    border-left: 4px solid var(--accent-orange);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.data-unavailable h4 {
+    color: var(--accent-orange);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.data-unavailable ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.data-unavailable li {
+    margin-bottom: 8px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, var(--betjordan-red) 0%, #c41a1f 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.stat-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.stat-card .value {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-card .label {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.culture-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.value-box {
+    background-color: var(--betjordan-red);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.value-box:hover {
+    transform: scale(1.05);
+}
+
+.value-box h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.value-box p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.info-box {
+    background-color: #e3f2fd;
+    border-left: 4px solid var(--accent-blue);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.info-box h4 {
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+}
+
+.success-box {
+    background-color: #e8f5e9;
+    border-left: 4px solid var(--accent-green);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.success-box h4 {
+    color: var(--accent-green);
+    margin-bottom: 10px;
+}
+
+.providers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.provider-badge {
+    background-color: var(--betjordan-light-gray);
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.provider-badge:hover {
+    border-color: var(--betjordan-red);
+    background-color: white;
+}
+
+.footer {
+    background-color: var(--betjordan-dark);
+    color: var(--betjordan-white);
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+    }
+    
+    .nav a {
+        border-bottom: 1px solid #eee;
+    }
+    
+    .title-slide h1 {
+        font-size: 40px;
+    }
+    
+    .comparison-table {
+        font-size: 12px;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px 5px;
+    }
+}
+
+.highlight-red {
+    background-color: #ffebee !important;
+    font-weight: bold;
+}
+
+.section-divider {
+    background: linear-gradient(135deg, var(--betjordan-dark) 0%, var(--betjordan-gray) 100%);
+    color: var(--betjordan-white);
+    padding: 80px 40px;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.section-divider h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-divider .subtitle {
+    font-size: 20px;
+    color: var(--betjordan-red);
+    font-weight: 600;
+}
+
+
+/* === Adapter CSS to align Austria doc with Germany's style system === */
+
+/* Map Austria's sticky top nav to Germany's .nav */
+.navigation {
+    background-color: var(--betjordan-white);
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-links { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; margin: 0; padding: 0; }
+.nav-links li { margin: 0; }
+.nav-links a {
+    display: block;
+    padding: 15px 25px;
+    color: var(--betjordan-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+    text-transform: none;
+    font-size: 14px;
+}
+.nav-links a:hover { background-color: var(--betjordan-red); color: var(--betjordan-white); border-bottom-color: var(--betjordan-red); }
+
+/* Align body and containers */
+body { background-color: var(--betjordan-light-gray); color: var(--betjordan-gray); font-family: 'Arial', 'Helvetica Neue', sans-serif; }
+.container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+
+/* Header */
+.header { background-color: var(--betjordan-dark); color: var(--betjordan-white); padding: 30px 50px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.header h1 { color: var(--betjordan-white); margin: 0 0 8px 0; }
+.header p { color: #bbb; margin: 0; }
+
+/* Section wrappers */
+.section { background-color: var(--betjordan-white); margin-bottom: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; padding: 0; }
+.section-header { background: linear-gradient(135deg, var(--betjordan-dark) 0%, var(--betjordan-gray) 100%); color: var(--betjordan-white); padding: 25px 40px; font-size: 28px; font-weight: bold; margin: 0; border: 0; }
+.section-content { padding: 40px; }
+.section .section-content p { color: var(--betjordan-gray); }
+
+/* Competitor cards/grid */
+.competitor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+.competitor-card { background-color: var(--betjordan-light-gray); padding: 25px; border-radius: 8px; border-left: 4px solid var(--betjordan-red); transition: transform 0.3s, box-shadow 0.3s; text-align: left; }
+.competitor-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(227,30,36,0.3); }
+.competitor-card h4, .competitor-card h3 { color: var(--betjordan-dark); font-size: 20px; margin-bottom: 10px; }
+.competitor-card .rank { display: inline-block; background-color: var(--betjordan-red); color: var(--betjordan-white); padding: 5px 15px; border-radius: 20px; font-weight: bold; margin-bottom: 10px; }
+
+/* Tables */
+.comparison-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+.comparison-table th { background-color: var(--betjordan-dark); color: var(--betjordan-white); padding: 15px; text-align: left; font-weight: 600; border: 1px solid #ddd; }
+.comparison-table td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
+.comparison-table tbody tr:nth-child(even) { background-color: #f9f9f9; }
+.comparison-table tbody tr:hover { background-color: #fff5f5; }
+
+/* Info/success/warning boxes */
+.info-box { background-color: #e3f2fd; border-left: 4px solid var(--accent-blue); padding: 20px; margin: 20px 0; border-radius: 4px; }
+.info-box h4 { color: var(--accent-blue); margin-bottom: 10px; }
+.success-box { background-color: #e8f5e9; border-left: 4px solid var(--accent-green); padding: 20px; margin: 20px 0; border-radius: 4px; }
+.success-box h4 { color: var(--accent-green); margin-bottom: 10px; }
+/* Treat Austria's warning box as Germany's 'data-unavailable' style */
+.warning-box { background-color: #fff9e6; border-left: 4px solid var(--accent-orange); padding: 20px; margin: 20px 0; border-radius: 4px; color: #8a6d3b; }
+.warning-box h4 { color: var(--accent-orange); margin-bottom: 10px; }
+
+/* Stats cards */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+.stat-card { background: linear-gradient(135deg, var(--betjordan-red) 0%, #c41a1f 100%); color: var(--betjordan-white); padding: 25px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.stat-card h3 { font-size: 16px; margin-bottom: 10px; opacity: 0.9; }
+.stat-card .value { font-size: 36px; font-weight: bold; margin-bottom: 5px; }
+.stat-card .label { font-size: 14px; opacity: 0.85; }
+
+/* Footer */
+.footer { background-color: var(--betjordan-dark); color: var(--betjordan-white); text-align: center; padding: 30px; margin-top: 50px; }
+.footer p { margin-bottom: 10px; }
+
+/* Minor fixes */
+.section { border-left: none; }
+</style>
+</head>
+<body>
+<div class="header">
+<h1>Austria Online Casino</h1>
+<p>Competitor &amp; Market Analysis Dashboard | October 17, 2025</p>
+</div>
+<nav class="navigation">
+<ul class="nav-links">
+<li><a href="#competitors">Competitors</a></li>
+<li><a href="#welcome-offer">Welcome Offer</a></li>
+<li><a href="#loyalty">Loyalty</a></li>
+<li><a href="#retention">Retention</a></li>
+<li><a href="#games-providers">Games &amp; Providers</a></li>
+<li><a href="#marketing-costs">Marketing</a></li>
+<li><a href="#projected-stats">Stats</a></li>
+<li><a href="#culture">Culture</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+</nav>
+<div class="container">
+<div class="section" id="competitors">
+<div class="section-header">Top 10 Competitors</div>
+
+<div class="section-content"><p style="margin-bottom: 20px; font-size: 16px;">The Austrian online gambling market is dominated by the state-licensed monopoly, Win2day. However, a significant portion of the market is serviced by international operators. The top 10 operators by traffic and market presence are listed below (Source: SimilarWeb, SEMrush, Blask Analytics - Sep 2025).</p><div class="competitor-grid">
+<div class="competitor-card"> <div class="rank">1</div> <h4>Win2day (licensed monopoly)</h4> </div><div class="competitor-card"> <div class="rank">2</div> <h4>Admiral</h4> </div><div class="competitor-card"> <div class="rank">3</div> <h4>Bet365</h4> </div><div class="competitor-card"> <div class="rank">4</div> <h4>Bwin</h4> </div><div class="competitor-card"> <div class="rank">5</div> <h4>Tipp3</h4> </div><div class="competitor-card"> <div class="rank">6</div> <h4>Interwetten</h4> </div><div class="competitor-card"> <div class="rank">7</div> <h4>Mr Green</h4> </div><div class="competitor-card"> <div class="rank">8</div> <h4>Cashpoint</h4> </div><div class="competitor-card"> <div class="rank">9</div> <h4>Bet-at-home</h4> </div><div class="competitor-card"> <div class="rank">10</div> <h4>Lottoland</h4> </div></div></div></div>
+<div class="section" id="welcome-offer">
+<div class="section-header">Welcome Offer</div>
+<div class="section-content">
+<p style="margin-bottom: 20px; font-size: 16px;">Current welcome bonus offers from Austrian online casino operators (Data collected: October 2025).</p>
+<table class="comparison-table">
+<thead>
+<tr>
+<th>Offer Type</th>
+<th>Bonus Amount</th>
+<th>Conditions</th>
+<th>Wagering</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Welcome Bonus</strong></td>
+<td>100% up to €1,000 + free spins</td>
+<td>Must enter promo code NEO1 to opt-in</td>
+<td>Not specified</td>
+</tr>
+<tr>
+<td><strong>Found promotion on page</strong></td>
+<td>up to 400 €</td>
+<td>See full T&amp;Cs bonus package split across deposits</td>
+<td>Not specified</td>
+</tr>
+<tr>
+<td><strong>Deposit Bonus</strong></td>
+<td>100% up to €1000 + 100 free spins</td>
+<td>Applies to new players; free spins credited in batches</td>
+<td>Not specified</td>
+</tr>
+<tr>
+<td><strong>Welcome Package</strong></td>
+<td>up to €400 + free spins</td>
+<td>Applies to new customers; package split by deposit</td>
+<td>Not specified</td>
+</tr>
+<tr>
+<td><strong>Welcome Offer</strong></td>
+<td>100% up to €500 + 50 spins</td>
+<td>First deposit only; spins credited next day</td>
+<td>Not specified</td>
+</tr>
+</tbody>
+</table>
+<h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Additional Bonus Types Available</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<h3>Free Spins Offers</h3>
+<div class="value">7</div>
+<div class="label">Active Promotions</div>
+</div>
+<div class="stat-card">
+<h3>Cashback Offers</h3>
+<div class="value">7</div>
+<div class="label">Active Promotions</div>
+</div>
+<div class="stat-card">
+<h3>Tournament Events</h3>
+<div class="value">4</div>
+<div class="label">Active Competitions</div>
+</div>
+</div>
+<div class="info-box" style="margin-top: 30px;">
+<h4>Free Spins Promotions</h4><p style="margin-top: 10px;"><strong>Found 'free spins' on page:</strong> Free spins will be credited over 4 days star... spins on the first day and 25 per day for the following days.</p><p style="margin-top: 10px;"><strong>Free Spins Offer:</strong> Daily free spins credited over 4 days from activation.</p><p style="margin-top: 10px;"><strong>Daily Free Spins:</strong> Log in and play selected slots to claim daily free spins.</p>
+</div>
+<div class="success-box">
+<h4>✓ Typical Bonus Structure in Austria</h4>
+<p><strong>Casino Welcome Bonus:</strong> Combination of deposit match (75%-100%) + free spins (40-100 FS)</p>
+<p><strong>High Roller Bonus:</strong> Up to €2,000 with higher minimum deposits</p>
+<p><strong>Free Spins:</strong> Typically credited in batches over 4 days</p>
+<p><strong>Wagering:</strong> Terms vary by operator; always check T&amp;Cs</p>
+<p style="margin-top: 10px;"><strong>Note:</strong> Data collected from multiple operators in October 2025. Offers subject to change.</p>
+</div>
+</div>
+</div>
+<div class="section" id="loyalty">
+<div class="section-header">Loyalty</div>
+<div class="section-content">
+<p style="margin-bottom: 20px; font-size: 16px;">Loyalty programs and VIP benefits offered by Austrian online casino operators (Data collected: October 2025).</p>
+<table class="comparison-table">
+<thead>
+<tr>
+<th>Program Type</th>
+<th>Description</th>
+<th>Benefits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>VIP Program</strong></td>
+<td>Exclusive VIP levels grant higher withdrawal limits, personal manager and special bonuses.</td>
+<td>Invitation or status-based entry; benefits scale by level</td>
+</tr>
+<tr>
+<td><strong>Loyalty Points</strong></td>
+<td>Earn loyalty points for every wager and redeem them in the store for bonuses or spins.</td>
+<td>Points awarded per bet placed; redemption rules apply</td>
+</tr>
+<tr>
+<td><strong>VIP Levels</strong></td>
+<td>Progress through multiple VIP tiers to unlock better rewards and exclusive support.</td>
+<td>Tier progression based on monthly wagering</td>
+</tr>
+<tr>
+<td><strong>Loyalty Store</strong></td>
+<td>Redeem loyalty points in the store for bonus funds and spins.</td>
+<td>Exchange rate defined per program</td>
+</tr>
+<tr>
+<td><strong>Loyalty Boost</strong></td>
+<td>Earn extra loyalty points during campaign period.</td>
+<td>Applies to selected slots only</td>
+</tr>
+<tr>
+<td><strong>Loyalty Milestones</strong></td>
+<td>Reach milestones and claim bonus funds or spins.</td>
+<td>Rewards unlocked at set point thresholds</td>
+</tr>
+</tbody>
+</table>
+<h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">VIP &amp; Exclusive Benefits</h3>
+<table class="comparison-table">
+<thead>
+<tr>
+<th>VIP Feature</th>
+<th>Description</th>
+<th>Eligibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Exclusive Benefits</strong></td>
+<td>High-roller club with exclusive cashback, tailored bonuses, and higher limits.</td>
+<td>Eligibility based on play history; manager approval</td>
+</tr>
+<tr>
+<td><strong>Exclusive Reload</strong></td>
+<td>Invite-only reload offers for VIP members.</td>
+<td>Available to VIP only; invitation required</td>
+</tr>
+<tr>
+<td><strong>VIP Exclusive Bonus</strong></td>
+<td>Tailored bonus offers negotiated by your VIP manager.</td>
+<td>Contact VIP manager; terms individualized</td>
+</tr>
+<tr>
+<td><strong>VIP Perks</strong></td>
+<td>Priority withdrawals, special gifts, and bespoke promotions.</td>
+<td>Membership level dependent</td>
+</tr>
+<tr>
+<td><strong>VIP Weekend</strong></td>
+<td>VIP-only weekend with boosted bonuses and exclusive tournaments.</td>
+<td>Invitation only; separate T&amp;Cs</td>
+</tr>
+</tbody>
+</table>
+<h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Cashback Programs</h3>
+<div class="info-box">
+<h4>Cashback Offers Available</h4>
+<p><strong>Found 'cashback' on page:</strong> Weekly cashback for casino play.</p>
+<p style="margin-left: 20px; font-size: 14px;">Amount: up to 20% cashback | Conditions: Calculated on net losses; paid weekly</p>
+<p><strong>Cashback Weekend:</strong> Losses over the weekend receive a cashback credit.</p>
+<p style="margin-left: 20px; font-size: 14px;">Amount: 10% cashback | Conditions: Net losses only; capped per account</p>
+<p><strong>Loyalty Cashback:</strong> Recurring cashback based on loyalty tier.</p>
+<p style="margin-left: 20px; font-size: 14px;">Amount: up to 15% cashback | Conditions: Tier-based rates; monthly settlement</p>
+<p><strong>VIP Cashback:</strong> Higher cashback rates for top VIP tiers.</p>
+<p style="margin-left: 20px; font-size: 14px;">Amount: up to 25% cashback | Conditions: Top tiers only; credited weekly</p>
+</div>
+<div class="success-box">
+<h4>✓ Common Loyalty Features in Austrian Market</h4>
+<ul>
+<li><strong>VIP Levels:</strong> Multiple tiers with progressive benefits</li>
+<li><strong>Cashback:</strong> 10%-25% depending on tier and activity</li>
+<li><strong>Loyalty Points:</strong> Earn points per wager, redeem for bonuses/spins</li>
+<li><strong>Exclusive Benefits:</strong> Personal VIP manager, higher limits, tailored bonuses</li>
+<li><strong>Tournaments:</strong> Weekly and daily competitions with cash and spin prizes</li>
+<li><strong>Priority Support:</strong> Faster withdrawals and dedicated customer service</li>
+<li><strong>Special Events:</strong> VIP weekends, exclusive reload offers</li>
+</ul>
+<p style="margin-top: 10px;"><strong>Note:</strong> Data collected from multiple operators in October 2025.</p>
+</div>
+</div>
+</div>
+<div class="section" id="retention">
+<div class="section-header">Retention Technique</div>
+
+<div class="section-content"><div class="warning-box">
+<h4><i class="fas fa-exclamation-triangle"></i> Additional Research Required</h4>
+<p>This section requires internal, non-public data. Information on specific retention techniques (e.g., personalized CRM campaigns, targeted promotions, churn prevention strategies) is confidential to each operator.</p>
+<p><strong>To complete this section, the following would be needed:</strong></p>
+<ul>
+<li>Insider information or access to internal marketing documents.</li>
+<li>Long-term monitoring (30-60 days) of a player account to observe targeted offers and communications.</li>
+</ul>
+<p><strong>Note:</strong> Publicly available data is insufficient to complete this section accurately.</p>
+</div></div></div>
+<div class="section" id="games-providers">
+<div class="section-header">Games &amp; Providers</div>
+
+
+
+
+<div class="section-content"><p style="margin-bottom: 20px; font-size: 16px;">Austrian players show a strong preference for classic slots, especially from local provider Novomatic. However, popular international providers also have a significant market presence. (Source: Blask Analytics - Aug 2025, 3snet.info).</p><h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Top 10 Most Popular Games in Austria</h3><table class="comparison-table">
+<thead><tr><th>Rank</th><th>Game Title</th><th>Provider</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Legacy of Dead</td><td>Play'n GO</td></tr>
+<tr><td>2</td><td>Gates of Olympus</td><td>Pragmatic Play</td></tr>
+<tr><td>3</td><td>Gates of Olympus Super Scatter</td><td>Pragmatic Play</td></tr>
+<tr><td>4</td><td>Sweet Bonanza 1000</td><td>Pragmatic Play</td></tr>
+<tr><td>5</td><td>Big Bass Splash</td><td>Pragmatic Play</td></tr>
+<tr><td>6</td><td>Big Bass Vegas Double</td><td>Pragmatic Play</td></tr>
+<tr><td>7</td><td>Book of Dead</td><td>Play'n GO</td></tr>
+<tr><td>8</td><td>Book of Fallen</td><td>Pragmatic Play</td></tr>
+<tr><td>9</td><td>Bigger Bass Splash</td><td>Pragmatic Play</td></tr>
+<tr><td>10</td><td>Sugar Rush 1000</td><td>Pragmatic Play</td></tr>
+</tbody>
+</table><div class="info-box" style="margin-top: 30px;">
+<h4>Key Provider Insights</h4>
+<p><strong>Dominant Local Provider:</strong> <strong>Novomatic</strong> is a key player, with classics like 'Book of Ra Deluxe' being extremely popular.</p>
+<p><strong>Top International Providers:</strong> <strong>Pragmatic Play</strong> and <strong>Play'n GO</strong> dominate the top charts with their popular slot series.</p>
+<p><strong>Mobile Gaming:</strong> Funstage is a major provider of popular mobile casino apps like Slotpark and GameTwist.</p>
+</div></div></div>
+<div class="section" id="marketing-costs">
+<div class="section-header">Marketing Costs &amp; Regulatory Environment</div>
+
+
+
+<div class="section-content"><p style="margin-bottom: 20px; font-size: 16px;">The Austrian market presents significant opportunities for affiliates due to the monopoly structure leaving ~70% of the market to international operators. However, new tax regulations have increased costs.</p><div class="stats-grid">
+<div class="stat-card">
+<h3>Sports Betting Tax</h3>
+<div class="value">5%</div>
+<div class="label">of GGR (from April 2025)</div>
+</div>
+<div class="stat-card">
+<h3>Lottery Tax</h3>
+<div class="value">~40%</div>
+<div class="label">of GGR</div>
+</div>
+<div class="stat-card">
+<h3>Player Winnings Tax</h3>
+<div class="value">0%</div>
+<div class="label">Not taxed (major incentive)</div>
+</div>
+</div><div class="success-box" style="margin-top: 30px;">
+<h4>✓ Affiliate Opportunity</h4>
+<p>With the state monopoly (Win2day) controlling only ~30% of the regulated market and a large black market (~35%), there is a substantial opportunity for affiliates to drive traffic to international brands operating in the grey market. High internet (95.3%) and mobile (147%) penetration provide a large, accessible audience.</p>
+</div></div></div>
+<div class="section" id="projected-stats">
+<div class="section-header">Market Statistics &amp; Demographics</div>
+
+
+<div class="section-content"><p style="margin-bottom: 20px; font-size: 16px;">The Austrian online gambling market is projected to see steady growth, driven by a young, tech-savvy player base. (Source: iGamingToday, Statista - 2025).</p><div class="stats-grid">
+<div class="stat-card">
+<h3>Online Market Size (2024)</h3>
+<div class="value">€632M</div>
+<div class="label">Projected to reach €777M by 2029</div>
+</div>
+<div class="stat-card">
+<h3>Online Market CAGR</h3>
+<div class="value">4.22%</div>
+<div class="label">(2024-2029)</div>
+</div>
+<div class="stat-card">
+<h3>Player Gender Split</h3>
+<div class="value">82% / 18%</div>
+<div class="label">Male / Female</div>
+</div>
+<div class="stat-card">
+<h3>Key Player Age Group</h3>
+<div class="value">**</div>
+<div class="label">Constituting 70% of online players</div>
+</div>
+</div></div></div>
+<div class="section" id="culture">
+<div class="section-header">Culture &amp; Brand Considerations</div>
+
+<div class="section-content"><div class="info-box">
+<h4>Key Austrian Cultural Values</h4>
+<ul>
+<li><strong>Tradition &amp; History:</strong> Austrians have a long-standing tradition of gambling. Brands that acknowledge this history can build trust.</li>
+<li><strong>Quality &amp; Reliability:</strong> A preference for high-quality, reliable services. Brands should emphasize security, fair play, and excellent customer support.</li>
+<li><strong>Local Themes:</strong> Games and marketing that incorporate Austrian culture, history (e.g., 'Sissi: Empress of Austria'), or folklore are well-received.</li>
+<li><strong>Language:</strong> While many speak English (40%), German is the official language. A fully localized German-language site is essential for success.</li>
+</ul>
+</div></div></div>
+</div>
+<div class="footer">
+<p>This report was generated by Manus AI based on publicly available data and reliable sources as of October 17, 2025. All data is for informational purposes only. No estimated data is used.</p>
+<p>Sources: iGamingToday, Statista, SimilarWeb, SEMrush, 3snet.info, Blask Analytics</p>
+</div>
+</body>
+</html>

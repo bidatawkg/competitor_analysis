@@ -232,16 +232,16 @@ class CompetitorScraper:
                 {"name": "Lowen Play", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ],
             "AT": [
-                {"name": "20Bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "SpinBetter", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "Nomini", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "CasinoRex", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "CatCasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "Bitstarz", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "22Bet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "Hell Spin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "NeoSpin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "Wild Fortune", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
+                {"name": "Win2day", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Admiral", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Bet365", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Bwin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Tipp3", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Interwetten", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Mr Green", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Cashpoint", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Bet-at-home", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "Lottoland", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ],
 
             "CH": [
@@ -275,8 +275,18 @@ class CompetitorScraper:
                 # Puedes añadir más si quieres
             },
             "AT": {
-                "20Bet": ["https://20bet.com/at"]
+                "Win2day": ["https://www.win2day.at/","https://www.win2day.at/promotions-gewinnspiele", "https://www.win2day.at/clubinfo","https://www.win2day.at/promotions-gewinnspiele/casino-promotions"],
+                "Admiral": ["https://www.admiral.at/de/promos", "https://www.admiral.at/de/promos?_gl=1*hqhz14*_gcl_aw*R0NMLjE3NjA3MzY3NzMuQ2p3S0NBancwc2ZIQmhCNkVpd0FRdHY1cWExZ0ZUa3VCWnBqQjVFdnE5LTZiYkRLbkZnY3JVWEtZOE00WGVvYTM4S0YzTTd0eWVtd3J4b0NpYlVRQXZEX0J3RQ..*_gcl_au*MTQ2NjYxNzc0OC4xNzYwNzM2Nzcz*_ga*ODkwMjA2OTM2LjE3NjA3MzY3NzM.*_ga_8DHS9YG79Y*czE3NjA3MzY3NzMkbzEkZzEkdDE3NjA3MzY3NzMkajYwJGwwJGg5MTEzMTMyMDQ.", "https://www.admiral.at/en/help-and-contact/bonus-and-rewards/200-euro-newcomer-bonus", ],
+                "Bet365": ["https://casino.bet365.com/home", "https://casino.bet365.com/home/de","https://extra.bet365.com/promotions/en"],
+                "Bwin": ["https://www.bwin.com/de-at/engage/lan/pm/casino/cas_100b?wm=5360478&tdpeh=10732_19156034100_158302036775_751999043439_kwd-101165957_e_c&utm_source=search_google&utm_campaign=19156034100&utm_content=751999043439&utm_medium=e&utm_term=bet365%20casino&sb=1&gad_source=1&gad_campaignid=19156034100&gbraid=0AAAAADxF3XtEqvmsf3lC9nO3NT08kXmtf&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qQIMbKI8mOwrDV59WDrtwGIDdliOgWcWwFpvED7Y6bSk6y6PIJg_RRoC-IcQAvD_BwE", "https://www.bwin.com/de-at/engage/pub/s/p/games/190000/195/195051_1?wm=4616953&tdpeh=27392_10648535166_132749387759_582833191333_kwd-331291900932_p_c&utm_source=search_google&utm_campaign=10648535166&utm_content=582833191333&utm_medium=p&utm_term=bwin%20online%20casino&sb=1&gad_source=1&gad_campaignid=10648535166&gbraid=0AAAAADxF3XvcwiQdbVmqhrWeR6BGYd9N2&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qUNtLQ3CCjbfNAulypFcu_QcF17NWV9hE0UKdWAlpXauJ4L5-rWMqBoCOxQQAvD_BwE", "https://www.bwin.com/de-at/engage/pub/s/p/sports/we/loyalty_card"],
+                "Tipp3": ["https://www.tipp3.at/sportwetten/", "https://www.tipp3.at/sportwetten/ersteinzahlungsbonus", "https://www.tipp3.at/sportwetten/meine-erste-wette"],
+                "Interwetten": ["https://www.interwetten.com/de/content/sportsbook/promotions/interwettenboost?UseKeys=true&participate=1&utm_source=deeplink&gclsrc=aw.ds&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qemWUNZ7EZ6N4VlXpW_Gn3JOJb-SRRc7pPiG0kRbusd-QBLFkjcNlxoCCgUQAvD_BwE", "https://www.interwetten.com/de/neukundenbonus?utm_source=deeplink&gclsrc=aw.ds&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qX4bMimbyb9QjqRFW-tHdWdw0UpwaoNV2GV0D364uAZgoY1PyPgWZRoC9uQQAvD_BwE", "https://www.interwetten.de/de/slots", "https://www.interwetten.com/en/content/casino/promotions/reload-bonus"],
+                "Mr Green": ["https://www.mrgreen.com/promotions/", "https://www.mrgreen.com/", ""],
+                "Cashpoint": ["https://cashpointcasino.at/bonuscode", "https://cashpoint.co.at/en/", "https://cashpointcasino.at"],
+                "Bet-at-home": ["https://www.bet-at-home.de/slots", "https://www.bet-at-home.com/de/promotions?btag=59007522-CjwKCAjw0sfHBhB6EiwAQtv5qVVacNmoRpZG9lHVil0-EgZiw9iFIkqZa87jyegz-MIBHvc_lKyWcBoCBhYQAvD_BwE&etcc_med=SEA&etcc_par=Google&etcc_cmp=Brand&etcc_grp=145789558312&etcc_bky=bet%20at%20home&etcc_mty=p&etcc_plc=&etcc_ctv=744616064597&etcc_bde=c&gad_source=1&gad_campaignid=9832816266&gbraid=0AAAAAD6rWrxc8S6R564TZI1ixI7XQeHLL&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qVVacNmoRpZG9lHVil0-EgZiw9iFIkqZa87jyegz-MIBHvc_lKyWcBoCBhYQAvD_BwE", "https://www.bet-at-home.com/de/promotions"],
+                "Lottoland": ["https://www.lottoland.at/", ""],
             }
+
         }
 
 
