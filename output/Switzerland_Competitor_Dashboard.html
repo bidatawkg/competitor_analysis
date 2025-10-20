@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Switzerland Casino Market - Competitor Analysis Dashboard (Updated)</title>
+<title>Switzerland Casino Market - Competitor Analysis Dashboard</title>
 <style>
 :root {
     --betjordan-red: #e31e24;
@@ -16,279 +15,1435 @@
     --accent-green: #2ecc71;
     --accent-orange: #f39c12;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Arial', 'Helvetica Neue', sans-serif; background-color: var(--betjordan-light-gray); color: var(--betjordan-gray); line-height: 1.6; }
-.header { background-color: var(--betjordan-dark); padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-.logo { font-size: 32px; font-weight: bold; color: var(--betjordan-white); }
-.logo span { color: var(--betjordan-red); }
-.nav, .navigation { background-color: var(--betjordan-white); padding: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-.nav ul, .nav-links { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; padding: 0; margin: 0; }
-.nav li, .nav-links li { margin: 0; }
-.nav a, .nav-links a { display: block; padding: 15px 25px; color: var(--betjordan-gray); text-decoration: none; font-weight: 500; transition: all 0.3s; border-bottom: 3px solid transparent; font-size: 14px; }
-.nav a:hover, .nav-links a:hover { background-color: var(--betjordan-red); color: var(--betjordan-white); border-bottom-color: var(--betjordan-red); }
-.container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
-.section { background-color: var(--betjordan-white); margin-bottom: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; }
-.section-header { background: linear-gradient(135deg, var(--betjordan-dark) 0%, var(--betjordan-gray) 100%); color: var(--betjordan-white); padding: 25px 40px; font-size: 28px; font-weight: bold; }
-.section-subheader { background-color: var(--betjordan-red); color: var(--betjordan-white); padding: 15px 40px; font-size: 20px; font-weight: 600; }
-.section-content { padding: 40px; }
-.title-slide { background: linear-gradient(135deg, var(--betjordan-dark) 0%, #1a1a1a 100%); color: var(--betjordan-white); padding: 80px 40px; text-align: center; min-height: 280px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-.title-slide h1 { font-size: 56px; margin-bottom: 12px; font-weight: bold; }
-.title-slide .subtitle { font-size: 22px; color: var(--betjordan-red); font-weight: 600; }
-.competitors-list, .competitor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; padding: 0 40px 40px 40px; }
-.competitor-card { background-color: var(--betjordan-light-gray); padding: 25px; border-radius: 8px; border-left: 4px solid var(--betjordan-red); transition: transform 0.3s, box-shadow 0.3s; text-align: left; }
-.competitor-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(227, 30, 36, 0.3); }
-.competitor-card h3, .competitor-card h4 { color: var(--betjordan-dark); font-size: 22px; margin: 6px 0 0 0; }
-.competitor-card .rank { display: inline-block; background-color: var(--betjordan-red); color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; margin-bottom: 10px; font-size: 16px; }
-.comparison-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
-.comparison-table th { background-color: var(--betjordan-dark); color: var(--betjordan-white); padding: 15px; text-align: left; font-weight: 600; border: 1px solid #ddd; }
-.comparison-table td { padding: 15px; border: 1px solid #ddd; vertical-align: top; }
-.comparison-table tbody tr:nth-child(even) { background-color: #f9f9f9; }
-.comparison-table tbody tr:hover { background-color: #fff5f5; }
-.info-box { background-color: #e3f2fd; border-left: 4px solid var(--accent-blue); padding: 20px; margin: 20px 0; border-radius: 4px; }
-.info-box h4 { color: var(--accent-blue); margin-bottom: 10px; }
-.warning-box { background-color: #fff9e6; border-left: 4px solid var(--accent-orange); padding: 20px; margin: 20px 0; border-radius: 4px; color: #7a4e00; }
-.warning-box h4 { color: var(--accent-orange); margin-bottom: 10px; }
-.success-box { background-color: #e8f5e9; border-left: 4px solid var(--accent-green); padding: 20px; margin: 20px 0; border-radius: 4px; }
-.success-box h4 { color: var(--accent-green); margin-bottom: 10px; }
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-.stat-card { background: linear-gradient(135deg, var(--betjordan-red) 0%, #c41a1f 100%); color: white; padding: 25px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-.stat-card h3 { font-size: 16px; margin-bottom: 10px; opacity: 0.9; }
-.stat-card .value { font-size: 36px; font-weight: bold; margin-bottom: 5px; }
-.stat-card .label { font-size: 14px; opacity: 0.8; }
-.footer { background-color: var(--betjordan-dark); color: var(--betjordan-white); text-align: center; padding: 30px; margin-top: 50px; }
-@media (max-width: 768px) {
-    .header { flex-direction: column; text-align: center; }
-    .nav ul, .nav-links { flex-direction: column; }
-    .nav a, .nav-links a { border-bottom: 1px solid #eee; }
-    .title-slide h1 { font-size: 40px; }
-    .comparison-table { font-size: 12px; }
-    .comparison-table th, .comparison-table td { padding: 10px 5px; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.badge {display:inline-block;background:#f1f1f1;border-radius:12px;padding:4px 10px;margin:2px 6px 0 0;font-size:12px;color:#444;border:1px solid #e5e5e5;}
-.small {font-size:12px;color:#666;}
+
+body {
+    font-family: 'Arial', 'Helvetica Neue', sans-serif;
+    background-color: var(--betjordan-light-gray);
+    color: var(--betjordan-gray);
+    line-height: 1.6;
+}
+
+.header {
+    background-color: var(--betjordan-dark);
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--betjordan-white);
+}
+
+.logo span {
+    color: var(--betjordan-red);
+}
+
+.nav {
+    background-color: var(--betjordan-white);
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav li {
+    margin: 0;
+}
+
+.nav a {
+    display: block;
+    padding: 15px 25px;
+    color: var(--betjordan-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.nav a:hover {
+    background-color: var(--betjordan-red);
+    color: var(--betjordan-white);
+    border-bottom-color: var(--betjordan-red);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section {
+    background-color: var(--betjordan-white);
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.section-header {
+    background: linear-gradient(135deg, var(--betjordan-dark) 0%, var(--betjordan-gray) 100%);
+    color: var(--betjordan-white);
+    padding: 25px 40px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.section-subheader {
+    background-color: var(--betjordan-red);
+    color: var(--betjordan-white);
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.section-content {
+    padding: 40px;
+}
+
+.title-slide {
+    background: linear-gradient(135deg, var(--betjordan-dark) 0%, #1a1a1a 100%);
+    color: var(--betjordan-white);
+    padding: 100px 40px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-slide h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.title-slide .subtitle {
+    font-size: 24px;
+    color: var(--betjordan-red);
+    font-weight: 600;
+}
+
+.competitors-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.competitor-card {
+    background-color: var(--betjordan-light-gray);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--betjordan-red);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.competitor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(227, 30, 36, 0.3);
+}
+
+.competitor-card h3 {
+    color: var(--betjordan-dark);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.competitor-card .rank {
+    display: inline-block;
+    background-color: var(--betjordan-red);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.competitor-card a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.competitor-card a:hover {
+    text-decoration: underline;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.comparison-table th {
+    background-color: var(--betjordan-dark);
+    color: var(--betjordan-white);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid #ddd;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: #fff5f5;
+}
+
+.data-unavailable {
+    background-color: #fff9e6;
+    border-left: 4px solid var(--accent-orange);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.data-unavailable h4 {
+    color: var(--accent-orange);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.data-unavailable ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.data-unavailable li {
+    margin-bottom: 8px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, var(--betjordan-red) 0%, #c41a1f 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.stat-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.stat-card .value {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-card .label {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.culture-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.value-box {
+    background-color: var(--betjordan-red);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.value-box:hover {
+    transform: scale(1.05);
+}
+
+.value-box h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.value-box p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.info-box {
+    background-color: #e3f2fd;
+    border-left: 4px solid var(--accent-blue);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.info-box h4 {
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+}
+
+.success-box {
+    background-color: #e8f5e9;
+    border-left: 4px solid var(--accent-green);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.success-box h4 {
+    color: var(--accent-green);
+    margin-bottom: 10px;
+}
+
+.providers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.provider-badge {
+    background-color: var(--betjordan-light-gray);
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.provider-badge:hover {
+    border-color: var(--betjordan-red);
+    background-color: white;
+}
+
+.footer {
+    background-color: var(--betjordan-dark);
+    color: var(--betjordan-white);
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+    }
+    
+    .nav a {
+        border-bottom: 1px solid #eee;
+    }
+    
+    .title-slide h1 {
+        font-size: 40px;
+    }
+    
+    .comparison-table {
+        font-size: 12px;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px 5px;
+    }
+}
+
+.highlight-red {
+    background-color: #ffebee !important;
+    font-weight: bold;
+}
+
+.section-divider {
+    background: linear-gradient(135deg, var(--betjordan-dark) 0%, var(--betjordan-gray) 100%);
+    color: var(--betjordan-white);
+    padding: 80px 40px;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.section-divider h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-divider .subtitle {
+    font-size: 20px;
+    color: var(--betjordan-red);
+    font-weight: 600;
+}
 </style>
 </head>
 <body>
+
+<!-- Header -->
 <div class="header">
-  <div class="logo">BET<span>JORDAN</span></div>
-  <div style="color:#999;font-size:14px;">Switzerland Market Analysis — Updated Oct 20, 2025</div>
+    <div class="logo">BET<span>JORDAN</span></div>
+    <div style="color: #999; font-size: 14px;">Switzerland Market Analysis 2025</div>
 </div>
 
+<!-- Navigation -->
 <nav class="nav">
-  <ul class="nav-links">
-    <li><a href="#title">Home</a></li>
-    <li><a href="#competitors">Competitors</a></li>
-    <li><a href="#welcome-offer">Promotions</a></li>
-    <li><a href="#loyalty">Loyalty</a></li>
-    <li><a href="#games-providers">Games & Providers</a></li>
-    <li><a href="#market-notes">Regulation Notes</a></li>
-    <li><a href="#summary">Summary</a></li>
-  </ul>
+    <ul>
+        <li><a href="#title">Home</a></li>
+        <li><a href="#competitors">Competitors</a></li>
+        <li><a href="#welcome-offer">Promotions</a></li>
+        <li><a href="#loyalty">Loyalty</a></li>
+        <li><a href="#retention">Retention</a></li>
+        <li><a href="#payments">Payments</a></li>
+        <li><a href="#games">Games & Providers</a></li>
+        <li><a href="#marketing">Marketing</a></li>
+        <li><a href="#stats">Market Stats</a></li>
+        <li><a href="#culture">Culture</a></li>
+    </ul>
 </nav>
 
+<!-- Title Slide -->
 <div id="title" class="title-slide">
-  <h1>Switzerland Competition</h1>
-  <p class="subtitle">Comprehensive Market Analysis & Competitor Intelligence</p>
+    <h1>Switzerland Competition</h1>
+    <p class="subtitle">Comprehensive Market Analysis & Competitor Intelligence</p>
 </div>
 
 <div class="container">
 
-<!-- Competitors -->
+<!-- 1. COMPETITORS -->
 <div id="competitors" class="section">
-  <div class="section-header">Competitors</div>
-  <div class="section-content">
-    <p class="small">Selection of prominent online casinos operating under ESBK licenses. Ordering is editorial (not traffic-ranked).</p>
-    <div class="competitors-list">
-      <div class="competitor-card"><span class="rank">#1</span><h3>jackpots.ch</h3><div class="small">Grand Casino Baden</div></div>
-      <div class="competitor-card"><span class="rank">#2</span><h3>casino777.ch</h3><div class="small">Casino Davos</div></div>
-      <div class="competitor-card"><span class="rank">#3</span><h3>mycasino.ch</h3><div class="small">Grand Casino Luzern</div></div>
-      <div class="competitor-card"><span class="rank">#4</span><h3>swiss4win.ch</h3><div class="small">Casino Lugano</div></div>
-      <div class="competitor-card"><span class="rank">#5</span><h3>pasino.ch</h3><div class="small">Casino du Lac Meyrin (Partouche)</div></div>
-      <div class="competitor-card"><span class="rank">#6</span><h3>starvegas.ch</h3><div class="small">Casino Interlaken</div></div>
-      <div class="competitor-card"><span class="rank">#7</span><h3>7melons.ch</h3><div class="small">Grand Casino Bern</div></div>
-      <div class="competitor-card"><span class="rank">#8</span><h3>online.swisscasinos.ch</h3><div class="small">Swiss Casinos</div></div>
-      <div class="competitor-card"><span class="rank">#9</span><h3>goldengrand.ch</h3><div class="small">Grand Casino Basel</div></div>
-      <div class="competitor-card"><span class="rank">#10</span><h3>swisslos.ch</h3><div class="small">Lottery / sports betting (Gespa)</div></div>
-    </div>
-  </div>
-</div>
+    <div class="section-header">Competitors</div>
+    <div class="section-content">
+        <p style="margin-bottom: 20px; font-size: 16px;">Top 10 online gambling operators in Switzerland. All operators are licensed by the Swiss Federal Gaming Board (ESBK) and linked to land-based casinos (Data collected: October 2025).</p>
+        
+        <div class="competitors-list">
 
-<!-- Welcome Offers -->
-<div id="welcome-offer" class="section">
-  <div class="section-header">Promotions</div>
-  <div class="section-content">
-    <div class="stats-grid">
-      <div class="stat-card"><h3>Operators checked</h3><div class="value">10</div><div class="label">Licensed .ch brands</div></div>
-      <div class="stat-card"><h3>Avg. 1st‑deposit match</h3><div class="value">~CHF 1,155</div><div class="label">Mean across sample</div></div>
-      <div class="stat-card"><h3>Avg. free spins</h3><div class="value">~270</div><div class="label">Mean across sample</div></div>
-    </div>
+            <div class="competitor-card">
+                <span class="rank">#1</span>
+                <h3>Grand Casino Baden</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px; margin-top: 10px;"><a href="https://www.jackpots.ch" target="_blank">jackpots.ch</a></p>
+            </div>
 
-    <h3 style="color: var(--betjordan-red); margin: 30px 0 10px;">Welcome Bonus Comparison</h3>
-    <table class="comparison-table">
-      <thead><tr><th>Operator</th><th>Bonus Amount</th><th>Components</th><th>Notes</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Jackpots.ch</strong></td><td>Up to CHF 2,200 + 200 FS</td><td>4 deposits</td><td>Claim in stages; FS with no wagering on winnings</td></tr>
-        <tr><td><strong>Swiss4Win</strong></td><td>Up to CHF 2,000 + 350–500 FS + Golden Chips</td><td>First 3 deposits</td><td>Distribution by deposit; time limits apply</td></tr>
-        <tr><td><strong>Casino777</strong></td><td>100% up to CHF 777 + 100 FS</td><td>1st deposit</td><td>Verification bonus CHF 10 available</td></tr>
-        <tr><td><strong>mycasino</strong></td><td>100% up to CHF 300 + 200 FS</td><td>1st deposit</td><td>Wagering 35x bonus within 30 days</td></tr>
-        <tr><td><strong>PASINO.ch</strong></td><td>100% up to CHF 500 + 350 FS</td><td>1st deposit</td><td>+10 no‑deposit “super spins” on KYC</td></tr>
-        <tr><td><strong>StarVegas</strong></td><td>Up to CHF 900 + 250 FS</td><td>3 deposits</td><td>+20 FS (reg + day‑after) + 80 FS after verification</td></tr>
-        <tr><td><strong>7melons</strong></td><td>100% up to CHF 1,007</td><td>1st deposit</td><td>Verification FS available</td></tr>
-		<tr><td><strong>Swiss4Win</strong></td><td>Multiple free spins packages</td><td>Welcome Bonus</td><td>FS across multiple slot games as part of package</td></tr>
-        <tr><td><strong>Golden Grand</strong></td><td>Up to CHF 900</td><td>First 3 deposits</td><td>Occasional no‑deposit / verification offers</td></tr>
-      </tbody>
-    </table>
+            <div class="competitor-card">
+                <span class="rank">#2</span>
+                <h3>Casino Davos</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px; margin-top: 10px;"><a href="https://www.casino777.ch" target="_blank">casino777.ch</a></p>
+            </div>
 
-    <div class="success-box">
-      <h4>Typical Structures (Switzerland)</h4>
-      <p><strong>Deposit match:</strong> 100% is common; caps range ~CHF 300–2,200.</p>
-      <p><strong>Free spins:</strong> Frequently bundled (100–350+), often split over days or tied to KYC.</p>
-      <p><strong>Wagering:</strong> Commonly 30–40x bonus; FS winnings vary by site.</p>
-      <p class="small">Always check bonus pages for current terms.</p>
-    </div>
-	
-	<div class="info-box">
-		<h4>Active Free Spins Offers</h4>
-		<p><strong>Swiss4Win:</strong> Free spins for Big Bass Bonanza, 3 Reeler Aztec Gems Megaways, Floating Dragon - Year of the Snake, Aztec Smash, Eternal Empress - Freeze Time, Candy Corner and more.</p>
-	</div>
-  </div>
-</div>
+            <div class="competitor-card">
+                <span class="rank">#3</span>
+                <h3>Grand Casino Luzern</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px; margin-top: 10px;"><a href="https://www.mycasino.ch" target="_blank">mycasino.ch</a></p>
+            </div>
 
-<!-- Loyalty -->
-<div id="loyalty" class="section">
-  <div class="section-header">Loyalty & VIP</div>
-  <div class="section-content">
-    <h3 class="section-subheader">Cashback / VIP </h3>
-    <table class="comparison-table">
-      <thead><tr><th>Operator</th><th>Mechanic</th><th>Illustrative Perks</th><th>Conditions / Notes</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Jackpots.ch</strong></td><td>Tiered Loyalty</td><td>Ranks up to “Diamond Millionaire”, Reward‑Shop</td><td>Earn points on stakes; exchange coins for rewards</td></tr>
-        <tr><td><strong>Casino777</strong></td><td>VIP/Weekly promos</td><td>Game of the Week VIP editions, FS bundles</td><td>Stake thresholds per promo; rotating</td></tr>
-        <tr><td><strong>Swiss4Win</strong></td><td>VIP Levels</td><td>Status tiers (Bronze→Ruby), prize wheels, raffles</td><td>Points accrued from play; periodic missions</td></tr>
-        <tr><td><strong>StarVegas</strong></td><td>Ongoing bonuses</td><td>Weekly Wheel of Fortune, refer‑a‑friend CHF 50</td><td>FS and bonuses tied to participation</td></tr>
-      </tbody>
-    </table>
+            <div class="competitor-card">
+                <span class="rank">#4</span>
+                <h3>Casino Lugano</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px; margin-top: 10px;"><a href="https://www.swiss4win.ch" target="_blank">swiss4win.ch</a></p>
+            </div>
 
-    <div class="info-box">
-      <h4>Patterns observed</h4>
-      <ul>
-        <li>Verification/KYC frequently rewarded with small bonuses or free spins.</li>
-        <li>VIP ladders use wager‑based points; higher tiers unlock cash/FS, faster withdrawals and exclusive promos.</li>
-        <li>Some operators run weekly slot missions (e.g., “Game of the Week”).</li>
-      </ul>
-    </div>
-	
-	<div class="info-box">
-		<h4>Common VIP Program Features in Switzerland</h4>
-		<ul>
-			<li><strong>Tiered Systems:</strong> Bronze, Silver, Gold, Platinum based on wagering.</li>
-			<li><strong>Cashback Rates:</strong> 5–10% for VIP members.</li>
-			<li><strong>Exclusive Tournaments:</strong> VIP-only competitions.</li>
-			<li><strong>Personal Account Managers:</strong> High-tier support.</li>
-			<li><strong>Faster Withdrawals:</strong> Priority processing.</li>
-			<li><strong>Birthday Bonuses:</strong> Special offers.</li>
-			<li><strong>Reload Bonuses:</strong> Regular deposit bonuses.</li>
-		</ul>
-	</div>
-	
-	<h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Jackpot Programs</h3>
-	<table class="comparison-table">
-		<thead>
-			<tr>
-				<th>Operator</th>
-				<th>Jackpot Type</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr><td><strong>Swiss4Win</strong></td><td>Found 'jackpot' on page</td><td>Age of the Gods series (Helios, Wheels of Olympus, Medusa & More).</td></tr>
-		</tbody>
-	</table>
-	
-  </div>
-</div>
+            <div class="competitor-card">
+                <span class="rank">#5</span>
+                <h3>Casino du Lac Meyrin</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px; margin-top: 10px;"><a href="https://www.pasino.ch" target="_blank">pasino.ch</a></p>
+            </div>
 
-<!-- Games & Providers -->
-<div id="games-providers" class="section">
-  <div class="section-header">Games & Providers</div>
-  <div class="section-content">
-    <p>Across licensed .ch casinos you’ll find a stable mix of popular slot franchises and live‑dealer tables. Swiss sites commonly feature:</p>
-    <div>
-      <span class="badge">Greentube / Novomatic</span>
-      <span class="badge">Play’n GO</span>
-      <span class="badge">Pragmatic Play</span>
-      <span class="badge">Evolution (Live)</span>
-      <span class="badge">Red Tiger</span>
-      <span class="badge">Playtech</span>
-      <span class="badge">Wazdan</span>
-      <span class="badge">NetEnt</span>
-    </div>
+            <div class="competitor-card">
+                <span class="rank">#6</span>
+                <h3>Casino Interlaken</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px; margin-top: 10px;"><a href="https://www.starvegas.ch" target="_blank">starvegas.ch</a></p>
+            </div>
 
-    <h3 style="color: var(--betjordan-red); margin: 30px 0 10px;">Highlighted titles seen on CH sites</h3>
-    <table class="comparison-table">
-      <thead><tr><th>Game</th><th>Provider</th><th>Seen at</th><th>Context</th></tr></thead>
-      <tbody>
-        <tr><td>Book of Ra Deluxe</td><td>Greentube</td><td>mycasino</td><td>Listed among “Top 20 games today”.</td></tr>
-        <tr><td>Book of Dead</td><td>Play’n GO</td><td>mycasino</td><td>Included in daily top‑games list.</td></tr>
-        <tr><td>Sweet Bonanza</td><td>Pragmatic Play</td><td>StarVegas</td><td>Featured slot with welcome bonus messaging.</td></tr>
-        <tr><td>Madame Destiny Megaways</td><td>Pragmatic Play</td><td>mycasino</td><td>Appears in popular list / megaways category.</td></tr>
-      </tbody>
-    </table>
-	
-	 <p style="margin-top: 20px; margin-bottom: 20px; font-size: 16px;">Swiss players show a preference for slots, which dominate the market. Live dealer games and sports betting are also highly popular.</p>
-	<table class="comparison-table">
-		<thead><tr><th>Game Type</th><th>Market Share / Details</th></tr></thead>
-		<tbody>
-			<tr><td><strong>Slots</strong></td><td>Over 80% of online casino game market share.</td></tr>
-			<tr><td><strong>Live Dealer</strong></td><td>Roulette and Blackjack popular for immersive experience.</td></tr>
-			<tr><td><strong>Sports Betting</strong></td><td>Football ~70% of the sports betting market.</td></tr>
-			<tr><td><strong>Poker</strong></td><td>Available on regulated Swiss platforms.</td></tr>
-		</tbody>
-	</table>
-	<div class="info-box" style="margin-top: 30px;">
-		<h4>Most Popular Slot Game</h4>
-		<p>The most popular slot machine among Swiss players is reported to be <strong>Cherry Trio</strong> by iSoftBet.</p>
-	</div>
-	
-  </div>
-</div>
+            <div class="competitor-card">
+                <span class="rank">#7</span>
+                <h3>Grand Casino Bern</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px; margin-top: 10px;"><a href="https://www.7melons.ch" target="_blank">7melons.ch</a></p>
+            </div>
 
-<!-- Regulation Notes -->
-<div id="market-notes" class="section">
-  <div class="section-header">Market & Regulation Notes</div>
-  <div class="section-content">
-    <div class="warning-box">
-      <h4>Licensing</h4>
-      <p>Only ESBK‑licensed casino brands may offer online casino games to Swiss residents. Lotteries/sports betting are supervised by Gespa. ISPs block unlicensed domains (DNS blocking) to protect consumers.</p>
-    </div>
-    <p class="small">Tip: Payment methods such as TWINT and PostFinance are commonly supported by licensed .ch operators.</p>
-	
-	<div class="section-content">
-        <div class="stats-grid">
-            <div class="stat-card"><h3>Total Market Size</h3><div class="value">~US$5.92 billion</div></div>
-            <div class="stat-card"><h3>Market CAGR (2025-2029)</h3><div class="value">2.42%</div><div class="label">Compound Annual Growth Rate (CAGR)</div></div>
-            <div class="stat-card"><h3>Key Player Age Group</h3><div class="value">18-39</div></div>
-            <div class="stat-card"><h3>Player Gender Split</h3><div class="value">~82% Male</div></div>
+            <div class="competitor-card">
+                <span class="rank">#8</span>
+                <h3>Swiss Casinos</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino</p>
+                <p style="font-size: 14px; margin-top: 10px;"><a href="https://www.online.swisscasinos.ch" target="_blank">online.swisscasinos.ch</a></p>
+            </div>
+
+            <div class="competitor-card">
+                <span class="rank">#9</span>
+                <h3>Grand Casino Basel</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Online Casino (Redirects to Swiss4Win)</p>
+                <p style="font-size: 14px; margin-top: 10px;"><a href="https://www.goldengrand.ch" target="_blank">goldengrand.ch</a></p>
+            </div>
+
+            <div class="competitor-card">
+                <span class="rank">#10</span>
+                <h3>Swisslos</h3>
+                <p style="margin: 10px 0; color: #666;">Category: Lottery & Sports Betting</p>
+                <p style="font-size: 14px; margin-top: 10px;"><a href="https://www.swisslos.ch" target="_blank">swisslos.ch</a></p>
+            </div>
+
+        </div>
+        
+        <div class="info-box" style="margin-top: 30px;">
+            <h4>Swiss Market Characteristics</h4>
+            <p><strong>Regulation:</strong> Only land-based casinos licensed by ESBK can offer online gambling in Switzerland. Foreign operators are prohibited from targeting Swiss customers.</p>
+            <p style="margin-top: 10px;"><strong>Market Size:</strong> 22 licensed casinos total, 12 with online gambling rights (as of January 2025)</p>
+            <p style="margin-top: 10px;"><strong>Key Regulator:</strong> ESBK (Federal Gaming Board) for casinos, Gespa for lotteries and sports betting</p>
         </div>
     </div>
-	
-  </div>
 </div>
 
-<!-- Summary -->
-<div id="summary" class="section">
-  <div class="section-header">Summary</div>
-  <div class="section-content">
-    <ul>
-      <li><strong>Most aggressive welcome:</strong> Jackpots.ch advertises up to CHF 2,200 + 200 FS (spread over four deposits).</li>
-      <li><strong>High‑value bundles:</strong> Swiss4Win packages up to CHF 2,000 with 350–500 FS plus live‑game chips.</li>
-      <li><strong>Market norm:</strong> 100% match + FS on first deposit; wagering typically ~35x bonus (check each site).</li>
-      <li><strong>VIP/retention:</strong> All leading brands run tiered loyalty with missions, wheels, raffles and/or reward shops.</li>
-    </ul>
-  </div>
+<!-- 2. WELCOME OFFER -->
+<div id="welcome-offer" class="section">
+    <div class="section-header">Promotions</div>
+    <div class="section-content">
+        <p style="margin-bottom: 20px; font-size: 16px;">Current welcome bonus offers from Swiss online casino operators (Data collected: October 20, 2025).</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Competitor</th>
+                    <th>Welcome Bonus</th>
+                    <th>Key Details</th>
+                    <th>Wagering</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><strong>Jackpots.ch</strong></td>
+                    <td>CHF 2,200 + 200 Free Spins</td>
+                    <td>4 deposits: 100% up to CHF 700 + 200 FS (1st), 100% up to CHF 500 (2nd), 75% up to CHF 500 (3rd), 100% up to CHF 500 (4th)</td>
+                    <td>30x bonus</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Casino777.ch</strong></td>
+                    <td>CHF 777 + 100 Free Spins</td>
+                    <td>100% bonus on first deposit, FS on exclusive House Slot</td>
+                    <td>30x bonus</td>
+                </tr>
+
+                <tr>
+                    <td><strong>mycasino.ch</strong></td>
+                    <td>CHF 300 + 200 Free Spins</td>
+                    <td>100% match on first deposit, min CHF 10, FS on Book of Dead</td>
+                    <td>35x bonus (30 days)</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Swiss4Win</strong></td>
+                    <td>CHF 2,000 + 350 FS + 15 Golden Chips</td>
+                    <td>3 deposits: 100% up to CHF 1,000 + 50 FS (1st), 50% up to CHF 500 + 50 FS (2nd/3rd). No deposit: 150 FS on validation</td>
+                    <td>45x bonus</td>
+                </tr>
+
+                <tr>
+                    <td><strong>PASINO.ch</strong></td>
+                    <td>CHF 500 + 350 Free Spins</td>
+                    <td>100% up to CHF 500, FS distributed over 35 days, +10 Super Spins on verification</td>
+                    <td>35x bonus (30 days)</td>
+                </tr>
+
+                <tr>
+                    <td><strong>StarVegas</strong></td>
+                    <td>CHF 900 + 250 Free Spins</td>
+                    <td>3 deposits: 100% up to CHF 300 + 50 FS (1st), 50% up to CHF 300 + 50 FS (2nd), 100% up to CHF 300 + 50 FS (3rd). +80 FS on verification</td>
+                    <td>Not specified</td>
+                </tr>
+
+                <tr>
+                    <td><strong>7melons</strong></td>
+                    <td>CHF 1,007</td>
+                    <td>100% bonus on first deposit, verification FS available</td>
+                    <td>Not specified</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Swiss Casinos</strong></td>
+                    <td>CHF 1,400 + 150 Free Spins</td>
+                    <td>100% up to CHF 300 (1st), 100% up to CHF 100 + 100 FS (2nd), +50 FS on verification, +CHF 1,000 bonus after CHF 1,000 deposit</td>
+                    <td>Fair and transparent</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Golden Grand</strong></td>
+                    <td>See Swiss4Win</td>
+                    <td>Golden Grand redirects to Swiss4Win (closed July 2023)</td>
+                    <td>See Swiss4Win</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Swisslos</strong></td>
+                    <td>No traditional casino bonus</td>
+                    <td>Lottery and sports betting operator, occasional game credit promotions</td>
+                    <td>N/A</td>
+                </tr>
+
+            </tbody>
+        </table>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Bonus Statistics</h3>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Average Bonus Amount</h3>
+                <div class="value">CHF 1,155</div>
+                <div class="label">Mean across operators</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Average Free Spins</h3>
+                <div class="value">270</div>
+                <div class="label">Mean across operators</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Typical Wagering</h3>
+                <div class="value">30-45x</div>
+                <div class="label">Bonus Amount</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Operators Analyzed</h3>
+                <div class="value">10</div>
+                <div class="label">Licensed Swiss Casinos</div>
+            </div>
+        </div>
+        
+        <div class="success-box">
+            <h4>✓ Typical Bonus Structure in Switzerland</h4>
+            <p><strong>Deposit Match:</strong> 100% is most common; caps range CHF 300-2,200</p>
+            <p><strong>Free Spins:</strong> Frequently bundled (100-350+), often split over days or tied to KYC verification</p>
+            <p><strong>Wagering:</strong> Commonly 30-45x bonus amount; FS winnings vary by site</p>
+            <p><strong>Verification Bonuses:</strong> Many operators reward KYC completion with additional FS or bonus money</p>
+            <p style="margin-top: 10px;"><strong>Note:</strong> Data collected from 10 licensed operators on October 20, 2025. Offers subject to change.</p>
+        </div>
+        
+        <div class="info-box">
+            <h4>Popular Free Spins Games</h4>
+            <p><strong>Swiss4Win:</strong> Big Bass Bonanza, Aztec Gems Megaways, Floating Dragon, Aztec Smash, Eternal Empress, Candy Corner</p>
+            <p style="margin-top: 10px;"><strong>mycasino:</strong> Book of Dead</p>
+            <p style="margin-top: 10px;"><strong>StarVegas:</strong> Novoline slots (Book of Ra, Sizzling Hot)</p>
+        </div>
+    </div>
+</div>
+
+<!-- 3. LOYALTY -->
+<div id="loyalty" class="section">
+    <div class="section-header">Loyalty</div>
+    <div class="section-content">
+        <p style="margin-bottom: 20px; font-size: 16px;">Loyalty programs and VIP benefits offered by Swiss online casino operators (Data collected: October 20, 2025).</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Competitor</th>
+                    <th>Loyalty Program</th>
+                    <th>Key Benefits</th>
+                    <th>VIP Tiers</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Jackpots.ch</strong></td>
+                    <td>Tiered Loyalty Program with Reward Shop</td>
+                    <td>Points on stakes, exchange coins for rewards, double/triple points on selected games during promotions</td>
+                    <td>Up to Diamond Millionaire</td>
+                </tr>
+                <tr>
+                    <td><strong>Casino777.ch</strong></td>
+                    <td>VIP Program & Weekly Promotions</td>
+                    <td>Game of the Week VIP editions, FS bundles, comp points and VIP perks</td>
+                    <td>Standard VIP levels</td>
+                </tr>
+                <tr>
+                    <td><strong>mycasino.ch</strong></td>
+                    <td>Loyalty Promotions (No formal tiers)</td>
+                    <td>Birthday Bonus (50 FS), Anniversary Bonus (up to 600 FS), Lucky Draw Raffle (CHF 1,000 monthly)</td>
+                    <td>No formal tiers</td>
+                </tr>
+                <tr>
+                    <td><strong>Swiss4Win</strong></td>
+                    <td>7-Tier VIP Loyalty Club</td>
+                    <td>Bronze → Ruby → Diamond Elite, points from play (CHF 1 = 0.4-2 points), Cash Rewards, VIP Prize Wheels, raffles</td>
+                    <td>7 tiers (Bronze to Diamond Elite)</td>
+                </tr>
+                <tr>
+                    <td><strong>PASINO.ch</strong></td>
+                    <td>Monthly Bonuses for Loyalty</td>
+                    <td>Rewards for regular play, monthly bonus offers</td>
+                    <td>Not specified</td>
+                </tr>
+                <tr>
+                    <td><strong>StarVegas</strong></td>
+                    <td>Loyalty Programme</td>
+                    <td>Up to CHF 100 in real money per month, Weekly Wheel of Fortune, Refer-a-Friend CHF 50</td>
+                    <td>Not specified</td>
+                </tr>
+                <tr>
+                    <td><strong>7melons</strong></td>
+                    <td>Standard loyalty features</td>
+                    <td>Information not publicly available</td>
+                    <td>Not specified</td>
+                </tr>
+                <tr>
+                    <td><strong>Swiss Casinos</strong></td>
+                    <td>Regular Bonus Offers</td>
+                    <td>Ongoing promotions for loyal customers after first deposits</td>
+                    <td>No formal tiers</td>
+                </tr>
+                <tr>
+                    <td><strong>Golden Grand</strong></td>
+                    <td>See Swiss4Win</td>
+                    <td>Redirects to Swiss4Win</td>
+                    <td>See Swiss4Win</td>
+                </tr>
+                <tr>
+                    <td><strong>Swisslos</strong></td>
+                    <td>N/A</td>
+                    <td>Focus on lottery and sports betting, no traditional casino loyalty program</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="success-box">
+            <h4>✓ Common Loyalty Features in Swiss Market</h4>
+            <ul>
+                <li><strong>VIP Levels:</strong> Typically 4-7 tiers for operators with formal programs</li>
+                <li><strong>Points Systems:</strong> Earn points per CHF wagered, convertible to cash or rewards</li>
+                <li><strong>Verification Rewards:</strong> KYC completion frequently rewarded with FS or bonuses</li>
+                <li><strong>Birthday/Anniversary:</strong> Special bonuses on player milestones</li>
+                <li><strong>Exclusive Promotions:</strong> VIP-only tournaments, prize wheels, raffles</li>
+                <li><strong>Personalized Offers:</strong> Based on gaming behavior and tier level</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 4. RETENTION -->
+<div id="retention" class="section">
+    <div class="section-header">Retention</div>
+    <div class="section-content">
+        <p style="margin-bottom: 20px; font-size: 16px;">Ongoing promotions and retention strategies used by Swiss online casino operators (Data collected: October 20, 2025).</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Competitor</th>
+                    <th>Ongoing Promotions</th>
+                    <th>Tournaments</th>
+                    <th>Special Features</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Jackpots.ch</strong></td>
+                    <td>Twint & Win, Invite a Friend, Birthday Bonus, Newsletter Bonuses (email/SMS)</td>
+                    <td>Slot Tournaments (Tuesday & Saturday)</td>
+                    <td>Reward Shop, regular email/SMS offers</td>
+                </tr>
+                <tr>
+                    <td><strong>Casino777.ch</strong></td>
+                    <td>Welcome Back Reload (100% up to CHF 100), Daily Freespins (min CHF 1 wager), Birthday Freespins (77 FS)</td>
+                    <td>Regular tournaments</td>
+                    <td>Refer Friends Ambassador program</td>
+                </tr>
+                <tr>
+                    <td><strong>mycasino.ch</strong></td>
+                    <td>Game of the Week (30 FS), Bring a Friend (CHF 50), Birthday Bonus (50 FS), Surprise Bonus, Event bonuses (Advent/Easter)</td>
+                    <td>Regular tournaments, Lucky Draw Raffle (CHF 1,000 monthly)</td>
+                    <td>Anniversary Bonus (up to 600 FS)</td>
+                </tr>
+                <tr>
+                    <td><strong>Swiss4Win</strong></td>
+                    <td>Daily Free Spins Minigame, Game of the Week (bonus credits for different play levels), Weekly Missions, Birthday Bonus</td>
+                    <td>Slot Tournaments with prizes (Bonus Credits, FS, Golden Chips)</td>
+                    <td>VIP Prize Wheels, raffles, periodic missions</td>
+                </tr>
+                <tr>
+                    <td><strong>PASINO.ch</strong></td>
+                    <td>Bonus of the Month (FS), Games of the Week (CHF 100 draw), Refer a Friend (CHF 50), Birthday Bonus, TWINT Deposit Bonus (weekly draw up to CHF 200)</td>
+                    <td>Seasonal/time-limited tournaments</td>
+                    <td>Account verification bonus (10 Super Spins)</td>
+                </tr>
+                <tr>
+                    <td><strong>StarVegas</strong></td>
+                    <td>Slot Races (Tuesdays/Thursdays), Bergfest Wheel of Fortune (Wednesdays, up to 20 FS), Refer-a-Friend (CHF 50), Deposit Bonus, Mystery Bonus, Vouchers</td>
+                    <td>Slot Races with instant prizes, Live Casino Promotions</td>
+                    <td>Happy Hour promotions, newsletter/social media announcements</td>
+                </tr>
+                <tr>
+                    <td><strong>7melons</strong></td>
+                    <td>Verification FS available</td>
+                    <td>Information not publicly available</td>
+                    <td>Standard retention features</td>
+                </tr>
+                <tr>
+                    <td><strong>Swiss Casinos</strong></td>
+                    <td>Game of the Week (up to 60 FS, CHF 15 bonus, or 15 Golden Chips), Bring a Friend (CHF 50/CHF 25), Seasonal bonuses, Regular deposit bonuses</td>
+                    <td>Slot Tournaments (Weekend, Top Scores, Battle of) - CHF 3,000 prize pool</td>
+                    <td>Live Casino from Casino Pfäffikon</td>
+                </tr>
+                <tr>
+                    <td><strong>Golden Grand</strong></td>
+                    <td>See Swiss4Win</td>
+                    <td>See Swiss4Win</td>
+                    <td>Redirects to Swiss4Win</td>
+                </tr>
+                <tr>
+                    <td><strong>Swisslos</strong></td>
+                    <td>Sporttip OddsBoost, CombiBoost, Occasional game credit competitions (10 x CHF 300)</td>
+                    <td>N/A</td>
+                    <td>Focus on lottery draws and sports betting promotions</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="info-box">
+            <h4>Common Retention Strategies in Switzerland</h4>
+            <p><strong>Daily/Weekly Promotions:</strong> Game of the Week, daily free spins, weekly missions</p>
+            <p style="margin-top: 10px;"><strong>Tournaments:</strong> Slot races and tournaments with prize pools (common on Tuesdays, Thursdays, weekends)</p>
+            <p style="margin-top: 10px;"><strong>Referral Programs:</strong> CHF 50 bonus for referring friends is standard</p>
+            <p style="margin-top: 10px;"><strong>Seasonal Events:</strong> Advent calendars, Easter promotions, special holiday bonuses</p>
+            <p style="margin-top: 10px;"><strong>Payment Method Promotions:</strong> TWINT bonuses, deposit method-specific offers</p>
+        </div>
+    </div>
+</div>
+
+<!-- 5. PAYMENTS -->
+<div id="payments" class="section">
+    <div class="section-header">Payments</div>
+    <div class="section-content">
+        <p style="margin-bottom: 20px; font-size: 16px;">Payment methods accepted by Swiss online casino operators (Data collected: October 20, 2025).</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Competitor</th>
+                    <th>Deposit Methods</th>
+                    <th>Withdrawal Methods</th>
+                    <th>Processing Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Jackpots.ch</strong></td>
+                    <td>Visa, Mastercard, PostFinance Pay, TWINT, Bank Transfer, paysafecard, Apple Pay</td>
+                    <td>Swiss bank account (player's name)</td>
+                    <td>3-4 working days (free)</td>
+                </tr>
+                <tr>
+                    <td><strong>Casino777.ch</strong></td>
+                    <td>VISA, MasterCard, PaySafeCard, Skrill, Neteller, Bank Transfer</td>
+                    <td>Bank Transfer, Skrill, Neteller</td>
+                    <td>Standard processing</td>
+                </tr>
+                <tr>
+                    <td><strong>mycasino.ch</strong></td>
+                    <td>Visa, Mastercard, Yapeal, PostFinance, PostFinance Pay, TWINT, Paysafecard, Neteller, Skrill, Apple Pay (min CHF 10)</td>
+                    <td>Same as deposit methods</td>
+                    <td>Standard processing</td>
+                </tr>
+                <tr>
+                    <td><strong>Swiss4Win</strong></td>
+                    <td>VISA, Mastercard, Wire Transfer, PostFinance/Post E-finance, Twint, Skrill, Apple Pay, Paysafe Card</td>
+                    <td>VISA, Mastercard, Wire Transfer</td>
+                    <td>Instant Payment/Withdrawal (CHF 500-1,500)</td>
+                </tr>
+                <tr>
+                    <td><strong>PASINO.ch</strong></td>
+                    <td>Twint, Apple Pay, Visa, Mastercard, PostFinance, paysafecard, Neteller, Skrill, Bank Transfers</td>
+                    <td>Bank transfer to Swiss bank account (player's name)</td>
+                    <td>No fees mentioned</td>
+                </tr>
+                <tr>
+                    <td><strong>StarVegas</strong></td>
+                    <td>TWINT, PostFinance, Visa, Mastercard, Apple Pay, Aircash, paysafecard, NETELLER, Skrill (min CHF 10, max CHF 10,000)</td>
+                    <td>Same as deposit (generally via bank transfer)</td>
+                    <td>Standard processing</td>
+                </tr>
+                <tr>
+                    <td><strong>7melons</strong></td>
+                    <td>Information not publicly available</td>
+                    <td>Information not publicly available</td>
+                    <td>Not specified</td>
+                </tr>
+                <tr>
+                    <td><strong>Swiss Casinos</strong></td>
+                    <td>Bank Transfer, VISA, TWINT, Apple Pay, PostFinance, PostFinance E-Finance, Mastercard, paysafecard, Diners Club, Discover</td>
+                    <td>Same as deposit methods</td>
+                    <td>Standard processing</td>
+                </tr>
+                <tr>
+                    <td><strong>Golden Grand</strong></td>
+                    <td>See Swiss4Win</td>
+                    <td>See Swiss4Win</td>
+                    <td>Instant Payout feature (Swiss4Win)</td>
+                </tr>
+                <tr>
+                    <td><strong>Swisslos</strong></td>
+                    <td>Credit cards (Visa, Mastercard), Twint, PostFinance Pay, Bank Transfer</td>
+                    <td>Bank Transfer</td>
+                    <td>Standard processing</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Most Popular Payment Methods</h3>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>TWINT</h3>
+                <div class="value">90%</div>
+                <div class="label">Operator Availability</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Visa/Mastercard</h3>
+                <div class="value">100%</div>
+                <div class="label">Operator Availability</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>PostFinance</h3>
+                <div class="value">80%</div>
+                <div class="label">Operator Availability</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Apple Pay</h3>
+                <div class="value">70%</div>
+                <div class="label">Operator Availability</div>
+            </div>
+        </div>
+        
+        <div class="success-box">
+            <h4>✓ Payment Characteristics in Swiss Market</h4>
+            <p><strong>Local Methods Essential:</strong> TWINT and PostFinance are expected by Swiss players</p>
+            <p style="margin-top: 10px;"><strong>Bank Transfers:</strong> Most common withdrawal method, must be to Swiss bank account in player's name</p>
+            <p style="margin-top: 10px;"><strong>E-Wallets:</strong> Skrill, Neteller widely accepted for both deposits and withdrawals</p>
+            <p style="margin-top: 10px;"><strong>Instant Payouts:</strong> Swiss4Win offers instant payment/withdrawal for CHF 500-1,500</p>
+            <p style="margin-top: 10px;"><strong>Minimum Deposits:</strong> Typically CHF 10 across operators</p>
+            <p style="margin-top: 10px;"><strong>Fees:</strong> Most operators offer free withdrawals</p>
+        </div>
+    </div>
+</div>
+
+<!-- 6. GAMES & PROVIDERS -->
+<div id="games" class="section">
+    <div class="section-header">Games & Providers</div>
+    <div class="section-content">
+        <p style="margin-bottom: 20px; font-size: 16px;">Game providers and types available at Swiss online casino operators (Data collected: October 20, 2025).</p>
+        
+        <h3 style="color: var(--betjordan-red); margin-bottom: 20px;">Top Game Providers in Switzerland</h3>
+        
+        <div class="providers-grid">
+            <div class="provider-badge">Pragmatic Play</div>
+            <div class="provider-badge">Evolution Gaming</div>
+            <div class="provider-badge">Playtech</div>
+            <div class="provider-badge">Play'n GO</div>
+            <div class="provider-badge">Greentube</div>
+            <div class="provider-badge">NetEnt</div>
+            <div class="provider-badge">Wazdan</div>
+            <div class="provider-badge">Red Tiger</div>
+            <div class="provider-badge">Yggdrasil</div>
+            <div class="provider-badge">Playson</div>
+            <div class="provider-badge">Big Time Gaming</div>
+            <div class="provider-badge">ELK Studios</div>
+            <div class="provider-badge">iSoftBet</div>
+            <div class="provider-badge">Hacksaw Gaming</div>
+            <div class="provider-badge">Synot</div>
+            <div class="provider-badge">Games Global</div>
+            <div class="provider-badge">Amusnet</div>
+            <div class="provider-badge">Gamomat</div>
+            <div class="provider-badge">Fazi</div>
+            <div class="provider-badge">Stakelogic</div>
+            <div class="provider-badge">Endorphina</div>
+            <div class="provider-badge">Push Gaming</div>
+            <div class="provider-badge">No Limit City</div>
+            <div class="provider-badge">Bragg</div>
+            <div class="provider-badge">Gaming1</div>
+            <div class="provider-badge">Hölle Games</div>
+            <div class="provider-badge">Pariplay</div>
+            <div class="provider-badge">BGaming</div>
+            <div class="provider-badge">CT Interactive</div>
+            <div class="provider-badge">RedRake Gaming</div>
+            <div class="provider-badge">Skywind</div>
+            <div class="provider-badge">ORYX Gaming</div>
+            <div class="provider-badge">Blueprint</div>
+            <div class="provider-badge">EveryMatrix</div>
+            <div class="provider-badge">BF Games</div>
+            <div class="provider-badge">IGT</div>
+            <div class="provider-badge">GameArt</div>
+            <div class="provider-badge">Kajot Games</div>
+            <div class="provider-badge">Spinoro</div>
+            <div class="provider-badge">Real Dealer</div>
+        </div>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Provider Distribution by Operator</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Competitor</th>
+                    <th>Number of Providers</th>
+                    <th>Key Providers</th>
+                    <th>Game Types</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Jackpots.ch</strong></td>
+                    <td>35+</td>
+                    <td>Pragmatic Play, Evolution, Greentube, Playtech, Play'n GO, NetEnt, Wazdan, Hacksaw Gaming</td>
+                    <td>Slots, Roulette, Blackjack, Poker, Baccarat, Live Casino, Game Shows, Arcade, Jackpots</td>
+                </tr>
+                <tr>
+                    <td><strong>Casino777.ch</strong></td>
+                    <td>10+</td>
+                    <td>Amusnet, Big Time Gaming, Fazi, Games Global, Greentube, CT Interactive, Yggdrasil</td>
+                    <td>Slots (Megaways, Buy Bonus, Jackpot), Table Games (Blackjack, Baccarat, Poker), Live Casino</td>
+                </tr>
+                <tr>
+                    <td><strong>mycasino.ch</strong></td>
+                    <td>20+</td>
+                    <td>Evolution, Pragmatic Play, Play'n GO, Greentube, Playtech, Wazdan, Yggdrasil, IGT, Playson</td>
+                    <td>Slots, Jackpots, Live Casino (Roulette, Blackjack), Table Games, Video Poker (3,000+ games)</td>
+                </tr>
+                <tr>
+                    <td><strong>Swiss4Win</strong></td>
+                    <td>10+</td>
+                    <td>Playtech, Pragmatic, Red Tiger, Yggdrasil, Evolution, Playson, Synot, Pariplay, Bragg</td>
+                    <td>Slots (Jackpot, Progressive), Table Games (Roulette, Blackjack, Poker, Baccarat), Live Casino, Quick Games (1,000+ titles)</td>
+                </tr>
+                <tr>
+                    <td><strong>PASINO.ch</strong></td>
+                    <td>15+</td>
+                    <td>Pragmatic Play, Wazdan, Greentube, Fazi, Playson, Stakelogic, Elk Studios, Big Time Gaming, Evolution, Play'n GO</td>
+                    <td>Slots, Live Casino, Table Games, Jackpots, Buy Feature Slots</td>
+                </tr>
+                <tr>
+                    <td><strong>StarVegas</strong></td>
+                    <td>10+</td>
+                    <td>Greentube (Novoline), Pragmatic Play, Gamomat, NetEnt, Playtech, Red Tiger, Big Time Gaming, No Limit City</td>
+                    <td>Slots (Novoline classics: Book of Ra, Sizzling Hot), Jackpots, Live Casino, Table Games, Buy Bonus, Exclusive StarVegas games</td>
+                </tr>
+                <tr>
+                    <td><strong>7melons</strong></td>
+                    <td>Information not available</td>
+                    <td>Information not available</td>
+                    <td>Standard casino games</td>
+                </tr>
+                <tr>
+                    <td><strong>Swiss Casinos</strong></td>
+                    <td>15+</td>
+                    <td>Playtech, Greentube, Pragmatic Play, Red Tiger, Skywind, Synot, Wazdan, Isoftbet, Gamomat, Blueprint</td>
+                    <td>Slots (Classic, Video, Jackpot, Megaways), Table Games (Roulette, Blackjack, Poker), Live Casino</td>
+                </tr>
+                <tr>
+                    <td><strong>Golden Grand</strong></td>
+                    <td>See Swiss4Win</td>
+                    <td>See Swiss4Win</td>
+                    <td>See Swiss4Win</td>
+                </tr>
+                <tr>
+                    <td><strong>Swisslos</strong></td>
+                    <td>1 (Scientific Games)</td>
+                    <td>Scientific Games (Sporttip platform)</td>
+                    <td>Lotteries (Swiss Lotto, EuroMillions), Sports Betting, Instant Tickets, Bingo, Jass</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="success-box">
+            <h4>✓ Game Characteristics in Swiss Market</h4>
+            <p><strong>Provider Diversity:</strong> Most operators offer 10-35+ providers, ensuring variety</p>
+            <p style="margin-top: 10px;"><strong>Live Casino:</strong> Evolution Gaming dominates live dealer games across all operators</p>
+            <p style="margin-top: 10px;"><strong>Novoline/Greentube:</strong> Very popular in Switzerland (Book of Ra, Sizzling Hot)</p>
+            <p style="margin-top: 10px;"><strong>Game Counts:</strong> Range from 1,000+ to 3,000+ games per operator</p>
+            <p style="margin-top: 10px;"><strong>Exclusive Games:</strong> Some operators offer branded/exclusive titles (e.g., StarVegas branded slots)</p>
+            <p style="margin-top: 10px;"><strong>Buy Feature Slots:</strong> Increasingly popular, with dedicated categories on some sites</p>
+        </div>
+    </div>
+</div>
+
+<!-- 7. MARKETING -->
+<div id="marketing" class="section">
+    <div class="section-header">Marketing</div>
+    <div class="section-content">
+        <p style="margin-bottom: 20px; font-size: 16px;">Marketing channels and strategies used by Swiss online casino operators (Data collected: October 20, 2025).</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Competitor</th>
+                    <th>Social Media</th>
+                    <th>Sponsorships/Partnerships</th>
+                    <th>Other Channels</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Jackpots.ch</strong></td>
+                    <td>Instagram (@jackpots.ch), Facebook (JackPots), X (Twitter), YouTube</td>
+                    <td>Partnerships with game providers (Push Gaming, Gaming Corps, Endorphina, Stakelogic Live)</td>
+                    <td>Newsletter (email/SMS), Affiliate program</td>
+                </tr>
+                <tr>
+                    <td><strong>Casino777.ch</strong></td>
+                    <td>Social media presence</td>
+                    <td>Hockey Club Davos (HCD) - "Gambler of the Game" award, Partnerships with Yggdrasil, Greentube</td>
+                    <td>LivePartners affiliate program</td>
+                </tr>
+                <tr>
+                    <td><strong>mycasino.ch</strong></td>
+                    <td>Social media with competitions</td>
+                    <td>Main sponsor of EV Zug (ice hockey) for 3 years (2022/23 season start), Content partnerships with Wazdan, Evolution, Greentube</td>
+                    <td>mycasinoAffiliates program</td>
+                </tr>
+                <tr>
+                    <td><strong>Swiss4Win</strong></td>
+                    <td>Social media presence</td>
+                    <td>"Swiss4Win: The New Home for Golden Grand Players" campaign</td>
+                    <td>Focus on acquiring former Golden Grand customers</td>
+                </tr>
+                <tr>
+                    <td><strong>PASINO.ch</strong></td>
+                    <td>Social media activity</td>
+                    <td>Official sponsor of Servette FC (football club)</td>
+                    <td>Blog content, online promotions</td>
+                </tr>
+                <tr>
+                    <td><strong>StarVegas</strong></td>
+                    <td>Facebook, Instagram, Twitter</td>
+                    <td>SC Bern, SC Bern Frauen, SCUI, Wacker Thun (sports teams)</td>
+                    <td>Mobile apps (iOS/Android), Newsletter</td>
+                </tr>
+                <tr>
+                    <td><strong>7melons</strong></td>
+                    <td>Information not available</td>
+                    <td>Information not available</td>
+                    <td>Standard marketing channels</td>
+                </tr>
+                <tr>
+                    <td><strong>Swiss Casinos</strong></td>
+                    <td>Facebook, TikTok, Instagram, LinkedIn, YouTube</td>
+                    <td>Information not publicly available</td>
+                    <td>Affiliate program</td>
+                </tr>
+                <tr>
+                    <td><strong>Golden Grand</strong></td>
+                    <td>See Swiss4Win</td>
+                    <td>See Swiss4Win</td>
+                    <td>Redirects to Swiss4Win</td>
+                </tr>
+                <tr>
+                    <td><strong>Swisslos</strong></td>
+                    <td>Facebook, Instagram, YouTube</td>
+                    <td>Swiss sport via Stiftung "Sportförderung Schweiz", Swiss Olympic, Swiss Football Association</td>
+                    <td>Traditional advertising campaigns, focus on "good cause" messaging</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Key Marketing Trends in Switzerland</h3>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Sports Sponsorships</h3>
+                <div class="value">60%</div>
+                <div class="label">Operators with Sports Partnerships</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Social Media</h3>
+                <div class="value">90%</div>
+                <div class="label">Active on Multiple Platforms</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Affiliate Programs</h3>
+                <div class="value">70%</div>
+                <div class="label">Operators with Programs</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Mobile Apps</h3>
+                <div class="value">40%</div>
+                <div class="label">Dedicated iOS/Android Apps</div>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h4>Swiss Market Marketing Characteristics</h4>
+            <p><strong>Sports Sponsorships:</strong> Ice hockey and football are the most popular sponsorship targets (EV Zug, SC Bern, Servette FC, HCD)</p>
+            <p style="margin-top: 10px;"><strong>Local Focus:</strong> Emphasis on Swiss identity, land-based casino heritage, and local partnerships</p>
+            <p style="margin-top: 10px;"><strong>Responsible Gambling:</strong> All marketing emphasizes player protection and responsible gaming</p>
+            <p style="margin-top: 10px;"><strong>Multi-Language:</strong> Content in German, French, and Italian to serve all Swiss regions</p>
+            <p style="margin-top: 10px;"><strong>Social Contribution:</strong> Swisslos emphasizes profits going to cultural, social, and sports projects</p>
+        </div>
+    </div>
+</div>
+
+<!-- 8. MARKET STATS -->
+<div id="stats" class="section">
+    <div class="section-header">Switzerland Market Stats</div>
+    <div class="section-content">
+        <h3 style="color: var(--betjordan-red); margin-bottom: 20px;">Key Market Metrics</h3>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Market Size</h3>
+                <div class="value">$2.92B</div>
+                <div class="label">2025 Projected Revenue (USD)</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Market Growth</h3>
+                <div class="value">1.48%</div>
+                <div class="label">CAGR 2025-2030</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Users by 2030</h3>
+                <div class="value">3.1M</div>
+                <div class="label">Expected Player Base</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>User Penetration</h3>
+                <div class="value">31.4%</div>
+                <div class="label">Of Adult Population (2025)</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>ARPU</h3>
+                <div class="value">$1,040</div>
+                <div class="label">Average Revenue Per User</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Population</h3>
+                <div class="value">8.8M</div>
+                <div class="label">Total Population</div>
+            </div>
+        </div>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Regulatory Framework</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Licensing Authority</strong></td>
+                    <td>ESBK (Federal Gaming Board) for casinos, Gespa for lotteries and sports betting</td>
+                </tr>
+                <tr>
+                    <td><strong>License Requirement</strong></td>
+                    <td>Only land-based casinos licensed by ESBK can offer online gambling</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Licensed Casinos</strong></td>
+                    <td>22 casinos throughout Switzerland (as of January 2025)</td>
+                </tr>
+                <tr>
+                    <td><strong>Online Gambling Rights</strong></td>
+                    <td>12 casinos granted the right to offer online gambling</td>
+                </tr>
+                <tr>
+                    <td><strong>Foreign Operators</strong></td>
+                    <td>Prohibited from targeting Swiss customers</td>
+                </tr>
+                <tr>
+                    <td><strong>Tax Contribution</strong></td>
+                    <td>CHF 8.1 billion contributed to AVS (Old Age and Survivors Insurance) since 2002</td>
+                </tr>
+                <tr>
+                    <td><strong>Gambling Participation</strong></td>
+                    <td>71% of Swiss population have gambled in their lifetime, 60% in the past year</td>
+                </tr>
+                <tr>
+                    <td><strong>Sports Betting</strong></td>
+                    <td>24.7% of people bet on sports in the past 12 months</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3 style="color: var(--betjordan-red); margin: 40px 0 20px 0;">Market Trends</h3>
+        
+        <div class="info-box">
+            <h4>Customer Preferences</h4>
+            <p>Switzerland has a strong culture of gambling, with a long history of traditional casino games such as poker and roulette. In recent years, there has been a significant shift towards online gambling due to convenience and accessibility. The availability of a wide range of games and betting options online has contributed to this growth.</p>
+        </div>
+        
+        <div class="info-box">
+            <h4>Mobile Gambling</h4>
+            <p>One of the key trends is the increasing popularity of mobile gambling. With widespread smartphone and tablet use, more customers are opting to gamble on the go. Mobile gambling platforms offer a seamless and user-friendly experience, allowing customers to place bets and play games anytime, anywhere.</p>
+        </div>
+        
+        <div class="info-box">
+            <h4>Live Dealer Games</h4>
+            <p>The emergence of live dealer games has gained significant traction in Switzerland. These games provide an interactive and immersive experience, allowing customers to play with real dealers in real-time. This trend combines the convenience of online gambling with the authenticity of traditional casino games, particularly appealing to customers who enjoy the social aspect of gambling.</p>
+        </div>
+        
+        <div class="success-box">
+            <h4>✓ Macroeconomic Factors</h4>
+            <ul>
+                <li><strong>Internet Penetration:</strong> High internet penetration rate drives online gambling growth</li>
+                <li><strong>Strong Economy:</strong> High per capita income and stable financial system support leisure spending</li>
+                <li><strong>Cultural Acceptance:</strong> Gambling is widely accepted as entertainment in Swiss society</li>
+                <li><strong>Regulatory Clarity:</strong> Clear licensing framework creates controlled and secure market</li>
+                <li><strong>Social Contribution:</strong> Gambling revenues support AVS and cantonal projects (culture, social, sports)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 9. CULTURE -->
+<div id="culture" class="section">
+    <div class="section-header">Culture</div>
+    <div class="section-content">
+        <h3 style="color: var(--betjordan-red); margin-bottom: 30px; text-align: center;">Core Values - Swiss Market</h3>
+        
+        <div class="culture-values">
+            <div class="value-box">
+                <h4>Quality & Precision</h4>
+                <p>Swiss players expect high-quality products and services. Attention to detail and precision are highly valued.</p>
+            </div>
+            
+            <div class="value-box">
+                <h4>Trust & Reliability</h4>
+                <p>Strong emphasis on trustworthy operators, secure transactions, and reliable customer service.</p>
+            </div>
+            
+            <div class="value-box">
+                <h4>Local Connection</h4>
+                <p>Preference for operators linked to established Swiss land-based casinos with local heritage.</p>
+            </div>
+            
+            <div class="value-box">
+                <h4>Responsible Gambling</h4>
+                <p>High awareness of responsible gaming practices and player protection measures.</p>
+            </div>
+            
+            <div class="value-box">
+                <h4>Multilingual Service</h4>
+                <p>Expectation of service in German, French, and Italian to serve all Swiss regions.</p>
+            </div>
+            
+            <div class="value-box">
+                <h4>Privacy & Security</h4>
+                <p>Strong concern for data protection, privacy, and secure payment methods.</p>
+            </div>
+        </div>
+        
+        <h3 style="color: var(--betjordan-red); margin: 50px 0 20px 0;">Cultural Considerations for Branding</h3>
+        
+        <div class="info-box">
+            <h4>Language Requirements</h4>
+            <p><strong>Multilingual Support MANDATORY:</strong> Content, customer support, and terms must be available in German, French, and Italian. English is often provided as an additional language but is not sufficient alone.</p>
+            <p style="margin-top: 10px;"><strong>Regional Preferences:</strong> German-speaking Switzerland (65%), French-speaking (23%), Italian-speaking (8%), Romansh (0.5%)</p>
+        </div>
+        
+        <div class="info-box">
+            <h4>Payment Preferences</h4>
+            <p><strong>Local Methods Essential:</strong> TWINT and PostFinance are expected by Swiss players. These are the most trusted and widely used payment methods in Switzerland.</p>
+            <p style="margin-top: 10px;"><strong>Bank Transfers:</strong> Withdrawals must be to Swiss bank accounts in the player's name</p>
+            <p style="margin-top: 10px;"><strong>E-Wallets:</strong> Skrill and Neteller are popular alternatives</p>
+            <p style="margin-top: 10px;"><strong>Cards:</strong> Visa and Mastercard are standard, with Apple Pay growing in popularity</p>
+        </div>
+        
+        <div class="info-box">
+            <h4>Design Preferences</h4>
+            <ul>
+                <li><strong>Clean & Professional:</strong> Swiss players prefer minimalist, functional designs</li>
+                <li><strong>Clear Navigation:</strong> Intuitive structure with easy access to information</li>
+                <li><strong>Trust Signals:</strong> Display ESBK/Gespa licenses and certifications prominently</li>
+                <li><strong>Responsible Gambling Visible:</strong> Easy access to limits, self-exclusion, and support resources</li>
+                <li><strong>Mobile Optimized:</strong> Excellent mobile experience is essential</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h4>Customer Support</h4>
+            <p><strong>Multilingual Support:</strong> Customer service in German, French, and Italian is expected</p>
+            <p style="margin-top: 10px;"><strong>Response Times:</strong> Quick response times for live chat and email</p>
+            <p style="margin-top: 10px;"><strong>Local Knowledge:</strong> Support staff should understand Swiss banking, payment methods, and regulations</p>
+        </div>
+        
+        <div class="info-box">
+            <h4>Social Responsibility</h4>
+            <p><strong>Community Contribution:</strong> Swiss players appreciate operators that contribute to local communities and social causes</p>
+            <p style="margin-top: 10px;"><strong>Sports Sponsorships:</strong> Support for local sports teams (ice hockey, football) enhances brand reputation</p>
+            <p style="margin-top: 10px;"><strong>Responsible Gaming:</strong> Strong commitment to player protection and problem gambling prevention</p>
+        </div>
+    </div>
 </div>
 
 </div>
-<div class="footer"><p>© 2025 BetJordan — Switzerland Market Dashboard (Updated)</p></div>
+
+<!-- Footer -->
+<div class="footer">
+    <p><strong>Switzerland Casino Market - Competitor Analysis Dashboard</strong></p>
+    <p>Report Generated: October 2025</p>
+    <p>Data Sources: Gespa, ESBK, Statista, iGamingToday, Operator Websites, Industry Reports</p>
+    <p style="margin-top: 15px; font-size: 12px;">This dashboard contains verified data from reliable sources and official operator websites. All information collected October 20, 2025.</p>
+    <p style="margin-top: 10px;">© 2025 BetJordan. All rights reserved.</p>
+</div>
+
 </body>
 </html>
