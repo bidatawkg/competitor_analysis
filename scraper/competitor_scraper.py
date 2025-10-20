@@ -245,16 +245,16 @@ class CompetitorScraper:
             ],
 
             "CH": [
-                {"name": "Spins of Glory", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "Lucky Dreams", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "Caspero", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "Azurslot", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "Dazard", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "SlotsVader", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "Rockwin", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "FeliceBet", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "SlotsMafia", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
-                {"name": "Crowngold", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
+                {"name": "swisslos", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "loro", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "jackpots", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "pasino", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "casino777", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "swiss4win", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "bet365", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "interwetten", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "gamdom", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]},
+                {"name": "betclic", "search_terms": ["bonus", "promotion", "welcome", "jackpot", "free spins", "deposit", "tournament", "vip levels", "vip", "cashback", "vip levels", "loyalty", "points", "exclusive benefits"]}
             ]
 
         }
@@ -285,6 +285,18 @@ class CompetitorScraper:
                 "Cashpoint": ["https://cashpointcasino.at/bonuscode", "https://cashpoint.co.at/en/", "https://cashpointcasino.at"],
                 "Bet-at-home": ["https://www.bet-at-home.de/slots", "https://www.bet-at-home.com/de/promotions?btag=59007522-CjwKCAjw0sfHBhB6EiwAQtv5qVVacNmoRpZG9lHVil0-EgZiw9iFIkqZa87jyegz-MIBHvc_lKyWcBoCBhYQAvD_BwE&etcc_med=SEA&etcc_par=Google&etcc_cmp=Brand&etcc_grp=145789558312&etcc_bky=bet%20at%20home&etcc_mty=p&etcc_plc=&etcc_ctv=744616064597&etcc_bde=c&gad_source=1&gad_campaignid=9832816266&gbraid=0AAAAAD6rWrxc8S6R564TZI1ixI7XQeHLL&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qVVacNmoRpZG9lHVil0-EgZiw9iFIkqZa87jyegz-MIBHvc_lKyWcBoCBhYQAvD_BwE", "https://www.bet-at-home.com/de/promotions"],
                 "Lottoland": ["https://www.lottoland.at/", ""],
+            },
+            "CH": {
+                "swisslos": ["https://www.swisslos.ch/en/sporttip", ""],
+                "loro": ["https://www.loro.ch/en", "https://jeux.loro.ch/lp/promo-cash-euromillions"],
+                "jackpots": ["https://www.jackpots.ch/en/", "https://www.jackpots.ch/en/casino-bonus", "https://www.jackpots.ch/en/loyalty-program"],
+                "casino777": ["https://www.casino777.ch/en/", "https://www.casino777.ch/en/promotions", "https://www.casino777.ch/en/bonus-information"],
+                "pasino": ["https://www.pasino.ch/en/","https://www.pasino.ch/en/promotions/", "https://www.pasino.ch/en/legal/bonus-terms-and-conditions/"],
+                "swiss4win": ["https://www.swiss4win.ch/en/", "https://www.swiss4win.ch/en/bonus", "https://www.swiss4win.ch/en/bonus/tournaments"],
+                "bet365": ["https://bet-365.ch/en/", "https://www.bet365.de/?_h=XNNwwML5KN2ZPuJYsrFmbQ%3D%3D&btsffd=1#/HO/"],
+                "interwetten": ["https://www.interwetten.com/en/sportsbook", "https://www.interwetten.com/en/landingpages/promotionoverview", "https://www.interwetten.com/en/content/sportsbook/promotions/loyaltysport"],
+                "gamdom": ["https://gamdom.ch/", "https://gamdom.com/promotions/welcome-offer", "https://gamdom.com/", "https://gamdom.com/promotions"],
+                "betclic": ["https://www.betclic.com/en/sports-betting/", "https://www.betclic.com/en/casino/?roxCurrentScreen=Homepage%2FPopularBets&roxPath=&roxSessionUuid=e4e1643d-e9b5-43d5-81ac-b9a9c28d21b8"],
             }
 
         }

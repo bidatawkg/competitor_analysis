@@ -1,28 +1,28 @@
 {
-  "id": "26537f94-26a9-47d1-8415-b67a93e712e0",
+  "id": "0adf9685-c985-4596-8521-06b16b8f025d",
   "object": "chat.completion",
-  "created": 1760739026,
+  "created": 1760775487,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"AT\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Lottoland\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"10,000,000 €\",\n                \"url\": \"https://www.lottoland.at/\"\n            },\n            {\n                \"competitor\": \"Mr Green\",\n                \"title\": \"Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"Up to €500 + 200 Free Spins\",\n                \"url\": \"https://www.mrgreen.com/promotions/\"\n            },\n            {\n                \"competitor\": \"Cashpoint\",\n                \"title\": \"Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"€100\",\n                \"url\": \"https://cashpoint.co.at/en/\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"Lottoland\",\n                \"game\": \"Jackpot\",\n                \"context\": \"Jackpot of 10 million € with quick pick options (6-line for 13.20 €, 12-line for 26.40 €)\"\n            },\n            {\n                \"competitor\": \"Mr Green\",\n                \"game\": \"Jackpot\",\n                \"context\": \"Exclusive jackpots for Mr Green players, with new players eligible for poker promotions to 'score twice'\"\n            },\n            {\n                \"competitor\": \"Mr Green\",\n                \"game\": \"Free Spins\",\n                \"context\": \"Free spins available via login notifications as part of 'my rewards' promotions\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"€233.33 (average of €100, €100, and €500 across 3 promotions)\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"10,000,000 € (only one quantified jackpot promotion)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"Two €10 free bets (only one promotion of this type)\"\n            },\n            {\n                \"bonus_type\": \"Cashback\",\n                \"average_bonus\": \"Not quantified (based on weekly poker rake)\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"200 Free Spins (only one quantified free spins promotion)\"\n            }\n        ],\n        \"distinctive_data\": [\"Lottoland offers an exceptionally high jackpot of 10 million €, significantly larger than typical casino bonuses.\", \"Mr Green provides a comprehensive welcome package with both a high deposit match (up to €500) and 200 free spins.\", \"Cashpoint focuses on sports betting with €100 free bet welcome offers, differing from casino-centric promotions.\", \"Mr Green includes multiple promotion types (cashback, free spins, jackpots) under one platform, enhancing player engagement.\"]\n    }\n}"
+        "content": "{\n    \"country\": \"AT\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"Lottoland\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"€10,000,000\",\n                \"url\": \"https://lottoland.at\"\n            },\n            {\n                \"competitor\": \"Mr Green\",\n                \"title\": \"Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"Up to €500 + 200 Free Spins\",\n                \"url\": \"https://www.mrgreen.com/promotions/\"\n            },\n            {\n                \"competitor\": \"Admiral\",\n                \"title\": \"Newcomer Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"Up to EUR 200\",\n                \"url\": \"https://www.admiral.at/en/help-and-contact/bonus-and-rewards/200-euro-newcomer-bonus\"\n            },\n            {\n                \"competitor\": \"Interwetten\",\n                \"title\": \"Bonus\",\n                \"bonus_type\": \"Other\",\n                \"bonus_amount\": \"up to €200\",\n                \"url\": \"https://www.interwetten.com/de/neukundenbonus?utm_source=deeplink&gclsrc=aw.ds&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qX4bMimbyb9QjqRFW-tHdWdw0UpwaoNV2GV0D364uAZgoY1PyPgWZRoC9uQQAvD_BwE\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"Lottoland\",\n                \"game\": \"Jackpot\",\n                \"context\": \"Jackpot 10 million €. Only 13.20 € for 6 quick picks. Add quick pick to cart. Only 26.40 € for 12 quick picks. Add quick pick to cart.\"\n            },\n            {\n                \"competitor\": \"Mr Green\",\n                \"game\": \"Jackpot\",\n                \"context\": \"Exclusive jackpots for Mr Green players. New players can score twice with poker promotions for new players.\"\n            },\n            {\n                \"competitor\": \"Win2day\",\n                \"game\": \"Crazy Prater Tag\",\n                \"context\": \"Every Wednesday you have the chance to win €1,000 at the Crazy Prater Tag event.\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"€200\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"Two €10 free bets\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"€5,000,000\"\n            },\n            {\n                \"bonus_type\": \"Other\",\n                \"average_bonus\": \"€600\"\n            }\n        ],\n        \"distinctive_data\": [\"Lottoland offers the highest jackpot at €10,000,000, significantly larger than other promotions.\", \"Mr Green provides the most comprehensive welcome package with up to €500 + 200 free spins.\", \"Win2day features unique daily and weekly promotions like 'Login and Win Today's Reward' and 'Crazy Prater Tag' with fixed €1,000 prizes.\", \"Cashback promotions are rare, with Mr Green being the only competitor offering cashback based on poker rake.\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 2063,
-    "completion_tokens": 672,
-    "total_tokens": 2735,
+    "prompt_tokens": 3311,
+    "completion_tokens": 793,
+    "total_tokens": 4104,
     "prompt_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 320
     },
-    "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 2063
+    "prompt_cache_hit_tokens": 320,
+    "prompt_cache_miss_tokens": 2991
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

@@ -82,147 +82,235 @@
     <body>
     <div class="container">
     <h1>Competitors Dashboard</h1>
-    <div class="subtitle">Generated on 2025-10-18 00:10</div>
-    <div class="nav"><button class="pill pill--active" onclick="openTab(event, 'AT')">AT</button></div>
+    <div class="subtitle">Generated on 2025-10-18 10:42</div>
+    <div class="nav"><button class="pill pill--active" onclick="openTab(event, 'CH')">CH</button></div>
     
-        <section id="AT" class="country" style="display:block;">
+        <section id="CH" class="country" style="display:block;">
             <div class="section-head">
-                <h2 class="country__title">AT</h2>
+                <h2 class="country__title">CH</h2>
                 <div class="stats">
-                    <div class="stat"><div class="stat__num">3</div><div class="stat__label">Competitors</div></div>
-                    <div class="stat"><div class="stat__num">8</div><div class="stat__label">Promotions</div></div>
-                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Bonus types</div></div>
+                    <div class="stat"><div class="stat__num">4</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">16</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">6</div><div class="stat__label">Bonus types</div></div>
                 </div>
             </div>
 
             <div class="controls">
                 <div class="control">
                     <label>Promotion Type</label>
-                    <select class="select" id="type-AT" onchange="filterCards('AT')">
+                    <select class="select" id="type-CH" onchange="filterCards('CH')">
                         <option value="ALL">All</option>
-                        <option value="Welcome Bonus">Welcome Bonus</option><option value="Deposit Bonus">Deposit Bonus</option><option value="Jackpot">Jackpot</option><option value="Free Spins">Free Spins</option><option value="Cashback">Cashback</option>
+                        <option value="Jackpot">Jackpot</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Cashback">Cashback</option><option value="Tournament">Tournament</option><option value="Deposit Bonus">Deposit Bonus</option><option value="Free Spins">Free Spins</option>
                     </select>
                 </div>
                 <div class="control">
                     <label>Search</label>
-                    <input class="input" type="search" id="search-AT" placeholder="Filter by text..." oninput="filterCards('AT')" />
+                    <input class="input" type="search" id="search-CH" placeholder="Filter by text..." oninput="filterCards('CH')" />
                 </div>
             </div>
 
             <div class="charts">
-                <div class="chart"><canvas id="donut-AT"></canvas></div>
-                <div class="chart"><canvas id="stacked-AT"></canvas></div>
+                <div class="chart"><canvas id="donut-CH"></canvas></div>
+                <div class="chart"><canvas id="stacked-CH"></canvas></div>
             </div>
 
             
             <div class="analysis">
-                <h3>Key Market Insights (AT)</h3>
+                <h3>Key Market Insights (CH)</h3>
                 <div class="analysis-section">
                     <h4>🎯 More aggressive promotions</h4>
-                    <ul><li><strong>Lottoland</strong>: Jackpot - 10,000,000 € <a href='https://www.lottoland.at/' target='_blank'>Link</a></li><li><strong>Mr Green</strong>: Welcome Bonus - Up to €500 + 200 Free Spins <a href='https://www.mrgreen.com/promotions/' target='_blank'>Link</a></li><li><strong>Cashpoint</strong>: Welcome Bonus - €100 <a href='https://cashpoint.co.at/en/' target='_blank'>Link</a></li></ul>
+                    <ul><li><strong>gamdom</strong>: Tournament - $4,000,000 total prize pool <a href='https://gamdom.com/promotions' target='_blank'>Link</a></li><li><strong>gamdom</strong>: Tournament - $1,000,000 <a href='https://gamdom.com/promotions' target='_blank'>Link</a></li><li><strong>casino777</strong>: Welcome Bonus - Up to CHF 777 + 100 Free Spins <a href='https://www.casino777.ch/en/bonus-information' target='_blank'>Link</a></li></ul>
                 </div>
                 <div class="analysis-section">
                     <h4>🎮 Highlighted games</h4>
-                    <ul><li><strong>Lottoland</strong>: Jackpot <em>(Jackpot of 10 million € with quick pick options (6-line for 13.20 €, 12-line for 26.40 €))</em></li><li><strong>Mr Green</strong>: Jackpot <em>(Exclusive jackpots for Mr Green players, with new players eligible for poker promotions to 'score twice')</em></li><li><strong>Mr Green</strong>: Free Spins <em>(Free spins available via login notifications as part of 'my rewards' promotions)</em></li></ul>
+                    <ul><li><strong>gamdom</strong>: Penguin King games <em>(Exclusive progressive jackpot available when playing Penguin King games)</em></li><li><strong>swiss4win</strong>: Big Bass Bonanza, 3 Reeler Aztec Gems Megaways, Floating Dragon - Year of the Snake, Aztec Smash, Eternal Empress - Freeze Time, Candy Corner <em>(Free spins offered on multiple popular slot games)</em></li><li><strong>swiss4win</strong>: Age of the Gods series (Helios, Wheels of Olympus, Medusa & Monsters, etc.) <em>(Jackpot promotion featuring various Age of the Gods slot games)</em></li><li><strong>interwetten</strong>: Book of the Fallen <em>(€10 free bet offered for this specific game to new customers before first deposit)</em></li></ul>
                 </div>
                 <div class="analysis-section">
                     <h4>📊 Average values by promotion type</h4>
-                    <ul><li><strong>Welcome Bonus</strong>: €233.33 (average of €100, €100, and €500 across 3 promotions)</li><li><strong>Jackpot</strong>: 10,000,000 € (only one quantified jackpot promotion)</li><li><strong>Deposit Bonus</strong>: Two €10 free bets (only one promotion of this type)</li><li><strong>Cashback</strong>: Not quantified (based on weekly poker rake)</li><li><strong>Free Spins</strong>: 200 Free Spins (only one quantified free spins promotion)</li></ul>
+                    <ul><li><strong>Welcome Bonus</strong>: Up to CHF 777 + 100 Free Spins (casino777), €10 free bet (interwetten), multiple free spins packages (swiss4win)</li><li><strong>Deposit Bonus</strong>: Up to CHF 777 (casino777), up to €100 (interwetten), up to €100 + up to €500 monthly (interwetten)</li><li><strong>Tournament</strong>: $2,500,000 average prize pool (based on $1,000,000 and $4,000,000 tournaments)</li><li><strong>Cashback</strong>: 5-10% loss refund (gamdom), weekend cashback on live casino losses (interwetten)</li><li><strong>Free Spins</strong>: Multiple free spins on various slot games (swiss4win), VIP bronze level free spins (gamdom)</li></ul>
                 </div>
                 <div class="analysis-section">
                     <h4>⭐ Differential data</h4>
-                    <ul><li>Lottoland offers an exceptionally high jackpot of 10 million €, significantly larger than typical casino bonuses.</li><li>Mr Green provides a comprehensive welcome package with both a high deposit match (up to €500) and 200 free spins.</li><li>Cashpoint focuses on sports betting with €100 free bet welcome offers, differing from casino-centric promotions.</li><li>Mr Green includes multiple promotion types (cashback, free spins, jackpots) under one platform, enhancing player engagement.</li></ul>
+                    <ul><li>Gamdom offers exceptionally high tournament prize pools reaching $4,000,000 total and $1,000,000 monthly, significantly larger than typical casino promotions.</li><li>Interwetten provides a unique €10 free bet for 'Book of the Fallen' game before first deposit, targeting new customers with a specific game incentive.</li><li>Swiss4win focuses heavily on free spins across multiple popular slot titles rather than large monetary bonuses.</li><li>Multiple competitors (gamdom, interwetten) offer cashback promotions with no turnover requirements, appealing to regular/VIP players.</li></ul>
                 </div>
             </div>
             
 
-            <div class="grid" id="grid-AT">
+            <div class="grid" id="grid-CH">
                 
-            <article class="card" data-type="Welcome Bonus" data-competitor="Cashpoint">
-                <header class="card__head">
-                    <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://cashpoint.co.at/en/" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">Cashpoint</h3>
-                <p class="card__amount">€100</p>
-                <p class="card__desc">Receive a €100 free bet for sports betting at Cashpoint Austria</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Welcome Bonus" data-competitor="Cashpoint">
-                <header class="card__head">
-                    <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://cashpoint.co.at/en/" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">Cashpoint</h3>
-                <p class="card__amount">€100</p>
-                <p class="card__desc">New bettors receive a bonus as a welcome gift. Support available via telephone: +43 810 000217 and live chat at pointsupport.com.</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Jackpot" data-competitor="Lottoland">
-                <header class="card__head">
-                    <div class="badge">Jackpot</div>
-                    <a class="link" href="https://www.lottoland.at/" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">Lottoland</h3>
-                <p class="card__amount">10,000,000 €</p>
-                <p class="card__desc">Jackpot of 10 million €. Only 13.20 € for a 6-line quick pick. Add quick pick to cart. Only 26.40 € for a 12-line quick pick. Add quick pick to cart.</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Cashback" data-competitor="Mr Green">
-                <header class="card__head">
-                    <div class="badge">Cashback</div>
-                    <a class="link" href="https://www.mrgreen.com/promotions/" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">Mr Green</h3>
-                <p class="card__amount"></p>
-                <p class="card__desc">Cashback is calculated based on the total poker rake accumulated each week. Minimum weekly rake requirement: $200. Rakeback credited within 72 hours of week's end.</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Deposit Bonus" data-competitor="Mr Green">
+            <article class="card" data-type="Deposit Bonus" data-competitor="casino777">
                 <header class="card__head">
                     <div class="badge">Deposit Bonus</div>
-                    <a class="link" href="https://www.mrgreen.com/promotions/" target="_blank" rel="noopener">Open</a>
+                    <a class="link" href="https://www.casino777.ch/en/bonus-information" target="_blank" rel="noopener">Open</a>
                 </header>
-                <h3 class="card__title">Mr Green</h3>
-                <p class="card__amount">Two €10 free bets</p>
-                <p class="card__desc">Deposit & bet €10 and get two €10 live free bets. New players only. Minimum deposit and bet: €/USD 10 / 20 CAD. Promo code required</p>
+                <h3 class="card__title">casino777</h3>
+                <p class="card__amount">Up to CHF 777</p>
+                <p class="card__desc">If you choose this bonus on your first deposit, we will double your amount up to CHF 777 with a bonus</p>
                 <p class="card__wagering"><strong>Wagering:</strong> </p>
             </article>
             
-            <article class="card" data-type="Free Spins" data-competitor="Mr Green">
-                <header class="card__head">
-                    <div class="badge">Free Spins</div>
-                    <a class="link" href="https://www.mrgreen.com/promotions/" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">Mr Green</h3>
-                <p class="card__amount"></p>
-                <p class="card__desc">free spins & cash log in notifications my rewards promotions home slots live casino new games casino games jackpots mr green exclusive blog 01:00 back</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Jackpot" data-competitor="Mr Green">
-                <header class="card__head">
-                    <div class="badge">Jackpot</div>
-                    <a class="link" href="https://www.mrgreen.com/promotions/" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">Mr Green</h3>
-                <p class="card__amount"></p>
-                <p class="card__desc">Exclusive jackpots for Mr Green players. New players can score twice with poker promotions for new players.</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Welcome Bonus" data-competitor="Mr Green">
+            <article class="card" data-type="Welcome Bonus" data-competitor="casino777">
                 <header class="card__head">
                     <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://www.mrgreen.com/promotions/" target="_blank" rel="noopener">Open</a>
+                    <a class="link" href="https://www.casino777.ch/en/bonus-information" target="_blank" rel="noopener">Open</a>
                 </header>
-                <h3 class="card__title">Mr Green</h3>
-                <p class="card__amount">Up to €500 + 200 Free Spins</p>
-                <p class="card__desc">100% deposit match bonus up to €500 + 200 free spins. T&Cs apply. 18+. New players only. Min deposit: €10.</p>
+                <h3 class="card__title">casino777</h3>
+                <p class="card__amount">Up to CHF 777 + 100 Free Spins</p>
+                <p class="card__desc">Welcome bonus up to CHF 777 + 100 free spins. Register now at online casino Switzerland. Bonus information examples.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="gamdom">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://gamdom.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">gamdom</h3>
+                <p class="card__amount">$1,000,000</p>
+                <p class="card__desc">Points system — the more risk you take, the more points you can earn. Learn more. Monthly prize pool of $1,000,000.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="gamdom">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://gamdom.ch/" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">gamdom</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">Free spins, cashback or special deposit bonuses – ideal for regular customers from Switzerland. VIP level reward redemption bronze free spins, exclusive</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="gamdom">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://gamdom.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">gamdom</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">Jackpot hunt ready to chase some life-changing prizes? When you play any Penguin King games, you'll get to enjoy our exclusive Gamdom progressive jackpot.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="gamdom">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://gamdom.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">gamdom</h3>
+                <p class="card__amount">$4,000,000 total prize pool</p>
+                <p class="card__desc">Tournaments running until September 24th! Battle for daily cash prizes and random drops worth up to €350,000 monthly from a massive $4,000,000 total prize pool.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Cashback" data-competitor="gamdom">
+                <header class="card__head">
+                    <div class="badge">Cashback</div>
+                    <a class="link" href="https://gamdom.ch/" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">gamdom</h3>
+                <p class="card__amount">5-10% cashback</p>
+                <p class="card__desc">5-10% loss refund cashback for VIP/regular customers. No turnover requirement. Welcome bonus for new Swiss players. Gamdom no deposit bonus for risk-free play.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="gamdom">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://gamdom.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">gamdom</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">Welcome to Gamdom! Unlock rewards and start earning more.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Cashback" data-competitor="interwetten">
+                <header class="card__head">
+                    <div class="badge">Cashback</div>
+                    <a class="link" href="https://www.interwetten.com/en/landingpages/promotionoverview" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">interwetten</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">Play in our live casino on the weekend and get money back for your losses with the cashback campaign. Drops and wins!</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="interwetten">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://www.interwetten.com/en/content/sportsbook/promotions/loyaltysport" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">interwetten</h3>
+                <p class="card__amount">up to €100</p>
+                <p class="card__desc">Deposit bonus of up to €100! Get your bonus! And it's as simple as this: 1. Activate the bonus. Activate your personal loyalty bonus with your next deposit.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="interwetten">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://www.interwetten.com/en/landingpages/promotionoverview" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">interwetten</h3>
+                <p class="card__amount">Up to €100 + Up to €500</p>
+                <p class="card__desc">Deposit bonus of up to €100! €500 casino loyalty bonus! Bag a 50% bonus of up to €500 on top of your deposits every month in the casino.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="interwetten">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://www.interwetten.com/en/sportsbook" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">interwetten</h3>
+                <p class="card__amount">Up to €100</p>
+                <p class="card__desc">Deposit and we will credit your account with the same amount up to €100. From here, pick the sports betting odds from our online betting site you want</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="interwetten">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.interwetten.com/en/landingpages/promotionoverview" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">interwetten</h3>
+                <p class="card__amount">€10 free bet</p>
+                <p class="card__desc">Every new customer at Interwetten automatically receives a €10 free bet for Book of the Fallen before their first deposit! Simply register.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="swiss4win">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://swiss4win.ch" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">swiss4win</h3>
+                <p class="card__amount">Not specified</p>
+                <p class="card__desc">Free spins for Big Bass Bonanza, 3 Reeler Aztec Gems Megaways, Floating Dragon - Year of the Snake, Aztec Smash, Eternal Empress - Freeze Time, Candy Corner and more</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="swiss4win">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://swiss4win.ch" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">swiss4win</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">Jackpot Bells Age of the Gods, Age of the Gods: Helios, Age of the Gods: Wheels of Olympus, Age of the Gods: Medusa & Monsters, Age of the Gods</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="swiss4win">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://swiss4win.ch" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">swiss4win</h3>
+                <p class="card__amount">Multiple free spins packages</p>
+                <p class="card__desc">Welcome bonus package featuring free spins on various slots: American Eagle 40, Ferocious Fruits 40, Supreme Fruits 40, Wild Fire 6 50, Extreme Hot 50, Fortune Fruits, A Fistful of Wilds</p>
                 <p class="card__wagering"><strong>Wagering:</strong> </p>
             </article>
             
@@ -230,10 +318,10 @@
 
             <script>
             (function() {
-                const payload = {"types": ["Cashback", "Deposit Bonus", "Free Spins", "Jackpot", "Welcome Bonus"], "typeCounts": [1, 1, 1, 2, 3], "competitors": ["Cashpoint", "Lottoland", "Mr Green"], "stackedByType": [[0, 0, 1], [0, 0, 1], [0, 0, 1], [0, 1, 1], [2, 0, 1]]};
-                console.log("Chart payload for AT", payload);
-                renderDonut("donut-AT", payload.types, payload.typeCounts);
-                renderStacked("stacked-AT", payload.competitors, payload.types, payload.stackedByType);
+                const payload = {"types": ["Cashback", "Deposit Bonus", "Free Spins", "Jackpot", "Tournament", "Welcome Bonus"], "typeCounts": [2, 4, 2, 2, 2, 4], "competitors": ["casino777", "gamdom", "interwetten", "swiss4win"], "stackedByType": [[0, 1, 1, 0], [1, 0, 3, 0], [0, 1, 0, 1], [0, 1, 0, 1], [0, 2, 0, 0], [1, 1, 1, 1]]};
+                console.log("Chart payload for CH", payload);
+                renderDonut("donut-CH", payload.types, payload.typeCounts);
+                renderStacked("stacked-CH", payload.competitors, payload.types, payload.stackedByType);
             })();
             </script>
         </section>
