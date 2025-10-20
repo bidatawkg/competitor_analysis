@@ -82,235 +82,171 @@
     <body>
     <div class="container">
     <h1>Competitors Dashboard</h1>
-    <div class="subtitle">Generated on 2025-10-18 10:42</div>
-    <div class="nav"><button class="pill pill--active" onclick="openTab(event, 'CH')">CH</button></div>
+    <div class="subtitle">Generated on 2025-10-14 17:34</div>
+    <div class="nav"><button class="pill pill--active" onclick="openTab(event, 'SA')">SA</button>
+<button class="pill " onclick="openTab(event, 'KW')">KW</button>
+<button class="pill " onclick="openTab(event, 'NZ')">NZ</button></div>
     
-        <section id="CH" class="country" style="display:block;">
+        <section id="SA" class="country" style="display:block;">
             <div class="section-head">
-                <h2 class="country__title">CH</h2>
+                <h2 class="country__title">SA</h2>
                 <div class="stats">
-                    <div class="stat"><div class="stat__num">4</div><div class="stat__label">Competitors</div></div>
-                    <div class="stat"><div class="stat__num">16</div><div class="stat__label">Promotions</div></div>
-                    <div class="stat"><div class="stat__num">6</div><div class="stat__label">Bonus types</div></div>
+                    <div class="stat"><div class="stat__num">3</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">10</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Bonus types</div></div>
                 </div>
             </div>
 
             <div class="controls">
                 <div class="control">
                     <label>Promotion Type</label>
-                    <select class="select" id="type-CH" onchange="filterCards('CH')">
+                    <select class="select" id="type-SA" onchange="filterCards('SA')">
                         <option value="ALL">All</option>
-                        <option value="Jackpot">Jackpot</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Cashback">Cashback</option><option value="Tournament">Tournament</option><option value="Deposit Bonus">Deposit Bonus</option><option value="Free Spins">Free Spins</option>
+                        <option value="Tournament">Tournament</option><option value="Jackpot">Jackpot</option><option value="Welcome Bonus">Welcome Bonus</option><option value="Free Spins">Free Spins</option><option value="Deposit Bonus">Deposit Bonus</option>
                     </select>
                 </div>
                 <div class="control">
                     <label>Search</label>
-                    <input class="input" type="search" id="search-CH" placeholder="Filter by text..." oninput="filterCards('CH')" />
+                    <input class="input" type="search" id="search-SA" placeholder="Filter by text..." oninput="filterCards('SA')" />
                 </div>
             </div>
 
             <div class="charts">
-                <div class="chart"><canvas id="donut-CH"></canvas></div>
-                <div class="chart"><canvas id="stacked-CH"></canvas></div>
+                <div class="chart"><canvas id="donut-SA"></canvas></div>
+                <div class="chart"><canvas id="stacked-SA"></canvas></div>
             </div>
 
             
             <div class="analysis">
-                <h3>Key Market Insights (CH)</h3>
+                <h3>Key Market Insights (SA)</h3>
                 <div class="analysis-section">
                     <h4>🎯 More aggressive promotions</h4>
-                    <ul><li><strong>gamdom</strong>: Tournament - $4,000,000 total prize pool <a href='https://gamdom.com/promotions' target='_blank'>Link</a></li><li><strong>gamdom</strong>: Tournament - $1,000,000 <a href='https://gamdom.com/promotions' target='_blank'>Link</a></li><li><strong>casino777</strong>: Welcome Bonus - Up to CHF 777 + 100 Free Spins <a href='https://www.casino777.ch/en/bonus-information' target='_blank'>Link</a></li></ul>
+                    <ul><li><strong>JustCasino</strong>: Welcome Bonus - $7,777 + 300 Free Spins and 100% up to $1,111 + 100 Free Spins <a href='https://justcasino.com' target='_blank'>Link</a></li><li><strong>JustCasino</strong>: Jackpot - $7,777 + 300 free spins <a href='https://justcasino.com' target='_blank'>Link</a></li><li><strong>JustCasino</strong>: Deposit Bonus - 100% up to $1,111 + 100 free spins <a href='https://www.justcasino.com' target='_blank'>Link</a></li></ul>
                 </div>
                 <div class="analysis-section">
                     <h4>🎮 Highlighted games</h4>
-                    <ul><li><strong>gamdom</strong>: Penguin King games <em>(Exclusive progressive jackpot available when playing Penguin King games)</em></li><li><strong>swiss4win</strong>: Big Bass Bonanza, 3 Reeler Aztec Gems Megaways, Floating Dragon - Year of the Snake, Aztec Smash, Eternal Empress - Freeze Time, Candy Corner <em>(Free spins offered on multiple popular slot games)</em></li><li><strong>swiss4win</strong>: Age of the Gods series (Helios, Wheels of Olympus, Medusa & Monsters, etc.) <em>(Jackpot promotion featuring various Age of the Gods slot games)</em></li><li><strong>interwetten</strong>: Book of the Fallen <em>(€10 free bet offered for this specific game to new customers before first deposit)</em></li></ul>
+                    <ul><li><strong>1x bet</strong>: Champions League stars <em>(Star League: bet on Champions League stars and win 70,000 USD!)</em></li><li><strong>1x bet</strong>: Asian football stars <em>(Asian league elite place bets on asian football stars)</em></li><li><strong>JustCasino</strong>: Jackpots <em>(Tournament with payments deal promo featuring just jackpots)</em></li></ul>
                 </div>
                 <div class="analysis-section">
                     <h4>📊 Average values by promotion type</h4>
-                    <ul><li><strong>Welcome Bonus</strong>: Up to CHF 777 + 100 Free Spins (casino777), €10 free bet (interwetten), multiple free spins packages (swiss4win)</li><li><strong>Deposit Bonus</strong>: Up to CHF 777 (casino777), up to €100 (interwetten), up to €100 + up to €500 monthly (interwetten)</li><li><strong>Tournament</strong>: $2,500,000 average prize pool (based on $1,000,000 and $4,000,000 tournaments)</li><li><strong>Cashback</strong>: 5-10% loss refund (gamdom), weekend cashback on live casino losses (interwetten)</li><li><strong>Free Spins</strong>: Multiple free spins on various slot games (swiss4win), VIP bronze level free spins (gamdom)</li></ul>
+                    <ul><li><strong>Welcome Bonus</strong>: $4,444 + 200 free spins (based on $7,777 + 300 FS and up to €1,500 + 150 FS)</li><li><strong>Deposit Bonus</strong>: 100% up to $1,111 + 100 free spins (most common offer)</li><li><strong>Free Spins</strong>: Free Spins / Free Bets (amount not specified in most cases)</li><li><strong>Jackpot</strong>: $7,777 + 300 free spins</li></ul>
                 </div>
                 <div class="analysis-section">
                     <h4>⭐ Differential data</h4>
-                    <ul><li>Gamdom offers exceptionally high tournament prize pools reaching $4,000,000 total and $1,000,000 monthly, significantly larger than typical casino promotions.</li><li>Interwetten provides a unique €10 free bet for 'Book of the Fallen' game before first deposit, targeting new customers with a specific game incentive.</li><li>Swiss4win focuses heavily on free spins across multiple popular slot titles rather than large monetary bonuses.</li><li>Multiple competitors (gamdom, interwetten) offer cashback promotions with no turnover requirements, appealing to regular/VIP players.</li></ul>
+                    <ul><li>JustCasino dominates the market with the highest bonus amounts, including a massive $7,777 + 300 free spins welcome package and jackpot offer</li><li>1x bet stands out with sports betting integration, offering large cash prizes (70,000 USD) for betting on specific sports events like Champions League and Asian football</li><li>EmirBet offers the most player-friendly conditions with a €10 free bet and weekly cashback refund up to 10% on losses</li><li>Multiple promotions from JustCasino mention 'no bonus code required' and availability for multiple regions/languages</li><li>JustCasino has the most diverse promotion types including welcome bonuses, deposit bonuses, free spins, jackpots, and tournaments</li></ul>
                 </div>
             </div>
             
 
-            <div class="grid" id="grid-CH">
+            <div class="grid" id="grid-SA">
                 
-            <article class="card" data-type="Deposit Bonus" data-competitor="casino777">
+            <article class="card" data-type="Deposit Bonus" data-competitor="1x bet">
                 <header class="card__head">
                     <div class="badge">Deposit Bonus</div>
-                    <a class="link" href="https://www.casino777.ch/en/bonus-information" target="_blank" rel="noopener">Open</a>
+                    <a class="link" href="https://www.1xbet.com" target="_blank" rel="noopener">Open</a>
                 </header>
-                <h3 class="card__title">casino777</h3>
-                <p class="card__amount">Up to CHF 777</p>
-                <p class="card__desc">If you choose this bonus on your first deposit, we will double your amount up to CHF 777 with a bonus</p>
+                <h3 class="card__title">1x bet</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">Register and receive a bonus on the 1st deposit. Star League: bet on Champions League stars and win 70,000 USD!</p>
                 <p class="card__wagering"><strong>Wagering:</strong> </p>
             </article>
             
-            <article class="card" data-type="Welcome Bonus" data-competitor="casino777">
-                <header class="card__head">
-                    <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://www.casino777.ch/en/bonus-information" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">casino777</h3>
-                <p class="card__amount">Up to CHF 777 + 100 Free Spins</p>
-                <p class="card__desc">Welcome bonus up to CHF 777 + 100 free spins. Register now at online casino Switzerland. Bonus information examples.</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Tournament" data-competitor="gamdom">
-                <header class="card__head">
-                    <div class="badge">Tournament</div>
-                    <a class="link" href="https://gamdom.com/promotions" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">gamdom</h3>
-                <p class="card__amount">$1,000,000</p>
-                <p class="card__desc">Points system — the more risk you take, the more points you can earn. Learn more. Monthly prize pool of $1,000,000.</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Free Spins" data-competitor="gamdom">
+            <article class="card" data-type="Free Spins" data-competitor="1x bet">
                 <header class="card__head">
                     <div class="badge">Free Spins</div>
-                    <a class="link" href="https://gamdom.ch/" target="_blank" rel="noopener">Open</a>
+                    <a class="link" href="https://1xbet.com" target="_blank" rel="noopener">Open</a>
                 </header>
-                <h3 class="card__title">gamdom</h3>
-                <p class="card__amount"></p>
-                <p class="card__desc">Free spins, cashback or special deposit bonuses – ideal for regular customers from Switzerland. VIP level reward redemption bronze free spins, exclusive</p>
+                <h3 class="card__title">1x bet</h3>
+                <p class="card__amount">Free Spins / Free Bets</p>
+                <p class="card__desc">Free spins register crownbet get free bets for every task you complete! Get your free bet asian league elite place bets on asian football stars</p>
                 <p class="card__wagering"><strong>Wagering:</strong> </p>
             </article>
             
-            <article class="card" data-type="Jackpot" data-competitor="gamdom">
-                <header class="card__head">
-                    <div class="badge">Jackpot</div>
-                    <a class="link" href="https://gamdom.com/promotions" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">gamdom</h3>
-                <p class="card__amount"></p>
-                <p class="card__desc">Jackpot hunt ready to chase some life-changing prizes? When you play any Penguin King games, you'll get to enjoy our exclusive Gamdom progressive jackpot.</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Tournament" data-competitor="gamdom">
-                <header class="card__head">
-                    <div class="badge">Tournament</div>
-                    <a class="link" href="https://gamdom.com/promotions" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">gamdom</h3>
-                <p class="card__amount">$4,000,000 total prize pool</p>
-                <p class="card__desc">Tournaments running until September 24th! Battle for daily cash prizes and random drops worth up to €350,000 monthly from a massive $4,000,000 total prize pool.</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Cashback" data-competitor="gamdom">
-                <header class="card__head">
-                    <div class="badge">Cashback</div>
-                    <a class="link" href="https://gamdom.ch/" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">gamdom</h3>
-                <p class="card__amount">5-10% cashback</p>
-                <p class="card__desc">5-10% loss refund cashback for VIP/regular customers. No turnover requirement. Welcome bonus for new Swiss players. Gamdom no deposit bonus for risk-free play.</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Welcome Bonus" data-competitor="gamdom">
+            <article class="card" data-type="Welcome Bonus" data-competitor="1x bet">
                 <header class="card__head">
                     <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://gamdom.com/promotions" target="_blank" rel="noopener">Open</a>
+                    <a class="link" href="https://www.1xbet.com" target="_blank" rel="noopener">Open</a>
                 </header>
-                <h3 class="card__title">gamdom</h3>
-                <p class="card__amount"></p>
-                <p class="card__desc">Welcome to Gamdom! Unlock rewards and start earning more.</p>
+                <h3 class="card__title">1x bet</h3>
+                <p class="card__amount">up to €1,500 + 150 free spins</p>
+                <p class="card__desc">welcome package up to €1,500 + 150 free spins register crownbet get free bets for every task you complete! get your free bet asian league elite place</p>
                 <p class="card__wagering"><strong>Wagering:</strong> </p>
             </article>
             
-            <article class="card" data-type="Cashback" data-competitor="interwetten">
-                <header class="card__head">
-                    <div class="badge">Cashback</div>
-                    <a class="link" href="https://www.interwetten.com/en/landingpages/promotionoverview" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">interwetten</h3>
-                <p class="card__amount"></p>
-                <p class="card__desc">Play in our live casino on the weekend and get money back for your losses with the cashback campaign. Drops and wins!</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Deposit Bonus" data-competitor="interwetten">
+            <article class="card" data-type="Deposit Bonus" data-competitor="EmirBet">
                 <header class="card__head">
                     <div class="badge">Deposit Bonus</div>
-                    <a class="link" href="https://www.interwetten.com/en/content/sportsbook/promotions/loyaltysport" target="_blank" rel="noopener">Open</a>
+                    <a class="link" href="https://emirbet.net" target="_blank" rel="noopener">Open</a>
                 </header>
-                <h3 class="card__title">interwetten</h3>
-                <p class="card__amount">up to €100</p>
-                <p class="card__desc">Deposit bonus of up to €100! Get your bonus! And it's as simple as this: 1. Activate the bonus. Activate your personal loyalty bonus with your next deposit.</p>
+                <h3 class="card__title">EmirBet</h3>
+                <p class="card__amount">€10 Free Bet</p>
+                <p class="card__desc">€10 free bet on first bets, weekly cashback refund up to 10% on losses, payment methods</p>
                 <p class="card__wagering"><strong>Wagering:</strong> </p>
             </article>
             
-            <article class="card" data-type="Deposit Bonus" data-competitor="interwetten">
+            <article class="card" data-type="Deposit Bonus" data-competitor="JustCasino">
                 <header class="card__head">
                     <div class="badge">Deposit Bonus</div>
-                    <a class="link" href="https://www.interwetten.com/en/landingpages/promotionoverview" target="_blank" rel="noopener">Open</a>
+                    <a class="link" href="https://www.justcasino.com" target="_blank" rel="noopener">Open</a>
                 </header>
-                <h3 class="card__title">interwetten</h3>
-                <p class="card__amount">Up to €100 + Up to €500</p>
-                <p class="card__desc">Deposit bonus of up to €100! €500 casino loyalty bonus! Bag a 50% bonus of up to €500 on top of your deposits every month in the casino.</p>
+                <h3 class="card__title">JustCasino</h3>
+                <p class="card__amount">100% up to $1,111 + 100 free spins</p>
+                <p class="card__desc">Deposit bonus 100% up to $1,111 + 100 free spins no bonus code required because space is full of surprises. Sign up second deposit bonus 100% up to $1,1</p>
                 <p class="card__wagering"><strong>Wagering:</strong> </p>
             </article>
             
-            <article class="card" data-type="Deposit Bonus" data-competitor="interwetten">
-                <header class="card__head">
-                    <div class="badge">Deposit Bonus</div>
-                    <a class="link" href="https://www.interwetten.com/en/sportsbook" target="_blank" rel="noopener">Open</a>
-                </header>
-                <h3 class="card__title">interwetten</h3>
-                <p class="card__amount">Up to €100</p>
-                <p class="card__desc">Deposit and we will credit your account with the same amount up to €100. From here, pick the sports betting odds from our online betting site you want</p>
-                <p class="card__wagering"><strong>Wagering:</strong> </p>
-            </article>
-            
-            <article class="card" data-type="Welcome Bonus" data-competitor="interwetten">
+            <article class="card" data-type="Welcome Bonus" data-competitor="JustCasino">
                 <header class="card__head">
                     <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://www.interwetten.com/en/landingpages/promotionoverview" target="_blank" rel="noopener">Open</a>
+                    <a class="link" href="https://www.justcasino.com/welcome-bonus" target="_blank" rel="noopener">Open</a>
                 </header>
-                <h3 class="card__title">interwetten</h3>
-                <p class="card__amount">€10 free bet</p>
-                <p class="card__desc">Every new customer at Interwetten automatically receives a €10 free bet for Book of the Fallen before their first deposit! Simply register.</p>
+                <h3 class="card__title">JustCasino</h3>
+                <p class="card__amount">100% up to $1,111 + 100 Free Spins</p>
+                <p class="card__desc">bonus 100% up to $1,111 +100 free spins no bonus code required because space is full of surprises sign up second deposit bonus 100% up to $1,111 +50 free spins</p>
                 <p class="card__wagering"><strong>Wagering:</strong> </p>
             </article>
             
-            <article class="card" data-type="Free Spins" data-competitor="swiss4win">
+            <article class="card" data-type="Free Spins" data-competitor="JustCasino">
                 <header class="card__head">
                     <div class="badge">Free Spins</div>
-                    <a class="link" href="https://swiss4win.ch" target="_blank" rel="noopener">Open</a>
+                    <a class="link" href="https://justcasino.com/offers" target="_blank" rel="noopener">Open</a>
                 </header>
-                <h3 class="card__title">swiss4win</h3>
+                <h3 class="card__title">JustCasino</h3>
                 <p class="card__amount">Not specified</p>
-                <p class="card__desc">Free spins for Big Bass Bonanza, 3 Reeler Aztec Gems Megaways, Floating Dragon - Year of the Snake, Aztec Smash, Eternal Empress - Freeze Time, Candy Corner and more</p>
+                <p class="card__desc">Free spins nothing but casino join now! Huge selection over 12,000 games, 24hr support live chat in English, no waiting fast withdrawals.</p>
                 <p class="card__wagering"><strong>Wagering:</strong> </p>
             </article>
             
-            <article class="card" data-type="Jackpot" data-competitor="swiss4win">
+            <article class="card" data-type="Jackpot" data-competitor="JustCasino">
                 <header class="card__head">
                     <div class="badge">Jackpot</div>
-                    <a class="link" href="https://swiss4win.ch" target="_blank" rel="noopener">Open</a>
+                    <a class="link" href="https://justcasino.com" target="_blank" rel="noopener">Open</a>
                 </header>
-                <h3 class="card__title">swiss4win</h3>
-                <p class="card__amount"></p>
-                <p class="card__desc">Jackpot Bells Age of the Gods, Age of the Gods: Helios, Age of the Gods: Wheels of Olympus, Age of the Gods: Medusa & Monsters, Age of the Gods</p>
+                <h3 class="card__title">JustCasino</h3>
+                <p class="card__amount">$7,777 + 300 free spins</p>
+                <p class="card__desc">jackpots ar-en en-au ca-en nz ar-en ar de at-de ch-de ch-fr no fi $7,777 + 300 free spins nothing but casino join now! huge selection over 12 000 game</p>
                 <p class="card__wagering"><strong>Wagering:</strong> </p>
             </article>
             
-            <article class="card" data-type="Welcome Bonus" data-competitor="swiss4win">
+            <article class="card" data-type="Welcome Bonus" data-competitor="JustCasino">
                 <header class="card__head">
                     <div class="badge">Welcome Bonus</div>
-                    <a class="link" href="https://swiss4win.ch" target="_blank" rel="noopener">Open</a>
+                    <a class="link" href="https://justcasino.com" target="_blank" rel="noopener">Open</a>
                 </header>
-                <h3 class="card__title">swiss4win</h3>
-                <p class="card__amount">Multiple free spins packages</p>
-                <p class="card__desc">Welcome bonus package featuring free spins on various slots: American Eagle 40, Ferocious Fruits 40, Supreme Fruits 40, Wild Fire 6 50, Extreme Hot 50, Fortune Fruits, A Fistful of Wilds</p>
+                <h3 class="card__title">JustCasino</h3>
+                <p class="card__amount">$7,777 + 300 Free Spins and 100% up to $1,111 + 100 Free Spins</p>
+                <p class="card__desc">welcome offer $7,777 + 300 free spins join now! first deposit bonus 100% up to $1,111 +100 free spins no bonus code required because space is full of</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="JustCasino">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://www.justcasino.com/offers" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">JustCasino</h3>
+                <p class="card__amount">$7,777 + 300 free spins</p>
+                <p class="card__desc">Join the tournament with payments deal promo featuring just jackpots. Available for multiple regions including ar-en, en-au, ca-en, nz, ar-en, ar, de, at-de, ch-de, ch-fr, no, fi</p>
                 <p class="card__wagering"><strong>Wagering:</strong> </p>
             </article>
             
@@ -318,10 +254,406 @@
 
             <script>
             (function() {
-                const payload = {"types": ["Cashback", "Deposit Bonus", "Free Spins", "Jackpot", "Tournament", "Welcome Bonus"], "typeCounts": [2, 4, 2, 2, 2, 4], "competitors": ["casino777", "gamdom", "interwetten", "swiss4win"], "stackedByType": [[0, 1, 1, 0], [1, 0, 3, 0], [0, 1, 0, 1], [0, 1, 0, 1], [0, 2, 0, 0], [1, 1, 1, 1]]};
-                console.log("Chart payload for CH", payload);
-                renderDonut("donut-CH", payload.types, payload.typeCounts);
-                renderStacked("stacked-CH", payload.competitors, payload.types, payload.stackedByType);
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Tournament", "Welcome Bonus"], "typeCounts": [3, 2, 1, 1, 3], "competitors": ["1x bet", "EmirBet", "JustCasino"], "stackedByType": [[1, 1, 1], [1, 0, 1], [0, 0, 1], [0, 0, 1], [1, 0, 2]]};
+                console.log("Chart payload for SA", payload);
+                renderDonut("donut-SA", payload.types, payload.typeCounts);
+                renderStacked("stacked-SA", payload.competitors, payload.types, payload.stackedByType);
+            })();
+            </script>
+        </section>
+        
+
+        <section id="KW" class="country" >
+            <div class="section-head">
+                <h2 class="country__title">KW</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">4</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">6</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">3</div><div class="stat__label">Bonus types</div></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-KW" onchange="filterCards('KW')">
+                        <option value="ALL">All</option>
+                        <option value="Welcome Bonus">Welcome Bonus</option><option value="Jackpot">Jackpot</option><option value="Deposit Bonus">Deposit Bonus</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-KW" placeholder="Filter by text..." oninput="filterCards('KW')" />
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart"><canvas id="donut-KW"></canvas></div>
+                <div class="chart"><canvas id="stacked-KW"></canvas></div>
+            </div>
+
+            
+            <div class="analysis">
+                <h3>Key Market Insights (KW)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>888 Casino</strong>: Jackpot - €300,128.89 (Jackpot Gold), €488.16 (Ultimate Buffalo Cash) <a href='https://www.888casino.com' target='_blank'>Link</a></li><li><strong>Casinia</strong>: Welcome Bonus - 100% up to €100 + 200% up to 3,000 USDT + 100% up to 200 USDT <a href='https://www.casinia.com' target='_blank'>Link</a></li><li><strong>Casinia</strong>: Welcome Bonus - 100% up to €500 + 200 FS <a href='https://www.casinia.com' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>888 Casino</strong>: Jackpot Gold, Ultimate Buffalo Cash, The Sweetest Cash Collect, Flaming Wild Crown <em>(Multiple jackpot games with significant prize amounts highlighted)</em></li><li><strong>Casinia</strong>: Tournaments, VIP levels, Bonus crab shop <em>(Additional gaming features included in welcome bonuses)</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: Approx. 133% match bonus + 133 free spins (based on Casinia and Rabona offers)</li><li><strong>Jackpot</strong>: €300,128.89 (single large jackpot amount from 888 Casino)</li><li><strong>Deposit Bonus</strong>: €10 Free Bet + 10% cashback (from EmirBet)</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>888 Casino offers exceptionally high jackpot prizes (over €300,000), which is significantly higher than typical casino bonuses</li><li>Casinia provides multiple welcome bonuses including crypto options (up to 200% match in USDT), showing strong crypto integration</li><li>EmirBet offers a unique weekly cashback refund of up to 10% on losses, providing ongoing player protection</li><li>Rabona focuses specifically on crypto sports betting welcome bonuses, targeting a niche market</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-KW">
+                
+            <article class="card" data-type="Jackpot" data-competitor="888 Casino">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://www.888casino.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">888 Casino</h3>
+                <p class="card__amount">€300,128.89 (Jackpot Gold), €488.16 (Ultimate Buffalo Cash)</p>
+                <p class="card__desc">jackpot gold 300.128,89€ nuevos juegos de casino online ultimate buffalo cash 488,16€ the sweetest cash collect flaming wild crown don premiote jackpo</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 fs + 1 bonus crab</p>
+                <p class="card__desc">Welcome bonus 100% up to €500 + 200 free spins + 1 bonus crab. Includes tournaments, VIP levels, and bonus crab shop.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €100 + 200% up to 3,000 USDT + 100% up to 200 USDT</p>
+                <p class="card__desc">deposit bonus 100% up to €100 join now casino crypto welcome bonus 200% up to 3,000 usdt join now sport crypto welcome bonus 100% up to 200 usdt join</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Casinia">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.casinia.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Casinia</h3>
+                <p class="card__amount">100% up to €500 + 200 FS</p>
+                <p class="card__desc">Welcome bonus 100% up to €500 + 200 free spins + 1 bonus crab. Sport first deposit bonus 100% up to €100. Casino crypto welcome bonus 200% up.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="EmirBet">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://emirbet.net" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">EmirBet</h3>
+                <p class="card__amount">€10 Free Bet</p>
+                <p class="card__desc">€10 free bet on first bets, weekly cashback refund up to 10% on losses, payment methods, emirbet</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="Rabona">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://rabona.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">Rabona</h3>
+                <p class="card__amount">100% up to 200 USDT</p>
+                <p class="card__desc">bonus crab niveles vip español centro de ayuda deportes apuestas en vivo casino bono de bienvenida crypto para deportes 100% hasta 200 usdt ¡únete ya!</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            </div>
+
+            <script>
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Jackpot", "Welcome Bonus"], "typeCounts": [1, 1, 4], "competitors": ["888 Casino", "Casinia", "EmirBet", "Rabona"], "stackedByType": [[0, 0, 1, 0], [1, 0, 0, 0], [0, 3, 0, 1]]};
+                console.log("Chart payload for KW", payload);
+                renderDonut("donut-KW", payload.types, payload.typeCounts);
+                renderStacked("stacked-KW", payload.competitors, payload.types, payload.stackedByType);
+            })();
+            </script>
+        </section>
+        
+
+        <section id="NZ" class="country" >
+            <div class="section-head">
+                <h2 class="country__title">NZ</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat__num">4</div><div class="stat__label">Competitors</div></div>
+                    <div class="stat"><div class="stat__num">18</div><div class="stat__label">Promotions</div></div>
+                    <div class="stat"><div class="stat__num">5</div><div class="stat__label">Bonus types</div></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label>Promotion Type</label>
+                    <select class="select" id="type-NZ" onchange="filterCards('NZ')">
+                        <option value="ALL">All</option>
+                        <option value="Deposit Bonus">Deposit Bonus</option><option value="Tournament">Tournament</option><option value="Jackpot">Jackpot</option><option value="Free Spins">Free Spins</option><option value="Welcome Bonus">Welcome Bonus</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Search</label>
+                    <input class="input" type="search" id="search-NZ" placeholder="Filter by text..." oninput="filterCards('NZ')" />
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart"><canvas id="donut-NZ"></canvas></div>
+                <div class="chart"><canvas id="stacked-NZ"></canvas></div>
+            </div>
+
+            
+            <div class="analysis">
+                <h3>Key Market Insights (NZ)</h3>
+                <div class="analysis-section">
+                    <h4>🎯 More aggressive promotions</h4>
+                    <ul><li><strong>leovegas</strong>: Welcome Bonus - Up to $1,000 + 3,000 Free Spins <a href='https://leovegas.com' target='_blank'>Link</a></li><li><strong>betvictor</strong>: Welcome Bonus - NZ$1500 + 200 FS <a href='https://www.betvictor.nz' target='_blank'>Link</a></li><li><strong>casumo</strong>: Welcome Bonus - 110% up to $1100 + 60 spins <a href='https://casumo.com/promotions' target='_blank'>Link</a></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>🎮 Highlighted games</h4>
+                    <ul><li><strong>betvictor</strong>: Gonzo’s Quest <em>(Free spins and expanding symbols on Gonzo’s Quest (NetEnt) with avalanche reels and increasing multipliers)</em></li><li><strong>betvictor</strong>: Sweet Bonanza <em>(Free spins on Sweet Bonanza (Pragmatic))</em></li><li><strong>christchurchcasino</strong>: Pragmatic Play Megaways games <em>(Free spins on Pragmatic Play Megaways games with minimum deposit)</em></li><li><strong>leovegas</strong>: Halloween Tournament <em>(Tournament with $25,000 prize pool for 500 players)</em></li><li><strong>casumo</strong>: Jackpot Splash <em>(Year-long jackpot celebration from 15.01.2025 to 21.12.2025)</em></li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>📊 Average values by promotion type</h4>
+                    <ul><li><strong>Welcome Bonus</strong>: Up to NZ$1,150 + 940 Free Spins</li><li><strong>Free Spins</strong>: 20-200 Free Spins</li><li><strong>Tournament</strong>: $15,000 prize pool</li><li><strong>Deposit Bonus</strong>: Up to $1,100 + 60 Free Spins</li></ul>
+                </div>
+                <div class="analysis-section">
+                    <h4>⭐ Differential data</h4>
+                    <ul><li>LeoVegas offers the highest number of free spins (3,000) in their welcome bonus, significantly more than competitors</li><li>BetVictor provides the highest cash bonus amount (NZ$1,500) in their welcome offer</li><li>Casumo has the longest running promotion with their Jackpot Splash lasting almost a full year</li><li>Multiple competitors are highlighting specific game providers and mechanics (NetEnt, Pragmatic Play, Megaways)</li><li>Tournament prizes range from $5,000 to $25,000, showing significant prize pool investments</li></ul>
+                </div>
+            </div>
+            
+
+            <div class="grid" id="grid-NZ">
+                
+            <article class="card" data-type="Free Spins" data-competitor="betvictor">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://betvictor.nz" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">betvictor</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">Free spins and expanding symbols. Gonzo’s Quest NetEnt 95.97% quest for treasure with avalanche reels and increasing multipliers. Sweet Bonanza Pragmatic</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="betvictor">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://betvictor.nz" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">betvictor</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">Jackpot slot with respin and money respin features. Top advantages of Bet Victor for New Zealand players choosing Bet Victor offers a wealth of unique</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="betvictor">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://www.betvictor.nz" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">betvictor</h3>
+                <p class="card__amount">NZ$1500 + 200 FS</p>
+                <p class="card__desc">Welcome bonus up to NZ$1500 + 200 Free Spins</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Deposit Bonus" data-competitor="casumo">
+                <header class="card__head">
+                    <div class="badge">Deposit Bonus</div>
+                    <a class="link" href="https://casumo.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">casumo</h3>
+                <p class="card__amount">Up to $1100 + 60 Free Spins</p>
+                <p class="card__desc">Deposit bonus up to $1,100 on the first deposit + 60 bonus spins (selected games only) of $0.20</p>
+                <p class="card__wagering"><strong>Wagering:</strong> 30x</p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="casumo">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://casumo.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">casumo</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">jackpot splash prepare for a year-long jackpot celebration! ready to make a splash? 15.01.2025-21.12.2025 let's play 18+. opt in required.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="casumo">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://casumo.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">casumo</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">Tournaments 04.06.2025 - 19.11.2025 let's play 18+. opt in required. promo period: 04.06.2025 - 19.11.2025. min. bet required to qualify is $0,30</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="casumo">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://casumo.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">casumo</h3>
+                <p class="card__amount">110% up to $1100 + 60 spins</p>
+                <p class="card__desc">110% deposit bonus up to $1100 + 60 bonus spins for new customers only</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="christchurchcasino">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://christchurchcasino.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">christchurchcasino</h3>
+                <p class="card__amount">20 Free Spins</p>
+                <p class="card__desc">deposit nz$20+ and enjoy 20 free spins on pragmatic play megaways games. 18+ t&cs apply please play responsibly gamblingtherapy.org read more reload r</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="christchurchcasino">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://www.christchurchcasino.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">christchurchcasino</h3>
+                <p class="card__amount">Free Spins + 50% Bonus</p>
+                <p class="card__desc">Free spins on Pragmatic Play Megaways games. 18+ T&Cs apply. Please play responsibly gamblingtherapy.org. Read more Reload Rush get 50% bonus instantly.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="christchurchcasino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://christchurchcasino.com/offers" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">christchurchcasino</h3>
+                <p class="card__amount">Up to NZ$1,000 + 500</p>
+                <p class="card__desc">jackpots drops & wins table games blackjack roulette poker providers promotions gamble with care t&cs apply. welcome offer up to nz$1,000 bonus + 500</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="christchurchcasino">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://christchurchcasino.com/offers" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">christchurchcasino</h3>
+                <p class="card__amount">up to NZ$1,000 + 500 loyalty points</p>
+                <p class="card__desc">welcome offer up to nz$1,000 bonus + 500 loyalty points! about us terms & conditions live support ooops! nothing to see here it seems like you have en</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="leovegas">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://leovegas.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">leovegas</h3>
+                <p class="card__amount">Up to $1,000 + 3,000 Free Spins</p>
+                <p class="card__desc">Get a 100% deposit match bonus up to $1,000 and 3,000 free spins. Get your offer now, in a few easy steps! 18+ leosafeplay.com</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="leovegas">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://leovegas.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">leovegas</h3>
+                <p class="card__amount">up to $1,000 & 3,000 free spins</p>
+                <p class="card__desc">deposit match: up to $1,000 & 3,000 free spins get your offer now, in a few easy steps! get welcome offer 18+ leosafeplay.com, promotional t&cs apply.</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="leovegas">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://leovegas.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">leovegas</h3>
+                <p class="card__amount">$5,000</p>
+                <p class="card__desc">Free spins! But, only the boldest of them all will rise to the top of the leaderboard and vanish with $5,000 in cash. Terms & conditions gates to glo</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Free Spins" data-competitor="leovegas">
+                <header class="card__head">
+                    <div class="badge">Free Spins</div>
+                    <a class="link" href="https://leovegas.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">leovegas</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">free spins get your offer now, in a few easy steps! get welcome offer 18+ leosafeplay.com, promotional t&cs apply. please play responsibly. leovegas s</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Jackpot" data-competitor="leovegas">
+                <header class="card__head">
+                    <div class="badge">Jackpot</div>
+                    <a class="link" href="https://leovegas.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">leovegas</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">jackpot jackpot games are what pokie playing dreams are made of! while pokies themselves are entertaining enough, the thrill of lucking into a mega-mi</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Welcome Bonus" data-competitor="leovegas">
+                <header class="card__head">
+                    <div class="badge">Welcome Bonus</div>
+                    <a class="link" href="https://leovegas.com" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">leovegas</h3>
+                <p class="card__amount"></p>
+                <p class="card__desc">jackpots crash & mine games ready to drop bingo table games classic slots virtual sports join today and choose any one of our roaring welcome offers!</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            <article class="card" data-type="Tournament" data-competitor="leovegas">
+                <header class="card__head">
+                    <div class="badge">Tournament</div>
+                    <a class="link" href="https://leovegas.com/promotions" target="_blank" rel="noopener">Open</a>
+                </header>
+                <h3 class="card__title">leovegas</h3>
+                <p class="card__amount">$25,000</p>
+                <p class="card__desc">tournament and claw your way into a $25,000 prize pool. this halloween tourney gives 500 players the chance to walk away with scream-worthy cash prize</p>
+                <p class="card__wagering"><strong>Wagering:</strong> </p>
+            </article>
+            
+            </div>
+
+            <script>
+            (function() {
+                const payload = {"types": ["Deposit Bonus", "Free Spins", "Jackpot", "Tournament", "Welcome Bonus"], "typeCounts": [1, 4, 3, 3, 7], "competitors": ["betvictor", "casumo", "christchurchcasino", "leovegas"], "stackedByType": [[0, 1, 0, 0], [1, 0, 2, 1], [1, 1, 0, 1], [0, 1, 0, 2], [1, 1, 2, 3]]};
+                console.log("Chart payload for NZ", payload);
+                renderDonut("donut-NZ", payload.types, payload.typeCounts);
+                renderStacked("stacked-NZ", payload.competitors, payload.types, payload.stackedByType);
             })();
             </script>
         </section>
