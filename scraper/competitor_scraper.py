@@ -309,7 +309,7 @@ class CompetitorScraper:
                 "EmirBet": ["https://emirbet.com/ar/promotions"],
                 "JustCasino": ["justcasino.com/vip","https://www.justcasino.com/en-AR/extra_bonus?exit-intent-offer=modal"],
             },
-            "NZ": [
+            "NZ": {
                 "Jackpot City": ["https://www.jackpotcitycasino.com/new-zealand/casino-promotions/","https://www.jackpotcitycasino.com/loyalty-rewards/"],
                 "Wildz": ["https://www.wildz.com/nz/bonus/","https://www.wildz.com/nz/info/loyalty-terms/"],
                 "Spincasino": ["https://www.spincasino.com/nz/casino-promotions/","https://www.spincasino.com/ca/blog/how-to-earn-loyalty-points/"],
@@ -320,7 +320,7 @@ class CompetitorScraper:
                 "christchurchcasino": ["https://christchurchcasino.com/promotions","chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://christchurchcasino.co.nz/wp-content/uploads/2019/04/Players-Club-Terms-and-Conditions.pdf"],
                 "highroller": ["https://www.highroller.com/en-nz/promotions","https://www.highroller.com/en-nz/loyalty","https://www.highroller.com/en-nz/promotions/welcome-bonus#login"],
                 "casumo": ["https://www.casumo.com/en-nz/promotions/"],
-            ],
+            },
             "DE": {
                 "NV Casino": ["https://nv.casino/de", "https://kelleycarter.com/fan-engagement/nv-casino-official-loyalty-program-benefits-and-rewards/"],
                 "Tipico": ["https://games.tipico.de/de", "https://sports.tipico.de/en", "https://www.tipico.de/de", "https://sports.tipico.de", "https://sportshandle.com/tipico-sportsbook-cashback-program/", ""],
@@ -332,7 +332,6 @@ class CompetitorScraper:
                 "Betano": ["https://www.betano.de/", "https://www.betano.de/slots/", "https://www.betano.de/promotions/", "https://promos.betano.de/slots-bonus-400-merkur-spiele/index.html?btag=a_1318b_2675c_GSN_COMP_CAS_Wunderino&cq_plac=&cq_net=g&cq_pos=&cq_med=&cq_plt=gp&cq_src=google_ads&cq_cmp=19594070076&cq_con=143324282617&cq_term=wunderino%20bonus&gad_source=1&gad_campaignid=19594070076&gbraid=0AAAAAC1-GiMloSW5x9RoChz2Dih7o5Knq&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qQBeYGwd58qGRZC1vndfGQDvQMy8pD8_GhR1IPIhzgnMuuHftU-oqhoCVI0QAvD_BwE"],
                 "Wunderino": ["https://www.wunderino.de/de/", "https://www.wunderino.de/de/loyalty/"],
                 "Lowen Play": ["https://www.loewen-play.de/", "https://www.loewen-play.de/bonus"],
-                # Puedes añadir más si quieres
             },
             "AT": {
                 "Win2day": ["https://www.win2day.at/","https://www.win2day.at/promotions-gewinnspiele", "https://www.win2day.at/clubinfo","https://www.win2day.at/promotions-gewinnspiele/casino-promotions"],
