@@ -1661,3 +1661,5 @@
 2025-11-11 23:52:04 AEAD Decrypt error: bad packet ID (may be a replay): [ #300643 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
 2025-11-11 23:52:04 PID_ERR large diff [64] [SSL-0] [00000_______________00000______0___________0___00_______________] 0:300708 0:300644 t=1762901524[0] r=[-1,64,15,586,1] sl=[46,64,64,528]
 2025-11-11 23:52:04 AEAD Decrypt error: bad packet ID (may be a replay): [ #300644 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+2025-11-12 00:25:07 us=359000 win_ctrl_handler: signal received (code=2)
+2025-11-12 00:25:07 us=359000 win_ctrl_handler: signal (code=2) not handled
