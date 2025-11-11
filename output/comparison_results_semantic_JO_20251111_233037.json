@@ -1,0 +1,63 @@
+{
+  "comparison_date": "2025-11-11",
+  "country": "JO",
+  "new_promotions": [
+    {
+      "id": 2038,
+      "competitor": "888 Casino",
+      "country": "JO",
+      "title": "Found 'jackpot' on page",
+      "description": "Jackpot gold 117,885.20€. New online casino games: Gates of Olympus, Super Scatter Gold Blitz, Ultimate Minerales Magicos, Banana Rush, Sweet Rush.",
+      "bonus_amount": "117,885.20€",
+      "bonus_type": "Jackpot",
+      "conditions": "Jackpot promotion for various slot games including Gates of Olympus, Banana Rush, and Sweet Rush.",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://www.888casino.com",
+      "scraped_at": "2025-11-11T23:18:54.029306",
+      "hash_id": "-2174409208946058222",
+      "created_at": "2025-11-11 22:30:37"
+    },
+    {
+      "id": 2037,
+      "competitor": "EmirBet",
+      "country": "JO",
+      "title": "Deposit Bonus",
+      "description": "Deposit bonus, €10 free bet on first bets, weekly cashback, refund up to 10% on losses, payment methods, Emirbet",
+      "bonus_amount": "€10 free bet",
+      "bonus_type": "Deposit Bonus",
+      "conditions": "Free bet on first cash bets, weekly cashback up to 10% on losses",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://emirbet.net",
+      "scraped_at": "2025-11-11T23:23:29.145444",
+      "hash_id": "-1269822842445014885",
+      "created_at": "2025-11-11 22:30:37"
+    },
+    {
+      "id": 2036,
+      "competitor": "EmirBet",
+      "country": "JO",
+      "title": "Weekly Cashback",
+      "description": "Weekly cashback refund up to 10% on losses. Emirbet supports various secure payment methods for deposits and withdrawals.",
+      "bonus_amount": "Up to 10%",
+      "bonus_type": "Cashback",
+      "conditions": "Cashback based on weekly losses",
+      "wagering": "",
+      "valid_until": "",
+      "url": "https://emirbet.net",
+      "scraped_at": "2025-11-11T23:23:29.145444",
+      "hash_id": "5762828439229554570",
+      "created_at": "2025-11-11 22:30:37"
+    }
+  ],
+  "removed_promotions": [],
+  "total_current": 3,
+  "total_previous": 0,
+  "new_count": 3,
+  "removed_count": 0,
+  "competitors_analyzed": [
+    "888 Casino",
+    "EmirBet"
+  ]
+}

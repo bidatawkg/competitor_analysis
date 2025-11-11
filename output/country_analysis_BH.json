@@ -1,28 +1,28 @@
 {
-  "id": "cd479468-b24c-4eac-8888-2c51bfe95e69",
+  "id": "13d4e320-a0c9-4ffb-9adc-429c8fdb228c",
   "object": "chat.completion",
-  "created": 1760005404,
+  "created": 1762899403,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"BH\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [],\n        \"distinctive_data\": [\"No promotions found for any competitors in BH on 2025-10-09\", \"Total current and previous promotions are zero\", \"No competitors were analyzed due to absence of data\"]\n    }\n}"
+        "content": "{\n    \"country\": \"BH\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"€117,869.65\",\n                \"url\": \"https://www.888casino.com\"\n            },\n            {\n                \"competitor\": \"EmirBet\",\n                \"title\": \"Deposit Bonus\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"€10 free bet\",\n                \"url\": \"https://emirbet.net\"\n            },\n            {\n                \"competitor\": \"EmirBet\",\n                \"title\": \"Weekly Cashback\",\n                \"bonus_type\": \"Cashback\",\n                \"bonus_amount\": \"Up to 10%\",\n                \"url\": \"https://emirbet.net\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Gates of Olympus\",\n                \"context\": \"Jackpot promotion\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Super Scatter Gold Blitz\",\n                \"context\": \"Jackpot promotion\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Ultimate Minerales Magicos\",\n                \"context\": \"Jackpot promotion\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Banana Rush\",\n                \"context\": \"Jackpot promotion\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Sweet Rush\",\n                \"context\": \"Jackpot promotion\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"€117,869.65\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"€10 free bet\"\n            },\n            {\n                \"bonus_type\": \"Cashback\",\n                \"average_bonus\": \"Up to 10%\"\n            }\n        ],\n        \"distinctive_data\": [\"888 Casino offers a massive jackpot of €117,869.65, significantly higher than typical promotions in the market.\", \"EmirBet provides a combination of deposit bonus (€10 free bet) and weekly cashback (up to 10%), focusing on player retention.\", \"All promotions lack specified wagering requirements and validity dates, which may be a regulatory or transparency concern.\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 401,
-    "completion_tokens": 94,
-    "total_tokens": 495,
+    "prompt_tokens": 1019,
+    "completion_tokens": 566,
+    "total_tokens": 1585,
     "prompt_tokens_details": {
       "cached_tokens": 0
     },
     "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 401
+    "prompt_cache_miss_tokens": 1019
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

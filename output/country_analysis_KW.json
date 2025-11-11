@@ -1,28 +1,28 @@
 {
-  "id": "f707930c-90da-4e13-9cca-2e8bf89fb57d",
+  "id": "ebe944ed-19ba-405a-89a0-e04c8c0035ff",
   "object": "chat.completion",
-  "created": 1760453751,
+  "created": 1762896248,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"KW\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"€300,128.89 (Jackpot Gold), €488.16 (Ultimate Buffalo Cash)\",\n                \"url\": \"https://www.888casino.com\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Deposit Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to €100 + 200% up to 3,000 USDT + 100% up to 200 USDT\",\n                \"url\": \"https://www.casinia.com\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"title\": \"Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to €500 + 200 FS\",\n                \"url\": \"https://www.casinia.com\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Jackpot Gold, Ultimate Buffalo Cash, The Sweetest Cash Collect, Flaming Wild Crown\",\n                \"context\": \"Multiple jackpot games with significant prize amounts highlighted\"\n            },\n            {\n                \"competitor\": \"Casinia\",\n                \"game\": \"Tournaments, VIP levels, Bonus crab shop\",\n                \"context\": \"Additional gaming features included in welcome bonuses\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"Approx. 133% match bonus + 133 free spins (based on Casinia and Rabona offers)\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"€300,128.89 (single large jackpot amount from 888 Casino)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"€10 Free Bet + 10% cashback (from EmirBet)\"\n            }\n        ],\n        \"distinctive_data\": [\"888 Casino offers exceptionally high jackpot prizes (over €300,000), which is significantly higher than typical casino bonuses\", \"Casinia provides multiple welcome bonuses including crypto options (up to 200% match in USDT), showing strong crypto integration\", \"EmirBet offers a unique weekly cashback refund of up to 10% on losses, providing ongoing player protection\", \"Rabona focuses specifically on crypto sports betting welcome bonuses, targeting a niche market\"]\n    }\n}"
+        "content": "{\n    \"country\": \"KW\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"title\": \"Bonus Wheel\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"Up to $1000\",\n                \"url\": \"https://www.ar888games1.com/en\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"title\": \"Found 'deposit' on page\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to $1000\",\n                \"url\": \"https://www.ar888games1.com/en/promotions\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"title\": \"Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to $/€/£1,000\",\n                \"url\": \"https://www.ar888games1.com/en\"\n            },\n            {\n                \"competitor\": \"Rabona\",\n                \"title\": \"Welcome Bonus\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"100% up to $500 + 200 free spins\",\n                \"url\": \"https://arabcasinostars.com/en/review/casino-rabona/\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Gates of Olympus, Super Scatter Gold Blitz, Ultimate Minerales Magicos, Banana Rush, Sweet Rush\",\n                \"context\": \"Jackpot promotion with a jackpot amount of 117,803.23€\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Exclusive games and European roulette\",\n                \"context\": \"Free spins on exclusive games not available elsewhere; mentions European roulette having better odds\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"100% up to $/€/£833.33 (based on amounts: $1000, $1000, $1000, $500)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"Up to $1000\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"Not specified (888 Casino) and 50, 100, 150 Free Spins (Rabona)\"\n            },\n            {\n                \"bonus_type\": \"Cashback\",\n                \"average_bonus\": \"Up to 10%\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"117,803.23€\"\n            }\n        ],\n        \"distinctive_data\": [\"888 Casino offers a high jackpot of 117,803.23€ on specific slot games, which is significantly higher than typical promotions.\", \"Rabona provides a welcome bonus that includes 200 free spins, which is a large number compared to other competitors.\", \"EmirBet offers weekly cashback up to 10% on losses, providing consistent player protection.\", \"888 Casino has multiple promotions with bonuses up to $1000, indicating aggressive acquisition strategies.\", \"Rabona mentions no deposit free spins options (50, 100, 150), which are rare and attractive for new players.\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1725,
-    "completion_tokens": 592,
-    "total_tokens": 2317,
+    "prompt_tokens": 3700,
+    "completion_tokens": 748,
+    "total_tokens": 4448,
     "prompt_tokens_details": {
       "cached_tokens": 0
     },
     "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 1725
+    "prompt_cache_miss_tokens": 3700
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

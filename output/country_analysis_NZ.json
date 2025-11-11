@@ -1,28 +1,28 @@
 {
-  "id": "bd0d7a23-f2ec-47fa-8b3d-af253986adce",
+  "id": "fc9884ae-db91-4e98-a304-f55e48cb63ce",
   "object": "chat.completion",
-  "created": 1760520319,
+  "created": 1762902232,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"NZ\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"casumo\",\n                \"title\": \"welcome offer\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"110% up to $1100 + 60 spins\",\n                \"url\": \"https://www.casumo.com/promotions\"\n            },\n            {\n                \"competitor\": \"casumo\",\n                \"title\": \"Found 'deposit' on page\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"Up to $1100 + 60 Free Spins\",\n                \"url\": \"https://www.casumo.com/promotions\"\n            },\n            {\n                \"competitor\": \"highroller\",\n                \"title\": \"Found 'bonus' on page\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"up to $500 + 200 free spins\",\n                \"url\": \"https://highroller.nz\"\n            },\n            {\n                \"competitor\": \"highroller\",\n                \"title\": \"Let's Roll - 100% Bonus up to $500 + 200 Free Spins\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"100% up to $500 + 200 Free Spins\",\n                \"url\": \"https://highroller.nz\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"highroller\",\n                \"game\": \"Jackpot\",\n                \"context\": \"Sunday Swagger – your happy hour bonus! Every week – pick & play! Deposit & get free spins – your choice!\"\n            },\n            {\n                \"competitor\": \"highroller\",\n                \"game\": \"Progressive Jackpots\",\n                \"context\": \"Massive progressive jackpots mentioned in welcome bonuses\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"110% up to $1100 + 60 spins (casumo), unspecified (highroller)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"Up to $1100 + 60 Free Spins (casumo), up to $500 + 200 Free Spins (highroller)\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"$10.8 Million (highroller)\"\n            },\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"No specific bonus amount, but part of Sunday Swagger event (highroller)\"\n            }\n        ],\n        \"distinctive_data\": [\"Highroller offers a massive $10.8 million prize pool for non-stop drops & races, which is significantly higher than typical casino promotions.\", \"Casumo provides the highest welcome bonus amount at up to $1100, making it the most aggressive in terms of cash value.\", \"Highroller's Sunday Swagger event is a recurring weekly jackpot promotion, which is unique among the competitors.\"]\n    }\n}"
+        "content": "{\n    \"country\": \"NZ\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [],\n        \"distinctive_data\": [\"No current promotions available for analysis in NZ as of 2025-11-12\", \"Total current promotions dropped to 0 from 175 in the previous period\", \"All competitors analyzed show no active promotions\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 1919,
-    "completion_tokens": 681,
-    "total_tokens": 2600,
+    "prompt_tokens": 401,
+    "completion_tokens": 100,
+    "total_tokens": 501,
     "prompt_tokens_details": {
-      "cached_tokens": 320
+      "cached_tokens": 0
     },
-    "prompt_cache_hit_tokens": 320,
-    "prompt_cache_miss_tokens": 1599
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 401
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

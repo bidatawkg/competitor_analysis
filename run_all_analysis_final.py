@@ -38,8 +38,8 @@ class FinalAnalysisRunner:
     """Runs complete analysis for all countries and generates TABBED STATIC dashboard"""
     
     def __init__(self):
-        # self.countries = ["AE", "SA", "KW", "QA", "OM", "BH", "JO", "NZ"]
-        self.countries = ["CH"]
+        self.countries = ["AE", "SA", "KW", "QA", "OM", "BH", "JO", "NZ"]
+        # self.countries = ["CH"]
         # self.countries = ["DE","AT","CH"]
         self.analysis_system = CompetitorAnalysisSystem()
         self.dashboard_generator = TabbedStaticDashboardGenerator()

@@ -1,28 +1,28 @@
 {
-  "id": "5c88ac48-a582-4f14-b9f4-ffd430450ddf",
+  "id": "40d2d5d5-27e4-4dd4-956e-6380b9faa023",
   "object": "chat.completion",
-  "created": 1760005180,
+  "created": 1762898548,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"OM\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [],\n        \"highlighted_games\": [],\n        \"average_values_by_promo_type\": [],\n        \"distinctive_data\": [\"No promotions found for any competitors in the country OM on the comparison date 2025-10-09. The total current and previous promotion counts are zero, and no competitors were analyzed.\"]\n    }\n}"
+        "content": "{\n    \"country\": \"OM\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"€117,842.31\",\n                \"url\": \"https://888casino.com\"\n            },\n            {\n                \"competitor\": \"EmirBet\",\n                \"title\": \"Deposit Bonus\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"€10 free bet\",\n                \"url\": \"https://emirbet.net\"\n            },\n            {\n                \"competitor\": \"EmirBet\",\n                \"title\": \"Weekly Cashback\",\n                \"bonus_type\": \"Cashback\",\n                \"bonus_amount\": \"Up to 10%\",\n                \"url\": \"https://emirbet.net\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Gates of Olympus\",\n                \"context\": \"Jackpot promotion\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Banana Rush\",\n                \"context\": \"Jackpot promotion\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Sweet Rush\",\n                \"context\": \"Jackpot promotion\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Super Scatter\",\n                \"context\": \"Jackpot promotion\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Gold Blitz Ultimate\",\n                \"context\": \"Jackpot promotion\"\n            },\n            {\n                \"competitor\": \"888 Casino\",\n                \"game\": \"Magical Minerals\",\n                \"context\": \"Jackpot promotion\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Jackpot\",\n                \"average_bonus\": \"€117,842.31\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"€10 free bet\"\n            },\n            {\n                \"bonus_type\": \"Cashback\",\n                \"average_bonus\": \"Up to 10%\"\n            }\n        ],\n        \"distinctive_data\": [\"888 Casino offers a massive jackpot of €117,842.31, significantly higher than typical deposit bonuses or cashback offers.\", \"EmirBet provides a combination of deposit bonus (€10 free bet) and weekly cashback (up to 10%), focusing on player retention.\", \"All promotions lack specified wagering requirements and validity dates, which may affect player clarity.\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 401,
-    "completion_tokens": 96,
-    "total_tokens": 497,
+    "prompt_tokens": 1018,
+    "completion_tokens": 589,
+    "total_tokens": 1607,
     "prompt_tokens_details": {
       "cached_tokens": 0
     },
     "prompt_cache_hit_tokens": 0,
-    "prompt_cache_miss_tokens": 401
+    "prompt_cache_miss_tokens": 1018
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }

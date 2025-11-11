@@ -1,28 +1,28 @@
 {
-  "id": "9c667bf6-4d9d-415e-8a4e-153edc55189e",
+  "id": "a79208cf-c15f-4761-b35d-8aea98ef760b",
   "object": "chat.completion",
-  "created": 1760533971,
+  "created": 1762897674,
   "model": "deepseek-chat",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n    \"country\": \"QA\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"welcome offer\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$7,777 + 300 Free Spins and 100% up to $1,111 + 100 Free Spins\",\n                \"url\": \"https://www.justcasino.com/welcome-bonus\"\n            },\n            {\n                \"competitor\": \"1xBet\",\n                \"title\": \"Found 'free spins' on page\",\n                \"bonus_type\": \"Free Spins\",\n                \"bonus_amount\": \"Up to 250% bonus + free spins\",\n                \"url\": \"https://1xbet.com\"\n            },\n            {\n                \"competitor\": \"1xBet\",\n                \"title\": \"Star League Bet on Champions League Stars\",\n                \"bonus_type\": \"Tournament\",\n                \"bonus_amount\": \"70,000 USD\",\n                \"url\": \"https://1xbet.com\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"1xBet\",\n                \"game\": \"English Premier League matches\",\n                \"context\": \"Deposit bonus requires placing bets on English Premier League matches to qualify for free bets\"\n            },\n            {\n                \"competitor\": \"1xBet\",\n                \"game\": \"Champions League stars\",\n                \"context\": \"Tournament promotion focused on betting on Champions League stars with a 70,000 USD prize\"\n            },\n            {\n                \"competitor\": \"LuckyDreams\",\n                \"game\": \"Gates of Olympus, Book of Dead\",\n                \"context\": \"Featured games mentioned in free spins promotion with 'play now' calls to action\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"Approximately $4,444 + 200 Free Spins (based on JustCasino's $7,777 + 300 FS and 100% up to $1,111 + 100 FS offers)\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"100% match up to $1,111 + 75 Free Spins (based on JustCasino and LuckyDreams offers)\"\n            },\n            {\n                \"bonus_type\": \"Free Spins\",\n                \"average_bonus\": \"Up to 250% bonus + free spins (based on 1xBet's aggressive offer)\"\n            },\n            {\n                \"bonus_type\": \"Tournament\",\n                \"average_bonus\": \"$38,888.50 + 150 Free Spins (based on 1xBet's $70,000 and JustCasino's $7,777 + 300 FS offers)\"\n            }\n        ],\n        \"distinctive_data\": [\"1xBet offers a 'no risk bet' feature where players get refunds if their bets lose, which is highly aggressive and player-friendly\", \"JustCasino provides exceptionally high welcome bonuses reaching $7,777 + 300 free spins, significantly above market average\", \"Multiple competitors (JustCasino, LuckyDreams) offer identical 100% up to $1,111 deposit bonuses, suggesting market standardization\", \"1xBet's tournament prize of $70,000 is exceptionally high compared to typical casino promotions\", \"JustCasino mentions availability for multiple regional markets (ar-en, en-au, ca-en, etc.) within Qatar, indicating broad targeting\"]\n    }\n}"
+        "content": "{\n    \"country\": \"QA\",\n    \"analysis\": {\n        \"most_aggressive_promotions\": [\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Welcome Bonus\",\n                \"bonus_amount\": \"$7,777 + 300 free spins\",\n                \"url\": \"https://justcasino.com/welcome-bonus\"\n            },\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Found 'jackpot' on page\",\n                \"bonus_type\": \"Jackpot\",\n                \"bonus_amount\": \"$7,777 + 300 free spins\",\n                \"url\": \"https://www.justcasino.com/promotions\"\n            },\n            {\n                \"competitor\": \"JustCasino\",\n                \"title\": \"Deposit Bonus\",\n                \"bonus_type\": \"Deposit Bonus\",\n                \"bonus_amount\": \"100% up to $1,111 + 100 Free Spins\",\n                \"url\": \"https://justcasino.com\"\n            }\n        ],\n        \"highlighted_games\": [\n            {\n                \"competitor\": \"JustCasino\",\n                \"game\": \"Jackpots\",\n                \"context\": \"Promoted with large bonus amounts ($7,777 + 300 free spins) and available across multiple regions and languages\"\n            },\n            {\n                \"competitor\": \"JustCasino\",\n                \"game\": \"Tournaments\",\n                \"context\": \"Featured in VIP Galaxy Promotions as part of exclusive deals for VIP members\"\n            }\n        ],\n        \"average_values_by_promo_type\": [\n            {\n                \"bonus_type\": \"Welcome Bonus\",\n                \"average_bonus\": \"$7,777 + 300 free spins\"\n            },\n            {\n                \"bonus_type\": \"Deposit Bonus\",\n                \"average_bonus\": \"100% up to $1,111 + 75 free spins\"\n            },\n            {\n                \"bonus_type\": \"Cashback\",\n                \"average_bonus\": \"Up to 10%\"\n            },\n            {\n                \"bonus_type\": \"VIP Levels\",\n                \"average_bonus\": \"Personalized offers, higher withdrawal limits, cashback, and VIP manager access\"\n            }\n        ],\n        \"distinctive_data\": [\"JustCasino dominates with the highest bonus amounts ($7,777 + 300 free spins) across multiple promotions\", \"VIP programs are prominent, with Casinia and JustCasino offering tiered benefits including cashback and exclusive deals\", \"Cashback promotions are consistent, with EmirBet offering up to 10% weekly and Casinia providing it in VIP tiers\", \"No wagering requirements are mentioned for any promotions, which could be a key selling point\"]\n    }\n}"
       },
       "logprobs": null,
       "finish_reason": "stop"
     }
   ],
   "usage": {
-    "prompt_tokens": 3946,
-    "completion_tokens": 772,
-    "total_tokens": 4718,
+    "prompt_tokens": 2333,
+    "completion_tokens": 592,
+    "total_tokens": 2925,
     "prompt_tokens_details": {
-      "cached_tokens": 512
+      "cached_tokens": 0
     },
-    "prompt_cache_hit_tokens": 512,
-    "prompt_cache_miss_tokens": 3434
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 2333
   },
   "system_fingerprint": "fp_ffc7281d48_prod0820_fp8_kvcache"
 }
